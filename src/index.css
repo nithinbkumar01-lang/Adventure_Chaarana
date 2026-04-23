@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-slate-900 antialiased bg-slate-950;
+    @apply font-sans text-slate-900 antialiased bg-slate-50;
   }
   
   h1, h2, h3, h4, h5, h6 {

@@ -47,9 +47,10 @@ async function startServer() {
 
       console.log(`[Server] Saved successfully with ID: ${docRef.id}`);
       res.status(200).json({ success: true, id: docRef.id });
-    } catch (error: any) {
+    } catch (error) {
       console.error('[Server] Firestore Error:', error);
-      res.status(500).json({ error: error.message || 'Failed to save to database' });
+      const message = error instanceof Error ? error.message : 'Unknown error';
+      res.status(500).json({ error: message || 'Failed to save to database' });
     }
   });
 
