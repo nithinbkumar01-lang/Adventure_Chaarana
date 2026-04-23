@@ -315,16 +315,17 @@ const ComingSoon = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.1 }}
-                    className="flex flex-col items-center gap-3 p-8 bg-white border-2 border-emerald-500 rounded-3xl shadow-2xl shadow-emerald-500/20"
+                    className="flex flex-col items-center gap-4 p-10 bg-white border-4 border-emerald-500 rounded-[2.5rem] shadow-[0_20px_50px_rgba(4,120,87,0.2)] ring-1 ring-black/5"
                   >
-                    <div className="bg-emerald-500 p-3 rounded-full">
-                      <CheckCircle2 className="text-white w-8 h-8" />
+                    <div className="bg-emerald-500 p-4 rounded-full shadow-lg shadow-emerald-500/30">
+                      <CheckCircle2 className="text-white w-10 h-10" />
                     </div>
-                    <div className="space-y-1">
-                      <p className="text-emerald-600 font-black text-xs tracking-[0.3em] uppercase">Joined Successfully</p>
-                      <h3 className="text-slate-900 font-bold text-xl md:text-2xl tracking-tight">Welcome to Adventure Chaarana!</h3>
-                      <p className="text-slate-500 text-[10px] md:text-xs font-medium tracking-wide">
-                        Redirecting for confirmation...
+                    <div className="space-y-2">
+                      <p className="text-emerald-600 font-black text-[10px] md:text-xs tracking-[0.4em] uppercase">Registration Complete</p>
+                      <h2 className="text-slate-900 font-black text-2xl md:text-4xl tracking-tight leading-none mb-2">Welcome to Adventure Chaarana!</h2>
+                      <div className="h-1.5 w-16 bg-emerald-500 mx-auto rounded-full mt-4" />
+                      <p className="text-slate-600 text-xs md:text-sm font-bold tracking-wide pt-4 opacity-70">
+                        Redirecting to WhatsApp...
                       </p>
                     </div>
                   </motion.div>
