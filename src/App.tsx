@@ -52,7 +52,7 @@ const ComingSoon = () => {
       setPhone('');
 
       // 3. Fallback WhatsApp logic - Use window.top to avoid iframe restrictions
-      const message = `New person has joined the waitlist - ${phone}`;
+      const message = `Welcome to Adventure Chaarana - New entry: ${phone}`;
       const waUrl = `https://api.whatsapp.com/send?phone=919980489494&text=${encodeURIComponent(message)}`;
       
       setTimeout(() => {
@@ -321,7 +321,7 @@ const ComingSoon = () => {
                     <div>
                       <p className="text-brand-accent font-bold text-sm tracking-widest uppercase mb-1">Success</p>
                       <p className="text-slate-300 text-xs text-center leading-relaxed">
-                        Saved to our list!<br/>Redirecting to WhatsApp for confirmation...
+                        Welcome to Adventure Chaarana!<br/>Redirecting for confirmation...
                       </p>
                     </div>
                   </motion.div>
@@ -341,24 +341,31 @@ const ComingSoon = () => {
                         required
                         value={phone}
                         disabled={status === 'loading'}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => {
+                          const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                          setPhone(val);
+                        }}
                         whileFocus={{ scale: 1.01, boxShadow: "0 0 20px rgba(249, 115, 22, 0.1)" }}
                         className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 md:px-6 md:py-4 text-xs md:text-sm focus:outline-none focus:border-brand-accent focus:ring-4 focus:ring-brand-accent/5 transition-all font-medium placeholder:text-slate-400 text-slate-900 disabled:opacity-50 shadow-sm"
                       />
                       {status === 'error' && (
-                        <div className="absolute -bottom-6 left-0 flex items-center gap-1 text-[10px] text-red-400 font-bold uppercase tracking-wider">
+                        <motion.div 
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="absolute -bottom-8 left-0 flex items-center gap-2 text-[10px] text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2 py-1 rounded-md border border-red-500/20"
+                        >
                           <AlertCircle size={10} />
                           {errorMessage}
-                        </div>
+                        </motion.div>
                       )}
                     </div>
                     
                     <motion.button 
                       type="submit"
-                      disabled={status === 'loading'}
-                      whileHover={{ scale: 1.02, backgroundColor: "#ea580c" }}
-                      whileTap={{ scale: 0.98 }}
-                      className="bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-[9px] md:text-[10px] tracking-[0.2em] uppercase transition-colors shadow-xl shadow-orange-600/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px]"
+                      disabled={status === 'loading' || phone.trim().length < 10}
+                      whileHover={status !== 'loading' && phone.trim().length >= 10 ? { scale: 1.02, backgroundColor: "#ea580c" } : {}}
+                      whileTap={status !== 'loading' && phone.trim().length >= 10 ? { scale: 0.98 } : {}}
+                      className="bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-[9px] md:text-[10px] tracking-[0.2em] uppercase transition-colors shadow-xl shadow-orange-600/20 disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px]"
                     >
                       {status === 'loading' ? (
                         <>
