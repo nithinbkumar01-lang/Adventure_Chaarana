@@ -52,7 +52,7 @@ const ComingSoon = () => {
       setPhone('');
 
       // 3. Fallback WhatsApp logic - Use window.top to avoid iframe restrictions
-      const message = `Welcome to Adventure Chaarana - New entry: ${phone}`;
+      const message = `Welcome to Adventure Chaarana!`;
       const waUrl = `https://api.whatsapp.com/send?phone=919980489494&text=${encodeURIComponent(message)}`;
       
       setTimeout(() => {
@@ -315,13 +315,16 @@ const ComingSoon = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.1 }}
-                    className="flex flex-col items-center gap-3 p-6 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/20 rounded-2xl"
+                    className="flex flex-col items-center gap-3 p-8 bg-white border-2 border-emerald-500 rounded-3xl shadow-2xl shadow-emerald-500/20"
                   >
-                    <CheckCircle2 className="text-emerald-500 w-10 h-10" />
-                    <div>
-                      <p className="text-brand-accent font-bold text-sm tracking-widest uppercase mb-1">Success</p>
-                      <p className="text-slate-300 text-xs text-center leading-relaxed">
-                        Welcome to Adventure Chaarana!<br/>Redirecting for confirmation...
+                    <div className="bg-emerald-500 p-3 rounded-full">
+                      <CheckCircle2 className="text-white w-8 h-8" />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-emerald-600 font-black text-xs tracking-[0.3em] uppercase">Joined Successfully</p>
+                      <h3 className="text-slate-900 font-bold text-xl md:text-2xl tracking-tight">Welcome to Adventure Chaarana!</h3>
+                      <p className="text-slate-500 text-[10px] md:text-xs font-medium tracking-wide">
+                        Redirecting for confirmation...
                       </p>
                     </div>
                   </motion.div>
