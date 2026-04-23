@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif; /* Professional theme uses clean sans for everything */
+  
+  --color-brand-primary: #15803d; /* green-700 */
+  --color-brand-accent: #f97316; /* orange-500 */
+  --color-brand-light: #f0fdf4; /* green-50 */
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 antialiased bg-slate-950;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-slate-800;
+  }
+}

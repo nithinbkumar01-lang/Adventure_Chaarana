@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Waitlist collection security
+    match /waitlist/{entryId} {
+      function isValidWaitlistEntry(data) {
+        return data.phoneNumber is string 
+            && data.phoneNumber.size() >= 10 
+            && data.phoneNumber.size() <= 20
+            && data.createdAt == request.time
+            && data.source is string
+            && data.source.size() <= 50;
+      }
+
+      // Public can create entries if they follow the schema
+      // No ID check needed for create (auto-id usually)
+      allow create: if isValidWaitlistEntry(incoming()) 
+                    && incoming().keys().hasAll(['phoneNumber', 'createdAt', 'source'])
+                    && incoming().keys().size() == 3;
+      
+      // Nobody can read/update/delete via client SDK (only admin console)
+      allow read, update, delete: if false;
+    }
+  }
+}

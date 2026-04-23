@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "WaitlistEntry": {
+      "title": "Waitlist Entry",
+      "description": "Information about a user who joined the waitlist.",
+      "type": "object",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "The phone number of the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the user joined."
+        },
+        "source": {
+          "type": "string",
+          "description": "The origin of the entry (e.g., coming_soon_portal)."
+        }
+      },
+      "required": ["phoneNumber", "createdAt", "source"]
+    }
+  },
+  "firestore": {
+    "/waitlist/{entryId}": {
+      "schema": "WaitlistEntry",
+      "description": "Collection of waitlist entries."
+    }
+  }
+}
