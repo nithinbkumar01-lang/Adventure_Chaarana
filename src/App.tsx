@@ -52,7 +52,7 @@ const ComingSoon = () => {
       setPhone('');
 
       // 3. Fallback WhatsApp logic - Use window.top to avoid iframe restrictions
-      const message = `Welcome to Adventure Chaarana!`;
+      const message = `Hi, need more info on this`;
       const waUrl = `https://api.whatsapp.com/send?phone=919980489494&text=${encodeURIComponent(message)}`;
       
       setTimeout(() => {
