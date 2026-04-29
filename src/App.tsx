@@ -8,8 +8,6 @@ import { BrowserRouter, Routes, Route, useNavigate, useParams, Link, useLocation
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Clock,
-  CheckCircle2,
-  Calendar,
   MapPin,
   Heart,
   ArrowRight,
@@ -17,10 +15,9 @@ import {
   Sun,
   Compass,
   Tent,
-  MessageCircle,
   X,
-  Zap,
   ChevronDown,
+  ChevronLeft,
   Instagram,
   Facebook,
   Mail,
@@ -432,52 +429,119 @@ const Breadcrumbs = () => {
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToTreks = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('treks-section');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const section = document.getElementById('treks-section');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navLinksLeft = [
+    { label: 'Treks', onClick: scrollToTreks },
+    { label: 'Contact', path: '/' }
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] transition-all duration-300">
       <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-xl border-b border-white/5 shadow-2xl" />
-      <div className="max-w-7xl mx-auto px-4 md:px-12 h-16 md:h-20 flex items-center justify-between relative z-10">
-        <div className="flex items-center gap-4 md:gap-10 overflow-hidden">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center cursor-pointer shrink-0"
-            onClick={() => navigate('/')}
-          >
-            <img 
-              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
-              alt="Adventure Chaarana" 
-              className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-          <nav className="hidden md:flex items-center gap-8">
-            {['Home', 'Treks', 'About', 'Contact'].map((item, idx) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + idx * 0.1 }}
-              >
-                <Link to="/" className="text-[11px] font-black uppercase tracking-[0.25em] text-white/80 hover:text-white transition-all hover:tracking-[0.3em] relative group">
-                  {item}
+      
+      {/* Desktop Centered Navbar */}
+      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-24 lg:h-32 grid-cols-[1fr_auto_1fr] items-center relative z-10">
+        {/* Left Links */}
+        <nav className="flex items-center gap-10 justify-start">
+          {navLinksLeft.map((item, idx) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + idx * 0.1 }}
+            >
+              {item.onClick ? (
+                <button 
+                  onClick={item.onClick}
+                  className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group cursor-pointer"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
+                </button>
+              ) : (
+                <Link to={item.path || '/'} className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group">
+                  {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
                 </Link>
-              </motion.div>
-            ))}
-          </nav>
-        </div>
-        
-        <div className="flex items-center gap-4">
+              )}
+            </motion.div>
+          ))}
+        </nav>
+
+        {/* Logo (Center) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex items-center justify-center cursor-pointer px-10"
+          onClick={() => navigate('/')}
+        >
+          <img 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+            alt="Adventure Chaarana" 
+            className="h-24 lg:h-32 w-auto object-contain transition-all hover:scale-110"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+
+        {/* Right Section */}
+        <div className="flex items-center gap-10 justify-end">
           <motion.button 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-brand-orange text-white px-7 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-[0_8px_20px_rgba(232,117,26,0.4)] hover:shadow-brand-orange/60 transition-all border border-white/20"
+            className="bg-brand-orange text-white px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.25em] shadow-[0_8px_20px_rgba(232,117,26,0.3)] hover:shadow-brand-orange/60 transition-all border border-white/20 whitespace-nowrap"
           >
             Join Community
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden flex items-center justify-between px-6 h-20 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="cursor-pointer"
+          onClick={() => navigate('/')}
+        >
+          <img 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+            alt="Adventure Chaarana" 
+            className="h-14 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+        
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={scrollToTreks}
+            className="text-[8px] font-black uppercase tracking-widest text-white/70"
+          >
+            Treks
+          </button>
+          <motion.button 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="bg-brand-orange text-white px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest"
+          >
+            Join
           </motion.button>
         </div>
       </div>
@@ -529,7 +593,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
                 <img 
                   src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
                   alt="Adventure Chaarana" 
-                  className="h-16 w-auto object-contain filter brightness-0 invert opacity-90 transition-all hover:opacity-100"
+                  className="h-24 md:h-32 w-auto object-contain opacity-90 transition-all hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
               </Link>
@@ -539,7 +603,11 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               <div className="flex gap-4">
                 {[
                   { icon: <Instagram size={18} />, url: 'https://instagram.com/adventurechaarana', label: 'Instagram' },
-                  { icon: <MessageCircle size={18} />, url: 'https://wa.me/919980489494', label: 'WhatsApp' },
+                  { 
+                    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-[18px] h-[18px]" referrerPolicy="no-referrer" />, 
+                    url: 'https://wa.me/919980489494', 
+                    label: 'WhatsApp' 
+                  },
                   { icon: <Facebook size={18} />, url: 'https://facebook.com/adventurechaarana', label: 'Facebook' }
                 ].map((social) => (
                   <a 
@@ -547,7 +615,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-full text-white/60 hover:bg-brand-orange hover:text-brand-dark hover:border-brand-orange transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-full text-white/60 hover:bg-white hover:text-brand-dark hover:border-white transition-all duration-300"
                     title={social.label}
                   >
                     {social.icon}
@@ -612,6 +680,7 @@ const ScrollToTop = () => {
 
 const TrekDetailsPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const trek = TREKS.find(t => t.id === id);
 
   if (!trek) {
@@ -627,377 +696,344 @@ const TrekDetailsPage = () => {
     );
   }
 
+  const onBack = () => navigate(-1);
+
   return (
-    <div className="bg-brand-paper pb-20 font-sans min-h-screen">
-      {/* Hero Section */}
-      <header className="relative min-h-[70svh] flex flex-col justify-end bg-brand-dark overflow-hidden mx-6 md:mx-12 rounded-[2rem] md:rounded-[3rem] mt-4 mb-20 shadow-2xl">
-        <motion.div 
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute inset-0"
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-brand-paper relative font-sans selection:bg-brand-orange selection:text-white"
+    >
+      {/* ─── PROFESSIONAL COMPACT NAV ─── */}
+      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-14 flex items-center justify-between shadow-sm">
+        <button 
+          onClick={onBack}
+          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-brand-dark transition-all group"
         >
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          Back
+        </button>
+        <div className="hidden md:flex items-center gap-3 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200">
+           <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Trek:</span>
+           <span className="text-[9px] font-black uppercase tracking-widest text-brand-dark">{trek.title}</span>
+        </div>
+        <button className="bg-brand-orange text-white px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-orange/20 hover:scale-105 transition-all">
+          Join Now 🧗
+        </button>
+      </nav>
+
+      {/* ─── IMMERSIVE CENTERED HERO ─── */}
+      <header className="relative pt-14 flex flex-col justify-center items-center min-h-[65vh] md:min-h-[75vh] overflow-hidden text-center px-6">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <img 
             src={trek.image} 
             alt={trek.title} 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-        </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/80 to-brand-dark/95" />
+        </div>
         
-        {/* Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/25 via-brand-dark/5 to-brand-dark/95" 
-             style={{ background: 'linear-gradient(to bottom, rgba(15,15,15,0.25) 0%, rgba(15,15,15,0.05) 35%, rgba(15,15,15,0.65) 68%, rgba(15,15,15,0.97) 100%)' }}
-        />
-
-        {/* Hero Body */}
-        <div className="relative z-10 px-6 md:px-16 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.25 }}
-            className="space-y-6 md:space-y-10"
+        <div className="max-w-4xl mx-auto w-full relative z-10 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-orange text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full mx-auto"
           >
-            <div className="space-y-4 md:space-y-6">
-              <div className="inline-flex items-center gap-2 bg-brand-orange text-white text-[10px] font-bold uppercase tracking-[0.3em] px-4 py-1.5 rounded-sm">
-                ⛰️ {trek.host} · KARNATAKA
-              </div>
-              
-              <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-20">
-                <div className="flex-1">
-                  <h1 className="text-white font-serif text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tight">
-                    {trek.title.split(' ')[0]}<br />
-                    <span className="text-brand-orange-glow italic block mt-2">{trek.title.split(' ').slice(1).join(' ')}</span>
-                  </h1>
-                </div>
+            ⛰️ Karnataka Trekking Expedition
+          </motion.div>
+          
+          <div className="space-y-4">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter"
+            >
+              {trek.title.split(' ')[0]} <br />
+              <span className="text-brand-orange-glow italic font-serif opacity-95">{trek.title.split(' ').slice(1).join(' ')}</span>
+            </motion.h1>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-6 text-white/50 font-bold text-[10px] uppercase tracking-widest pt-2"
+            >
+              <span className="flex items-center gap-1.5">🏔️ {trek.elevation}</span>
+              <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>
+              <span className="flex items-center gap-1.5">📍 {trek.location}</span>
+              <span className="flex items-center gap-1.5">👶 Age {trek.minAge}+</span>
+            </motion.div>
+          </div>
 
-                <div className="flex items-center gap-8 lg:pb-6">
-                  {/* Vertical Divider for desktop */}
-                  <div className="hidden lg:block w-px h-32 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-                  
-                  <div className="flex flex-col gap-5 shrink-0">
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 block ml-1 flex items-center gap-2">
-                        <Zap size={10} className="text-brand-orange-glow" /> 
-                        Exclusive Deal
-                      </span>
-                      <div className="flex items-center gap-6">
-                        <div className="bg-brand-orange/20 backdrop-blur-xl border border-white/20 px-8 py-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(232,117,26,0.4)] flex flex-col items-center justify-center relative overflow-hidden group">
-                          {/* Inner glow effect */}
-                          <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                          <span className="text-5xl md:text-7xl font-mono font-bold text-white leading-none relative z-10">₹{trek.currentPrice.toLocaleString()}</span>
-                          <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-white/70 mt-3 relative z-10">Per Person · All Inc.</span>
-                        </div>
-                        <div className="flex flex-col justify-center gap-2">
-                           <div className="flex flex-col">
-                             <span className="text-white/30 text-xs font-bold uppercase tracking-widest line-through decoration-brand-orange/40 italic">₹{trek.originalPrice.toLocaleString()}</span>
-                             <span className="text-[10px] font-bold text-white/50 uppercase tracking-tighter">List Price</span>
-                           </div>
-                           <span className="bg-white text-brand-dark px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider shadow-lg transform -rotate-2">
-                             Save {trek.discount.split(' ')[1]}
-                           </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-white/60 text-xs md:text-sm">
-                <span className="flex items-center gap-1.5 font-medium tracking-wide">🏔️ {trek.elevation}</span>
-                <div className="w-1 h-1 bg-white/30 rounded-full" />
-                <span className="flex items-center gap-1.5 font-medium tracking-wide">{trek.distance} Round Trip</span>
-                <div className="w-1 h-1 bg-white/30 rounded-full" />
-                <span className="flex items-center gap-1.5 font-medium tracking-wide">{trek.location}</span>
-                <div className="w-1 h-1 bg-white/30 rounded-full" />
-                <span className="flex items-center gap-1.5 font-medium tracking-wide">Min Age {trek.minAge}</span>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+          >
+            <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
+              <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
+              <div className="flex flex-col items-start">
+                <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
               </div>
             </div>
-
-            {/* Stats Glass Bar */}
-            <div className="inline-flex flex-wrap bg-white/10 backdrop-blur-3xl border border-white/15 rounded-2xl overflow-hidden shadow-2xl">
-              {[
-                { label: 'Difficulty', val: trek.difficulty, accent: true },
-                { label: 'Distance', val: trek.distance },
-                { label: 'Elevation', val: trek.elevation },
-                { label: 'Min Age', val: trek.minAge },
-                { label: 'Type', val: trek.category === 'sunrise' ? 'Sunrise' : trek.category, accent: true }
-              ].map((stat, i) => (
-                <div key={i} className="px-6 md:px-8 py-4 md:py-6 border-r border-white/10 last:border-none hover:bg-brand-orange/15 transition-all text-center md:text-left min-w-[120px] md:min-w-0">
-                  <span className="block text-[9px] font-bold uppercase tracking-[0.25em] text-white/45 mb-1.5">{stat.label}</span>
-                  <span className={`block font-mono text-xs md:text-sm font-semibold text-white whitespace-nowrap ${stat.accent ? 'text-brand-orange-glow' : ''}`}>
-                    {stat.val}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <button 
+              onClick={() => {
+                const message = `I want to book the ${trek.title} Expedition! 🧗`;
+                window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+              }}
+              className="w-full sm:w-auto bg-[#25D366] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.25em] shadow-[0_20px_40px_rgba(37,211,102,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-3 active:scale-95"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-5 h-5 brightness-0 invert" />
+              Confirm My Seat
+            </button>
           </motion.div>
         </div>
       </header>
 
-      {/* ─── OFFERS BAND ─────────────────────────────────────── */}
-      <div className="bg-brand-orange relative z-20 flex flex-col md:flex-row justify-center items-stretch text-white border-y border-white/10">
-        {[
-          { icon: '🎁', title: '2 + 1 Offer', desc: 'Book 2 seats, bring 1 friend absolutely FREE' },
-          { icon: '🧍', title: 'Solo Booking — 10% Off', desc: 'Flat discount when you register as a solo trekker' }
-        ].map((item, i) => (
-          <div key={i} className="flex items-center gap-4 px-8 md:px-12 py-6 flex-1 border-b md:border-b-0 md:border-r border-white/20 last:border-none">
-            <span className="text-3xl leading-none">{item.icon}</span>
-            <div>
-              <div className="text-sm md:text-base font-bold leading-tight">{item.title}</div>
-              <div className="text-xs text-white/80 mt-0.5">{item.desc}</div>
-            </div>
-          </div>
-        ))}
+      {/* ─── SCROLLING OFFERS BAND ─── */}
+      <div className="bg-brand-dark/95 text-white/50 py-3 md:py-4 overflow-hidden flex whitespace-nowrap border-y border-white/5 backdrop-blur-md relative">
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        
+        <motion.div 
+          animate={{ x: [0, -1200] }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="flex gap-20 items-center px-12 relative z-10"
+        >
+          {[1,2,3,4,5].map(i => (
+            <React.Fragment key={i}>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🎁</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Group Offer: 2+1 Registration</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🧘</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Solo Trekkers Flat 10% Off</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🧗</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Certified Expedition Leads</span>
+              </div>
+            </React.Fragment>
+          ))}
+        </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-24">
-        {/* ─── DEPARTURE SCHEDULE ───────────────────────────────── */}
-        <section>
-          {/* Section Heading */}
-          <div className="mb-12">
-            <div className="flex items-center gap-2 text-brand-orange text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
-              📅 <span className="mt-0.5">Schedule</span>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
+        {/* ─── COMPACT TIMELINE ─── */}
+        <section className="space-y-8">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+            <div className="absolute inset-0 z-0">
+               <img src={trek.image} alt="Header Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
-            <div className="flex items-center gap-5">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark whitespace-nowrap leading-none">
-                Departure <em className="text-brand-orange italic font-bold not-italic">Schedule</em>
-              </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent min-w-10" />
-            </div>
-          </div>
-
-          <div className="bg-brand-dark rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-12 relative min-h-[140px] flex items-center justify-center text-center p-10 group">
-            <img 
-              src={trek.gallery?.[0] || trek.image} 
-              alt="Schedule Background" 
-              className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-1000"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-brand-dark/80 group-hover:bg-brand-dark/60 transition-all duration-700" />
             
-            <div className="relative z-10 space-y-3">
-              <h3 className="font-serif text-3xl md:text-4xl font-bold text-white leading-tight">
-                Every <em className="text-brand-orange-glow hover:text-white transition-colors italic font-bold not-italic">Friday & Saturday</em> Night Departure
-              </h3>
-              <p className="text-white/60 text-sm tracking-wide">
-                Night departure from Bangalore · Return by Sunday morning
-              </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 relative z-10">
+              <div className="space-y-1">
+                <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">📅 Timeline</div>
+                <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+                  Departure <span className="text-brand-orange-glow italic font-serif">Schedule</span>
+                </h2>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                <span className="text-xl">🗓️</span>
+                <div>
+                  <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
+                  <p className="font-bold text-white text-[10px]">Fri & Sat Night Pickup</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Timeline Itinerary */}
-          <div className="space-y-16">
-            {/* Day 0 */}
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange bg-brand-orange-pale border border-brand-orange/25 px-3 py-1 rounded-sm">
-                  🌃 Day 0 — Friday / Saturday Night
-                </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-brand-orange/30 to-transparent" />
-              </div>
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+            <div className="space-y-10">
+               {/* Day 0 */}
+               <div className="space-y-4">
+                 <div className="flex items-center gap-3">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">🌃 Day 0</span>
+                    <div className="flex-1 h-px bg-slate-100" />
+                 </div>
+                 
+                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                    {trek.itinerary.day1.map((item, idx) => (
+                      <div key={idx} className="relative pl-5 group">
+                        <div className="absolute left-[-4.5px] top-1 w-2 h-2 rounded-full bg-slate-200 border-2 border-white group-hover:bg-brand-orange transition-colors" />
+                        <div className="space-y-0">
+                          <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                          <p className="text-slate-600 font-bold text-xs leading-tight">{item.activity}</p>
+                        </div>
+                      </div>
+                    ))}
+                 </div>
+               </div>
 
-              <div className="relative space-y-4 pl-0 before:absolute before:left-[82px] md:before:left-[102px] before:top-3 before:bottom-3 before:w-px before:bg-gradient-to-b before:from-brand-orange before:via-slate-200 before:to-transparent">
-                {trek.itinerary.day1.map((item, idx) => (
-                   <div key={idx} className="flex gap-0 group hover:bg-brand-orange-pale/50 rounded-lg transition-all p-3 md:p-4 -ml-3 md:-ml-4">
-                     <span className="w-20 md:w-24 font-mono text-[11px] font-semibold text-brand-orange pt-1">{item.time}</span>
-                     <div className="relative z-10 w-4 md:w-6 flex justify-center pt-2 md:pt-2.5">
-                       <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-brand-orange ring-4 ring-brand-paper" />
-                     </div>
-                     <div className="flex-1 pl-4 md:pl-6 pt-0.5 font-medium text-brand-dark text-sm md:text-base leading-relaxed">
-                       {item.activity}
-                     </div>
-                   </div>
-                ))}
-              </div>
+               {/* Day 1 */}
+               <div className="space-y-4">
+                 <div className="flex items-center gap-3">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">🌄 Day 1</span>
+                    <div className="flex-1 h-px bg-slate-100" />
+                 </div>
+                 
+                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                    {trek.itinerary.day2.map((item, idx) => {
+                      const isHighlight = item.activity.toLowerCase().includes('sunrise');
+                      return (
+                        <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-2' : ''}`}>
+                          <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                          <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                            <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                            <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-sm' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
+                            {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ PEAK EXPERIENCE</p>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                 </div>
+               </div>
             </div>
 
-            {/* Day 1 */}
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-brand-orange bg-brand-orange-pale border border-brand-orange/25 px-3 py-1 rounded-sm">
-                   🌄 Day 1 — Saturday / Sunday
-                </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-brand-orange/30 to-transparent" />
-              </div>
-
-              <div className="relative space-y-4 pl-0 before:absolute before:left-[82px] md:before:left-[102px] before:top-3 before:bottom-3 before:w-px before:bg-gradient-to-b before:from-brand-orange before:via-slate-200 before:to-transparent">
-                {trek.itinerary.day2.map((item, idx) => {
-                  const isHighlight = item.activity.toLowerCase().includes('sunrise');
-                  return (
-                   <div key={idx} className={`flex gap-0 rounded-xl transition-all p-3 md:p-4 -ml-3 md:-ml-4 ${isHighlight ? 'bg-gradient-to-r from-brand-orange-pale to-[#FFE8CC] border border-brand-orange/20 shadow-sm my-2' : 'hover:bg-brand-orange-pale/50 group'}`}>
-                     <span className="w-20 md:w-24 font-mono text-[11px] font-semibold text-brand-orange pt-1">{item.time}</span>
-                     <div className="relative z-10 w-4 md:w-6 flex justify-center pt-2 md:pt-2.5">
-                       <div className={`rounded-full bg-brand-orange ${isHighlight ? 'w-3.5 h-3.5 ring-4 ring-brand-orange/20 mt-[-2px]' : 'w-2 h-2 ring-4 ring-brand-paper'}`} />
-                     </div>
-                     <div className={`flex-1 pl-4 md:pl-6 pt-0.5 leading-relaxed ${isHighlight ? 'font-bold text-[#7A3800] text-base md:text-lg' : 'font-medium text-brand-dark text-sm md:text-base'}`}>
-                       {item.activity}
-                       {isHighlight && <div className="text-xs md:text-sm font-medium text-brand-orange-glow mt-1 italic leading-tight">The moment you climbed all night for ✨</div>}
-                     </div>
-                   </div>
-                  );
-                })}
+            <div className="hidden lg:block sticky top-20 h-fit">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
+                 <img src={trek.gallery?.[1] || trek.image} alt="Expedition" className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                 <div className="absolute bottom-4 left-4 text-white">
+                   <p className="text-xl font-black leading-tight italic">"Where steps lead to <br/> better views."</p>
+                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─── QUOTE SECTION ───────────────────────────────────── */}
-        <section className="relative h-[400px] md:h-[600px] rounded-[2rem] md:rounded-[4rem] overflow-hidden flex items-center justify-center text-center px-6">
+        {/* ─── FULL SCREEN COMPACT QUOTE ─── */}
+        <section className="relative h-[30vh] md:h-[40vh] rounded-[2.5rem] overflow-hidden flex items-center justify-center text-center px-6">
+          <div className="absolute inset-0">
+             <img src={trek.gallery?.[0] || trek.image} alt="Quote Bg" className="w-full h-full object-cover" />
+             <div className="absolute inset-0 bg-brand-dark/50 backdrop-blur-[1px]" />
+          </div>
           <motion.div 
-            initial={{ scale: 1.1 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 2 }}
-            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="relative z-10 max-w-2xl space-y-4"
           >
-            <img src={trek.gallery?.[1] || trek.image} alt="Inspiring view" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <p className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight tracking-tighter">
+              The mountain calls, <br /> and I <span className="text-brand-orange italic font-serif">must</span> go.
+            </p>
+            <div className="flex items-center justify-center gap-3">
+               <div className="w-6 h-px bg-brand-orange" />
+               <span className="text-brand-orange font-black uppercase tracking-[0.3em] text-[8px]">Expedition Diaries</span>
+               <div className="w-6 h-px bg-brand-orange" />
+            </div>
           </motion.div>
-          <div className="absolute inset-0 bg-brand-dark/40" />
-          <div className="relative z-10 max-w-2xl">
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="font-serif text-3xl md:text-6xl text-white font-bold leading-tight"
-            >
-              "The best view comes after the <em className="text-brand-orange-glow italic font-bold not-italic underline decoration-brand-orange underline-offset-8">hardest climb</em>."
-            </motion.p>
-          </div>
         </section>
 
-        {/* ─── WHAT YOU GET ────────────────────────────────────── */}
-        <section className="space-y-12">
-          <div className="mb-12">
-            <div className="flex items-center gap-2 text-brand-orange text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
-              ✨ <span className="mt-0.5">The Perks</span>
+        {/* ─── EXPEDITION PERKS ─── */}
+        <section className="space-y-8">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+            <div className="absolute inset-0 z-0">
+               <img src={trek.gallery?.[1] || trek.image} alt="Perks Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
-            <div className="flex items-center gap-5">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark whitespace-nowrap leading-none">
-                What <em className="text-brand-orange italic font-bold not-italic">You Get</em>
+            <div className="space-y-1 relative z-10">
+              <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">✨ Included</div>
+              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+                Expedition <span className="text-brand-orange-glow italic font-serif">Perks</span>
               </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent min-w-10" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '🚌', title: 'Seamless Transport', desc: `Round trip from Bangalore in a comfortable traveler/bus.` },
-              { icon: '👤', title: 'Expert Guides', desc: 'Led by certified mountaineers with deep local knowledge.' },
-              { icon: '🎫', title: 'All Entry Fees', desc: 'No hidden costs. Forest permits and entry fees are on us.' },
-              { icon: '⛩️', title: 'Cultural Insight', desc: 'Visit ancient temples and learn local heritage.' },
-              { icon: '🏅', title: 'Achievement', desc: 'Earn your trek badge and certificate of completion.' },
-              { icon: '🍿', title: 'Light Refreshments', desc: 'Energy-boosting snacks and drinks at the summit.' }
+              { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
+              { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
+              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
+              { icon: '🍜', title: 'Energy Kit', desc: 'Early morning light breakfast and a hydration kit containing energy drinks and basic refreshments provided.' },
+              { icon: '🏅', title: 'Finisher Badge', desc: 'Personalized digital certificate and a physical finishing badge awarded to all participants who complete the trek.' },
+              { icon: '⛩️', title: 'Historical Insight', desc: 'Explore hidden cultural gems, temples, and ancient caves along the route with expert narrative guidance.' }
             ].map((item, i) => (
-              <div key={i} className="bg-brand-surface p-8 rounded-3xl border border-transparent hover:border-brand-orange/20 hover:bg-white hover:shadow-xl hover:shadow-brand-orange/5 transition-all duration-300 group">
-                <span className="text-4xl inline-block mb-6 group-hover:scale-110 transition-transform">{item.icon}</span>
-                <h4 className="text-lg font-bold text-brand-dark mb-2">{item.title}</h4>
-                <p className="text-brand-dark/60 text-sm leading-relaxed">{item.desc}</p>
+              <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
+                  <span className="text-3xl">{item.icon}</span>
+                </div>
+                <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
+                <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ─── INCLUSIONS & EXCLUSIONS ─── */}
-        <section className="grid lg:grid-cols-2 gap-8 md:gap-12 text-brand-dark">
-           {/* Inclusions */}
-           <div className="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] shadow-sm">
-             <div className="flex items-center gap-4 mb-8">
-               <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 border border-emerald-100">
-                 <CheckCircle2 size={24} />
-               </div>
-               <h3 className="font-serif text-2xl md:text-3xl font-bold">Inclusions</h3>
-             </div>
-             <ul className="grid gap-4">
-               {trek.inclusions.map((item, i) => (
-                 <li key={i} className="flex gap-4 items-start text-brand-dark/70 font-medium">
-                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0" />
-                   {item}
-                 </li>
-               ))}
-             </ul>
-           </div>
-
-           {/* Exclusions */}
-           <div className="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] shadow-sm">
-             <div className="flex items-center gap-4 mb-8">
-               <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-600 border border-red-100">
-                 <X size={24} />
-               </div>
-               <h3 className="font-serif text-2xl md:text-3xl font-bold">Exclusions</h3>
-             </div>
-             <ul className="grid gap-4">
-               {trek.exclusions.map((item, i) => (
-                 <li key={i} className="flex gap-4 items-start text-brand-dark/70 font-medium italic opacity-80">
-                   <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0" />
-                   {item}
-                 </li>
-               ))}
-             </ul>
-           </div>
-        </section>
-
-        {/* ─── THINGS TO CARRY ─── */}
-        <section className="bg-brand-dark text-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/5 blur-[120px] rounded-full" />
+        {/* ─── CHECKLIST ─── */}
+        <section className="bg-slate-900 text-white p-8 md:p-14 rounded-[3rem] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(232,117,26,0.1),transparent)]" />
           
-          <div className="relative z-10">
-            <div className="mb-12">
-              <div className="flex items-center gap-2 text-brand-orange-glow text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
-                🎒 <span className="mt-0.5">The Checklist</span>
+          <div className="relative z-10 grid lg:grid-cols-3 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <div className="text-brand-orange text-[9px] font-black uppercase tracking-[0.4em]">🎒 Checklist</div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-none">Gear Up for <br/> the Wild</h2>
               </div>
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white whitespace-nowrap leading-none">
-                Things to <em className="text-brand-orange-glow italic font-bold not-italic">Carry</em>
-              </h2>
+              <p className="text-white/40 font-bold text-sm leading-relaxed max-w-xs">Pack light, pack smart. These essential items ensure you enjoy the rugged mountain terrain without discomfort.</p>
+              <div className="p-5 bg-white/5 rounded-2xl border border-white/10 text-white/50 text-[10px] font-bold leading-tight">
+                💡 Pro Tip: Wear full-length trekking pants to avoid scratches from wild shrubs and rough rocks.
+              </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="lg:col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { icon: '👟', title: 'Trekking Shoes', desc: 'Mandatory! Sturdy sport shoes work too.' },
-                { icon: '🔦', title: 'Headlamp/Torch', desc: 'Essential for night treks. Mobile torch NOT advised.' },
-                { icon: '💧', title: 'Hydration', desc: 'At least 2L of water in reusable bottles.' },
-                { icon: '🧥', title: 'Extra Layer', desc: 'It gets surprisingly chilly at the summit.' },
-                { icon: '🍫', title: 'Power Snacks', desc: 'Energy bars, dry fruits or simple chocolates.' },
-                { icon: '🎒', title: 'Backpack', desc: 'A small daypack to carry your essentials.' },
-                { icon: '🪪', title: 'Valid ID', desc: 'Original Govt. ID proof is mandatory.' },
-                { icon: '🔋', title: 'Powerbank', desc: 'Keep your memories powered up.' }
+                { icon: '👟', title: 'Hiking Shoes', desc: 'Mandatory! Must have good grip for rocky trails.' },
+                { icon: '🔦', title: 'Headlamp', desc: 'Essential for night navigation. Hands-free is better.' },
+                { icon: '💧', title: 'Hydration (2L)', desc: 'Hydration is key. Reusable bottles only please.' },
+                { icon: '🧥', title: 'Warm Layer', desc: 'Summit temperatures drop significantly before dawn.' },
+                { icon: '🔋', title: 'Power Bank', desc: 'Keep your devices alive for those peak captures.' },
+                { icon: '🩹', title: 'Personal Meds', desc: 'Carry your regular medications and basic first aid.' }
               ].map((item, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
-                  <span className="text-3xl inline-block mb-4">{item.icon}</span>
-                  <h5 className="font-bold text-white mb-1">{item.title}</h5>
-                  <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+                <div key={i} className="flex gap-4 group">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-brand-orange transition-colors">
+                    <span className="text-2xl">{item.icon}</span>
+                  </div>
+                  <div className="space-y-1">
+                    <h5 className="font-bold text-white text-sm">{item.title}</h5>
+                    <p className="text-white/30 text-[10px] leading-tight">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ─── TERMS & CONDITIONS ─── */}
-        <section className="space-y-12 text-brand-dark">
-          <div className="mb-12">
-            <div className="flex items-center gap-2 text-brand-orange text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
-              📄 <span className="mt-0.5">The Fine Print</span>
+        {/* ─── POLICY ─── */}
+        <section className="space-y-8">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+            <div className="absolute inset-0 z-0">
+               <img src={trek.image} alt="Policy Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
-            <div className="flex items-center gap-5">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-dark whitespace-nowrap leading-none">
-                Terms & <em className="text-brand-orange italic font-bold not-italic">Conditions</em>
-              </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent min-w-10 " />
+            <div className="space-y-1 relative z-10">
+              <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">📄 Policy</div>
+              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+                Rules & <span className="text-brand-orange-glow italic font-serif">Guidelines</span>
+              </h3>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
-              { label: 'Booking & Refunds', desc: 'Once booked, amount is non-refundable and no rescheduling is allowed under any circumstance.', icon: '💳' },
-              { label: 'Zero Substance Policy', desc: 'No smoking, drinking or any intoxicating substances. Flouting leads to immediate termination.', icon: '🚫' },
-              { label: 'Code of Conduct', desc: 'Any sexual misconduct or abusive behavior results in immediate removal without refund.', icon: '⚖️' },
-              { label: 'Fitness & Health', desc: 'Lack of fitness affecting team average time or health issues rendering one unable to finish.', icon: '🫀' },
-              { label: 'Punctuality', desc: 'Pick-up timings are fixed. Arrive 10 mins early. No waiting for latecomers.', icon: '⏱️' },
-              { label: 'Property Respect', desc: 'No damage to provided equipment or forest property. Fines apply for damages.', icon: '⛺' }
+              { icon: '⚖️', label: 'Booking', desc: 'Non-refundable slots only.' },
+              { icon: '🚫', label: 'Sobriety', desc: 'Zero-tolerance policy.' },
+              { icon: '⏱️', label: 'Timing', desc: 'No waits for latecomers.' },
+              { icon: '🧤', label: 'Nature', desc: 'No littering whatsoever.' },
+              { icon: '🫀', label: 'Health', desc: 'Must be physically fit.' },
+              { icon: '🤝', label: 'Safety', desc: 'Follow lead instructions.' }
             ].map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 md:p-8 bg-brand-surface rounded-3xl border border-transparent hover:border-slate-200 transition-all">
-                <span className="text-2xl mt-1">{item.icon}</span>
-                <div>
-                  <h6 className="font-bold text-brand-dark text-lg mb-1">{item.label}</h6>
-                  <p className="text-brand-dark/50 text-sm leading-relaxed">{item.desc}</p>
+              <div key={i} className="p-5 bg-slate-50 rounded-xl flex items-start gap-3 hover:bg-white transition-all border border-transparent hover:border-slate-100">
+                <span className="text-xl shrink-0 p-1 bg-white rounded-lg shadow-sm">{item.icon}</span>
+                <div className="space-y-0">
+                  <h6 className="font-bold text-brand-dark text-xs">{item.label}</h6>
+                  <p className="text-slate-400 text-[9px] leading-tight">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -1005,40 +1041,29 @@ const TrekDetailsPage = () => {
         </section>
       </div>
 
-      {/* ─── FLOATING CTA ────────────────────────────────────── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-center pointer-events-none">
-        <motion.button
-          whileHover={{ scale: 1.02, y: -4 }}
-          whileTap={{ scale: 0.98 }}
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          transition={{ type: 'spring', damping: 20 }}
-          onClick={() => {
-            const message = `Hey, I'd like more info about ${trek.title} Trek!`;
-            const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank');
-          }}
-          className="pointer-events-auto w-full max-w-lg bg-[#25D366] text-white py-5 rounded-2xl md:rounded-3xl font-bold text-sm uppercase tracking-[0.2em] shadow-[0_20px_50px_rgba(37,211,102,0.4)] flex items-center justify-center gap-4 group overflow-hidden relative"
-        >
-          <div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white relative z-10" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.411.001 12.045a11.871 11.871 0 001.592 5.925L0 24l6.103-1.595a11.826 11.826 0 005.946 1.594h.005c6.634 0 12.045-5.411 12.048-12.044a11.83 11.83 0 00-3.535-8.508z" />
-          </svg>
-          <span className="relative z-10">Start Your Adventure</span>
-        </motion.button>
+      {/* ─── FLOATING CTA ─── */}
+      <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
+        <div className="max-w-md mx-auto flex gap-4 pointer-events-auto">
+          <motion.button
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              const message = `I want to book the ${trek.title} Expedition! 🧗`;
+              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+            }}
+            className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
+          >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-6 h-6 brightness-0 invert" />
+            Confirm My Slot
+          </motion.button>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const TrekCard = ({ trek }: { trek: Trek }) => {
   const navigate = useNavigate();
-  const handleWhatsAppInquiry = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const message = `Hey, can i get more information about ${trek.title} trek?`;
-    const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, '_blank');
-  };
 
   return (
     <motion.div 
@@ -1047,71 +1072,49 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
       viewport={{ once: true }}
       layout
       onClick={() => navigate(`/trek/${trek.id}`)}
-      className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-slate-200 transition-all duration-300 border border-slate-100 group flex flex-col h-full w-full cursor-pointer"
+      className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_100px_-20px_rgba(37,211,102,0.15)] transition-all duration-500 border border-slate-100 group flex flex-col h-full w-full cursor-pointer relative"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden m-3 rounded-[2rem]">
         <img 
           src={trek.image} 
           alt={trek.title} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-          <Mountain size={12} className="text-slate-900" />
-          <span className="text-[10px] font-black text-slate-900 uppercase tracking-wider">{trek.category.replace('-', ' ')}</span>
+        <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm border border-white/20">
+          <Mountain size={14} className="text-brand-orange" />
+          <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest">{trek.category.replace('-', ' ')}</span>
         </div>
-        <button className="absolute top-4 right-4 p-2.5 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-red-500 transition-all shadow-sm border border-white/30">
-          <Heart size={16} fill="transparent" />
-        </button>
       </div>
       
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-bold text-xl text-slate-900 text-left mb-4 group-hover:text-brand-accent transition-colors">
-          {trek.title}
-        </h3>
+      <div className="p-8 pt-4 flex flex-col flex-1">
+        <div className="flex justify-between items-start mb-6">
+          <h3 className="font-black text-2xl text-slate-900 leading-tight group-hover:text-brand-orange transition-colors pr-4">
+            {trek.title}
+          </h3>
+          <div className="bg-slate-50 text-slate-400 p-2 rounded-xl">
+             <Heart size={18} />
+          </div>
+        </div>
         
-        <div className="grid grid-cols-2 gap-y-3 mb-6">
-          <div className="flex items-center gap-2 text-slate-500">
-            <MapPin size={16} className="text-emerald-500" />
-            <span className="text-xs font-bold uppercase tracking-tight">{trek.location}</span>
+        <div className="grid grid-cols-2 gap-4 mb-10">
+          <div className="flex items-center gap-2 text-slate-400">
+            <MapPin size={16} />
+            <span className="text-xs font-bold">{trek.location}</span>
           </div>
-          <div className="flex items-center gap-2 text-slate-500">
-            <Clock size={16} className="text-emerald-500" />
+          <div className="flex items-center gap-2 text-slate-400">
+            <Clock size={16} />
             <span className="text-xs font-bold">{trek.duration}</span>
-          </div>
-          <div className="flex items-center gap-2 text-slate-500">
-            <Mountain size={16} className="text-emerald-500" />
-            <span className="text-xs font-bold">{trek.difficulty}</span>
-          </div>
-          <div className="flex items-center gap-2 text-slate-500">
-            <Calendar size={16} className="text-emerald-500" />
-            <span className="text-xs font-bold whitespace-nowrap">Next: {trek.date.split(',')[0]}</span>
           </div>
         </div>
 
-        <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between bg-slate-50 p-5 rounded-[2rem] border border-slate-100 transition-all group-hover:bg-brand-orange/5 group-hover:border-brand-orange/10 group-hover:shadow-lg group-hover:shadow-brand-orange/5">
           <div className="flex flex-col">
-            <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-slate-900 tracking-tight">₹{trek.currentPrice.toLocaleString()}</span>
-              <span className="text-sm font-bold text-slate-400 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-            </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">Expedition from</span>
+            <span className="text-2xl font-black text-slate-900 tracking-tight">₹{trek.currentPrice.toLocaleString()}</span>
           </div>
-          <div className="flex items-center gap-3">
-            <motion.button 
-               whileHover={{ scale: 1.1 }}
-               whileTap={{ scale: 0.9 }}
-               onClick={handleWhatsAppInquiry}
-               className="p-3 bg-emerald-500 text-white rounded-full shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-colors flex items-center justify-center"
-               title="Inquiry on WhatsApp"
-            >
-              <MessageCircle size={20} fill="currentColor" />
-            </motion.button>
-            <motion.div 
-               whileHover={{ x: 5 }}
-               className="text-emerald-500"
-            >
-              <ArrowRight size={20} />
-            </motion.div>
+          <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-400 group-hover:text-brand-orange group-hover:scale-110 transition-all border border-slate-100">
+            <ArrowRight size={20} />
           </div>
         </div>
       </div>
@@ -1289,7 +1292,7 @@ const HomePage = () => {
       </section>
 
       {/* Category Section */}
-      <section className="relative z-20 py-12 md:py-20 bg-white/10">
+      <section id="treks-section" className="relative z-20 py-12 md:py-20 bg-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-3 md:mb-4">
             Explore Treks by Category
