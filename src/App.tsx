@@ -959,8 +959,7 @@ const TrekDetailsPage = () => {
               { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
               { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
               { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
-              { icon: '🍜', title: 'Energy Kit', desc: 'Early morning light breakfast and a hydration kit containing energy drinks and basic refreshments provided.' },
-              { icon: '🏅', title: 'Finisher Badge', desc: 'Personalized digital certificate and a physical finishing badge awarded to all participants who complete the trek.' },
+              { icon: '🏅', title: 'Achievement', desc: 'Physical certificates and branded finishing badges will be provided to all participants who conquer the peak.' },
               { icon: '⛩️', title: 'Historical Insight', desc: 'Explore hidden cultural gems, temples, and ancient caves along the route with expert narrative guidance.' }
             ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
@@ -1014,7 +1013,7 @@ const TrekDetailsPage = () => {
         </section>
 
         {/* ─── POLICY ─── */}
-        <section className="space-y-8">
+        <section className="space-y-10">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
                <img src={trek.image} alt="Policy Bg" className="w-full h-full object-cover opacity-20 grayscale" />
@@ -1028,20 +1027,20 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: '⚖️', label: 'Booking', desc: 'Non-refundable slots only.' },
-              { icon: '🚫', label: 'Sobriety', desc: 'Zero-tolerance policy.' },
-              { icon: '⏱️', label: 'Timing', desc: 'No waits for latecomers.' },
-              { icon: '🧤', label: 'Nature', desc: 'No littering whatsoever.' },
-              { icon: '🫀', label: 'Health', desc: 'Must be physically fit.' },
-              { icon: '🤝', label: 'Safety', desc: 'Follow lead instructions.' }
+              { icon: '⚖️', label: 'Booking Policy', desc: 'Slots are non-refundable and non-transferable. Booking is confirmed only after full payment.' },
+              { icon: '🚫', label: 'Zero Tolerance', desc: 'Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned.' },
+              { icon: '⏱️', label: 'Strict Punctuality', desc: 'The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one.' },
+              { icon: '🧤', label: 'Eco-Sensitive', desc: 'We maintain a strict "Leave No Trace" policy. No littering allowed; carry your plastic waste back to the city.' },
+              { icon: '🫀', label: 'Physical Fitness', desc: 'Trekkers must be physically capable of continuous ascents. Please consult a doctor if you have heart conditions.' },
+              { icon: '🤝', label: 'Expert Safety', desc: 'Compliance with the Trek Lead\'s instructions is mandatory. Your safety depends on following group protocol.' }
             ].map((item, i) => (
-              <div key={i} className="p-5 bg-slate-50 rounded-xl flex items-start gap-3 hover:bg-white transition-all border border-transparent hover:border-slate-100">
-                <span className="text-xl shrink-0 p-1 bg-white rounded-lg shadow-sm">{item.icon}</span>
-                <div className="space-y-0">
-                  <h6 className="font-bold text-brand-dark text-xs">{item.label}</h6>
-                  <p className="text-slate-400 text-[9px] leading-tight">{item.desc}</p>
+              <div key={i} className="p-6 bg-slate-50 rounded-xl flex items-start gap-4 hover:bg-white hover:shadow-xl hover:shadow-slate-100 transition-all border border-transparent hover:border-slate-100">
+                <span className="text-3xl shrink-0 p-1 bg-white rounded-xl shadow-sm">{item.icon}</span>
+                <div className="space-y-1">
+                  <h6 className="font-bold text-brand-dark">{item.label}</h6>
+                  <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
