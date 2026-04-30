@@ -506,6 +506,10 @@ const Navbar = () => {
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const message = "Hey, i would like to join the community for further updates";
+              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+            }}
             className="bg-brand-orange text-white px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.25em] shadow-[0_8px_20px_rgba(232,117,26,0.3)] hover:shadow-brand-orange/60 transition-all border border-white/20 whitespace-nowrap"
           >
             Join Community
@@ -539,6 +543,10 @@ const Navbar = () => {
           <motion.button 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            onClick={() => {
+              const message = "Hey, i would like to join the community for further updates";
+              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+            }}
             className="bg-brand-orange text-white px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest"
           >
             Join
@@ -602,13 +610,13 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               </p>
               <div className="flex gap-4">
                 {[
-                  { icon: <Instagram size={18} />, url: 'https://instagram.com/adventurechaarana', label: 'Instagram' },
+                  { icon: <Instagram size={18} />, url: 'https://www.instagram.com/adventure_chaarana/', label: 'Instagram' },
                   { 
                     icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-[18px] h-[18px]" referrerPolicy="no-referrer" />, 
-                    url: 'https://wa.me/919980489494', 
+                    url: `https://wa.me/919980489494?text=${encodeURIComponent("Hey, I'm ready for adventure")}`, 
                     label: 'WhatsApp' 
                   },
-                  { icon: <Facebook size={18} />, url: 'https://facebook.com/adventurechaarana', label: 'Facebook' }
+                  { icon: <Facebook size={18} />, url: 'https://www.facebook.com/share/17MFdPjuWJ/', label: 'Facebook' }
                 ].map((social) => (
                   <a 
                     key={social.label} 
@@ -628,9 +636,9 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               <h5 className="font-serif text-lg font-bold">Quick Links</h5>
               <ul className="space-y-4 text-white/40 text-sm font-medium">
                 <li><Link to="/" className="hover:text-brand-orange transition-colors">Upcoming Treks</Link></li>
-                <li className="hover:text-brand-orange cursor-pointer transition-colors">Our Story</li>
                 <li className="hover:text-brand-orange cursor-pointer transition-colors">Safety Code</li>
-                <li className="hover:text-brand-orange cursor-pointer transition-colors">Adventure Journal</li>
+                <li className="hover:text-brand-orange cursor-pointer transition-colors">Terms and Conditions</li>
+                <li className="hover:text-brand-orange cursor-pointer transition-colors">Refund Policy</li>
               </ul>
             </div>
 
