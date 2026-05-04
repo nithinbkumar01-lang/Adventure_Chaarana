@@ -29,6 +29,12 @@ interface ItineraryItem {
   activity: string;
 }
 
+interface ItineraryDay {
+  label: string;
+  emoji: string;
+  items: ItineraryItem[];
+}
+
 interface Trek {
   id: string;
   title: string;
@@ -47,10 +53,7 @@ interface Trek {
   elevation?: string;
   distance?: string;
   minAge?: string;
-  itinerary: {
-    day1: ItineraryItem[];
-    day2: ItineraryItem[];
-  };
+  itinerary: ItineraryDay[];
   inclusions: string[];
   exclusions: string[];
   thingsToCarry: string[];
@@ -81,26 +84,34 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
-        { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' }
-      ],
-      day2: [
-        { time: '01:30 AM', activity: '🚍 Reach Shivagange base — rest in vehicle' },
-        { time: '03:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
-        { time: '05:45 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
-        { time: '06:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
-        { time: '08:00 AM', activity: '⬇️ Begin descent back to base' },
-        { time: '09:30 AM', activity: '🍽️ Reach base — breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🚌 Return to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
+          { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '01:30 AM', activity: '🚍 Reach Shivagange base — rest in vehicle' },
+          { time: '03:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
+          { time: '05:45 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
+          { time: '06:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
+          { time: '08:00 AM', activity: '⬇️ Begin descent back to base' },
+          { time: '09:30 AM', activity: '🍽️ Reach base — breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🚌 Return to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Transport — Bangalore to Bangalore',
       'Certified Trek Lead & Guide',
@@ -150,28 +161,36 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
-        { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
-        { time: '12:00 AM', activity: '📍Hebbal Flyover' },
-        { time: '12:15 AM', activity: '📍Yelahanka, New Town Bus Stand' }
-      ],
-      day2: [
-        { time: '04:00 AM', activity: '🚌Reach Skandagiri base camp — briefing with trek lead' },
-        { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain and dense forest trails' },
-        { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
-        { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the cloud sea!' },
-        { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
-        { time: '09:00 AM', activity: '🍽️Reach base — breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🏠Return journey to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
+          { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
+          { time: '12:00 AM', activity: '📍Hebbal Flyover' },
+          { time: '12:15 AM', activity: '📍Yelahanka, New Town Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '04:00 AM', activity: '🚌Reach Skandagiri base camp — briefing with trek lead' },
+          { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain and dense forest trails' },
+          { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
+          { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the cloud sea!' },
+          { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
+          { time: '09:00 AM', activity: '🍽️Reach base — breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🏠Return journey to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Transport — Bangalore to Bangalore',
       'Certified Trek Lead & Guide',
@@ -218,28 +237,36 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
-        { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
-        { time: '12:00 AM', activity: '📍Hebbal Flyover' },
-        { time: '12:15 AM', activity: '📍Yelahanka, New Town Bus Stand' }
-      ],
-      day2: [
-        { time: '04:00 AM', activity: '🚌Reach Kaiwara base camp — briefing with trek lead' },
-        { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain and dense forest trails' },
-        { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
-        { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the cloud sea!' },
-        { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
-        { time: '09:00 AM', activity: '🍽️Reach base — breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🏠Return journey to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
+          { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
+          { time: '12:00 AM', activity: '📍Hebbal Flyover' },
+          { time: '12:15 AM', activity: '📍Yelahanka, New Town Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '04:00 AM', activity: '🚌Reach Kaiwara base camp — briefing with trek lead' },
+          { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain and dense forest trails' },
+          { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
+          { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the cloud sea!' },
+          { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
+          { time: '09:00 AM', activity: '🍽️Reach base — breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🏠Return journey to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Travel from Bangalore to Bangalore (TT/bus, Non AC)',
       'Certified Trek Lead & Guide',
@@ -272,27 +299,35 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
-        { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
-        { time: '12:00 AM', activity: '📍Hebbal/Tumkur Road departure' }
-      ],
-      day2: [
-        { time: '04:00 AM', activity: '🚌Reach Channarayana durga base camp — briefing' },
-        { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
-        { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
-        { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the clouds!' },
-        { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
-        { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🏠Return to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
+          { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
+          { time: '12:00 AM', activity: '📍Hebbal/Tumkur Road departure' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '04:00 AM', activity: '🚌Reach Channarayana durga base camp — briefing' },
+          { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
+          { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
+          { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise above the clouds!' },
+          { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
+          { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🏠Return to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Travel from Bangalore in Non-AC vehicle',
       'Certified Trek Lead',
@@ -325,27 +360,35 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
-        { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
-        { time: '12:00 AM', activity: '📍Tumkur Road departure' }
-      ],
-      day2: [
-        { time: '04:00 AM', activity: '🚌Reach Uttari Betta base camp — briefing' },
-        { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
-        { time: '05:30 AM', activity: '🏔️Reach the summit — explore ruins' },
-        { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise!' },
-        { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
-        { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🏠Return to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nagarabhavi, Marilingappa Extension' },
+          { time: '11:30 PM', activity: '📍Gorguntepalya, KLE Dental College' },
+          { time: '12:00 AM', activity: '📍Tumkur Road departure' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '04:00 AM', activity: '🚌Reach Uttari Betta base camp — briefing' },
+          { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
+          { time: '05:30 AM', activity: '🏔️Reach the summit — explore ruins' },
+          { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise!' },
+          { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
+          { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🏠Return to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Travel Bangalore-Bangalore',
       'Guide & Trek Lead',
@@ -378,27 +421,35 @@ const TREKS: Trek[] = [
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
-    itinerary: {
-      day1: [
-        { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
-        { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
-        { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
-        { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
-        { time: '10:50 PM', activity: '📍PES University, Banashankari' },
-        { time: '11:10 PM', activity: '📍Nayandanahalli Metro Stations' },
-        { time: '11:30 PM', activity: '📍Kengeri metro station' },
-        { time: '12:00 AM', activity: '📍Departure to base' }
-      ],
-      day2: [
-        { time: '04:00 AM', activity: '🚌Reach Kunti Betta base camp — briefing' },
-        { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
-        { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
-        { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise!' },
-        { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
-        { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
-        { time: '01:00 PM', activity: '🏠Return to Bangalore' }
-      ]
-    },
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:30 PM', activity: '📍KLM Mall, Marathahalli' },
+          { time: '10:00 PM', activity: '📍Silk Board Bus Stand' },
+          { time: '10:10 PM', activity: '📍BTM, Udupi Garden Signal' },
+          { time: '10:30 PM', activity: '📍Banashankari Bus Stop' },
+          { time: '10:50 PM', activity: '📍PES University, Banashankari' },
+          { time: '11:10 PM', activity: '📍Nayandanahalli Metro Stations' },
+          { time: '11:30 PM', activity: '📍Kengeri metro station' },
+          { time: '12:00 AM', activity: '📍Departure to base' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '04:00 AM', activity: '🚌Reach Kunti Betta base camp — briefing' },
+          { time: '04:20 AM', activity: '🥾Begin ascent through rocky terrain' },
+          { time: '05:30 AM', activity: '🏔️Reach the summit — explore ancient fort ruins' },
+          { time: '06:15 AM', activity: '🌅Witness the breathtaking Sunrise!' },
+          { time: '07:30 AM', activity: '⬇️Begin descent back to base camp' },
+          { time: '09:00 AM', activity: '🍽️Breakfast stop (self-sponsored)' },
+          { time: '01:00 PM', activity: '🏠Return to Bangalore' }
+        ]
+      }
+    ],
     inclusions: [
       'Travel Bangalore-Bangalore',
       'Guide Support',
@@ -407,6 +458,92 @@ const TREKS: Trek[] = [
     ],
     exclusions: ['Main Breakfast', 'Personal Expenses'],
     thingsToCarry: ['Water bottle', 'Daypack', 'Trekking shoes', 'Govt ID']
+  },
+  {
+    id: '7',
+    title: 'Kodaikanal Weekend Getaway',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Kodaikanal',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Easy',
+    elevation: '2,133 m',
+    distance: '1.5 km trek',
+    minAge: '5 Years',
+    description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
+    originalPrice: 5499,
+    currentPrice: 5499,
+    discount: '10% OFF Group Discount (3+)',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882199/40410f69-c7c3-44ee-9379-2d45205093c8.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882191/b9c456a5-419d-4e76-acef-d92892f1de02.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882179/c470f8bc-4a6f-4a45-b2f4-00e014a114f1.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882164/81ce5ec6-5f5a-4cdb-8e7a-b075fe6964bd.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Pickups',
+        emoji: '🚌',
+        items: [
+          { time: '08:15 PM', activity: '📍Majestic (Shanthala Silks)' },
+          { time: '08:45 PM', activity: '📍Koramangala (Forum Mall)' },
+          { time: '09:15 PM', activity: '📍Silk Board (Renault Showroom)' },
+          { time: '09:45 PM', activity: '📍Electronic City (M5 Flyover)' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏞️',
+        items: [
+          { time: '07:00 AM', activity: '🏠 Arrival & check-in at homestay' },
+          { time: '08:30 AM', activity: '🍽️ Have breakfast and start day 1 itinerary' },
+          { time: '09:00 AM', activity: '🏔️ Upper Lake View, Vattakanal Falls' },
+          { time: '11:00 AM', activity: '🥾 Dolphin’s Nose (1.5 km trek)' },
+          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
+          { time: '02:00 PM', activity: '🍫 Chocolate Factory, Bryant Park, Coaker’s Walk' },
+          { time: '04:30 PM', activity: '🛶 Kodaikanal Lake (boating & activities self-sponsored)' },
+          { time: '08:00 PM', activity: '🔥 Dinner & Campfire overnight stay' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌲',
+        items: [
+          { time: '08:30 AM', activity: '🍽️ Breakfast & check-out' },
+          { time: '09:30 AM', activity: '📸 Pillar Rocks, Guna Caves, Pine Forest' },
+          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
+          { time: '02:00 PM', activity: '🏛️ Natural History Museum' },
+          { time: '05:00 PM', activity: '🌊 Silver Cascade Falls' },
+          { time: '09:00 PM', activity: '🚌 Departure to Bangalore' },
+          { time: '04:00 AM', activity: '🏠 Arrival in Bangalore (Monday)' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation (Non-AC Tempo Traveller / Mini Bus)',
+      'Stay: Basic homestay (shared rooms/dorms)',
+      'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
+      'Entry fees as per itinerary',
+      'Trek Lead'
+    ],
+    exclusions: [
+      'Meals not mentioned',
+      'Personal activities (boating, etc.)',
+      'Insurance',
+      'Emergency expenses'
+    ],
+    thingsToCarry: [
+      'Government ID (soft copy)',
+      'Extra clothes & small backpack',
+      'Water bottle & Toiletries',
+      'Jacket/sweater (cold weather)',
+      'Raincoat/umbrella',
+      'Personal medication & Power bank'
+    ]
   }
 ];
 
@@ -817,11 +954,11 @@ const TrekDetailsPage = () => {
             <React.Fragment key={i}>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Group Offer: 2+1 Registration</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Group Offer: 10% Discount (3+)' : 'Group Offer: 2+1 Registration'}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🧘</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Solo Trekkers Flat 10% Off</span>
+                <span className="text-xl md:text-2xl">🌍</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Solo Trekkers Flat 10% Off'}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🧗</span>
@@ -859,50 +996,33 @@ const TrekDetailsPage = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-            <div className="space-y-10">
-               {/* Day 0 */}
-               <div className="space-y-4">
-                 <div className="flex items-center gap-3">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">🌃 Day 0</span>
-                    <div className="flex-1 h-px bg-slate-100" />
-                 </div>
-                 
-                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                    {trek.itinerary.day1.map((item, idx) => (
-                      <div key={idx} className="relative pl-5 group">
-                        <div className="absolute left-[-4.5px] top-1 w-2 h-2 rounded-full bg-slate-200 border-2 border-white group-hover:bg-brand-orange transition-colors" />
-                        <div className="space-y-0">
-                          <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                          <p className="text-slate-600 font-bold text-xs leading-tight">{item.activity}</p>
-                        </div>
-                      </div>
-                    ))}
-                 </div>
-               </div>
-
-               {/* Day 1 */}
-               <div className="space-y-4">
-                 <div className="flex items-center gap-3">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">🌄 Day 1</span>
-                    <div className="flex-1 h-px bg-slate-100" />
-                 </div>
-                 
-                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                    {trek.itinerary.day2.map((item, idx) => {
-                      const isHighlight = item.activity.toLowerCase().includes('sunrise');
-                      return (
-                        <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-2' : ''}`}>
-                          <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                          <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                            <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                            <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-sm' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
-                            {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ PEAK EXPERIENCE</p>}
+            <div className="space-y-12">
+               {trek.itinerary.map((day, dIdx) => (
+                 <div key={dIdx} className="space-y-4">
+                   <div className="flex items-center gap-3">
+                      <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                        {day.emoji} {day.label}
+                      </span>
+                      <div className="flex-1 h-px bg-slate-100" />
+                   </div>
+                   
+                   <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                      {day.items.map((item, idx) => {
+                        const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                        return (
+                          <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                            <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                            <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                              <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                              <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-[11px]' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
+                              {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                   </div>
                  </div>
-               </div>
+               ))}
             </div>
 
             <div className="hidden lg:block sticky top-20 h-fit">
@@ -958,9 +1078,7 @@ const TrekDetailsPage = () => {
             {[
               { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
               { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
-              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
-              { icon: '🏅', title: 'Achievement', desc: 'Physical certificates and branded finishing badges will be provided to all participants who conquer the peak.' },
-              { icon: '⛩️', title: 'Historical Insight', desc: 'Explore hidden cultural gems, temples, and ancient caves along the route with expert narrative guidance.' }
+              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' }
             ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
@@ -1029,12 +1147,12 @@ const TrekDetailsPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: '⚖️', label: 'Booking Policy', desc: 'Slots are non-refundable and non-transferable. Booking is confirmed only after full payment.' },
+              { icon: '⚖️', label: 'Booking & Cancellation', desc: '48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances.' },
+              { icon: '⛈️', label: 'Calamities (Before)', desc: 'Full refund issued for cancellations due to natural disasters, unrest, or forest entry prohibitions (minus GST/Gateway fees).' },
+              { icon: '🚧', label: 'During Trip Issues', desc: 'No refunds or alternative arrangements if itinerary is blocked by traffic, weather, or authority restrictions during travel.' },
               { icon: '🚫', label: 'Zero Tolerance', desc: 'Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned.' },
               { icon: '⏱️', label: 'Strict Punctuality', desc: 'The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one.' },
-              { icon: '🧤', label: 'Eco-Sensitive', desc: 'We maintain a strict "Leave No Trace" policy. No littering allowed; carry your plastic waste back to the city.' },
-              { icon: '🫀', label: 'Physical Fitness', desc: 'Trekkers must be physically capable of continuous ascents. Please consult a doctor if you have heart conditions.' },
-              { icon: '🤝', label: 'Expert Safety', desc: 'Compliance with the Trek Lead\'s instructions is mandatory. Your safety depends on following group protocol.' }
+              { icon: '🧤', label: 'Eco-Sensitive', desc: 'We maintain a strict "Leave No Trace" policy. No littering allowed; carry your plastic waste back to the city.' }
             ].map((item, i) => (
               <div key={i} className="p-6 bg-slate-50 rounded-xl flex items-start gap-4 hover:bg-white hover:shadow-xl hover:shadow-slate-100 transition-all border border-transparent hover:border-slate-100">
                 <span className="text-3xl shrink-0 p-1 bg-white rounded-xl shadow-sm">{item.icon}</span>
