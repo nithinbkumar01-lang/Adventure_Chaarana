@@ -468,10 +468,10 @@ const TREKS: Trek[] = [
     duration: '2 Days / 1 Night',
     difficulty: 'Easy',
     elevation: '2,133 m',
-    distance: '1.5 km trek',
+    distance: '',
     minAge: '5 Years',
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
-    originalPrice: 5499,
+    originalPrice: 6200,
     currentPrice: 5499,
     discount: '10% OFF Group Discount (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
@@ -524,17 +524,18 @@ const TREKS: Trek[] = [
       }
     ],
     inclusions: [
-      'Transportation (Non-AC Tempo Traveller / Mini Bus)',
-      'Stay: Basic homestay (shared rooms/dorms)',
+      'Transportation - Non-AC seater (Tempo Traveller / Mini Bus / Bus depending on group size)',
       'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
-      'Entry fees as per itinerary',
-      'Trek Lead'
+      'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
+      'All entry fees as per itinerary'
     ],
     exclusions: [
-      'Meals not mentioned',
-      'Personal activities (boating, etc.)',
-      'Insurance',
-      'Emergency expenses'
+      'Any other expenses incurred apart from inclusions',
+      'Any meals not mentioned in inclusions',
+      'Any additional expenses due to emergencies / natural calamities',
+      'Travel & Medical insurance',
+      'Any activities, additional services & sightseeing',
+      'Any travel expenses arising due to vehicle breakdown'
     ],
     thingsToCarry: [
       'Government ID (soft copy)',
@@ -907,7 +908,7 @@ const TrekDetailsPage = () => {
               className="flex flex-wrap justify-center gap-6 text-white/50 font-bold text-[10px] uppercase tracking-widest pt-2"
             >
               <span className="flex items-center gap-1.5">🏔️ {trek.elevation}</span>
-              <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>
+              {trek.distance && <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>}
               <span className="flex items-center gap-1.5">📍 {trek.location}</span>
               <span className="flex items-center gap-1.5">👶 Age {trek.minAge}+</span>
             </motion.div>
@@ -1091,6 +1092,58 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
+        {/* ─── INCLUSIONS & EXCLUSIONS ─── */}
+        <section className="space-y-10">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+            <div className="absolute inset-0 z-0">
+               <img src={trek.image} alt="Inc Exc Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
+            </div>
+            <div className="space-y-1 relative z-10">
+              <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">📑 Logistics</div>
+              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+                Inclusions & <span className="text-brand-orange-glow italic font-serif">Exclusions</span>
+              </h3>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 border-b border-emerald-500/20 pb-4">
+                <span className="text-2xl">✅</span>
+                <h4 className="text-xl font-black text-brand-dark uppercase tracking-tight">What's Included</h4>
+              </div>
+              <ul className="space-y-4">
+                {trek.inclusions.map((item, idx) => (
+                  <li key={idx} className="flex gap-4 group">
+                    <div className="w-6 h-6 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
+                      <span className="text-[10px] font-black">✓</span>
+                    </div>
+                    <p className="text-slate-600 font-bold text-xs leading-relaxed">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 border-b border-red-500/20 pb-4">
+                <span className="text-2xl">❌</span>
+                <h4 className="text-xl font-black text-brand-dark uppercase tracking-tight">What's Excluded</h4>
+              </div>
+              <ul className="space-y-4">
+                {trek.exclusions.map((item, idx) => (
+                  <li key={idx} className="flex gap-4 group">
+                    <div className="w-6 h-6 rounded-full bg-red-50 border border-red-100 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all text-red-600">
+                      <span className="text-[10px] font-black">✕</span>
+                    </div>
+                    <p className="text-slate-600 font-bold text-xs leading-relaxed">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* ─── CHECKLIST ─── */}
         <section className="bg-slate-900 text-white p-8 md:p-14 rounded-[3rem] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(232,117,26,0.1),transparent)]" />
@@ -1108,24 +1161,34 @@ const TrekDetailsPage = () => {
             </div>
 
             <div className="lg:col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {[
-                { icon: '👟', title: 'Hiking Shoes', desc: 'Mandatory! Must have good grip for rocky trails.' },
-                { icon: '🔦', title: 'Headlamp', desc: 'Essential for night navigation. Hands-free is better.' },
-                { icon: '💧', title: 'Hydration (2L)', desc: 'Hydration is key. Reusable bottles only please.' },
-                { icon: '🧥', title: 'Warm Layer', desc: 'Summit temperatures drop significantly before dawn.' },
-                { icon: '🔋', title: 'Power Bank', desc: 'Keep your devices alive for those peak captures.' },
-                { icon: '🩹', title: 'Personal Meds', desc: 'Carry your regular medications and basic first aid.' }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-4 group">
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-brand-orange transition-colors">
-                    <span className="text-2xl">{item.icon}</span>
+              {trek.thingsToCarry.map((item, i) => {
+                const getIcon = (text: string) => {
+                  const t = text.toLowerCase();
+                  if (t.includes('shoe')) return '👟';
+                  if (t.includes('torch') || t.includes('headlamp')) return '🔦';
+                  if (t.includes('water') || t.includes('bottle')) return '💧';
+                  if (t.includes('jacket') || t.includes('sweater') || t.includes('clothes')) return '🧥';
+                  if (t.includes('id') || t.includes('proof')) return '🪪';
+                  if (t.includes('medication') || t.includes('aid')) return '🩹';
+                  if (t.includes('power') || t.includes('charger')) return '🔋';
+                  if (t.includes('bag') || t.includes('pack')) return '🎒';
+                  if (t.includes('rain') || t.includes('umbrella')) return '☔';
+                  if (t.includes('toiletries') || t.includes('brush')) return '🪥';
+                  if (t.includes('snack') || t.includes('fruit')) return '🍎';
+                  return '📍';
+                };
+                return (
+                  <div key={i} className="flex gap-4 group">
+                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-brand-orange transition-colors">
+                      <span className="text-2xl">{getIcon(item)}</span>
+                    </div>
+                    <div className="space-y-1">
+                      <h5 className="font-bold text-white text-sm">{item}</h5>
+                      <p className="text-white/30 text-[10px] leading-tight">Must-have essential</p>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <h5 className="font-bold text-white text-sm">{item.title}</h5>
-                    <p className="text-white/30 text-[10px] leading-tight">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
