@@ -58,6 +58,7 @@ interface Trek {
   exclusions: string[];
   thingsToCarry: string[];
   gallery?: string[];
+  placesCovered?: string[];
 }
 
 const TREKS: Trek[] = [
@@ -75,7 +76,7 @@ const TREKS: Trek[] = [
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: 'FLAT 27% OFF',
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382263/4790249a-ade4-4ee4-b4d8-f5cd5071e794.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -152,7 +153,7 @@ const TREKS: Trek[] = [
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
     currentPrice: 1499,
-    discount: 'FLAT 32% OFF',
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
@@ -228,7 +229,7 @@ const TREKS: Trek[] = [
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
     currentPrice: 1499,
-    discount: 'FLAT 32% OFF',
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
@@ -290,7 +291,7 @@ const TREKS: Trek[] = [
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
     currentPrice: 799,
-    discount: 'FLAT 33% OFF',
+    discount: 'Group Discount: 5% OFF (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -351,7 +352,7 @@ const TREKS: Trek[] = [
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: 'FLAT 27% OFF',
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
@@ -412,7 +413,7 @@ const TREKS: Trek[] = [
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: 'FLAT 27% OFF',
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
@@ -473,7 +474,7 @@ const TREKS: Trek[] = [
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 6200,
     currentPrice: 5499,
-    discount: '10% OFF Group Discount (3+)',
+    discount: 'LIMITED SLOTS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
@@ -544,6 +545,111 @@ const TREKS: Trek[] = [
       'Jacket/sweater (cold weather)',
       'Raincoat/umbrella',
       'Personal medication & Power bank'
+    ],
+    placesCovered: [
+      'Upper Lake View',
+      'Vattakanal Falls',
+      'Dolphin’s Nose',
+      'Chocolate Factory',
+      'Bryant Park',
+      'Coaker’s Walk',
+      'Kodaikanal Lake',
+      'Pillar Rocks',
+      'Guna Caves',
+      'Pine Forest',
+      'Natural History Museum',
+      'Silver Cascade Falls'
+    ]
+  },
+  {
+    id: '8',
+    title: 'Tadiandamol Trek - Coorg',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Coorg, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '1,748 m',
+    distance: '10 km (5+5)',
+    minAge: '8 Years',
+    description: 'Trek to the highest peak of Coorg. Experience the lush shola forests and rolling grasslands of the Western Ghats, culminating in a visit to the golden temple and Mysore.',
+    originalPrice: 4199,
+    currentPrice: 3999,
+    discount: 'LIMITED SLOTS',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988160/246526e1-e4af-4f2b-85c4-be56c2e0b88d.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988362/0742d8da-17a0-4c46-883e-e3a665d9e345.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:00 PM', activity: '📍 Majestic (Shantala Silks) - Pickup' },
+          { time: '09:30 PM', activity: '📍 Nayandanahalli Metro - Pickup' },
+          { time: '09:45 PM', activity: '📍 Kengeri Metro - Pickup' },
+          { time: '10:00 PM', activity: '🚍 Overnight journey from Bangalore' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🥾',
+        items: [
+          { time: '05:00 AM', activity: '🏠 Arrival at homestay & freshen up' },
+          { time: '07:00 AM', activity: '🍽️ Breakfast and briefing' },
+          { time: '07:30 AM', activity: '🧗 Trek start' },
+          { time: '01:00 PM', activity: '⛰️ Reach summit & enjoy packed lunch' },
+          { time: '02:30 PM', activity: '⬇️ Descend back to base' },
+          { time: '04:30 PM', activity: '🏰 Visit Nalknad Palace' },
+          { time: '08:00 PM', activity: '🔥 Dinner, Campfire & overnight stay' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌄',
+        items: [
+          { time: '08:00 AM', activity: '🌊 Visit Cheluvara Falls' },
+          { time: '11:00 AM', activity: '🚧 Visit Chiklihole Dam' },
+          { time: '01:00 PM', activity: '🍽️ Lunch (Self-sponsored)' },
+          { time: '02:00 PM', activity: '🛕 Visit Namdroling Monastery (Golden Temple)' },
+          { time: '04:00 PM', activity: '🚌 Return journey to Bangalore' },
+          { time: '11:00 PM', activity: '🏠 Reach Bangalore (approx.)' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation (Non-AC Tempo Traveller / Mini Bus)',
+      'Trek permits & entry fees',
+      'Experienced trek guide',
+      'Accommodation (sharing basis)',
+      'Meals: 2 Breakfast, 1 Packed Lunch (Day 1), 1 Dinner',
+      'Sightseeing as per itinerary',
+      'Finishing Badges & Achievement Certificates'
+    ],
+    exclusions: [
+      'Day 2 Lunch & Dinner',
+      'Any personal expenses',
+      'Anything not mentioned in inclusions'
+    ],
+    thingsToCarry: [
+      'Government ID (soft copy)',
+      'Extra clothes & small backpack',
+      'Water bottle & Toiletries',
+      'Sturdy trekking shoes',
+      'Raincoat/umbrella',
+      'Personal medication & Power bank',
+      'Energy snacks (Dry fruits, etc.)'
+    ],
+    placesCovered: [
+      'Tadiandamol Trek',
+      'Nalknad Palace',
+      'Cheluvara Falls',
+      'Chiklihole Dam',
+      'Kushalnagara Lunch',
+      'Namdroling Monastery'
     ]
   }
 ];
@@ -644,6 +750,7 @@ const Navbar = () => {
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Join our WhatsApp community"
             onClick={() => {
               const message = "Hey, i would like to join the community for further updates";
               window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
@@ -870,7 +977,7 @@ const TrekDetailsPage = () => {
       </nav>
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
-      <header className="relative pt-14 flex flex-col justify-center items-center min-h-[65vh] md:min-h-[75vh] overflow-hidden text-center px-6">
+      <header className="relative pt-14 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -922,9 +1029,13 @@ const TrekDetailsPage = () => {
           >
             <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
               <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
                 <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
                 <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
               </div>
             </div>
             <button 
@@ -955,11 +1066,11 @@ const TrekDetailsPage = () => {
             <React.Fragment key={i}>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Group Offer: 10% Discount (3+)' : 'Group Offer: 2+1 Registration'}</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 10% OFF SUNRISE TREKS</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🌍</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Solo Trekkers Flat 10% Off'}</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Eco-Sensitive Explorations'}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🧗</span>
@@ -971,6 +1082,36 @@ const TrekDetailsPage = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
+        {/* ─── PLACES WE COVER ─── */}
+        {trek.placesCovered && trek.placesCovered.length > 0 && (
+          <section className="space-y-8">
+            <div className="flex items-center gap-3">
+              <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📍 Highlights</span>
+              <div className="flex-1 h-px bg-slate-100" />
+            </div>
+            
+            <div className="space-y-2">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+                Places We <span className="text-brand-orange italic font-serif">Explore</span>
+              </h2>
+              <p className="text-slate-400 font-medium text-xs max-w-lg">
+                Our curated itinerary ensures you witness the most iconic landmarks and hidden gems this landscape has to offer.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+              {trek.placesCovered.map((place, idx) => (
+                <div key={idx} className="bg-white border border-slate-100 p-3 rounded-xl flex items-center gap-2 hover:shadow-lg hover:shadow-slate-100 transition-all group">
+                   <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-brand-orange/10 transition-colors">
+                     <MapPin size={14} className="text-slate-300 group-hover:text-brand-orange transition-colors" />
+                   </div>
+                   <span className="text-[9px] font-black text-slate-600 leading-tight uppercase tracking-tight">{place}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* ─── COMPACT TIMELINE ─── */}
         <section className="space-y-8">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
@@ -990,7 +1131,7 @@ const TrekDetailsPage = () => {
                 <span className="text-xl">🗓️</span>
                 <div>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
-                  <p className="font-bold text-white text-[10px]">Fri & Sat Night Pickup</p>
+                  <p className="font-bold text-white text-[10px]">Friday Night Departure</p>
                 </div>
               </div>
             </div>
@@ -1079,7 +1220,9 @@ const TrekDetailsPage = () => {
             {[
               { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
               { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
-              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' }
+              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
+              { icon: '🏅', title: 'Finishing Badge', desc: 'A high-quality physical metal badge to commemorate your successful summit and grit.' },
+              { icon: '📜', title: 'Achievement Certificate', desc: 'Official signed document recognizing your successful completion of the mountain expedition.' }
             ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
@@ -1227,6 +1370,137 @@ const TrekDetailsPage = () => {
             ))}
           </div>
         </section>
+
+        {/* ─── TERMS & CONDITIONS ─── */}
+        <section className="space-y-10">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-slate-100">
+            <div className="space-y-1 relative z-10">
+              <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">⚖️ Agreement</div>
+              <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">
+                Terms & <span className="text-brand-orange italic font-serif">Conditions</span>
+              </h3>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 text-slate-600">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h5 className="font-black text-brand-dark uppercase tracking-tight flex items-center gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full" />
+                  Important Note
+                </h5>
+                <ul className="space-y-3 text-[10px] md:text-[11px] font-medium leading-relaxed list-disc pl-4 marker:text-brand-orange">
+                  <li>If you want the Trip to be a memorable experience, you need to cooperate with your Trip captain.</li>
+                  <li>Strictly no drinking & smoking during the entire duration of trip.</li>
+                  <li>Do not create any nuisances on the way by throwing any kind of plastic waste.</li>
+                  <li>Sometimes local authorities might restrict entry. Adventure Chaarana will try to make alternate arrangements but is not responsible for authorities' decisions.</li>
+                  <li>You will be responsible for your belongings.</li>
+                  <li>Arrival might be delayed due to heavy rains, traffic, or other unavoidable circumstances.</li>
+                  <li>Do not expect luxury in accommodation. Hot water and campfire are weather-dependent.</li>
+                  <li>Mandatory signing of Medical, Risk, and Indemnity forms before starting. Under 18 requires parental consent.</li>
+                  <li>No medical/accidental insurance included. It is highly recommended to have insurance.</li>
+                  <li>Expect to be out of your comfort zone; no luxury facilities.</li>
+                  <li>Views depend on weather conditions, not just what's on social media.</li>
+                  <li>Do not enter water bodies/falls without the Trip captain’s permission.</li>
+                  <li>Stay with the group at all times; inform lead before separating. Participants wandering separately must formally discontinue the trip by providing an official message.</li>
+                  <li>Adventure Chaarana reserves the right to cancel a batch if minimum participants are not reached. Refunds will be issued excluding gateway fees.</li>
+                  <li>Seat allocation is first-come, first-served at boarding.</li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h5 className="font-black text-brand-dark uppercase tracking-tight flex items-center gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full" />
+                  Code of Conduct & Environment
+                </h5>
+                <div className="space-y-4 text-[10px] md:text-[11px] font-medium leading-relaxed">
+                  <p>Participants need to respect the ethnicity, culture, environment of the place of visit & fellow trekkers. Any behavior deemed disrespectful, harmful, or illegal may result in immediate expulsion without refund.</p>
+                  <p>Littering, damaging, or any illegal activities that harm the ecosystem is strictly prohibited. We maintain a strict "Leave No Trace" policy.</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h5 className="font-black text-brand-dark uppercase tracking-tight flex items-center gap-2">
+                  <span className="w-2 h-2 bg-brand-orange rounded-full" />
+                  Emergency & Risks
+                </h5>
+                <div className="space-y-4 text-[10px] md:text-[11px] font-medium leading-relaxed">
+                  <p className="font-bold text-slate-900 mb-2">Natural Hazards:</p>
+                  <ul className="list-disc pl-4 space-y-1 text-slate-500">
+                    <li>Extreme weather (rain, flash floods, thunderstorms, lighting)</li>
+                    <li>Wildlife encounters (bears, snakes, insects) or harmful plants</li>
+                    <li>Natural disasters (landslides, earthquakes, whiteouts)</li>
+                  </ul>
+                  <p className="font-bold text-slate-900 mb-2 mt-4">Altitude & Physical Injury:</p>
+                  <ul className="list-disc pl-4 space-y-1 text-slate-500">
+                    <li>AMS, Pulminary Edema (HAPE), Cerebral Edema (HACE)</li>
+                    <li>Slips, falls, exposure to sun/cold (frostbite, hypothermia)</li>
+                    <li>Difficulty in emergency evacuation from remote locations</li>
+                  </ul>
+                  <p className="mt-4 italic">In the event of illness or accident, all medical/hospital/repatriation expenses are the participant's responsibility.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+               <div className="p-8 bg-slate-900 rounded-[2rem] text-white space-y-6">
+                  <h5 className="font-black text-brand-orange uppercase tracking-widest text-xs">Preparation Guidelines</h5>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <p className="text-[10px] font-black uppercase text-white/40 tracking-widest">Prepare 15 days before:</p>
+                      <ul className="text-[10px] md:text-[11px] list-disc pl-4 space-y-1 text-white/60">
+                        <li>Brisk walk/jog 10-12 km daily</li>
+                        <li>Stair climbing (10-15 floors)</li>
+                        <li>Strength training for legs/core</li>
+                        <li>Cardio: Running, Cycling, Swimming</li>
+                        <li>Consult a doctor before joining</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-[10px] font-black uppercase text-white/40 tracking-widest">30 Days Before (Avoid):</p>
+                      <ul className="text-[10px] md:text-[11px] list-disc pl-4 space-y-1 text-white/60">
+                        <li>Smoking, Alcohol, Vaping</li>
+                        <li>Sleep Deprivation & Junk Food</li>
+                        <li>Sudden intense new workouts</li>
+                      </ul>
+                    </div>
+                  </div>
+               </div>
+
+               <div className="space-y-4">
+                 <h5 className="font-black text-brand-dark uppercase tracking-tight flex items-center gap-2">
+                   <span className="w-2 h-2 bg-brand-orange rounded-full" />
+                   Termination Policy
+                 </h5>
+                 <p className="text-[10px] md:text-[11px] font-medium leading-relaxed">
+                   Adventure Chaarana reserves the right to terminate a participant's trip for:
+                   <span className="block mt-2 font-bold text-red-500 underline underline-offset-4 decoration-red-500/20">Smoking, drinking, sexual misconduct, physical/verbal abuse, lack of fitness affecting the team, or ignoring safety rules.</span>
+                   No refunds will be provided in case of termination.
+                 </p>
+               </div>
+
+               <div className="p-6 border-2 border-brand-orange/20 rounded-2xl bg-brand-orange/5">
+                 <h6 className="font-black text-brand-orange uppercase tracking-tight text-xs mb-2">Photography Rights</h6>
+                 <p className="text-[9px] md:text-[10px] font-medium text-slate-500 leading-relaxed italic">
+                   Adventure Chaarana reserves the right to use trip photos/videos for promotional purposes. Booking grants us a royalty-free license. If you wish to opt-out, notify us before the journey starts.
+                 </p>
+               </div>
+
+               <div className="space-y-4 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                 <h5 className="font-black text-slate-900 uppercase tracking-tight text-xs">Liability Clause</h5>
+                 <p className="text-[9px] md:text-[10px] font-medium text-slate-500 leading-relaxed">
+                   Participants join at their own risk. Adventure Chaarana is not liable for injuries, accidents, death, or loss of personal belongings. Insurance is mandatory.
+                 </p>
+               </div>
+
+               <div className="p-6 bg-brand-orange/10 border-2 border-brand-orange rounded-2xl">
+                 <p className="text-[10px] md:text-[11px] font-black text-brand-orange leading-relaxed uppercase tracking-tight">
+                   Important: Due to unforeseen circumstances such as natural disasters, roadblocks, local unrest, government mandates, or severe traffic, certain locations in the itinerary may become inaccessible. In such events, Adventure Chaarana shall not be held liable, and no refunds, alternative arrangements, or compensatory claims will be provided.
+                 </p>
+               </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* ─── FLOATING CTA ─── */}
@@ -1301,6 +1575,11 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">Expedition from</span>
             <span className="text-2xl font-black text-slate-900 tracking-tight">₹{trek.currentPrice.toLocaleString()}</span>
           </div>
+          {trek.discount && (
+            <div className="bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/20">
+              <span className="text-[8px] font-black text-brand-orange uppercase tracking-wider">{trek.discount}</span>
+            </div>
+          )}
           <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-400 group-hover:text-brand-orange group-hover:scale-110 transition-all border border-slate-100">
             <ArrowRight size={20} />
           </div>
@@ -1330,36 +1609,35 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
           >
             {/* Design Element */}
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-orange-100 rounded-full blur-3xl opacity-50" />
-            
-            {/* Header / Close Button */}
-            <button 
-              onClick={onClose}
-              className="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full transition-all z-10 group"
-            >
-              <X size={20} className="text-slate-400 group-hover:text-slate-900 group-hover:rotate-90 transition-transform" />
-            </button>
-
             {/* Content */}
             <div className="p-8 md:p-10 space-y-6 md:space-y-8">
+              {/* Header / Close Button */}
+              <button 
+                onClick={onClose}
+                className="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full transition-all z-10 group"
+              >
+                <X size={20} className="text-slate-400 group-hover:text-slate-900 group-hover:rotate-90 transition-transform" />
+              </button>
+
               <div className="flex justify-center">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-orange-50 rounded-2xl md:rounded-3xl flex items-center justify-center border border-orange-100 shadow-inner">
-                   <Sun size={32} className="text-[#f2711c] md:size-40" strokeWidth={2.5} />
+                   <Sun size={32} className="text-[#f2711c]" strokeWidth={2.5} />
                 </div>
               </div>
-              
+
               <div className="text-center space-y-3">
-                <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Flash Offer</p>
+                <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Sunrise Special</p>
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                  Buy 2 and get 1 <br/>
-                  <span className="text-[#f15a24] italic uppercase">FREE</span>
+                  Flat 10% OFF on <br/>
+                  <span className="text-[#f15a24] italic uppercase">Sunrise Treks</span>
                 </h3>
               </div>
 
               <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-100 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 <p className="text-slate-600 font-bold leading-relaxed relative z-10">
-                  Valid for all <span className="text-[#f2711c]">Sunrise Treks</span> <br/> 
-                  during the month of <span className="text-slate-900 font-black">May</span>.
+                  Valid for all upcoming <br/> 
+                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">Sunrise Adventures</span>.
                 </p>
               </div>
 
@@ -1367,7 +1645,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const message = "Hi! I'd like to claim the 'Buy 2 Get 1 FREE' offer for the May Sunrise Treks. How can I proceed?";
+                  const message = "Hi! I'd like to claim the 10% discount for Sunrise Treks. How can I proceed?";
                   const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
                   window.open(waUrl, '_blank');
                   onClose();
@@ -1445,7 +1723,7 @@ const HomePage = () => {
               transition={{ delay: 0.6, duration: 1 }}
               className="text-xs md:text-lg text-white/60 font-medium leading-relaxed max-w-xl mx-auto drop-shadow-lg px-6"
             >
-              Crafting authentic mountain expeditions <br className="hidden md:block" /> 
+              Crafting authentic mountain expeditions from Bangalore <br className="hidden md:block" /> 
               for the modern explorer in the heart of the Western Ghats.
             </motion.p>
           </div>
