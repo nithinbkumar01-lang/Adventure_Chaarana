@@ -75,7 +75,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 799,
+    currentPrice: 990,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382263/4790249a-ade4-4ee4-b4d8-f5cd5071e794.png',
     gallery: [
@@ -152,7 +152,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
-    currentPrice: 1499,
+    currentPrice: 1980,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
     gallery: [
@@ -228,7 +228,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
-    currentPrice: 1499,
+    currentPrice: 1980,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
     gallery: [
@@ -290,8 +290,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 799,
-    discount: 'Group Discount: 5% OFF (3+)',
+    currentPrice: 1080,
+    discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -351,7 +351,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 799,
+    currentPrice: 990,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
     gallery: [
@@ -412,7 +412,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
-    currentPrice: 799,
+    currentPrice: 990,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
     gallery: [
@@ -473,7 +473,7 @@ const TREKS: Trek[] = [
     minAge: '5 Years',
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 6200,
-    currentPrice: 5499,
+    currentPrice: 6200,
     discount: 'LIMITED SLOTS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
     gallery: [
@@ -573,8 +573,8 @@ const TREKS: Trek[] = [
     distance: '10 km (5+5)',
     minAge: '8 Years',
     description: 'Trek to the highest peak of Coorg. Experience the lush shola forests and rolling grasslands of the Western Ghats, culminating in a visit to the golden temple and Mysore.',
-    originalPrice: 4199,
-    currentPrice: 3999,
+    originalPrice: 4499,
+    currentPrice: 4199,
     discount: 'LIMITED SLOTS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988160/246526e1-e4af-4f2b-85c4-be56c2e0b88d.png',
     gallery: [
@@ -661,13 +661,26 @@ const Breadcrumbs = () => {
   if (!trek) return null;
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center gap-2.5 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-      <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
-      <ArrowRight size={10} className="text-slate-300" />
-      <span className="text-slate-300">Sunrise Treks</span>
-      <ArrowRight size={10} className="text-slate-300" />
-      <span className="text-brand-orange">{trek.title}</span>
-    </div>
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center gap-2.5 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+      <ol className="flex items-center gap-2.5" itemScope itemType="https://schema.org/BreadcrumbList">
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+          <Link to="/" itemProp="item" className="hover:text-brand-orange transition-colors">
+            <span itemProp="name">Home</span>
+          </Link>
+          <meta itemProp="position" content="1" />
+        </li>
+        <ArrowRight size={10} className="text-slate-300" />
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+          <span itemProp="name" className="text-slate-300">Treks</span>
+          <meta itemProp="position" content="2" />
+        </li>
+        <ArrowRight size={10} className="text-slate-300" />
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+          <span itemProp="name" className="text-brand-orange">{trek.title}</span>
+          <meta itemProp="position" content="3" />
+        </li>
+      </ol>
+    </nav>
   );
 };
 
@@ -736,7 +749,7 @@ const Navbar = () => {
         >
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
-            alt="Adventure Chaarana" 
+            alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
             className="h-24 lg:h-32 w-auto object-contain transition-all hover:scale-110"
             referrerPolicy="no-referrer"
           />
@@ -772,7 +785,7 @@ const Navbar = () => {
         >
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
-            alt="Adventure Chaarana" 
+            alt="Adventure Chaarana Logo" 
             className="h-14 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
@@ -845,7 +858,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               >
                 <img 
                   src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
-                  alt="Adventure Chaarana" 
+                  alt="Adventure Chaarana Footer Logo" 
                   className="h-24 md:h-32 w-auto object-contain opacity-90 transition-all hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
@@ -936,6 +949,15 @@ const TrekDetailsPage = () => {
   const navigate = useNavigate();
   const trek = TREKS.find(t => t.id === id);
 
+  useEffect(() => {
+    if (trek) {
+      document.title = `${trek.title} | Adventure Chaarana - Best Treks from Bangalore`;
+    }
+    return () => {
+      document.title = "Adventure Chaarana | Best Trekking & Weekend Getaways from Bangalore";
+    };
+  }, [trek]);
+
   if (!trek) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
@@ -982,7 +1004,7 @@ const TrekDetailsPage = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={trek.image} 
-            alt={trek.title} 
+            alt={`Mountain Expedition: ${trek.title} Sunrise Trail`} 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -1116,7 +1138,7 @@ const TrekDetailsPage = () => {
         <section className="space-y-8">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
-               <img src={trek.image} alt="Header Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <img src={trek.image} alt={`Trek Timeline - ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             
@@ -1169,7 +1191,7 @@ const TrekDetailsPage = () => {
 
             <div className="hidden lg:block sticky top-20 h-fit">
               <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
-                 <img src={trek.gallery?.[1] || trek.image} alt="Expedition" className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
+                 <img src={trek.gallery?.[1] || trek.image} alt={`Expedition Highlights - ${trek.title}`} className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                  <div className="absolute bottom-4 left-4 text-white">
                    <p className="text-xl font-black leading-tight italic">"Where steps lead to <br/> better views."</p>
@@ -1182,7 +1204,7 @@ const TrekDetailsPage = () => {
         {/* ─── FULL SCREEN COMPACT QUOTE ─── */}
         <section className="relative h-[30vh] md:h-[40vh] rounded-[2.5rem] overflow-hidden flex items-center justify-center text-center px-6">
           <div className="absolute inset-0">
-             <img src={trek.gallery?.[0] || trek.image} alt="Quote Bg" className="w-full h-full object-cover" />
+             <img src={trek.gallery?.[0] || trek.image} alt={`Mountain views from ${trek.title}`} className="w-full h-full object-cover" />
              <div className="absolute inset-0 bg-brand-dark/50 backdrop-blur-[1px]" />
           </div>
           <motion.div 
@@ -1205,7 +1227,7 @@ const TrekDetailsPage = () => {
         <section className="space-y-8">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
-               <img src={trek.gallery?.[1] || trek.image} alt="Perks Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <img src={trek.gallery?.[1] || trek.image} alt={`Trekking perks at ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
@@ -1239,7 +1261,7 @@ const TrekDetailsPage = () => {
         <section className="space-y-10">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
-               <img src={trek.image} alt="Inc Exc Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <img src={trek.image} alt={`Trek inclusions and exclusions for ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
@@ -1340,7 +1362,7 @@ const TrekDetailsPage = () => {
         <section className="space-y-10">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
-               <img src={trek.image} alt="Policy Bg" className="w-full h-full object-cover opacity-20 grayscale" />
+               <img src={trek.image} alt={`Booking policy background for ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
@@ -1539,7 +1561,7 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
       <div className="relative aspect-[4/3] overflow-hidden m-3 rounded-[2rem]">
         <img 
           src={trek.image} 
-          alt={trek.title} 
+          alt={`Trek Expedition: ${trek.title} - ${trek.location}`} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
           referrerPolicy="no-referrer"
         />
@@ -1669,6 +1691,10 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
+  useEffect(() => {
+    document.title = "Adventure Chaarana | Best Trekking & Weekend Getaways from Bangalore";
+  }, []);
+
   const categories = [
     { id: 'all', label: 'All Treks', icon: <Mountain size={14} /> },
     { id: 'sunrise', label: 'Sunrise Treks', icon: <Sun size={14} /> },
@@ -1688,7 +1714,7 @@ const HomePage = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777477957/Background_tdfgts.png" 
-            alt="Mountainscape" 
+            alt="Scenic mountain range background for Adventure Chaarana" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -1714,7 +1740,9 @@ const HomePage = () => {
               className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter text-white drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
             >
               Explore the <br className="hidden md:block" /> Pure Wild with <br />
-              <span className="text-brand-orange-glow italic uppercase font-serif block mt-2 md:mt-0 tracking-normal">ADVENTURE ಚಾರಣ</span>
+              <span className="text-brand-orange-glow italic uppercase font-serif block mt-2 md:mt-0 tracking-normal">
+                Adventure Chaarana <span className="opacity-70">—</span> ADVENTURE ಚಾರಣ
+              </span>
             </motion.h1>
             
             <motion.p 
