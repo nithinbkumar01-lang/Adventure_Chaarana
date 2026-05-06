@@ -1060,16 +1060,6 @@ const TrekDetailsPage = () => {
                 <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
               </div>
             </div>
-            <button 
-              onClick={() => {
-                const message = `I want to book the ${trek.title} Expedition! 🧗`;
-                window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
-              }}
-              className="w-full sm:w-auto bg-[#25D366] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.25em] shadow-[0_20px_40px_rgba(37,211,102,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-3 active:scale-95"
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-5 h-5 brightness-0 invert" />
-              Confirm My Seat
-            </button>
           </motion.div>
         </div>
       </header>
