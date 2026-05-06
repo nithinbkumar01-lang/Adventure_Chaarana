@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Clock,
@@ -660,6 +661,98 @@ const TREKS: Trek[] = [
       'Kushalnagara Lunch',
       'Namdroling Monastery'
     ]
+  },
+  {
+    id: '9',
+    slug: 'nethravathi-peak-trek',
+    title: 'Nethravathi Peak Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Kudremukh, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    currentPrice: 4200,
+    originalPrice: 5200,
+    discount: 'WESTERN GHATS SPECIAL',
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png'
+    ],
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: '📍HSR Layout' },
+          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
+          { time: '08:45 PM', activity: '📍Domlur Post Office' },
+          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
+          { time: '09:30 PM', activity: '📍Yeshwantpur' },
+          { time: '10:00 PM', activity: '📍Gorguntepalya' },
+          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '⛰️',
+        items: [
+          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in & Freshen up' },
+          { time: '07:00 AM', activity: '🍽️ Breakfast and Trek Briefing' },
+          { time: '08:00 AM', activity: '🥾 Reach Trek Base and Start Climbing' },
+          { time: '12:00 PM', activity: '⛰️ Reach Nethravathi Peak & Packed Lunch' },
+          { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
+          { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire & Rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌿',
+        items: [
+          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
+          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
+          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge Visit' },
+          { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
+          { time: '02:30 PM', activity: '🏛️ Visit Historic Belur Temple' },
+          { time: '04:00 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:00 PM', activity: '🏡 Final drop-offs in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation (Bangalore to Bangalore)',
+      'Accommodations in Homestay/Tents (Multiple sharing)',
+      'Meals: 2 Breakfasts, 1 Lunch, 1 Dinner',
+      'Forest entry permissions & Guide fees',
+      'Professional Trek Leads',
+      'First Aid Support'
+    ],
+    exclusions: [
+      'Day 2: Lunch & Dinner',
+      'Personal snacks & Water bottles',
+      'Anything not mentioned in inclusions'
+    ],
+    thingsToCarry: [
+      'Small backpack (10-20L)',
+      'Two pairs of clothes',
+      'Trekking shoes with good grip',
+      'Raincoat/Poncho (Mandatory in monsoons)',
+      'Water bottles (min 2L)',
+      'Personal emergency medicine',
+      'Sunglasses & Hat'
+    ],
+    placesCovered: [
+      'Nethravathi Peak',
+      'Kudremukh Forest Area',
+      'Samse Tea Estate',
+      'Kalasa Hanging Bridge',
+      'Belur Temple'
+    ]
   }
 ];
 
@@ -734,7 +827,7 @@ const Navbar = () => {
       <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-xl border-b border-white/5 shadow-2xl" />
       
       {/* Desktop Centered Navbar */}
-      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-24 lg:h-32 grid-cols-[1fr_auto_1fr] items-center relative z-10">
+      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-16 lg:h-20 grid-cols-[1fr_auto_1fr] items-center relative z-10">
         {/* Left Links */}
         <nav className="flex items-center gap-10 justify-start">
           {navLinksLeft.map((item, idx) => (
@@ -772,7 +865,7 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
             alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
-            className="h-24 lg:h-32 w-auto object-contain transition-all hover:scale-110"
+            className="h-12 lg:h-16 w-auto object-contain transition-all hover:scale-110"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -798,7 +891,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden flex items-center justify-between px-6 h-20 relative z-10">
+      <div className="md:hidden flex items-center justify-between px-6 h-14 relative z-10">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -808,7 +901,7 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
             alt="Adventure Chaarana Logo" 
-            className="h-14 w-auto object-contain"
+            className="h-10 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -865,7 +958,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
       {!isDetailsPage && <Background />}
       <Navbar />
       
-      <main className={`relative z-10 flex-1 pt-16 md:pt-20`}>
+      <main className={`relative z-10 flex-1 pt-14 md:pt-16 lg:pt-20`}>
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -969,7 +1062,6 @@ const ScrollToTop = () => {
 
 const TermsPage = () => {
   useEffect(() => {
-    document.title = "Terms & Conditions | Adventure Chaarana";
     window.scrollTo(0, 0);
   }, []);
 
@@ -1008,8 +1100,13 @@ const TermsPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Terms & Conditions | Adventure Chaarana</title>
+        <meta name="description" content="Read the official terms and conditions of Adventure Chaarana. Booking policies, cancellation rules, and safety guidelines." />
+        <link rel="canonical" href="https://adventurechaarana.com/terms" />
+      </Helmet>
       {/* Header Spacer */}
-      <div className="h-40" />
+      <div className="h-24" />
       
       <div className="max-w-4xl mx-auto px-6 pb-24">
         <motion.div 
@@ -1163,13 +1260,17 @@ const TermsPage = () => {
 
 const RefundPolicyPage = () => {
   useEffect(() => {
-    document.title = "Refund Policy | Adventure Chaarana";
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="h-40" />
+      <Helmet>
+        <title>Refund & Cancellation Policy | Adventure Chaarana</title>
+        <meta name="description" content="Understand our refund process and cancellation charges. 48h cancellation rules and calamity refunds explained." />
+        <link rel="canonical" href="https://adventurechaarana.com/refund-policy" />
+      </Helmet>
+      <div className="h-24" />
       <div className="max-w-4xl mx-auto px-6 pb-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -1248,13 +1349,17 @@ const RefundPolicyPage = () => {
 
 const SafetyPage = () => {
   useEffect(() => {
-    document.title = "Safety & Conduct | Adventure Chaarana";
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="h-40" />
+      <Helmet>
+        <title>Safety Code & Conduct | Adventure Chaarana</title>
+        <meta name="description" content="Safety is our priority. Learn about our 'Leave No Trace' policy, group conduct rules, and biological risk awareness." />
+        <link rel="canonical" href="https://adventurechaarana.com/safety-code" />
+      </Helmet>
+      <div className="h-24" />
       <div className="max-w-4xl mx-auto px-6 pb-24 text-slate-700">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -1343,14 +1448,37 @@ const TrekDetailsPage = () => {
   const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
-  useEffect(() => {
-    if (trek) {
-      document.title = `${trek.title} | Adventure Chaarana - Best Treks from Bangalore`;
+  const getUpcomingBatches = (category: string) => {
+    const batches = [];
+    const today = new Date();
+    const isOneDay = category === 'sunrise';
+    
+    // Check next 30 days
+    for (let i = 0; i < 30; i++) {
+      const date = new Date();
+      date.setDate(today.getDate() + i);
+      const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
+
+      // One day: Fri & Sat departures
+      // Two day: Only Fri departures
+      if (day === 5 || (isOneDay && day === 6)) {
+        const startDate = new Date(date);
+        const endDate = new Date(date);
+        endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
+
+        const formatDate = (d: Date) => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+        
+        batches.push({
+          start: formatDate(startDate),
+          end: formatDate(endDate),
+          year: startDate.getFullYear(),
+          dayName: startDate.toLocaleDateString('en-IN', { weekday: 'short' })
+        });
+      }
+      if (batches.length >= 4) break;
     }
-    return () => {
-      document.title = "Adventure Chaarana | Best Trekking & Weekend Getaways from Bangalore";
-    };
-  }, [trek]);
+    return batches;
+  };
 
   if (!trek) {
     return (
@@ -1367,6 +1495,37 @@ const TrekDetailsPage = () => {
 
   const onBack = () => navigate(-1);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": trek.title,
+    "description": trek.description,
+    "image": trek.image,
+    "startDate": trek.date.includes('Every') ? undefined : new Date(trek.date).toISOString(),
+    "location": {
+      "@type": "Place",
+      "name": trek.location,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": trek.location,
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": trek.currentPrice,
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": `https://adventurechaarana.com/trek/${trek.slug}`
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Adventure Chaarana",
+      "url": "https://adventurechaarana.com"
+    }
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -1374,8 +1533,24 @@ const TrekDetailsPage = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-brand-paper relative font-sans selection:bg-brand-orange selection:text-white"
     >
+      <Helmet>
+        <title>{trek.title} | Adventure Chaarana - Best Treks from Bangalore</title>
+        <meta name="description" content={trek.description} />
+        <meta name="keywords" content={`${trek.title}, trekking ${trek.location}, ${trek.category} treks, adventure trip from bangalore, adventure chaarana`} />
+        <link rel="canonical" href={`https://adventurechaarana.com/trek/${trek.slug}`} />
+        
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${trek.title} | Adventure Chaarana`} />
+        <meta property="og:description" content={trek.description} />
+        <meta property="og:image" content={trek.image} />
+        <meta property="og:url" content={`https://adventurechaarana.com/trek/${trek.slug}`} />
+
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       {/* ─── PROFESSIONAL COMPACT NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-14 flex items-center justify-between shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-12 flex items-center justify-between shadow-sm">
         <button 
           onClick={onBack}
           className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-brand-dark transition-all group"
@@ -1393,7 +1568,7 @@ const TrekDetailsPage = () => {
       </nav>
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
-      <header className="relative pt-14 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+      <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1517,6 +1692,100 @@ const TrekDetailsPage = () => {
             </div>
           </section>
         )}
+
+        {/* ─── BATCHES & PICKUPS ─── */}
+        <section className="grid lg:grid-cols-2 gap-8 sticky-trigger">
+          {/* Upcoming Batches */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📆 Available Batches</span>
+              <div className="flex-1 h-px bg-slate-100" />
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
+              <div className="grid gap-3">
+                {getUpcomingBatches(trek.category).map((batch, idx) => {
+                  const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
+                  const waLink = `https://wa.me/918792019313?text=${whatsappMsg}`;
+
+                  return (
+                    <a 
+                      key={idx} 
+                      href={waLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group bg-white border border-slate-100 p-5 rounded-2xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
+                    >
+                      <div className="flex items-center gap-5">
+                        <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                          <span className="text-[10px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
+                          <span className="text-lg font-black">{batch.start.split(' ')[0]}</span>
+                        </div>
+                        <div>
+                          <p className="text-[10px] font-black text-brand-orange uppercase tracking-widest mb-0.5">Booking Open</p>
+                          <p className="font-bold text-slate-800 text-sm">{batch.start} - {batch.end}, {batch.year}</p>
+                        </div>
+                      </div>
+                      <button className="bg-slate-50 text-slate-400 group-hover:bg-brand-orange group-hover:text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+                        Book Now
+                      </button>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Pickup Points */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <span className="text-cyan-500 text-[8px] font-black uppercase tracking-[0.4em]">🚍 Boarding Points</span>
+              <div className="flex-1 h-px bg-slate-100" />
+            </div>
+
+            <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Compass size={120} className="text-white animate-spin-slow" />
+              </div>
+              
+              <div className="relative z-10 space-y-8">
+                <div className="space-y-1">
+                   <h3 className="text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
+                   <p className="text-[10px] uppercase font-black tracking-widest text-white/40 italic">Departures from Bangalore</p>
+                </div>
+
+                <div className="space-y-6">
+                  {(trek.category === 'sunrise' ? [
+                    { time: '09:30 PM', loc: 'Silk Board Bus Stand', desc: 'Near BDA Complex' },
+                    { time: '10:00 PM', loc: 'Indiranagar / Koramangala', desc: 'Sony Signal' },
+                    { time: '11:00 PM', loc: 'Majestic / Yeshwantpur', desc: 'Santhosh Theatre' },
+                    { time: '11:30 PM', loc: 'Gorguntepalya', desc: 'Opp. People Tree Hospital' },
+                    { time: '12:00 AM', loc: 'Hebbal Flyover', desc: 'Airport Road' }
+                  ] : [
+                    { time: '08:00 PM', loc: 'HSR Layout (Silk Board)', desc: 'Near BDA Complex' },
+                    { time: '08:45 PM', loc: 'Indiranagar', desc: 'KTM Showroom' },
+                    { time: '09:30 PM', loc: 'Majestic', desc: 'Santhosh Theatre' },
+                    { time: '10:15 PM', loc: 'Yeshwantpur', desc: 'Hallimane Hotel' },
+                    { time: '11:00 PM', loc: 'Gorguntepalya', desc: 'Opp. People Tree Hospital' }
+                  ]).map((p, idx) => (
+                    <div key={idx} className="flex gap-4 group/point">
+                      <div className="flex flex-col items-center gap-1 shrink-0">
+                         <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
+                         {idx < 4 && <div className="w-px flex-1 bg-white/10" />}
+                      </div>
+                      <div className="pb-4">
+                        <span className="text-[9px] font-black text-cyan-400 uppercase tracking-widest">{p.time}</span>
+                        <p className="font-bold text-sm text-white/90">{p.loc}</p>
+                        <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">{p.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ─── COMPACT TIMELINE ─── */}
         <section className="space-y-8">
@@ -2075,10 +2344,6 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  useEffect(() => {
-    document.title = "Adventure Chaarana | Best Trekking & Weekend Getaways from Bangalore";
-  }, []);
-
   const categories = [
     { id: 'all', label: 'All Treks', icon: <Mountain size={14} /> },
     { id: 'sunrise', label: 'Sunrise Treks', icon: <Sun size={14} /> },
@@ -2092,6 +2357,18 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col">
+      <Helmet>
+        <title>Adventure Chaarana | Premium Trekking & Adventure Community in Bangalore</title>
+        <meta name="description" content="Explore the pure wild with Adventure Chaarana. We offer the best sunrise treks, weekend getaways, and western ghats expeditions from Bangalore. Join our active adventure community." />
+        <meta name="keywords" content="trekking bangalore, sunrise treks bangalore, adventure community bangalore, western ghats trek, kodaikanal trip, tadiandamol trek, adventure chaarana" />
+        <link rel="canonical" href="https://adventurechaarana.com/" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://adventurechaarana.com/" />
+        <meta property="og:title" content="Adventure Chaarana | Premium Trekking & Adventure Community" />
+        <meta property="og:description" content="Explore the pure wild with Bangalore's most active trekking community." />
+        <meta property="og:image" content="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative z-20 min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden">
         {/* Background Image Layer */}
@@ -2230,17 +2507,19 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Layout showPromo={showPromo} setShowPromo={setShowPromo}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/trek/:slug" element={<TrekDetailsPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/refund-policy" element={<RefundPolicyPage />} />
-          <Route path="/safety-code" element={<SafetyPage />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Layout showPromo={showPromo} setShowPromo={setShowPromo}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/trek/:slug" element={<TrekDetailsPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/refund-policy" element={<RefundPolicyPage />} />
+            <Route path="/safety-code" element={<SafetyPage />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
