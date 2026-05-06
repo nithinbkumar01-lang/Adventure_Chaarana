@@ -75,7 +75,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 990,
+    currentPrice: 799,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382263/4790249a-ade4-4ee4-b4d8-f5cd5071e794.png',
     gallery: [
@@ -152,7 +152,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
-    currentPrice: 1980,
+    currentPrice: 1499,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
     gallery: [
@@ -228,7 +228,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
-    currentPrice: 1980,
+    currentPrice: 1499,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
     gallery: [
@@ -290,7 +290,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 1080,
+    currentPrice: 799,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
     gallery: [
@@ -351,7 +351,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 990,
+    currentPrice: 799,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
     gallery: [
@@ -412,7 +412,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
-    currentPrice: 990,
+    currentPrice: 799,
     discount: '10% OFF SUNRISE TREKS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
     gallery: [
@@ -473,7 +473,7 @@ const TREKS: Trek[] = [
     minAge: '5 Years',
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 6200,
-    currentPrice: 6200,
+    currentPrice: 5499,
     discount: 'LIMITED SLOTS',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
     gallery: [
