@@ -711,9 +711,22 @@ const Navbar = () => {
     }
   };
 
-  const navLinksLeft = [
+  const scrollToFooter = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const footer = document.getElementById('footer');
+    if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  interface NavItem {
+    label: string;
+    onClick?: (e: React.MouseEvent) => void;
+    path?: string;
+  }
+
+  const navLinksLeft: NavItem[] = [
     { label: 'Treks', onClick: scrollToTreks },
-    { label: 'Contact', path: '/' }
+    { label: 'Contact', onClick: scrollToFooter },
+    { label: 'Terms', path: '/terms' }
   ];
 
   return (
@@ -757,7 +770,7 @@ const Navbar = () => {
           onClick={() => navigate('/')}
         >
           <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
             alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
             className="h-24 lg:h-32 w-auto object-contain transition-all hover:scale-110"
             referrerPolicy="no-referrer"
@@ -793,7 +806,7 @@ const Navbar = () => {
           onClick={() => navigate('/')}
         >
           <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
             alt="Adventure Chaarana Logo" 
             className="h-14 w-auto object-contain"
             referrerPolicy="no-referrer"
@@ -857,7 +870,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
         {children}
       </main>
 
-      <footer className="relative z-20 bg-brand-dark text-white pt-24 pb-12 w-full shrink-0">
+      <footer id="footer" className="relative z-20 bg-brand-dark text-white pt-24 pb-12 w-full shrink-0">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2 space-y-8">
@@ -903,9 +916,9 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               <h5 className="font-serif text-lg font-bold">Quick Links</h5>
               <ul className="space-y-4 text-white/40 text-sm font-medium">
                 <li><Link to="/" className="hover:text-brand-orange transition-colors">Upcoming Treks</Link></li>
-                <li className="hover:text-brand-orange cursor-pointer transition-colors">Safety Code</li>
-                <li className="hover:text-brand-orange cursor-pointer transition-colors">Terms and Conditions</li>
-                <li className="hover:text-brand-orange cursor-pointer transition-colors">Refund Policy</li>
+                <li><Link to="/safety-code" className="hover:text-brand-orange transition-colors">Safety Code</Link></li>
+                <li><Link to="/terms" className="hover:text-brand-orange transition-colors">Terms and Conditions</Link></li>
+                <li><Link to="/refund-policy" className="hover:text-brand-orange transition-colors">Refund Policy</Link></li>
               </ul>
             </div>
 
@@ -933,8 +946,9 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
               © 2026 Adventure Chaarana · All Rights Reserved
             </p>
             <div className="flex gap-8">
-              <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.25em]">Handcrafted in BLR</p>
-              <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.25em]">Leave No Trace</p>
+              <Link to="/safety-code" className="text-white/20 hover:text-white transition-colors text-[10px] uppercase font-black tracking-widest">Safety</Link>
+              <Link to="/terms" className="text-white/20 hover:text-white transition-colors text-[10px] uppercase font-black tracking-widest">Terms</Link>
+              <Link to="/refund-policy" className="text-white/20 hover:text-white transition-colors text-[10px] uppercase font-black tracking-widest">Refund Policy</Link>
             </div>
           </div>
         </div>
@@ -951,6 +965,377 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+};
+
+const TermsPage = () => {
+  useEffect(() => {
+    document.title = "Terms & Conditions | Adventure Chaarana";
+    window.scrollTo(0, 0);
+  }, []);
+
+  const policies = [
+    {
+      icon: "⚖️",
+      title: "Booking & Cancellation",
+      description: "48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances."
+    },
+    {
+      icon: "⛈️",
+      title: "Calamities (Before)",
+      description: "Full refund issued for cancellations due to natural disasters, unrest, or forest entry prohibitions (minus GST/Gateway fees)."
+    },
+    {
+      icon: "🚧",
+      title: "During Trip Issues",
+      description: "No refunds or alternative arrangements if itinerary is blocked by traffic, weather, or authority restrictions during travel."
+    },
+    {
+      icon: "🚫",
+      title: "Zero Tolerance",
+      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned."
+    },
+    {
+      icon: "⏱️",
+      title: "Strict Punctuality",
+      description: "The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one."
+    },
+    {
+      icon: "🧤",
+      title: "Eco-Sensitive",
+      description: "We maintain a strict 'Leave No Trace' policy. No littering allowed; carry your plastic waste back to the city."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header Spacer */}
+      <div className="h-40" />
+      
+      <div className="max-w-4xl mx-auto px-6 pb-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-12"
+        >
+          <div className="space-y-4">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-orange">Policy</span>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">Terms and <br />Conditions</h1>
+          </div>
+
+          {/* Quick Policy Grid */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {policies.map((policy, idx) => (
+              <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 flex flex-col gap-4">
+                <span className="text-3xl">{policy.icon}</span>
+                <h3 className="font-black text-xs uppercase tracking-wider">{policy.title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed font-medium">{policy.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-12 pt-12 text-slate-700">
+            <section className="space-y-6">
+              <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-slate-400">
+                <span className="w-12 h-[1px] bg-slate-200" />
+                Agreement
+              </div>
+              <h2 className="text-3xl font-black tracking-tight">Rules & Guidelines</h2>
+              <div className="prose prose-slate prose-lg max-w-none">
+                <ul className="space-y-4 list-none p-0">
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">01.</span>
+                    <p><strong>Cooperation:</strong> If you want the Trip to be a memorable experience, you need to cooperate with your Trip captain.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">02.</span>
+                    <p><strong>Zero Tolerance:</strong> Strictly no drinking & smoking during the entire duration of trip.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">03.</span>
+                    <p><strong>Eco-Impact:</strong> Do not create any nuisances on the way by throwing any kind of plastic waste.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">04.</span>
+                    <p><strong>Authority Decisions:</strong> Sometimes local authorities might restrict entry. Adventure Chaarana will try to make alternate arrangements but is not responsible for authorities' decisions.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">05.</span>
+                    <p><strong>Belongings:</strong> You will be responsible for your belongings.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">06.</span>
+                    <p><strong>Delays:</strong> Arrival might be delayed due to heavy rains, traffic, or other unavoidable circumstances.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">07.</span>
+                    <p><strong>No Luxury:</strong> Do not expect luxury in accommodation. Hot water and campfire are weather-dependent.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">08.</span>
+                    <p><strong>Medical/Risk:</strong> Mandatory signing of Medical, Risk, and Indemnity forms before starting. Under 18 requires parental consent.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">09.</span>
+                    <p><strong>Insurance:</strong> No medical/accidental insurance included. It is highly recommended to have insurance.</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-black tracking-tight">Group Etiquette</h2>
+              <p className="text-lg leading-relaxed">
+                Stay with the group at all times; inform lead before separating. Participants wandering separately must formally discontinue the trip by providing an official message.
+              </p>
+              <p className="text-slate-500 italic">
+                Adventure Chaarana reserves the right to cancel a batch if minimum participants are not reached. Refunds will be issued excluding gateway fees.
+              </p>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-black tracking-tight text-red-500 uppercase">Emergency & Risks</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h4 className="font-black text-xs uppercase tracking-widest text-slate-400">Natural Hazards</h4>
+                  <ul className="text-sm space-y-2 list-disc pl-4 text-slate-600">
+                    <li>Extreme weather (rain, flash floods, thunderstorms, lighting)</li>
+                    <li>Wildlife encounters (bears, snakes, insects) or harmful plants</li>
+                    <li>Natural disasters (landslides, earthquakes, whiteouts)</li>
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="font-black text-xs uppercase tracking-widest text-slate-400">Physical Injury</h4>
+                  <ul className="text-sm space-y-2 list-disc pl-4 text-slate-600">
+                    <li>AMS, Pulminary Edema (HAPE), Cerebral Edema (HACE)</li>
+                    <li>Slips, falls, exposure to sun/cold (frostbite, hypothermia)</li>
+                    <li>Difficulty in emergency evacuation from remote locations</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="bg-slate-900 text-white p-12 rounded-[3rem] space-y-8">
+              <h2 className="text-3xl font-black tracking-tight text-brand-orange">Preparation Guidelines</h2>
+              <div className="grid sm:grid-cols-2 gap-12">
+                <div className="space-y-4">
+                  <h4 className="font-black text-xs uppercase tracking-widest text-brand-orange/60">Do (15 Days Before)</h4>
+                  <ul className="text-sm space-y-2 list-none p-0 text-slate-300">
+                    <li>• Brisk walk/jog 10-12 km daily</li>
+                    <li>• Stair climbing (10-15 floors)</li>
+                    <li>• Strength training for legs/core</li>
+                    <li>• Cardio: Running, Cycling, Swimming</li>
+                    <li>• Consult a doctor before joining</li>
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="font-black text-xs uppercase tracking-widest text-red-400">Avoid (30 Days Before)</h4>
+                  <ul className="text-sm space-y-2 list-none p-0 text-slate-300">
+                    <li>• Smoking, Alcohol, Vaping</li>
+                    <li>• Sleep Deprivation & Junk Food</li>
+                    <li>• Sudden intense new workouts</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="space-y-6 border-t border-slate-100 pt-12">
+              <h2 className="text-3xl font-black tracking-tight">Photography Rights</h2>
+              <p className="text-slate-600">
+                Adventure Chaarana reserves the right to use trip photos/videos for promotional purposes. Booking grants us a royalty-free license. If you wish to opt-out, notify us before the journey starts.
+              </p>
+            </section>
+
+            <div className="bg-red-50 p-8 rounded-[2rem] border border-red-100 text-red-900">
+              <p className="text-sm font-bold leading-relaxed">
+                <strong>Liability Clause:</strong> Participants join at their own risk. Adventure Chaarana is not liable for injuries, accidents, death, or loss of personal belongings. Insurance is mandatory.
+              </p>
+            </div>
+            
+            <p className="text-xs text-slate-400 font-medium leading-relaxed italic">
+              Important: Due to unforeseen circumstances such as natural disasters, roadblocks, local unrest, government mandates, or severe traffic, certain locations in the itinerary may become inaccessible. In such events, Adventure Chaarana shall not be held liable, and no refunds, alternative arrangements, or compensatory claims will be provided.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+const RefundPolicyPage = () => {
+  useEffect(() => {
+    document.title = "Refund Policy | Adventure Chaarana";
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="h-40" />
+      <div className="max-w-4xl mx-auto px-6 pb-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-12"
+        >
+          <div className="space-y-4">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-orange">Transparency</span>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">Refund <br />Policy</h1>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-slate-900 text-white p-10 rounded-[3rem] space-y-6">
+              <h3 className="text-xl font-black">Standard Cancellations</h3>
+              <div className="space-y-4">
+                <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                  <span className="text-brand-orange font-black text-xs block mb-1">48 HOURS OR MORE</span>
+                  <p className="text-sm font-medium">45% of total package amount will be deducted as cancellation charges.</p>
+                </div>
+                <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
+                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS</span>
+                  <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed under any circumstances.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 flex flex-col justify-center gap-6">
+              <h3 className="text-xl font-black">Natural Calamities</h3>
+              <p className="text-slate-600 leading-relaxed">
+                If a trip is cancelled by Adventure Chaarana due to natural disasters, political unrest, or forest entry prohibitions before the journey starts, a <strong>Full Refund</strong> will be issued (minus GST or Gateway fees).
+              </p>
+              <div className="flex items-center gap-3 text-brand-orange">
+                <span className="text-2xl">⛈️</span>
+                <span className="text-xs font-black uppercase tracking-widest">Weather Protection</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-12 pt-12">
+            <section className="space-y-6">
+              <h2 className="text-3xl font-black tracking-tight">Terms of Refund</h2>
+              <div className="prose prose-slate prose-lg max-w-none text-slate-600">
+                <ul className="space-y-4 list-none p-0">
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">•</span>
+                    <p><strong>Punctuality:</strong> The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">•</span>
+                    <p><strong>Route Blocks:</strong> No refunds or alternative arrangements if the itinerary is blocked by traffic, weather, or authority restrictions during travel.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">•</span>
+                    <p><strong>Batch Cancellation:</strong> Adventure Chaarana reserves the right to cancel a batch if minimum participants are not reached. Refunds will be issued excluding gateway fees.</p>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="text-brand-orange font-bold">•</span>
+                    <p><strong>Termination:</strong> Any participant expelled for breach of conduct (smoking, drinking, nuisance) will not be eligible for a refund.</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <div className="bg-blue-50 p-10 rounded-[3rem] border border-blue-100">
+              <h3 className="text-lg font-black mb-4">Refund Processing</h3>
+              <p className="text-sm text-blue-900 leading-relaxed font-medium">
+                Approved refunds are typically processed within 5-7 working days and credited back to the original payment source. For any queries regarding your cancellation, please contact our support team with your booking ID.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+const SafetyPage = () => {
+  useEffect(() => {
+    document.title = "Safety & Conduct | Adventure Chaarana";
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="h-40" />
+      <div className="max-w-4xl mx-auto px-6 pb-24 text-slate-700">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-16"
+        >
+          <div className="space-y-4">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-500">Ethics</span>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">Safety & <br />Conduct</h1>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-cyan-50 p-10 rounded-[3rem] border border-cyan-100 flex flex-col gap-6">
+              <span className="text-4xl">🌍</span>
+              <h3 className="text-xl font-black">Environment First</h3>
+              <p className="text-sm leading-relaxed font-medium text-cyan-900/70">
+                We maintain a strict <strong>"Leave No Trace"</strong> policy. Every piece of plastic or waste you carry in must be carried back to the city. Respect the local flora and fauna.
+              </p>
+            </div>
+            <div className="bg-orange-50 p-10 rounded-[3rem] border border-orange-100 flex flex-col gap-6">
+              <span className="text-4xl">🤝</span>
+              <h3 className="text-xl font-black">Group Harmony</h3>
+              <p className="text-sm leading-relaxed font-medium text-orange-900/70">
+                Respect fellow trekkers and local culture. Disrespectful, harmful, or illegal behavior results in immediate expulsion without refund.
+              </p>
+            </div>
+          </div>
+
+          <section className="space-y-8">
+            <h2 className="text-3xl font-black tracking-tight">Adventure Safety Code</h2>
+            <div className="grid gap-4">
+              {[
+                { title: "No Sustance Use", desc: "Strictly no drinking or smoking during the entire duration of the trip. Safety depends on your alertness.", icon: "🚫" },
+                { title: "Listen to Leads", desc: "Follow the Trip Captain's instructions at all times. Do not enter water bodies or explore solo without permission.", icon: "📣" },
+                { title: "Stay Together", desc: "Never separate from the group. If you wander off, you must formally discontinue the trip via an official message.", icon: "👫" },
+                { title: "Gear Check", desc: "Ensure you are carrying the recommended gear and wearing appropriate shoes. Safety starts with preparation.", icon: "👟" }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 p-6 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                  <span className="text-2xl shrink-0">{item.icon}</span>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-wider">{item.title}</h4>
+                    <p className="text-slate-500 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="bg-slate-900 text-white p-12 rounded-[3.5rem] space-y-10">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-black tracking-tight text-red-400">Biological & Physical Risks</h2>
+              <p className="text-slate-400 text-sm">Every participant must be aware of the inherent risks of adventure travel.</p>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 gap-12 text-sm">
+              <div className="space-y-4">
+                <h4 className="font-black uppercase tracking-widest text-slate-500">Outdoor Hazards</h4>
+                <ul className="space-y-3 list-none p-0 text-slate-300">
+                  <li className="flex gap-3"><span className="text-red-400">•</span> Flash floods & thunderstorms</li>
+                  <li className="flex gap-3"><span className="text-red-400">•</span> Snake bites & insect stings</li>
+                  <li className="flex gap-3"><span className="text-red-400">•</span> Landslides & extreme cold</li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <h4 className="font-black uppercase tracking-widest text-slate-500">Physical Sickness</h4>
+                <ul className="space-y-3 list-none p-0 text-slate-300">
+                  <li className="flex gap-3"><span className="text-red-400">•</span> AMS & Pulmonary Edema</li>
+                  <li className="flex gap-3"><span className="text-red-400">•</span> Heatstroke / Hypothermia</li>
+                  <li className="flex gap-3"><span className="text-red-400">•</span> Slips & falls in remote areas</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div className="bg-blue-50 p-8 rounded-[2.5rem] border border-blue-100 italic text-blue-900 text-sm text-center">
+            "We do not inherit the earth from our ancestors, we borrow it from our children." — Let's travel responsibly. 🌲
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 const TrekDetailsPage = () => {
@@ -1740,7 +2125,7 @@ const HomePage = () => {
             >
               Explore the <br className="hidden md:block" /> Pure Wild with <br />
               <span className="text-brand-orange-glow italic uppercase font-serif block mt-2 md:mt-0 tracking-normal">
-                Adventure Chaarana <span className="opacity-70">—</span> ADVENTURE ಚಾರಣ
+                Adventure Chaarana
               </span>
             </motion.h1>
             
@@ -1851,6 +2236,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/trek/:slug" element={<TrekDetailsPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/refund-policy" element={<RefundPolicyPage />} />
+          <Route path="/safety-code" element={<SafetyPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
