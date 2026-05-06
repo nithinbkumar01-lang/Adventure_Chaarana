@@ -37,6 +37,7 @@ interface ItineraryDay {
 
 interface Trek {
   id: string;
+  slug: string;
   title: string;
   host: string;
   date: string;
@@ -64,6 +65,7 @@ interface Trek {
 const TREKS: Trek[] = [
   {
     id: '1',
+    slug: 'shivagange-sunrise-trek',
     title: 'Shivagange Sunrise Trek',
     host: 'Adventure Chaarana',
     date: 'May 3, 2026',
@@ -141,6 +143,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '2',
+    slug: 'skandagiri-sunrise-trek',
     title: 'Skandagiri Sunrise Trek',
     host: 'Adventure Chaarana',
     date: 'Every Weekend',
@@ -217,6 +220,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '3',
+    slug: 'kaiwara-betta-sunrise-trek',
     title: 'Kaiwara Betta Sunrise Trek',
     host: 'Adventure Chaarana',
     date: 'Every Weekend',
@@ -279,6 +283,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '4',
+    slug: 'channarayana-durga-fort-trek',
     title: 'Channarayana Durga Fort Trek',
     host: 'Adventure Chaarana',
     date: 'Every Weekend',
@@ -340,6 +345,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '5',
+    slug: 'uttari-betta-sunrise-trek',
     title: 'Uttari Betta Sunrise Trek',
     host: 'Adventure Chaarana',
     date: 'Every Weekend',
@@ -401,6 +407,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '6',
+    slug: 'kunti-betta-sunrise-trek',
     title: 'Kunti Betta Sunrise Trek',
     host: 'Adventure Chaarana',
     date: 'Every Weekend',
@@ -462,6 +469,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '7',
+    slug: 'kodaikanal-weekend-getaway',
     title: 'Kodaikanal Weekend Getaway',
     host: 'Adventure Chaarana',
     date: 'Every Friday Night',
@@ -563,6 +571,7 @@ const TREKS: Trek[] = [
   },
   {
     id: '8',
+    slug: 'tadiandamol-trek-coorg',
     title: 'Tadiandamol Trek - Coorg',
     host: 'Adventure Chaarana',
     date: 'Every Friday Night',
@@ -655,8 +664,8 @@ const TREKS: Trek[] = [
 ];
 
 const Breadcrumbs = () => {
-  const { id } = useParams();
-  const trek = TREKS.find(t => t.id === id);
+  const { slug } = useParams();
+  const trek = TREKS.find(t => t.slug === slug);
 
   if (!trek) return null;
 
@@ -945,9 +954,9 @@ const ScrollToTop = () => {
 };
 
 const TrekDetailsPage = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
-  const trek = TREKS.find(t => t.id === id);
+  const trek = TREKS.find(t => t.slug === slug);
 
   useEffect(() => {
     if (trek) {
@@ -1545,7 +1554,7 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       layout
-      onClick={() => navigate(`/trek/${trek.id}`)}
+      onClick={() => navigate(`/trek/${trek.slug}`)}
       className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_100px_-20px_rgba(37,211,102,0.15)] transition-all duration-500 border border-slate-100 group flex flex-col h-full w-full cursor-pointer relative"
     >
       <div className="relative aspect-[4/3] overflow-hidden m-3 rounded-[2rem]">
@@ -1841,7 +1850,7 @@ export default function App() {
       <Layout showPromo={showPromo} setShowPromo={setShowPromo}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/trek/:id" element={<TrekDetailsPage />} />
+          <Route path="/trek/:slug" element={<TrekDetailsPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
