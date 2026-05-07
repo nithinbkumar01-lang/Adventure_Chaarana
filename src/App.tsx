@@ -74,8 +74,8 @@ const TREKS: Trek[] = [
     duration: '1 day',
     difficulty: 'Moderate',
     elevation: '1,368 m',
-    distance: '2–3 km',
-    minAge: '4 Years',
+    distance: '2-3 km (one way)',
+    minAge: '5 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
     currentPrice: 799,
@@ -108,8 +108,8 @@ const TREKS: Trek[] = [
         items: [
           { time: '01:30 AM', activity: '🚍 Reach Shivagange base — rest in vehicle' },
           { time: '04:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
-          { time: '05:45 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
-          { time: '06:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
+          { time: '07:00 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
+          { time: '07:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
           { time: '08:00 AM', activity: '⬇️ Begin descent back to base' },
           { time: '09:30 AM', activity: '🍽️ Reach base — breakfast stop (self-sponsored)' },
           { time: '01:00 PM', activity: '🚌 Return to Bangalore' }
@@ -121,7 +121,6 @@ const TREKS: Trek[] = [
       'Certified Trek Lead & Guide',
       'All entry fees as per itinerary',
       'Completion certificate & trek badges',
-      'Light snacks during the trek',
       'First aid support on trail'
     ],
     exclusions: [
@@ -201,7 +200,6 @@ const TREKS: Trek[] = [
       'Certified Trek Lead & Guide',
       'Forest Permits & Entry Fees',
       'Completion Certificate & Badge',
-      'Light Snacks During Trek',
       'First Aid Support'
     ],
     exclusions: [
@@ -401,7 +399,7 @@ const TREKS: Trek[] = [
       'Travel Bangalore-Bangalore',
       'Guide & Trek Lead',
       'Entry Fees',
-      'Snacks & First Aid'
+      'First Aid Support'
     ],
     exclusions: ['Breakfast', 'Water bottles'],
     thingsToCarry: ['Water bottle', 'Backpack', 'Sturdy shoes', 'Govt ID']
@@ -462,8 +460,7 @@ const TREKS: Trek[] = [
     inclusions: [
       'Travel Bangalore-Bangalore',
       'Guide Support',
-      'Entry & Permits',
-      'Snacks'
+      'Entry & Permits'
     ],
     exclusions: ['Main Breakfast', 'Personal Expenses'],
     thingsToCarry: ['Water bottle', 'Daypack', 'Trekking shoes', 'Govt ID']
@@ -1073,7 +1070,7 @@ const TermsPage = () => {
     {
       icon: "⚖️",
       title: "Booking & Cancellation",
-      description: "48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances."
+      description: "48h+ before: 45% deducted. Within 48h or for One-day treks: No refund or rescheduling under any circumstances."
     },
     {
       icon: "⛈️",
@@ -1295,8 +1292,8 @@ const RefundPolicyPage = () => {
                   <p className="text-sm font-medium">45% of total package amount will be deducted as cancellation charges.</p>
                 </div>
                 <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
-                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS</span>
-                  <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed under any circumstances.</p>
+                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS & ONE DAY TREKS</span>
+                  <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed for one-day treks or cancellations within 48 hours.</p>
                 </div>
               </div>
             </div>
@@ -1451,11 +1448,11 @@ const TrekDetailsPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
+  const isOneDay = trek?.duration.toLowerCase().includes('1 day');
 
-  const getUpcomingBatches = (trek: Trek) => {
+  const getUpcomingBatches = () => {
     const batches = [];
     const today = new Date();
-    const isOneDay = trek.duration.toLowerCase().includes('1 day');
     const searchLimit = isOneDay ? 30 : 60;
     
     // Check next 30 or 60 days
@@ -1464,9 +1461,8 @@ const TrekDetailsPage = () => {
       date.setDate(today.getDate() + i);
       const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
-      // One day: Fri & Sat departures
-      // Two day: Only Fri departures
-      if (day === 5 || (isOneDay && day === 6)) {
+      // Fri & Sat departures
+      if (day === 5 || day === 6) {
         const startDate = new Date(date);
         const endDate = new Date(date);
         endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
@@ -1681,7 +1677,7 @@ const TrekDetailsPage = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
               <div className="grid gap-2">
-                {getUpcomingBatches(trek).map((batch, idx) => {
+                {getUpcomingBatches().map((batch, idx) => {
                   const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
                   const waLink = `https://wa.me/918792019313?text=${whatsappMsg}`;
 
@@ -1766,7 +1762,7 @@ const TrekDetailsPage = () => {
                 <span className="text-xl">🗓️</span>
                 <div>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
-                  <p className="font-bold text-white text-[10px]">Friday Night Departure</p>
+                  <p className="font-bold text-white text-[10px]">Fri & Sat Night Departure</p>
                 </div>
               </div>
             </div>
