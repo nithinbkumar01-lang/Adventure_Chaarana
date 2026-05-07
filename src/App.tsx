@@ -107,7 +107,7 @@ const TREKS: Trek[] = [
         emoji: '🌄',
         items: [
           { time: '01:30 AM', activity: '🚍 Reach Shivagange base — rest in vehicle' },
-          { time: '03:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
+          { time: '04:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
           { time: '05:45 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
           { time: '06:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
           { time: '08:00 AM', activity: '⬇️ Begin descent back to base' },
@@ -671,6 +671,8 @@ const TREKS: Trek[] = [
     location: 'Kudremukh, Karnataka',
     duration: '2 Days / 1 Night',
     difficulty: 'Moderate',
+    elevation: '1,520 m',
+    minAge: '5 Years',
     currentPrice: 4200,
     originalPrice: 5200,
     discount: 'WESTERN GHATS SPECIAL',
@@ -717,6 +719,7 @@ const TREKS: Trek[] = [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
           { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
           { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge Visit' },
+          { time: '11:00 AM', activity: '🏛️ Kalasa Temple (Dakshina Kashi)' },
           { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
           { time: '02:30 PM', activity: '🏛️ Visit Historic Belur Temple' },
           { time: '04:00 PM', activity: '🚌 Start journey back to Bangalore' },
@@ -751,6 +754,7 @@ const TREKS: Trek[] = [
       'Kudremukh Forest Area',
       'Samse Tea Estate',
       'Kalasa Hanging Bridge',
+      'Kalasa Temple (Dakshina Kashi)',
       'Belur Temple'
     ]
   }
@@ -1084,7 +1088,7 @@ const TermsPage = () => {
     {
       icon: "🚫",
       title: "Zero Tolerance",
-      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned."
+      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund"
     },
     {
       icon: "⏱️",
@@ -1145,7 +1149,7 @@ const TermsPage = () => {
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">02.</span>
-                    <p><strong>Zero Tolerance:</strong> Strictly no drinking & smoking during the entire duration of trip.</p>
+                    <p><strong>Zero Tolerance:</strong> Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">03.</span>
@@ -1392,7 +1396,7 @@ const SafetyPage = () => {
             <h2 className="text-3xl font-black tracking-tight">Adventure Safety Code</h2>
             <div className="grid gap-4">
               {[
-                { title: "No Sustance Use", desc: "Strictly no drinking or smoking during the entire duration of the trip. Safety depends on your alertness.", icon: "🚫" },
+                { title: "Zero Tolerance", desc: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund.", icon: "🚫" },
                 { title: "Listen to Leads", desc: "Follow the Trip Captain's instructions at all times. Do not enter water bodies or explore solo without permission.", icon: "📣" },
                 { title: "Stay Together", desc: "Never separate from the group. If you wander off, you must formally discontinue the trip via an official message.", icon: "👫" },
                 { title: "Gear Check", desc: "Ensure you are carrying the recommended gear and wearing appropriate shoes. Safety starts with preparation.", icon: "👟" }
@@ -1448,13 +1452,14 @@ const TrekDetailsPage = () => {
   const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
-  const getUpcomingBatches = (category: string) => {
+  const getUpcomingBatches = (trek: Trek) => {
     const batches = [];
     const today = new Date();
-    const isOneDay = category === 'sunrise';
+    const isOneDay = trek.duration.toLowerCase().includes('1 day');
+    const searchLimit = isOneDay ? 30 : 60;
     
-    // Check next 30 days
-    for (let i = 0; i < 30; i++) {
+    // Check next 30 or 60 days
+    for (let i = 0; i < searchLimit; i++) {
       const date = new Date();
       date.setDate(today.getDate() + i);
       const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
@@ -1475,7 +1480,6 @@ const TrekDetailsPage = () => {
           dayName: startDate.toLocaleDateString('en-IN', { weekday: 'short' })
         });
       }
-      if (batches.length >= 4) break;
     }
     return batches;
   };
@@ -1567,8 +1571,9 @@ const TrekDetailsPage = () => {
         </button>
       </nav>
 
-      {/* ─── IMMERSIVE CENTERED HERO ─── */}
-      <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+      <div className="bg-brand-paper">
+        {/* ─── IMMERSIVE CENTERED HERO ─── */}
+        <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1616,51 +1621,22 @@ const TrekDetailsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
-              <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
-              <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
-                <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-                <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+              <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
+                <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
+                <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
+                  <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                  <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                  <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
-                <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </header>
-
-      {/* ─── SCROLLING OFFERS BAND ─── */}
-      <div className="bg-brand-dark/95 text-white/50 py-3 md:py-4 overflow-hidden flex whitespace-nowrap border-y border-white/5 backdrop-blur-md relative">
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        
-        <motion.div 
-          animate={{ x: [0, -1200] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-          className="flex gap-20 items-center px-12 relative z-10"
-        >
-          {[1,2,3,4,5].map(i => (
-            <React.Fragment key={i}>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 10% OFF SUNRISE TREKS</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🌍</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Eco-Sensitive Explorations'}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🧗</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Certified Expedition Leads</span>
-              </div>
-            </React.Fragment>
-          ))}
-        </motion.div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
         {/* ─── PLACES WE COVER ─── */}
@@ -1704,8 +1680,8 @@ const TrekDetailsPage = () => {
             
             <div className="space-y-4">
               <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
-              <div className="grid gap-3">
-                {getUpcomingBatches(trek.category).map((batch, idx) => {
+              <div className="grid gap-2">
+                {getUpcomingBatches(trek).map((batch, idx) => {
                   const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
                   const waLink = `https://wa.me/918792019313?text=${whatsappMsg}`;
 
@@ -1715,21 +1691,17 @@ const TrekDetailsPage = () => {
                       href={waLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-white border border-slate-100 p-5 rounded-2xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
+                      className="group bg-white border border-slate-100 p-4 rounded-xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
                     >
-                      <div className="flex items-center gap-5">
-                        <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                          <span className="text-[10px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
-                          <span className="text-lg font-black">{batch.start.split(' ')[0]}</span>
+                      <div className="flex items-center gap-4">
+                        <div className="flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                          <span className="text-[9px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
+                          <span className="text-base font-black">{batch.start.split(' ')[0]}</span>
                         </div>
                         <div>
-                          <p className="text-[10px] font-black text-brand-orange uppercase tracking-widest mb-0.5">Booking Open</p>
                           <p className="font-bold text-slate-800 text-sm">{batch.start} - {batch.end}, {batch.year}</p>
                         </div>
                       </div>
-                      <button className="bg-slate-50 text-slate-400 group-hover:bg-brand-orange group-hover:text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
-                        Book Now
-                      </button>
                     </a>
                   );
                 })}
@@ -1756,28 +1728,16 @@ const TrekDetailsPage = () => {
                 </div>
 
                 <div className="space-y-6">
-                  {(trek.category === 'sunrise' ? [
-                    { time: '09:30 PM', loc: 'Silk Board Bus Stand', desc: 'Near BDA Complex' },
-                    { time: '10:00 PM', loc: 'Indiranagar / Koramangala', desc: 'Sony Signal' },
-                    { time: '11:00 PM', loc: 'Majestic / Yeshwantpur', desc: 'Santhosh Theatre' },
-                    { time: '11:30 PM', loc: 'Gorguntepalya', desc: 'Opp. People Tree Hospital' },
-                    { time: '12:00 AM', loc: 'Hebbal Flyover', desc: 'Airport Road' }
-                  ] : [
-                    { time: '08:00 PM', loc: 'HSR Layout (Silk Board)', desc: 'Near BDA Complex' },
-                    { time: '08:45 PM', loc: 'Indiranagar', desc: 'KTM Showroom' },
-                    { time: '09:30 PM', loc: 'Majestic', desc: 'Santhosh Theatre' },
-                    { time: '10:15 PM', loc: 'Yeshwantpur', desc: 'Hallimane Hotel' },
-                    { time: '11:00 PM', loc: 'Gorguntepalya', desc: 'Opp. People Tree Hospital' }
-                  ]).map((p, idx) => (
+                  {(trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || []).map((p, idx, filtered) => (
                     <div key={idx} className="flex gap-4 group/point">
                       <div className="flex flex-col items-center gap-1 shrink-0">
                          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
-                         {idx < 4 && <div className="w-px flex-1 bg-white/10" />}
+                         {idx < filtered.length - 1 && <div className="w-px flex-1 bg-white/10" />}
                       </div>
                       <div className="pb-4">
                         <span className="text-[9px] font-black text-cyan-400 uppercase tracking-widest">{p.time}</span>
-                        <p className="font-bold text-sm text-white/90">{p.loc}</p>
-                        <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">{p.desc}</p>
+                        <p className="font-bold text-sm text-white/90">{p.activity.replace('📍', '').trim()}</p>
+                        <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">Boarding Point</p>
                       </div>
                     </div>
                   ))}
@@ -1812,7 +1772,7 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="w-full">
             <div className="space-y-12">
                {trek.itinerary.map((day, dIdx) => (
                  <div key={dIdx} className="space-y-4">
@@ -1840,16 +1800,6 @@ const TrekDetailsPage = () => {
                    </div>
                  </div>
                ))}
-            </div>
-
-            <div className="hidden lg:block sticky top-20 h-fit">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
-                 <img src={trek.gallery?.[1] || trek.image} alt={`Expedition Highlights - ${trek.title}`} className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                 <div className="absolute bottom-4 left-4 text-white">
-                   <p className="text-xl font-black leading-tight italic">"Where steps lead to <br/> better views."</p>
-                 </div>
-              </div>
             </div>
           </div>
         </section>
@@ -2177,6 +2127,7 @@ const TrekDetailsPage = () => {
           </div>
         </section>
       </div>
+    </div>
 
       {/* ─── FLOATING CTA ─── */}
       <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
