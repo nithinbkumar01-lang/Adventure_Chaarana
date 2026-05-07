@@ -787,150 +787,6 @@ const Breadcrumbs = () => {
   );
 };
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const scrollToTreks = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const section = document.getElementById('treks-section');
-        if (section) section.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const section = document.getElementById('treks-section');
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToFooter = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const footer = document.getElementById('footer');
-    if (footer) footer.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  interface NavItem {
-    label: string;
-    onClick?: (e: React.MouseEvent) => void;
-    path?: string;
-  }
-
-  const navLinksLeft: NavItem[] = [
-    { label: 'Treks', onClick: scrollToTreks },
-    { label: 'Contact', onClick: scrollToFooter },
-    { label: 'Terms', path: '/terms' }
-  ];
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-[60] transition-all duration-300">
-      <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-xl border-b border-white/5 shadow-2xl" />
-      
-      {/* Desktop Centered Navbar */}
-      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-16 lg:h-20 grid-cols-[1fr_auto_1fr] items-center relative z-10">
-        {/* Left Links */}
-        <nav className="flex items-center gap-10 justify-start">
-          {navLinksLeft.map((item, idx) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + idx * 0.1 }}
-            >
-              {item.onClick ? (
-                <button 
-                  onClick={item.onClick}
-                  className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group cursor-pointer"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
-                </button>
-              ) : (
-                <Link to={item.path || '/'} className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group">
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
-                </Link>
-              )}
-            </motion.div>
-          ))}
-        </nav>
-
-        {/* Logo (Center) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex items-center justify-center cursor-pointer px-10"
-          onClick={() => navigate('/')}
-        >
-          <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
-            alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
-            className="h-12 lg:h-16 w-auto object-contain transition-all hover:scale-110"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-
-        {/* Right Section */}
-        <div className="flex items-center gap-10 justify-end">
-          <motion.button 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Join our WhatsApp community"
-            onClick={() => {
-              const message = "Hey, i would like to join the community for further updates";
-              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
-            }}
-            className="bg-brand-orange text-white px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.25em] shadow-[0_8px_20px_rgba(232,117,26,0.3)] hover:shadow-brand-orange/60 transition-all border border-white/20 whitespace-nowrap"
-          >
-            Join Community
-          </motion.button>
-        </div>
-      </div>
-
-      {/* Mobile Navbar */}
-      <div className="md:hidden flex items-center justify-between px-6 h-14 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="cursor-pointer"
-          onClick={() => navigate('/')}
-        >
-          <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
-            alt="Adventure Chaarana Logo" 
-            className="h-10 w-auto object-contain"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-        
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={scrollToTreks}
-            className="text-[8px] font-black uppercase tracking-widest text-white/70"
-          >
-            Treks
-          </button>
-          <motion.button 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={() => {
-              const message = "Hey, i would like to join the community for further updates";
-              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
-            }}
-            className="bg-brand-orange text-white px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest"
-          >
-            Join
-          </motion.button>
-        </div>
-      </div>
-    </header>
-  );
-};
-
 const Background = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
@@ -957,9 +813,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
   return (
     <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
       {!isDetailsPage && <Background />}
-      <Navbar />
-      
-      <main className={`relative z-10 flex-1 pt-14 md:pt-16 lg:pt-20`}>
+      <main className={`relative z-10 flex-1 pt-0`}>
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -1549,27 +1403,7 @@ const TrekDetailsPage = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      {/* ─── PROFESSIONAL COMPACT NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-12 flex items-center justify-between shadow-sm">
-        <button 
-          onClick={onBack}
-          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-brand-dark transition-all group"
-        >
-          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Back
-        </button>
-        <div className="hidden md:flex items-center gap-3 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200">
-           <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Trek:</span>
-           <span className="text-[9px] font-black uppercase tracking-widest text-brand-dark">{trek.title}</span>
-        </div>
-        <button className="bg-brand-orange text-white px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-orange/20 hover:scale-105 transition-all">
-          Join Now 🧗
-        </button>
-      </nav>
-
-      <div className="bg-brand-paper">
-        {/* ─── IMMERSIVE CENTERED HERO ─── */}
-        <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+      <header className="relative flex flex-col justify-center items-center min-h-[50vh] md:min-h-[60vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1578,59 +1412,64 @@ const TrekDetailsPage = () => {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/80 to-brand-dark/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/20 via-brand-dark/60 to-brand-paper" />
         </div>
         
-        <div className="max-w-4xl mx-auto w-full relative z-10 space-y-8">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-orange text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full mx-auto"
-          >
-            ⛰️ Karnataka Trekking Expedition
-          </motion.div>
-          
-          <div className="space-y-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter"
+        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
+          <div className="w-full flex justify-start mb-12">
+            <button 
+              onClick={onBack}
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-all group drop-shadow-md"
             >
-              {trek.title.split(' ')[0]} <br />
-              <span className="text-brand-orange-glow italic font-serif opacity-95">{trek.title.split(' ').slice(1).join(' ')}</span>
-            </motion.h1>
-            
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-6 text-white/50 font-bold text-[10px] uppercase tracking-widest pt-2"
-            >
-              <span className="flex items-center gap-1.5">🏔️ {trek.elevation}</span>
-              {trek.distance && <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>}
-              <span className="flex items-center gap-1.5">📍 {trek.location}</span>
-              <span className="flex items-center gap-1.5">👶 Age {trek.minAge}+</span>
-            </motion.div>
+              <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+              Back to Treks
+            </button>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
-              <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
-                <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
-                <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
-                  <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-                  <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+          <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-brand-orange text-white text-[8px] font-black uppercase tracking-[0.4em] rounded-full mx-auto shadow-xl"
+            >
+              ⛰️ Karnataka Trekking Expedition
+            </motion.div>
+            
+            <div className="space-y-4">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-6xl md:text-8xl lg:text-9xl font-black text-brand-dark leading-[0.9] tracking-tighter"
+              >
+                {trek.title.split(' ')[0]} <br />
+                {trek.title.split(' ').slice(1).length > 0 && (
+                  <span className="text-brand-orange-glow italic font-serif">{trek.title.split(' ').slice(1).join(' ')}</span>
+                )}
+              </motion.h1>
+              
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-wrap justify-center gap-6 text-slate-500 font-bold text-[10px] uppercase tracking-widest pt-4"
+              >
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                  <span className="text-brand-orange">🏔️</span> {trek.elevation}
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
-                  <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+                {trek.distance && (
+                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                    <span className="text-brand-orange">📏</span> {trek.distance}
+                  </div>
+                )}
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                  <span className="text-brand-orange">📍</span> {trek.location}
                 </div>
-              </div>
-          </motion.div>
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                  <span className="text-brand-orange">👶</span> Age {trek.minAge}+
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -2123,7 +1962,6 @@ const TrekDetailsPage = () => {
           </div>
         </section>
       </div>
-    </div>
 
       {/* ─── FLOATING CTA ─── */}
       <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
