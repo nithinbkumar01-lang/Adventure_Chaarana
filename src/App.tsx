@@ -1403,74 +1403,76 @@ const TrekDetailsPage = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      <header className="relative flex flex-col justify-center items-center min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] overflow-hidden text-center px-6">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      <header className="relative flex flex-col justify-center items-center min-h-[65vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden text-center px-6">
+        {/* Background Image with Enhanced Contrast */}
+        <div className="absolute inset-0 z-0 scale-110">
           <img 
             src={trek.image} 
             alt={`Mountain Expedition: ${trek.title} Sunrise Trail`} 
-            className="w-full h-full object-cover scale-105"
+            className="w-full h-full object-cover brightness-[0.75] contrast-[1.15]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/20 to-brand-paper" />
-          <div className="absolute inset-0 bg-brand-dark/30 backdrop-blur-[1px]" />
+          {/* Layered Overlays for Dramatic Lighting */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-paper via-transparent to-brand-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-transparent to-brand-paper/20" />
+          
+          {/* Subtle Color Wash */}
+          <div className="absolute inset-0 bg-brand-orange/10 mix-blend-color" />
+          
+          {/* Intense Animated Glow Highlight */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-full bg-[radial-gradient(circle,rgba(232,117,26,0.2)_0%,transparent_60%)] opacity-70 animate-pulse" />
         </div>
         
         <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
-          <div className="w-full flex justify-start mb-8 md:mb-12">
+          <div className="w-full flex justify-start mb-12 md:mb-16">
             <button 
               onClick={onBack}
-              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-brand-orange-glow transition-all group drop-shadow-lg bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-brand-orange-glow transition-all group drop-shadow-2xl bg-black/40 backdrop-blur-xl px-6 py-2.5 rounded-full border border-white/20"
             >
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              Back to Treks
+              Back to Expeditions
             </button>
           </div>
 
-          <div className="space-y-6 relative">
-            <div className="absolute -inset-20 bg-brand-orange-glow/10 blur-[100px] rounded-full z-0 opacity-50" />
+          <div className="relative group">
+            {/* Focal Highlight under the text - even stronger */}
+            <div className="absolute inset-0 bg-brand-orange/40 blur-[150px] rounded-full z-0 opacity-60 animate-pulse" />
             
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="relative z-10 inline-flex items-center gap-2 px-3 py-1 bg-brand-orange text-white text-[8px] font-black uppercase tracking-[0.4em] rounded-full mx-auto shadow-xl"
-            >
-              ⛰️ Karnataka Trekking Expedition
-            </motion.div>
-            
-            <div className="space-y-4 relative z-10">
-              <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
-              >
-                {trek.title.split(' ')[0]} <br />
-                {trek.title.split(' ').slice(1).length > 0 && (
-                  <span className="text-brand-orange-glow italic font-serif opacity-95">{trek.title.split(' ').slice(1).join(' ')}</span>
-                )}
-              </motion.h1>
-              
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-wrap justify-center gap-4 md:gap-6 text-slate-800 font-bold text-[10px] uppercase tracking-widest pt-6"
-              >
-                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
-                  <span className="text-brand-orange">🏔️</span> {trek.elevation}
-                </div>
-                {trek.distance && (
-                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
-                    <span className="text-brand-orange">📏</span> {trek.distance}
+            <div className="relative z-10 bg-black/20 backdrop-blur-md rounded-[3rem] md:rounded-[5rem] p-8 md:p-16 border border-white/10 shadow-2xl space-y-10">
+              <div className="space-y-6">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
+                >
+                  {trek.title.split(' ')[0]} <br />
+                  {trek.title.split(' ').slice(1).length > 0 && (
+                    <span className="text-brand-orange-glow italic font-serif opacity-100">{trek.title.split(' ').slice(1).join(' ')}</span>
+                  )}
+                </motion.h1>
+                
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex flex-wrap justify-center gap-4 md:gap-8 text-white font-black text-[10px] uppercase tracking-widest pt-6"
+                >
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    <span className="text-brand-orange">🏔️</span> {trek.elevation}
                   </div>
-                )}
-                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
-                  <span className="text-brand-orange">📍</span> {trek.location}
-                </div>
-                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
-                  <span className="text-brand-orange">👶</span> Age {trek.minAge}+
-                </div>
-              </motion.div>
+                  {trek.distance && (
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                      <span className="text-brand-orange">📏</span> {trek.distance}
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    <span className="text-brand-orange">📍</span> {trek.location}
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
+                    <span className="text-brand-orange">👶</span> Age {trek.minAge}+
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -1508,16 +1510,16 @@ const TrekDetailsPage = () => {
         )}
 
         {/* ─── BATCHES & PICKUPS ─── */}
-        <section className="grid lg:grid-cols-2 gap-8 sticky-trigger">
+        <section className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 sticky-trigger">
           {/* Upcoming Batches */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📆 Available Batches</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
             
-            <div className="space-y-4">
-              <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
+            <div className="space-y-3">
+              <h3 className="text-xl md:text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
               <div className="grid gap-2">
                 {getUpcomingBatches().map((batch, idx) => {
                   const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
@@ -1548,31 +1550,31 @@ const TrekDetailsPage = () => {
           </div>
 
           {/* Pickup Points */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="text-cyan-500 text-[8px] font-black uppercase tracking-[0.4em]">🚍 Boarding Points</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
-
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white relative overflow-hidden group">
+ 
+            <div className="bg-slate-900 rounded-[2.5rem] p-6 md:p-8 text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Compass size={120} className="text-white animate-spin-slow" />
               </div>
               
-              <div className="relative z-10 space-y-8">
+              <div className="relative z-10 space-y-6">
                 <div className="space-y-1">
-                   <h3 className="text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
+                   <h3 className="text-xl md:text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
                    <p className="text-[10px] uppercase font-black tracking-widest text-white/40 italic">Departures from Bangalore</p>
                 </div>
-
-                <div className="space-y-6">
+ 
+                <div className="space-y-4">
                   {(trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || []).map((p, idx, filtered) => (
                     <div key={idx} className="flex gap-4 group/point">
                       <div className="flex flex-col items-center gap-1 shrink-0">
                          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
                          {idx < filtered.length - 1 && <div className="w-px flex-1 bg-white/10" />}
                       </div>
-                      <div className="pb-4">
+                      <div className="pb-3">
                         <span className="text-[9px] font-black text-cyan-400 uppercase tracking-widest">{p.time}</span>
                         <p className="font-bold text-sm text-white/90">{p.activity.replace('📍', '').trim()}</p>
                         <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">Boarding Point</p>
