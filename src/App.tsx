@@ -1635,7 +1635,7 @@ const TrekDetailsPage = () => {
                 <span className="text-xl">🗓️</span>
                 <div>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
-                  <p className="font-bold text-white text-[10px]">Fri & Sat Night Departure</p>
+                  <p className="font-bold text-white text-[10px]">{trek.duration.includes('2 Day') ? 'Friday' : 'Fri & Sat'} Night Departure</p>
                 </div>
               </div>
             </div>
