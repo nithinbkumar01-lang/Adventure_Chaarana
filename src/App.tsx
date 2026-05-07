@@ -74,8 +74,8 @@ const TREKS: Trek[] = [
     duration: '1 day',
     difficulty: 'Moderate',
     elevation: '1,368 m',
-    distance: '2-3 km (one way)',
-    minAge: '5 Years',
+    distance: '2–3 km',
+    minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
     currentPrice: 799,
@@ -107,9 +107,9 @@ const TREKS: Trek[] = [
         emoji: '🌄',
         items: [
           { time: '01:30 AM', activity: '🚍 Reach Shivagange base — rest in vehicle' },
-          { time: '04:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
-          { time: '07:00 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
-          { time: '07:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
+          { time: '03:30 AM', activity: '🧗 Begin trek — ascent through monolithic rock & iron ladder' },
+          { time: '05:45 AM', activity: '⛰️ Reach the summit — peaceful time at the peak' },
+          { time: '06:15 AM', activity: '🌅 Witness the breathtaking Sunrise from the summit!' },
           { time: '08:00 AM', activity: '⬇️ Begin descent back to base' },
           { time: '09:30 AM', activity: '🍽️ Reach base — breakfast stop (self-sponsored)' },
           { time: '01:00 PM', activity: '🚌 Return to Bangalore' }
@@ -121,6 +121,7 @@ const TREKS: Trek[] = [
       'Certified Trek Lead & Guide',
       'All entry fees as per itinerary',
       'Completion certificate & trek badges',
+      'Light snacks during the trek',
       'First aid support on trail'
     ],
     exclusions: [
@@ -200,6 +201,7 @@ const TREKS: Trek[] = [
       'Certified Trek Lead & Guide',
       'Forest Permits & Entry Fees',
       'Completion Certificate & Badge',
+      'Light Snacks During Trek',
       'First Aid Support'
     ],
     exclusions: [
@@ -399,7 +401,7 @@ const TREKS: Trek[] = [
       'Travel Bangalore-Bangalore',
       'Guide & Trek Lead',
       'Entry Fees',
-      'First Aid Support'
+      'Snacks & First Aid'
     ],
     exclusions: ['Breakfast', 'Water bottles'],
     thingsToCarry: ['Water bottle', 'Backpack', 'Sturdy shoes', 'Govt ID']
@@ -460,7 +462,8 @@ const TREKS: Trek[] = [
     inclusions: [
       'Travel Bangalore-Bangalore',
       'Guide Support',
-      'Entry & Permits'
+      'Entry & Permits',
+      'Snacks'
     ],
     exclusions: ['Main Breakfast', 'Personal Expenses'],
     thingsToCarry: ['Water bottle', 'Daypack', 'Trekking shoes', 'Govt ID']
@@ -534,8 +537,7 @@ const TREKS: Trek[] = [
       'Transportation - Non-AC seater (Tempo Traveller / Mini Bus / Bus depending on group size)',
       'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
       'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
-      'All entry fees as per itinerary',
-      'Badges'
+      'All entry fees as per itinerary'
     ],
     exclusions: [
       'Any other expenses incurred apart from inclusions',
@@ -635,7 +637,7 @@ const TREKS: Trek[] = [
       'Accommodation (sharing basis)',
       'Meals: 2 Breakfast, 1 Packed Lunch (Day 1), 1 Dinner',
       'Sightseeing as per itinerary',
-      'Badges'
+      'Finishing Badges & Achievement Certificates'
     ],
     exclusions: [
       'Day 2 Lunch & Dinner',
@@ -731,8 +733,7 @@ const TREKS: Trek[] = [
       'Meals: 2 Breakfasts, 1 Lunch, 1 Dinner',
       'Forest entry permissions & Guide fees',
       'Professional Trek Leads',
-      'First Aid Support',
-      'Badges'
+      'First Aid Support'
     ],
     exclusions: [
       'Day 2: Lunch & Dinner',
@@ -789,6 +790,150 @@ const Breadcrumbs = () => {
   );
 };
 
+const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToTreks = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('treks-section');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const section = document.getElementById('treks-section');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToFooter = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const footer = document.getElementById('footer');
+    if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  interface NavItem {
+    label: string;
+    onClick?: (e: React.MouseEvent) => void;
+    path?: string;
+  }
+
+  const navLinksLeft: NavItem[] = [
+    { label: 'Treks', onClick: scrollToTreks },
+    { label: 'Contact', onClick: scrollToFooter },
+    { label: 'Terms', path: '/terms' }
+  ];
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-[60] transition-all duration-300">
+      <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-xl border-b border-white/5 shadow-2xl" />
+      
+      {/* Desktop Centered Navbar */}
+      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-16 lg:h-20 grid-cols-[1fr_auto_1fr] items-center relative z-10">
+        {/* Left Links */}
+        <nav className="flex items-center gap-10 justify-start">
+          {navLinksLeft.map((item, idx) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + idx * 0.1 }}
+            >
+              {item.onClick ? (
+                <button 
+                  onClick={item.onClick}
+                  className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group cursor-pointer"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
+                </button>
+              ) : (
+                <Link to={item.path || '/'} className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group">
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
+                </Link>
+              )}
+            </motion.div>
+          ))}
+        </nav>
+
+        {/* Logo (Center) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex items-center justify-center cursor-pointer px-10"
+          onClick={() => navigate('/')}
+        >
+          <img 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
+            alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
+            className="h-12 lg:h-16 w-auto object-contain transition-all hover:scale-110"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+
+        {/* Right Section */}
+        <div className="flex items-center gap-10 justify-end">
+          <motion.button 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Join our WhatsApp community"
+            onClick={() => {
+              const message = "Hey, i would like to join the community for further updates";
+              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+            }}
+            className="bg-brand-orange text-white px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.25em] shadow-[0_8px_20px_rgba(232,117,26,0.3)] hover:shadow-brand-orange/60 transition-all border border-white/20 whitespace-nowrap"
+          >
+            Join Community
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden flex items-center justify-between px-6 h-14 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="cursor-pointer"
+          onClick={() => navigate('/')}
+        >
+          <img 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
+            alt="Adventure Chaarana Logo" 
+            className="h-10 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+        
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={scrollToTreks}
+            className="text-[8px] font-black uppercase tracking-widest text-white/70"
+          >
+            Treks
+          </button>
+          <motion.button 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => {
+              const message = "Hey, i would like to join the community for further updates";
+              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+            }}
+            className="bg-brand-orange text-white px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest"
+          >
+            Join
+          </motion.button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
 const Background = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
@@ -815,7 +960,9 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
   return (
     <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
       {!isDetailsPage && <Background />}
-      <main className={`relative z-10 flex-1 pt-0`}>
+      <Navbar />
+      
+      <main className={`relative z-10 flex-1 pt-14 md:pt-16 lg:pt-20`}>
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -926,7 +1073,7 @@ const TermsPage = () => {
     {
       icon: "⚖️",
       title: "Booking & Cancellation",
-      description: "48h+ before: 45% deducted. Within 48h or for One-day treks: No refund or rescheduling under any circumstances."
+      description: "48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances."
     },
     {
       icon: "⛈️",
@@ -941,7 +1088,7 @@ const TermsPage = () => {
     {
       icon: "🚫",
       title: "Zero Tolerance",
-      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund"
+      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned."
     },
     {
       icon: "⏱️",
@@ -1002,7 +1149,7 @@ const TermsPage = () => {
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">02.</span>
-                    <p><strong>Zero Tolerance:</strong> Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund.</p>
+                    <p><strong>Zero Tolerance:</strong> Strictly no drinking & smoking during the entire duration of trip.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">03.</span>
@@ -1148,8 +1295,8 @@ const RefundPolicyPage = () => {
                   <p className="text-sm font-medium">45% of total package amount will be deducted as cancellation charges.</p>
                 </div>
                 <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
-                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS & ONE DAY TREKS</span>
-                  <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed for one-day treks or cancellations within 48 hours.</p>
+                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS</span>
+                  <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed under any circumstances.</p>
                 </div>
               </div>
             </div>
@@ -1249,7 +1396,7 @@ const SafetyPage = () => {
             <h2 className="text-3xl font-black tracking-tight">Adventure Safety Code</h2>
             <div className="grid gap-4">
               {[
-                { title: "Zero Tolerance", desc: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned and removed from the trip without any refund.", icon: "🚫" },
+                { title: "No Sustance Use", desc: "Strictly no drinking or smoking during the entire duration of the trip. Safety depends on your alertness.", icon: "🚫" },
                 { title: "Listen to Leads", desc: "Follow the Trip Captain's instructions at all times. Do not enter water bodies or explore solo without permission.", icon: "📣" },
                 { title: "Stay Together", desc: "Never separate from the group. If you wander off, you must formally discontinue the trip via an official message.", icon: "👫" },
                 { title: "Gear Check", desc: "Ensure you are carrying the recommended gear and wearing appropriate shoes. Safety starts with preparation.", icon: "👟" }
@@ -1304,20 +1451,20 @@ const TrekDetailsPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
-  const isOneDay = trek?.duration.toLowerCase().includes('1 day');
 
-  const getUpcomingBatches = () => {
+  const getUpcomingBatches = (trek: Trek) => {
     const batches = [];
     const today = new Date();
-    const searchLimit = isOneDay ? 30 : 60;
+    const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // Check next 30 or 60 days
-    for (let i = 0; i < searchLimit; i++) {
+    // Check next 30 days
+    for (let i = 0; i < 30; i++) {
       const date = new Date();
       date.setDate(today.getDate() + i);
       const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
-      // for 2-day treks, only Friday departures. For 1-day treks, both Fri & Sat.
+      // One day: Fri & Sat departures
+      // Two day: Only Fri departures
       if (day === 5 || (isOneDay && day === 6)) {
         const startDate = new Date(date);
         const endDate = new Date(date);
@@ -1332,6 +1479,7 @@ const TrekDetailsPage = () => {
           dayName: startDate.toLocaleDateString('en-IN', { weekday: 'short' })
         });
       }
+      if (batches.length >= 4) break;
     }
     return batches;
   };
@@ -1405,109 +1553,120 @@ const TrekDetailsPage = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      <header className="relative flex flex-col justify-center items-center min-h-[65vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden text-center px-6">
-        {/* Background Image with Enhanced Contrast */}
-        <div className="absolute inset-0 z-0 scale-110">
+      {/* ─── PROFESSIONAL COMPACT NAV ─── */}
+      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-12 flex items-center justify-between shadow-sm">
+        <button 
+          onClick={onBack}
+          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-brand-dark transition-all group"
+        >
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          Back
+        </button>
+        <div className="hidden md:flex items-center gap-3 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200">
+           <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Trek:</span>
+           <span className="text-[9px] font-black uppercase tracking-widest text-brand-dark">{trek.title}</span>
+        </div>
+        <button className="bg-brand-orange text-white px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-orange/20 hover:scale-105 transition-all">
+          Join Now 🧗
+        </button>
+      </nav>
+
+      {/* ─── IMMERSIVE CENTERED HERO ─── */}
+      <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <img 
             src={trek.image} 
             alt={`Mountain Expedition: ${trek.title} Sunrise Trail`} 
-            className="w-full h-full object-cover brightness-[0.75] contrast-[1.15]"
+            className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          {/* Layered Overlays for Dramatic Lighting */}
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-paper via-transparent to-brand-dark/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-transparent to-brand-paper/20" />
-          
-          {/* Subtle Color Wash */}
-          <div className="absolute inset-0 bg-brand-orange/10 mix-blend-color" />
-          
-          {/* Intense Animated Glow Highlight */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-full bg-[radial-gradient(circle,rgba(232,117,26,0.2)_0%,transparent_60%)] opacity-70 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/80 to-brand-dark/95" />
         </div>
         
-        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
-          <div className="w-full flex justify-start mb-12 md:mb-16">
-            <button 
-              onClick={onBack}
-              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-brand-orange-glow transition-all group drop-shadow-2xl bg-black/40 backdrop-blur-xl px-6 py-2.5 rounded-full border border-white/20"
+        <div className="max-w-4xl mx-auto w-full relative z-10 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-orange text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full mx-auto"
+          >
+            ⛰️ Karnataka Trekking Expedition
+          </motion.div>
+          
+          <div className="space-y-4">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter"
             >
-              <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              Back to Expeditions
-            </button>
+              {trek.title.split(' ')[0]} <br />
+              <span className="text-brand-orange-glow italic font-serif opacity-95">{trek.title.split(' ').slice(1).join(' ')}</span>
+            </motion.h1>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-6 text-white/50 font-bold text-[10px] uppercase tracking-widest pt-2"
+            >
+              <span className="flex items-center gap-1.5">🏔️ {trek.elevation}</span>
+              {trek.distance && <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>}
+              <span className="flex items-center gap-1.5">📍 {trek.location}</span>
+              <span className="flex items-center gap-1.5">👶 Age {trek.minAge}+</span>
+            </motion.div>
           </div>
 
-          <div className="relative group">
-            {/* Focal Highlight under the text - even stronger */}
-            <div className="absolute inset-0 bg-brand-orange/40 blur-[150px] rounded-full z-0 opacity-60 animate-pulse" />
-            
-            <div className="relative z-10 bg-black/20 backdrop-blur-md rounded-[3rem] md:rounded-[5rem] p-8 md:p-16 border border-white/10 shadow-2xl space-y-10">
-              <div className="space-y-6">
-                <div className="flex flex-col items-center gap-2">
-                  <motion.h1 
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
-                  >
-                    {trek.title.split(' ')[0]} <br />
-                    {trek.title.split(' ').slice(1).length > 0 && (
-                      <span className="text-brand-orange-glow italic font-serif opacity-100">{trek.title.split(' ').slice(1).join(' ')}</span>
-                    )}
-                  </motion.h1>
-                  
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="bg-brand-dark/90 backdrop-blur-2xl border border-white/10 px-10 py-5 rounded-full shadow-[0_30px_60px_rgba(0,0,0,0.6)] flex items-center gap-8 mt-10 relative z-20"
-                  >
-                    <div className="flex flex-col items-start leading-none gap-2">
-                      <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40">Guaranteed Best Price</span>
-                      <div className="flex items-baseline gap-3">
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-xl md:text-2xl text-brand-orange-glow font-black">₹</span>
-                          <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none">{trek.currentPrice.toLocaleString()}</span>
-                        </div>
-                        {trek.originalPrice > trek.currentPrice && (
-                          <span className="text-xl md:text-2xl font-bold text-white/20 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="w-px h-12 bg-white/10" />
-                    <div className="flex flex-col items-end leading-none gap-2">
-                      <span className="text-[10px] font-black text-brand-orange uppercase tracking-[.4em]">All Inclusive</span>
-                      <span className="text-[8px] font-bold text-white/40 uppercase tracking-widest italic">Taxes & Permits Included</span>
-                    </div>
-                  </motion.div>
-                </div>
-                
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="flex flex-wrap justify-center gap-4 md:gap-8 text-white font-black text-[10px] uppercase tracking-widest pt-6"
-                >
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
-                    <span className="text-brand-orange">🏔️</span> {trek.elevation}
-                  </div>
-                  {trek.distance && (
-                    <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
-                      <span className="text-brand-orange">📏</span> {trek.distance}
-                    </div>
-                  )}
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
-                    <span className="text-brand-orange">📍</span> {trek.location}
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20">
-                    <span className="text-brand-orange">👶</span> Age {trek.minAge}+
-                  </div>
-                </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+          >
+            <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
+              <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
+              <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
+                <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 space-y-16 md:space-y-20">
+      {/* ─── SCROLLING OFFERS BAND ─── */}
+      <div className="bg-brand-dark/95 text-white/50 py-3 md:py-4 overflow-hidden flex whitespace-nowrap border-y border-white/5 backdrop-blur-md relative">
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        
+        <motion.div 
+          animate={{ x: [0, -1200] }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="flex gap-20 items-center px-12 relative z-10"
+        >
+          {[1,2,3,4,5].map(i => (
+            <React.Fragment key={i}>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🎁</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 10% OFF SUNRISE TREKS</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🌍</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Eco-Sensitive Explorations'}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl md:text-2xl">🧗</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Certified Expedition Leads</span>
+              </div>
+            </React.Fragment>
+          ))}
+        </motion.div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
         {/* ─── PLACES WE COVER ─── */}
         {trek.placesCovered && trek.placesCovered.length > 0 && (
           <section className="space-y-8">
@@ -1539,18 +1698,18 @@ const TrekDetailsPage = () => {
         )}
 
         {/* ─── BATCHES & PICKUPS ─── */}
-        <section className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 sticky-trigger">
+        <section className="grid lg:grid-cols-2 gap-8 sticky-trigger">
           {/* Upcoming Batches */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center gap-3">
               <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📆 Available Batches</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
             
-            <div className="space-y-3">
-              <h3 className="text-xl md:text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
-              <div className="grid gap-2">
-                {getUpcomingBatches().map((batch, idx) => {
+            <div className="space-y-4">
+              <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
+              <div className="grid gap-3">
+                {getUpcomingBatches(trek).map((batch, idx) => {
                   const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
                   const waLink = `https://wa.me/918792019313?text=${whatsappMsg}`;
 
@@ -1560,17 +1719,21 @@ const TrekDetailsPage = () => {
                       href={waLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-white border border-slate-100 p-4 rounded-xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
+                      className="group bg-white border border-slate-100 p-5 rounded-2xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
                     >
-                      <div className="flex items-center gap-4">
-                        <div className="flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                          <span className="text-[9px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
-                          <span className="text-base font-black">{batch.start.split(' ')[0]}</span>
+                      <div className="flex items-center gap-5">
+                        <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                          <span className="text-[10px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
+                          <span className="text-lg font-black">{batch.start.split(' ')[0]}</span>
                         </div>
                         <div>
+                          <p className="text-[10px] font-black text-brand-orange uppercase tracking-widest mb-0.5">Booking Open</p>
                           <p className="font-bold text-slate-800 text-sm">{batch.start} - {batch.end}, {batch.year}</p>
                         </div>
                       </div>
+                      <button className="bg-slate-50 text-slate-400 group-hover:bg-brand-orange group-hover:text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+                        Book Now
+                      </button>
                     </a>
                   );
                 })}
@@ -1579,31 +1742,31 @@ const TrekDetailsPage = () => {
           </div>
 
           {/* Pickup Points */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center gap-3">
               <span className="text-cyan-500 text-[8px] font-black uppercase tracking-[0.4em]">🚍 Boarding Points</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
- 
-            <div className="bg-slate-900 rounded-[2.5rem] p-6 md:p-8 text-white relative overflow-hidden group">
+
+            <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Compass size={120} className="text-white animate-spin-slow" />
               </div>
               
-              <div className="relative z-10 space-y-6">
+              <div className="relative z-10 space-y-8">
                 <div className="space-y-1">
-                   <h3 className="text-xl md:text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
+                   <h3 className="text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
                    <p className="text-[10px] uppercase font-black tracking-widest text-white/40 italic">Departures from Bangalore</p>
                 </div>
- 
-                <div className="space-y-4">
+
+                <div className="space-y-6">
                   {(trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || []).map((p, idx, filtered) => (
                     <div key={idx} className="flex gap-4 group/point">
                       <div className="flex flex-col items-center gap-1 shrink-0">
                          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
                          {idx < filtered.length - 1 && <div className="w-px flex-1 bg-white/10" />}
                       </div>
-                      <div className="pb-3">
+                      <div className="pb-4">
                         <span className="text-[9px] font-black text-cyan-400 uppercase tracking-widest">{p.time}</span>
                         <p className="font-bold text-sm text-white/90">{p.activity.replace('📍', '').trim()}</p>
                         <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">Boarding Point</p>
@@ -1635,13 +1798,13 @@ const TrekDetailsPage = () => {
                 <span className="text-xl">🗓️</span>
                 <div>
                   <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
-                  <p className="font-bold text-white text-[10px]">{trek.duration.includes('2 Day') ? 'Friday' : 'Fri & Sat'} Night Departure</p>
+                  <p className="font-bold text-white text-[10px]">Friday Night Departure</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             <div className="space-y-12">
                {trek.itinerary.map((day, dIdx) => (
                  <div key={dIdx} className="space-y-4">
@@ -1669,6 +1832,16 @@ const TrekDetailsPage = () => {
                    </div>
                  </div>
                ))}
+            </div>
+
+            <div className="hidden lg:block sticky top-20 h-fit">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
+                 <img src={trek.gallery?.[1] || trek.image} alt={`Expedition Highlights - ${trek.title}`} className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                 <div className="absolute bottom-4 left-4 text-white">
+                   <p className="text-xl font-black leading-tight italic">"Where steps lead to <br/> better views."</p>
+                 </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1715,29 +1888,15 @@ const TrekDetailsPage = () => {
               { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
               { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
               { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
-              { 
-                icon: '🏅', 
-                title: trek.duration.includes('2 Day') ? 'Badge' : 'Finishing Badge', 
-                desc: trek.duration.includes('2 Day') 
-                  ? 'A high-quality physical metal badge to commemorate your adventure.' 
-                  : 'A high-quality physical metal badge to commemorate your successful summit and grit.' 
-              },
-              !trek.duration.includes('2 Day') && { 
-                icon: '📜', 
-                title: 'Achievement Certificate', 
-                desc: 'Official signed document recognizing your successful completion of the mountain expedition.' 
-              }
-            ].filter(Boolean).map((item, i) => (
+              { icon: '🏅', title: 'Finishing Badge', desc: 'A high-quality physical metal badge to commemorate your successful summit and grit.' },
+              { icon: '📜', title: 'Achievement Certificate', desc: 'Official signed document recognizing your successful completion of the mountain expedition.' }
+            ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
-                {item && typeof item === 'object' && (
-                  <>
-                    <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
-                      <span className="text-3xl">{item.icon}</span>
-                    </div>
-                    <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
-                    <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
-                  </>
-                )}
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
+                  <span className="text-3xl">{item.icon}</span>
+                </div>
+                <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
+                <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -2013,7 +2172,7 @@ const TrekDetailsPage = () => {
 
       {/* ─── FLOATING CTA ─── */}
       <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
-        <div className="max-w-md mx-auto pointer-events-auto">
+        <div className="max-w-md mx-auto flex gap-4 pointer-events-auto">
           <motion.button
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
@@ -2021,10 +2180,10 @@ const TrekDetailsPage = () => {
               const message = `I want to book the ${trek.title} Expedition! 🧗`;
               window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
             }}
-            className="w-full bg-[#25D366] text-white py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-[0_20px_50px_rgba(37,211,102,0.4)] flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
+            className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
           >
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-6 h-6 brightness-0 invert" />
-            Secure My Slot
+            Confirm My Slot
           </motion.button>
         </div>
       </div>
