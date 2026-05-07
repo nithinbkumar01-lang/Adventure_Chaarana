@@ -534,7 +534,8 @@ const TREKS: Trek[] = [
       'Transportation - Non-AC seater (Tempo Traveller / Mini Bus / Bus depending on group size)',
       'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
       'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
-      'All entry fees as per itinerary'
+      'All entry fees as per itinerary',
+      'Badges'
     ],
     exclusions: [
       'Any other expenses incurred apart from inclusions',
@@ -634,7 +635,7 @@ const TREKS: Trek[] = [
       'Accommodation (sharing basis)',
       'Meals: 2 Breakfast, 1 Packed Lunch (Day 1), 1 Dinner',
       'Sightseeing as per itinerary',
-      'Finishing Badges & Achievement Certificates'
+      'Badges'
     ],
     exclusions: [
       'Day 2 Lunch & Dinner',
@@ -730,7 +731,8 @@ const TREKS: Trek[] = [
       'Meals: 2 Breakfasts, 1 Lunch, 1 Dinner',
       'Forest entry permissions & Guide fees',
       'Professional Trek Leads',
-      'First Aid Support'
+      'First Aid Support',
+      'Badges'
     ],
     exclusions: [
       'Day 2: Lunch & Dinner',
@@ -1686,15 +1688,29 @@ const TrekDetailsPage = () => {
               { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
               { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
               { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
-              { icon: '🏅', title: 'Finishing Badge', desc: 'A high-quality physical metal badge to commemorate your successful summit and grit.' },
-              { icon: '📜', title: 'Achievement Certificate', desc: 'Official signed document recognizing your successful completion of the mountain expedition.' }
-            ].map((item, i) => (
+              { 
+                icon: '🏅', 
+                title: trek.duration.includes('2 Day') ? 'Badge' : 'Finishing Badge', 
+                desc: trek.duration.includes('2 Day') 
+                  ? 'A high-quality physical metal badge to commemorate your adventure.' 
+                  : 'A high-quality physical metal badge to commemorate your successful summit and grit.' 
+              },
+              !trek.duration.includes('2 Day') && { 
+                icon: '📜', 
+                title: 'Achievement Certificate', 
+                desc: 'Official signed document recognizing your successful completion of the mountain expedition.' 
+              }
+            ].filter(Boolean).map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
-                  <span className="text-3xl">{item.icon}</span>
-                </div>
-                <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
-                <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
+                {item && typeof item === 'object' && (
+                  <>
+                    <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
+                      <span className="text-3xl">{item.icon}</span>
+                    </div>
+                    <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
+                    <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
