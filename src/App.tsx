@@ -1403,47 +1403,50 @@ const TrekDetailsPage = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      <header className="relative flex flex-col justify-center items-center min-h-[50vh] md:min-h-[60vh] overflow-hidden text-center px-6">
+      <header className="relative flex flex-col justify-center items-center min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             src={trek.image} 
             alt={`Mountain Expedition: ${trek.title} Sunrise Trail`} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/20 via-brand-dark/60 to-brand-paper" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/20 to-brand-paper" />
+          <div className="absolute inset-0 bg-brand-dark/30 backdrop-blur-[1px]" />
         </div>
         
         <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
-          <div className="w-full flex justify-start mb-12">
+          <div className="w-full flex justify-start mb-8 md:mb-12">
             <button 
               onClick={onBack}
-              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-all group drop-shadow-md"
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-brand-orange-glow transition-all group drop-shadow-lg bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"
             >
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               Back to Treks
             </button>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
+            <div className="absolute -inset-20 bg-brand-orange-glow/10 blur-[100px] rounded-full z-0 opacity-50" />
+            
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-brand-orange text-white text-[8px] font-black uppercase tracking-[0.4em] rounded-full mx-auto shadow-xl"
+              className="relative z-10 inline-flex items-center gap-2 px-3 py-1 bg-brand-orange text-white text-[8px] font-black uppercase tracking-[0.4em] rounded-full mx-auto shadow-xl"
             >
               ⛰️ Karnataka Trekking Expedition
             </motion.div>
             
-            <div className="space-y-4">
+            <div className="space-y-4 relative z-10">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-6xl md:text-8xl lg:text-9xl font-black text-brand-dark leading-[0.9] tracking-tighter"
+                className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
               >
                 {trek.title.split(' ')[0]} <br />
                 {trek.title.split(' ').slice(1).length > 0 && (
-                  <span className="text-brand-orange-glow italic font-serif">{trek.title.split(' ').slice(1).join(' ')}</span>
+                  <span className="text-brand-orange-glow italic font-serif opacity-95">{trek.title.split(' ').slice(1).join(' ')}</span>
                 )}
               </motion.h1>
               
@@ -1451,20 +1454,20 @@ const TrekDetailsPage = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="flex flex-wrap justify-center gap-6 text-slate-500 font-bold text-[10px] uppercase tracking-widest pt-4"
+                className="flex flex-wrap justify-center gap-4 md:gap-6 text-slate-800 font-bold text-[10px] uppercase tracking-widest pt-6"
               >
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
                   <span className="text-brand-orange">🏔️</span> {trek.elevation}
                 </div>
                 {trek.distance && (
-                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
                     <span className="text-brand-orange">📏</span> {trek.distance}
                   </div>
                 )}
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
                   <span className="text-brand-orange">📍</span> {trek.location}
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-white shadow-xl">
                   <span className="text-brand-orange">👶</span> Age {trek.minAge}+
                 </div>
               </motion.div>
@@ -1473,7 +1476,7 @@ const TrekDetailsPage = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 lg:py-24 space-y-16 md:space-y-20">
         {/* ─── PLACES WE COVER ─── */}
         {trek.placesCovered && trek.placesCovered.length > 0 && (
           <section className="space-y-8">
