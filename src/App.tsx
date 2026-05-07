@@ -1315,8 +1315,8 @@ const TrekDetailsPage = () => {
       date.setDate(today.getDate() + i);
       const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
-      // Fri & Sat departures
-      if (day === 5 || day === 6) {
+      // for 2-day treks, only Friday departures. For 1-day treks, both Fri & Sat.
+      if (day === 5 || (isOneDay && day === 6)) {
         const startDate = new Date(date);
         const endDate = new Date(date);
         endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
