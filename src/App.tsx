@@ -1442,16 +1442,43 @@ const TrekDetailsPage = () => {
             
             <div className="relative z-10 bg-black/20 backdrop-blur-md rounded-[3rem] md:rounded-[5rem] p-8 md:p-16 border border-white/10 shadow-2xl space-y-10">
               <div className="space-y-6">
-                <motion.h1 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
-                >
-                  {trek.title.split(' ')[0]} <br />
-                  {trek.title.split(' ').slice(1).length > 0 && (
-                    <span className="text-brand-orange-glow italic font-serif opacity-100">{trek.title.split(' ').slice(1).join(' ')}</span>
-                  )}
-                </motion.h1>
+                <div className="flex flex-col items-center gap-2">
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
+                  >
+                    {trek.title.split(' ')[0]} <br />
+                    {trek.title.split(' ').slice(1).length > 0 && (
+                      <span className="text-brand-orange-glow italic font-serif opacity-100">{trek.title.split(' ').slice(1).join(' ')}</span>
+                    )}
+                  </motion.h1>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-brand-dark/90 backdrop-blur-2xl border border-white/10 px-10 py-5 rounded-full shadow-[0_30px_60px_rgba(0,0,0,0.6)] flex items-center gap-8 mt-10 relative z-20"
+                  >
+                    <div className="flex flex-col items-start leading-none gap-2">
+                      <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40">Guaranteed Best Price</span>
+                      <div className="flex items-baseline gap-3">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-xl md:text-2xl text-brand-orange-glow font-black">₹</span>
+                          <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none">{trek.currentPrice.toLocaleString()}</span>
+                        </div>
+                        {trek.originalPrice > trek.currentPrice && (
+                          <span className="text-xl md:text-2xl font-bold text-white/20 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="w-px h-12 bg-white/10" />
+                    <div className="flex flex-col items-end leading-none gap-2">
+                      <span className="text-[10px] font-black text-brand-orange uppercase tracking-[.4em]">All Inclusive</span>
+                      <span className="text-[8px] font-bold text-white/40 uppercase tracking-widest italic">Taxes & Permits Included</span>
+                    </div>
+                  </motion.div>
+                </div>
                 
                 <motion.div 
                   initial={{ opacity: 0 }}
@@ -1986,7 +2013,7 @@ const TrekDetailsPage = () => {
 
       {/* ─── FLOATING CTA ─── */}
       <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
-        <div className="max-w-md mx-auto flex gap-4 pointer-events-auto">
+        <div className="max-w-md mx-auto pointer-events-auto">
           <motion.button
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
@@ -1994,10 +2021,10 @@ const TrekDetailsPage = () => {
               const message = `I want to book the ${trek.title} Expedition! 🧗`;
               window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
             }}
-            className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
+            className="w-full bg-[#25D366] text-white py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-[0_20px_50px_rgba(37,211,102,0.4)] flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
           >
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-6 h-6 brightness-0 invert" />
-            Confirm My Slot
+            Secure My Slot
           </motion.button>
         </div>
       </div>
