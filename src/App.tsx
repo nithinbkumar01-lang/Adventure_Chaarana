@@ -78,8 +78,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 799,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 749,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382263/4790249a-ade4-4ee4-b4d8-f5cd5071e794.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -156,8 +156,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
-    currentPrice: 1499,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 1299,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
@@ -233,8 +233,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
-    currentPrice: 1499,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 1299,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
@@ -296,8 +296,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 799,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 749,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -358,8 +358,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 799,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 749,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
@@ -420,8 +420,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
-    currentPrice: 799,
-    discount: '5% GROUP DISCOUNT',
+    currentPrice: 749,
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
@@ -481,9 +481,9 @@ const TREKS: Trek[] = [
     distance: '',
     minAge: '5 Years',
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
-    originalPrice: 6200,
-    currentPrice: 5499,
-    discount: '5% GROUP DISCOUNT',
+    originalPrice: 5499,
+    currentPrice: 5299,
+    discount: 'LIMITED PRICE',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
@@ -585,7 +585,7 @@ const TREKS: Trek[] = [
     description: 'Trek to the highest peak of Coorg. Experience the lush shola forests and rolling grasslands of the Western Ghats, culminating in a visit to the golden temple and Mysore.',
     originalPrice: 4499,
     currentPrice: 4199,
-    discount: '5% GROUP DISCOUNT',
+    discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988160/246526e1-e4af-4f2b-85c4-be56c2e0b88d.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
@@ -675,7 +675,7 @@ const TREKS: Trek[] = [
     minAge: '5 Years',
     currentPrice: 4200,
     originalPrice: 5200,
-    discount: '5% GROUP DISCOUNT',
+    discount: '5% OFF (3+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
@@ -1072,33 +1072,33 @@ const TermsPage = () => {
   const policies = [
     {
       icon: "⚖️",
-      title: "Booking & Cancellation",
-      description: "48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances."
+      title: "Reservation Policy",
+      description: "Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable."
     },
     {
       icon: "⛈️",
-      title: "Calamities (Before)",
-      description: "Full refund issued for cancellations due to natural disasters, unrest, or forest entry prohibitions (minus GST/Gateway fees)."
+      title: "Unforeseen Circumstances",
+      description: "Safety first! Full refunds (minus standard fees) issued if trips are cancelled by us due to natural events or government restrictions."
     },
     {
       icon: "🚧",
-      title: "During Trip Issues",
-      description: "No refunds or alternative arrangements if itinerary is blocked by traffic, weather, or authority restrictions during travel."
+      title: "On-the-Road Logic",
+      description: "We aren't responsible for delays caused by traffic, weather, or sudden local authority changes once the journey has begun."
     },
     {
       icon: "🚫",
-      title: "Zero Tolerance",
-      description: "Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned."
+      title: "Conduct Code",
+      description: "We are a strictly dry/smoke-free community. Any substance use will lead to immediate removal and a permanent ban from our trips."
     },
     {
       icon: "⏱️",
-      title: "Strict Punctuality",
-      description: "The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one."
+      title: "Time Integrity",
+      description: "Our departures are precise. To respect everyone's time and catch the views, the bus will leave exactly as scheduled."
     },
     {
       icon: "🧤",
-      title: "Eco-Sensitive",
-      description: "We maintain a strict 'Leave No Trace' policy. No littering allowed; carry your plastic waste back to the city."
+      title: "Nature First",
+      description: "Leave nothing behind but footprints. Strictly no littering; help us keep the mountains pristine by carrying your waste back."
     }
   ];
 
@@ -1145,39 +1145,39 @@ const TermsPage = () => {
                 <ul className="space-y-4 list-none p-0">
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">01.</span>
-                    <p><strong>Cooperation:</strong> If you want the Trip to be a memorable experience, you need to cooperate with your Trip captain.</p>
+                    <p><strong>Team Spirit:</strong> A successful expedition relies on mutual respect and cooperation with your trek captain at all times.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">02.</span>
-                    <p><strong>Zero Tolerance:</strong> Strictly no drinking & smoking during the entire duration of trip.</p>
+                    <p><strong>Sober Trails:</strong> We maintain a strictly alcohol and smoke-free environment throughout the entire journey.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">03.</span>
-                    <p><strong>Eco-Impact:</strong> Do not create any nuisances on the way by throwing any kind of plastic waste.</p>
+                    <p><strong>Pristine Nature:</strong> Help us protect the wild. Disposal of any plastic or non-biodegradable waste on the trail is strictly forbidden.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">04.</span>
-                    <p><strong>Authority Decisions:</strong> Sometimes local authorities might restrict entry. Adventure Chaarana will try to make alternate arrangements but is not responsible for authorities' decisions.</p>
+                    <p><strong>Regulatory Compliance:</strong> We respect local authority mandates. While we strive to provide alternatives if access is denied, we are not liable for their final decisions.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">05.</span>
-                    <p><strong>Belongings:</strong> You will be responsible for your belongings.</p>
+                    <p><strong>Personal Gear:</strong> Participants are solely responsible for their personal items and equipment throughout the trip.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">06.</span>
-                    <p><strong>Delays:</strong> Arrival might be delayed due to heavy rains, traffic, or other unavoidable circumstances.</p>
+                    <p><strong>Timeline Variance:</strong> Return and arrival times are estimates. Delays due to weather, traffic, or road conditions are possible.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">07.</span>
-                    <p><strong>No Luxury:</strong> Do not expect luxury in accommodation. Hot water and campfire are weather-dependent.</p>
+                    <p><strong>Aura of Adventure:</strong> Trekking involves basic amenities. Campfires and hot water are communal and subject to weather availability.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">08.</span>
-                    <p><strong>Medical/Risk:</strong> Mandatory signing of Medical, Risk, and Indemnity forms before starting. Under 18 requires parental consent.</p>
+                    <p><strong>Health & Safety:</strong> Signing our mandatory risk and indemnity disclosure is required for all. Minors must have a guardian's authorization.</p>
                   </li>
                   <li className="flex gap-4">
                     <span className="text-brand-orange font-bold">09.</span>
-                    <p><strong>Insurance:</strong> No medical/accidental insurance included. It is highly recommended to have insurance.</p>
+                    <p><strong>Secure Protection:</strong> While we prioritize safety, personal travel and medical insurance are strongly advised for all participants.</p>
                   </li>
                 </ul>
               </div>
@@ -1651,7 +1651,7 @@ const TrekDetailsPage = () => {
             <React.Fragment key={i}>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 5% GROUP DISCOUNT FOR ALL TRIPS & TREKS</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 5% OFF FOR GROUPS ABOVE 3 PEOPLE</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🌍</span>
@@ -1711,7 +1711,7 @@ const TrekDetailsPage = () => {
               <div className="grid gap-3">
                 {getUpcomingBatches(trek).map((batch, idx) => {
                   const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
-                  const waLink = `https://wa.me/918792019313?text=${whatsappMsg}`;
+                  const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
 
                   return (
                     <a 
@@ -1885,11 +1885,11 @@ const TrekDetailsPage = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '🚌', title: 'Seamless Travel', desc: 'Comfortable round-trip transportation from Bangalore pickup points in sanitized Tempo Travelers.' },
-              { icon: '👤', title: 'Expert Leads', desc: 'Certified outdoor experts and local guides focused on your group safety and navigation throughout the trail.' },
-              { icon: '🎫', title: 'Forest Permits', desc: 'All mandatory forest department entry fees and park permissions are pre-booked and handled by us.' },
-              { icon: '🏅', title: 'Finishing Badge', desc: 'A high-quality physical metal badge to commemorate your successful summit and grit.' },
-              { icon: '📜', title: 'Achievement Certificate', desc: 'Official signed document recognizing your successful completion of the mountain expedition.' }
+              { icon: '🚌', title: 'Comfortable Transit', desc: 'Hassle-free round-trip travel from Bangalore in our well-maintained and sanitized push-back Tempo Travelers.' },
+              { icon: '👤', title: 'Professional Guidance', desc: 'Safety-first navigation by our certified mountaineers and local trek veterans who know the terrain inside out.' },
+              { icon: '🎫', title: 'Smooth Clearances', desc: 'We handle all necessary forest permissions and entry permits, so you can focus solely on your adventure.' },
+              { icon: '🏅', title: 'Summit Mementos', desc: 'Receive a premium physical metal badge—a badge of honor to remember your mountain conquest.' },
+              { icon: '📜', title: 'Official Recognition', desc: 'Get a signed digital certificate of achievement, documenting your grit and successful summit.' }
             ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
@@ -2003,6 +2003,56 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
+        {/* ─── WHY CHOOSE US ─── */}
+        <section className="space-y-10">
+          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-slate-100">
+            <div className="space-y-1 relative z-10">
+              <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">🌟 Expertise</div>
+              <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">
+                Why Choose <span className="text-brand-orange italic font-serif">Adventure Chaarana?</span>
+              </h3>
+            </div>
+          </div>
+          
+          <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm space-y-8">
+            <div className="grid md:grid-cols-2 gap-12 font-medium text-slate-600 leading-relaxed">
+              <div className="space-y-6">
+                <p>
+                  <span className="text-brand-dark font-black">Adventure Chaarana</span> is a premier outdoor collective with over 3 years of specialized experience in crafting unforgettable journeys across the Himalayas, Western Ghats, and the Sahyadri ranges.
+                </p>
+                <p>
+                  We take pride in our inclusive approach, welcoming everyone from solo explorers and families to corporate teams and friend groups. Our expeditions are led by <span className="text-brand-dark font-black">Certified Trek Leaders and First Responders</span>, ensuring that your safety remains our absolute top priority.
+                </p>
+                <p>
+                  As an eco-conscious organization, we strictly enforce a "Leave No Trace" policy and maintain a professional, substance-free environment on all our trips. We are committed to being a safe space for women and solo travelers, providing female trek leads to enhance comfort and security for all.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { icon: '🛡️', text: 'Safety-First Mindset' },
+                    { icon: '👨‍🎓', text: 'Certified First Responders' },
+                    { icon: '🚺', text: 'Safe for Women & Solo Souls' },
+                    { icon: '👩', text: 'Female Trek Leads Available' },
+                    { icon: '🚭', text: 'Dry & Smoke-Free Trips' },
+                    { icon: '🌱', text: 'Zero-Waste Trail Ethics' },
+                    { icon: '💰', text: 'Budget-Friendly Adventures' },
+                    { icon: '🏔️', text: '3+ Years Peak Experience' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-[11px]">
+                      <span className="text-xl">{item.icon}</span>
+                      <span className="font-bold text-slate-700">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── ONE DAY GALLERY (CONDITIONAL) ─── */}
+        {trek.duration.toLowerCase().includes('1 day') && <OneDayGallery />}
+
         {/* ─── POLICY ─── */}
         <section className="space-y-10">
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
@@ -2020,12 +2070,12 @@ const TrekDetailsPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: '⚖️', label: 'Booking & Cancellation', desc: '48h+ before: 45% of total package deducted. Within 48h: No refund or rescheduling under any circumstances.' },
-              { icon: '⛈️', label: 'Calamities (Before)', desc: 'Full refund issued for cancellations due to natural disasters, unrest, or forest entry prohibitions (minus GST/Gateway fees).' },
-              { icon: '🚧', label: 'During Trip Issues', desc: 'No refunds or alternative arrangements if itinerary is blocked by traffic, weather, or authority restrictions during travel.' },
-              { icon: '🚫', label: 'Zero Tolerance', desc: 'Smoking, alcohol, or any form of substance use is strictly prohibited. Violators will be banned.' },
-              { icon: '⏱️', label: 'Strict Punctuality', desc: 'The bus will leave at the scheduled time. No refunds for latecomers as sunset/sunrise waits for no one.' },
-              { icon: '🧤', label: 'Eco-Sensitive', desc: 'We maintain a strict "Leave No Trace" policy. No littering allowed; carry your plastic waste back to the city.' }
+              { icon: '⚖️', label: 'Reservation Policy', desc: 'Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable.' },
+              { icon: '⛈️', label: 'Unforeseen Circumstances', desc: 'Safety first! Full refunds (minus standard fees) issued if trips are cancelled by us due to natural events or government restrictions.' },
+              { icon: '🚧', label: 'On-the-Road Logic', desc: 'We aren\'t responsible for delays caused by traffic, weather, or sudden local authority changes once the journey has begun.' },
+              { icon: '🚫', label: 'Conduct Code', desc: 'We are a strictly dry/smoke-free community. Any substance use will lead to immediate removal and a permanent ban from our trips.' },
+              { icon: '⏱️', label: 'Time Integrity', desc: 'Our departures are precise. To respect everyone\'s time and catch the views, the bus will leave exactly as scheduled.' },
+              { icon: '🧤', label: 'Nature First', desc: 'Leave nothing behind but footprints. Strictly no littering; help us keep the mountains pristine by carrying your waste back.' }
             ].map((item, i) => (
               <div key={i} className="p-6 bg-slate-50 rounded-xl flex items-start gap-4 hover:bg-white hover:shadow-xl hover:shadow-slate-100 transition-all border border-transparent hover:border-slate-100">
                 <span className="text-3xl shrink-0 p-1 bg-white rounded-xl shadow-sm">{item.icon}</span>
@@ -2256,6 +2306,69 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
   );
 };
 
+const ONE_DAY_TREK_GALLERY = [
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_2607_esvkdr.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591371/WhatsApp_Image_2026-05-12_at_6.38.22_PM_ty88zx.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.12_PM_n44wjf.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.18_PM_yximiw.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/3_snpy8h.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590559/2_fisfsx.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/4_cgzqva.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5621_qhbc3b.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5628_xnbiec.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_6090_mgegx2.jpg",
+  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590555/IMG_3743_dinczl.jpg"
+];
+
+const OneDayGallery = () => {
+  return (
+    <section className="py-20 md:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
+        <div className="text-center space-y-4">
+          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Expedition Moments</div>
+          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+            One-Day <span className="text-brand-orange italic font-serif">Escapes Gallery</span>
+          </h2>
+          <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
+            A window into the wild. Authentic captures from our sunrise trails, monolithic climbs, and the vibrant community that calls the mountains home.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {ONE_DAY_TREK_GALLERY.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="relative overflow-hidden rounded-[2rem] border border-slate-100 group aspect-square"
+            >
+              <img 
+                src={img} 
+                alt={`Adventure Chaarana One Day Trek Gallery Moment ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6">
+                 <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                   <Mountain size={20} />
+                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   return (
     <AnimatePresence>
@@ -2296,7 +2409,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Group Special</p>
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
                   Flat 5% Group Discount <br/>
-                  <span className="text-[#f15a24] italic uppercase">on all Trips & Treks</span>
+                  <span className="text-[#f15a24] italic uppercase text-xl">for groups above 3 people</span>
                 </h3>
               </div>
 
@@ -2304,7 +2417,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 <p className="text-slate-600 font-bold leading-relaxed relative z-10">
                   Join with your team and save! <br/> 
-                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">For all upcoming adventures</span>.
+                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">Available for all upcoming adventures</span>.
                 </p>
               </div>
 
@@ -2312,7 +2425,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const message = "Hi! I'd like to claim the 5% group discount for all trips and treks. How can I proceed?";
+                  const message = "Hi! I'd like to claim the 5% group discount for groups above 3. How can I proceed?";
                   const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
                   window.open(waUrl, '_blank');
                   onClose();
@@ -2404,8 +2517,8 @@ const HomePage = () => {
               transition={{ delay: 0.6, duration: 1 }}
               className="text-xs md:text-lg text-white/60 font-medium leading-relaxed max-w-xl mx-auto drop-shadow-lg px-6"
             >
-              Crafting authentic mountain expeditions from Bangalore <br className="hidden md:block" /> 
-              for the modern explorer in the heart of the Western Ghats.
+              Designing genuine wilderness expeditions from Bangalore <br className="hidden md:block" /> 
+              for bold adventurers across the majestic Western Ghats.
             </motion.p>
           </div>
         </div>
@@ -2445,7 +2558,7 @@ const HomePage = () => {
             Explore Treks by Category
           </h2>
           <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide mb-8 md:mb-12">
-            Find your next adventure based on what you love.
+            Choose your next thrill from our handpicked collection of curated escapes.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 md:mb-20 overflow-x-auto pb-4 px-2 no-scrollbar">
@@ -2484,6 +2597,9 @@ const HomePage = () => {
           )}
         </div>
       </section>
+
+      {/* ─── ONE DAY GALLERY ─── */}
+      <OneDayGallery />
     </div>
   );
 };
