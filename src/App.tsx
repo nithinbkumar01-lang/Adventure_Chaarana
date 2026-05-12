@@ -79,7 +79,7 @@ const TREKS: Trek[] = [
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382263/4790249a-ade4-4ee4-b4d8-f5cd5071e794.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -157,7 +157,7 @@ const TREKS: Trek[] = [
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
     currentPrice: 1499,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
@@ -234,7 +234,7 @@ const TREKS: Trek[] = [
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
     currentPrice: 1499,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
@@ -297,7 +297,7 @@ const TREKS: Trek[] = [
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
     currentPrice: 799,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -359,7 +359,7 @@ const TREKS: Trek[] = [
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
@@ -421,7 +421,7 @@ const TREKS: Trek[] = [
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
     currentPrice: 799,
-    discount: '10% OFF SUNRISE TREKS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
@@ -483,7 +483,7 @@ const TREKS: Trek[] = [
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 6200,
     currentPrice: 5499,
-    discount: 'LIMITED SLOTS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
@@ -585,7 +585,7 @@ const TREKS: Trek[] = [
     description: 'Trek to the highest peak of Coorg. Experience the lush shola forests and rolling grasslands of the Western Ghats, culminating in a visit to the golden temple and Mysore.',
     originalPrice: 4499,
     currentPrice: 4199,
-    discount: 'LIMITED SLOTS',
+    discount: '5% GROUP DISCOUNT',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988160/246526e1-e4af-4f2b-85c4-be56c2e0b88d.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
@@ -675,7 +675,7 @@ const TREKS: Trek[] = [
     minAge: '5 Years',
     currentPrice: 4200,
     originalPrice: 5200,
-    discount: 'WESTERN GHATS SPECIAL',
+    discount: '5% GROUP DISCOUNT',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
@@ -1651,7 +1651,7 @@ const TrekDetailsPage = () => {
             <React.Fragment key={i}>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 10% OFF SUNRISE TREKS</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 5% GROUP DISCOUNT FOR ALL TRIPS & TREKS</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl">🌍</span>
@@ -2293,18 +2293,18 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
               </div>
 
               <div className="text-center space-y-3">
-                <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Sunrise Special</p>
+                <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Group Special</p>
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                  Flat 10% OFF on <br/>
-                  <span className="text-[#f15a24] italic uppercase">Sunrise Treks</span>
+                  Flat 5% Group Discount <br/>
+                  <span className="text-[#f15a24] italic uppercase">on all Trips & Treks</span>
                 </h3>
               </div>
 
               <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-100 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 <p className="text-slate-600 font-bold leading-relaxed relative z-10">
-                  Valid for all upcoming <br/> 
-                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">Sunrise Adventures</span>.
+                  Join with your team and save! <br/> 
+                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">For all upcoming adventures</span>.
                 </p>
               </div>
 
@@ -2312,7 +2312,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const message = "Hi! I'd like to claim the 10% discount for Sunrise Treks. How can I proceed?";
+                  const message = "Hi! I'd like to claim the 5% group discount for all trips and treks. How can I proceed?";
                   const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
                   window.open(waUrl, '_blank');
                   onClose();
