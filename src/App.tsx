@@ -2018,28 +2018,23 @@ const TrekDetailsPage = () => {
             <div className="grid md:grid-cols-2 gap-12 font-medium text-slate-600 leading-relaxed">
               <div className="space-y-6">
                 <p>
-                  <span className="text-brand-dark font-black">Adventure Chaarana</span> is a premier outdoor collective with over 3 years of specialized experience in crafting unforgettable journeys across the Himalayas, Western Ghats, and the Sahyadri ranges.
+                  With roots in raw exploration, <span className="text-brand-dark font-black">Adventure Chaarana</span> has dedicated the last three years to carving authentic paths through the Himalayas, the emerald Western Ghats, and the sprawling Sahyadris.
                 </p>
                 <p>
-                  We take pride in our inclusive approach, welcoming everyone from solo explorers and families to corporate teams and friend groups. Our expeditions are led by <span className="text-brand-dark font-black">Certified Trek Leaders and First Responders</span>, ensuring that your safety remains our absolute top priority.
-                </p>
-                <p>
-                  As an eco-conscious organization, we strictly enforce a "Leave No Trace" policy and maintain a professional, substance-free environment on all our trips. We are committed to being a safe space for women and solo travelers, providing female trek leads to enhance comfort and security for all.
+                  Our mission is to bridge the gap between people and the peaks—serving a diverse community of solo souls, families, and corporate teams. Led by <span className="text-brand-dark font-black">Certified Mountaineers and Emergency Responders</span>, we prioritize your safety so you can focus on the summit.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    { icon: '🛡️', text: 'Safety-First Mindset' },
-                    { icon: '👨‍🎓', text: 'Certified First Responders' },
-                    { icon: '🚺', text: 'Safe for Women & Solo Souls' },
-                    { icon: '👩', text: 'Female Trek Leads Available' },
-                    { icon: '🚭', text: 'Dry & Smoke-Free Trips' },
-                    { icon: '🌱', text: 'Zero-Waste Trail Ethics' },
-                    { icon: '💰', text: 'Budget-Friendly Adventures' },
-                    { icon: '🏔️', text: '3+ Years Peak Experience' }
+                    { icon: '🚭', text: 'Sober Trails & Pure Air' },
+                    { icon: '🌱', text: 'Conscious Footprints' },
+                    { icon: '👩', text: 'Inclusive Leadership' },
+                    { icon: '🛡️', text: 'Safety-Obsessed Ethics' },
+                    { icon: '🚺', text: 'Safe for Solo Souls' },
+                    { icon: '💰', text: 'Grit Over Gold' }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-[11px]">
+                    <div key={i} className="flex items-center gap-3 text-xs">
                       <span className="text-xl">{item.icon}</span>
                       <span className="font-bold text-slate-700">{item.text}</span>
                     </div>
