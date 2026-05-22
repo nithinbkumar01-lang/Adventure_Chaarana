@@ -158,7 +158,7 @@ const TREKS: Trek[] = [
     originalPrice: 2200,
     currentPrice: 1299,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440973/2_bckyhk.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474835/4f4cf98b-7e87-4312-9656-c4a6648ab864.png',
@@ -235,7 +235,7 @@ const TREKS: Trek[] = [
     originalPrice: 2200,
     currentPrice: 1299,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440971/3_itucgf.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474908/0276cc50-a26d-4602-a4d6-982106b75fa5.png',
@@ -298,7 +298,7 @@ const TREKS: Trek[] = [
     originalPrice: 1200,
     currentPrice: 749,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440970/4_iby5xb.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474987/84522134-5645-4383-bdc1-a0a992b5d501.png',
@@ -360,7 +360,7 @@ const TREKS: Trek[] = [
     originalPrice: 1100,
     currentPrice: 749,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440967/5_ylvihq.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475056/167b04de-82fe-4163-b580-3fc1e6368cdf.png',
@@ -422,7 +422,7 @@ const TREKS: Trek[] = [
     originalPrice: 1100,
     currentPrice: 749,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440965/6_u5qtbo.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475222/8b0a2455-249b-4d76-9613-3446c2a7be8e.png',
@@ -484,7 +484,7 @@ const TREKS: Trek[] = [
     originalPrice: 5499,
     currentPrice: 5299,
     discount: 'LIMITED PRICE',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882021/a074c025-b16c-41af-abb8-fb84452b2237.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882199/40410f69-c7c3-44ee-9379-2d45205093c8.png',
@@ -586,7 +586,7 @@ const TREKS: Trek[] = [
     originalPrice: 4499,
     currentPrice: 4199,
     discount: '5% OFF (3+ GROUPS)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988160/246526e1-e4af-4f2b-85c4-be56c2e0b88d.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988362/0742d8da-17a0-4c46-883e-e3a665d9e345.png'
@@ -790,150 +790,7 @@ const Breadcrumbs = () => {
   );
 };
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const scrollToTreks = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const section = document.getElementById('treks-section');
-        if (section) section.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const section = document.getElementById('treks-section');
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToFooter = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const footer = document.getElementById('footer');
-    if (footer) footer.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  interface NavItem {
-    label: string;
-    onClick?: (e: React.MouseEvent) => void;
-    path?: string;
-  }
-
-  const navLinksLeft: NavItem[] = [
-    { label: 'Treks', onClick: scrollToTreks },
-    { label: 'Contact', onClick: scrollToFooter },
-    { label: 'Terms', path: '/terms' }
-  ];
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-[60] transition-all duration-300">
-      <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-xl border-b border-white/5 shadow-2xl" />
-      
-      {/* Desktop Centered Navbar */}
-      <div className="hidden md:grid max-w-7xl mx-auto px-12 h-16 lg:h-20 grid-cols-[1fr_auto_1fr] items-center relative z-10">
-        {/* Left Links */}
-        <nav className="flex items-center gap-10 justify-start">
-          {navLinksLeft.map((item, idx) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + idx * 0.1 }}
-            >
-              {item.onClick ? (
-                <button 
-                  onClick={item.onClick}
-                  className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group cursor-pointer"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
-                </button>
-              ) : (
-                <Link to={item.path || '/'} className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80 hover:text-white transition-all hover:tracking-[0.35em] relative group">
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
-                </Link>
-              )}
-            </motion.div>
-          ))}
-        </nav>
-
-        {/* Logo (Center) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex items-center justify-center cursor-pointer px-10"
-          onClick={() => navigate('/')}
-        >
-          <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
-            alt="Adventure Chaarana - Premium Trekking & Adventure Community Logo" 
-            className="h-12 lg:h-16 w-auto object-contain transition-all hover:scale-110"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-
-        {/* Right Section */}
-        <div className="flex items-center gap-10 justify-end">
-          <motion.button 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Join our WhatsApp community"
-            onClick={() => {
-              const message = "Hey, i would like to join the community for further updates";
-              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
-            }}
-            className="bg-brand-orange text-white px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.25em] shadow-[0_8px_20px_rgba(232,117,26,0.3)] hover:shadow-brand-orange/60 transition-all border border-white/20 whitespace-nowrap"
-          >
-            Join Community
-          </motion.button>
-        </div>
-      </div>
-
-      {/* Mobile Navbar */}
-      <div className="md:hidden flex items-center justify-between px-6 h-14 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="cursor-pointer"
-          onClick={() => navigate('/')}
-        >
-          <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" 
-            alt="Adventure Chaarana Logo" 
-            className="h-10 w-auto object-contain"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-        
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={scrollToTreks}
-            className="text-[8px] font-black uppercase tracking-widest text-white/70"
-          >
-            Treks
-          </button>
-          <motion.button 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={() => {
-              const message = "Hey, i would like to join the community for further updates";
-              window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
-            }}
-            className="bg-brand-orange text-white px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest"
-          >
-            Join
-          </motion.button>
-        </div>
-      </div>
-    </header>
-  );
-};
-
+// Section separator
 const Background = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
@@ -960,9 +817,8 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
   return (
     <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
       {!isDetailsPage && <Background />}
-      <Navbar />
       
-      <main className={`relative z-10 flex-1 pt-14 md:pt-16 lg:pt-20`}>
+      <main className="relative z-10 flex-1 pt-0">
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -1449,7 +1305,6 @@ const SafetyPage = () => {
 
 const TrekDetailsPage = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
   const getUpcomingBatches = (trek: Trek) => {
@@ -1457,10 +1312,13 @@ const TrekDetailsPage = () => {
     const today = new Date();
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // Check next 30 days
-    for (let i = 0; i < 30; i++) {
-      const date = new Date();
-      date.setDate(today.getDate() + i);
+    // Start of next month
+    const startOfNextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+    
+    // Check up to 35 days from the start of next month to find upcoming weekend slots
+    for (let i = 0; i < 35; i++) {
+      const date = new Date(startOfNextMonth);
+      date.setDate(startOfNextMonth.getDate() + i);
       const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
       // One day: Fri & Sat departures
@@ -1496,8 +1354,6 @@ const TrekDetailsPage = () => {
       </div>
     );
   }
-
-  const onBack = () => navigate(-1);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -1553,26 +1409,9 @@ const TrekDetailsPage = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      {/* ─── PROFESSIONAL COMPACT NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-[70] bg-white/90 backdrop-blur-xl border-b border-slate-100 px-6 h-12 flex items-center justify-between shadow-sm">
-        <button 
-          onClick={onBack}
-          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-brand-dark transition-all group"
-        >
-          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Back
-        </button>
-        <div className="hidden md:flex items-center gap-3 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200">
-           <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Trek:</span>
-           <span className="text-[9px] font-black uppercase tracking-widest text-brand-dark">{trek.title}</span>
-        </div>
-        <button className="bg-brand-orange text-white px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-orange/20 hover:scale-105 transition-all">
-          Join Now 🧗
-        </button>
-      </nav>
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
-      <header className="relative pt-12 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+      <header className="relative pt-16 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1636,35 +1475,6 @@ const TrekDetailsPage = () => {
           </motion.div>
         </div>
       </header>
-
-      {/* ─── SCROLLING OFFERS BAND ─── */}
-      <div className="bg-brand-dark/95 text-white/50 py-3 md:py-4 overflow-hidden flex whitespace-nowrap border-y border-white/5 backdrop-blur-md relative">
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        
-        <motion.div 
-          animate={{ x: [0, -1200] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-          className="flex gap-20 items-center px-12 relative z-10"
-        >
-          {[1,2,3,4,5].map(i => (
-            <React.Fragment key={i}>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🎁</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Offer: 5% OFF FOR GROUPS ABOVE 3 PEOPLE</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🌍</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">{trek.id === '7' ? 'Safe & Eco-Friendly Travel' : 'Eco-Sensitive Explorations'}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl">🧗</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/80">Certified Expedition Leads</span>
-              </div>
-            </React.Fragment>
-          ))}
-        </motion.div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
         {/* ─── PLACES WE COVER ─── */}
@@ -2045,8 +1855,8 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
-        {/* ─── ONE DAY GALLERY (CONDITIONAL) ─── */}
-        {trek.duration.toLowerCase().includes('1 day') && <OneDayGallery />}
+        {/* ─── TREK SPECIFIC GALLERY ─── */}
+        <TrekGallery trek={trek} />
 
         {/* ─── POLICY ─── */}
         <section className="space-y-10">
@@ -2301,65 +2111,194 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
   );
 };
 
-const ONE_DAY_TREK_GALLERY = [
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_2607_esvkdr.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591371/WhatsApp_Image_2026-05-12_at_6.38.22_PM_ty88zx.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.12_PM_n44wjf.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.18_PM_yximiw.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/3_snpy8h.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590559/2_fisfsx.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/4_cgzqva.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5621_qhbc3b.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5628_xnbiec.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_6090_mgegx2.jpg",
-  "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590555/IMG_3743_dinczl.jpg"
-];
+const TrekGallery = ({ trek }: { trek: Trek }) => {
+  // Combine trek cover, trek gallery, and some relevant community images
+  const baseImages = [trek.image, ...(trek.gallery || [])];
+  
+  // Add some beautiful general group/scenic pictures that fit the theme
+  const communityAdditions = [
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg"
+  ];
 
-const OneDayGallery = () => {
+  const uniqueImages: string[] = [];
+  const seen = new Set<string>();
+
+  baseImages.forEach(img => {
+    if (img && !seen.has(img)) {
+      uniqueImages.push(img);
+      seen.add(img);
+    }
+  });
+
+  for (const img of communityAdditions) {
+    if (uniqueImages.length >= 8) break;
+    if (!seen.has(img)) {
+      uniqueImages.push(img);
+      seen.add(img);
+    }
+  }
+
+  const items = uniqueImages.map((url) => {
+    let caption: string;
+    if (url === trek.image) {
+      caption = `The Majestic Summit of ${trek.title}`;
+    } else if (url.includes('1.33.54_PM')) {
+      caption = `Our Wonderful Fellow Explorers Squad!`;
+    } else if (url.includes('IMG_5569') || url.includes('IMG_6197')) {
+      caption = `Conquering Trails Together`;
+    } else if (url.includes('IMG_5667') || url.includes('IMG_5646')) {
+      caption = `Shared Smiles & Lifelong Bonds`;
+    } else if (url.includes('6.38.09_PM') || url.includes('IMG_5628')) {
+      caption = `Pushing Limits on Scenic Steps`;
+    } else {
+      caption = `Vibrant Summit Vistas at ${trek.title}`;
+    }
+    return { url, caption };
+  });
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (lightboxIndex !== null) {
+      setLightboxIndex(prev => {
+        if (prev === null) return null;
+        return prev === 0 ? items.length - 1 : prev - 1;
+      });
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (lightboxIndex !== null) {
+      setLightboxIndex(prev => {
+        if (prev === null) return null;
+        return prev === items.length - 1 ? 0 : prev + 1;
+      });
+    }
+  };
+
   return (
-    <section className="py-20 md:py-32 bg-white overflow-hidden">
+    <section id="trek-gallery-section" className="py-20 bg-white overflow-hidden border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         <div className="text-center space-y-4">
-          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Expedition Moments</div>
-          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
-            One-Day <span className="text-brand-orange italic font-serif">Escapes Gallery</span>
+          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Authentic Expeditions</div>
+          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+            Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
           </h2>
           <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
-            A window into the wild. Authentic captures from our sunrise trails, monolithic climbs, and the vibrant community that calls the mountains home.
+            Real snaps from our actual {trek.title} groups. Breathtaking views, challenging steps, and incredible trail camaraderie.
           </p>
         </div>
 
+        {/* Gallery Symmetrical Square Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {ONE_DAY_TREK_GALLERY.map((img, i) => (
+          {items.map((img, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
+              key={img.url + i}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="relative overflow-hidden rounded-[2rem] border border-slate-100 group aspect-square"
+              transition={{ delay: (i % 8) * 0.05 }}
+              onClick={() => setLightboxIndex(i)}
+              className="relative overflow-hidden rounded-[2rem] border border-slate-100 group aspect-square cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-orange/10 transition-all duration-500"
             >
               <img 
-                src={img} 
-                alt={`Adventure Chaarana One Day Trek Gallery Moment ${i + 1}`}
+                src={img.url} 
+                alt={img.caption}
                 className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6">
-                 <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                   <Mountain size={20} />
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                 <div className="self-end w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                   <Mountain size={18} />
+                 </div>
+                 <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
                  </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Fullscreen Interactive Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxIndex(null)}
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-xl p-4 md:p-8"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 z-[110] bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer"
+              aria-label="Close Lightbox"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Container for Image & Controls */}
+            <div className="relative max-w-5xl w-full h-[65vh] md:h-[75vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
+              {/* Back Button */}
+              <button 
+                onClick={handlePrev}
+                className="absolute left-2 md:left-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                aria-label="Previous Image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              {/* Main Image */}
+              <motion.img 
+                key={lightboxIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.25 }}
+                src={items[lightboxIndex]?.url} 
+                alt={items[lightboxIndex]?.caption}
+                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
+                referrerPolicy="no-referrer"
+              />
+
+              {/* Next Button */}
+              <button 
+                onClick={handleNext}
+                className="absolute right-2 md:right-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                aria-label="Next Image"
+              >
+                <ArrowRight size={24} />
+              </button>
+            </div>
+
+            {/* Caption & Index Display */}
+            <div className="text-center mt-6 space-y-2 z-10 select-none">
+              <p className="text-white text-base md:text-lg font-black tracking-wide">
+                {items[lightboxIndex]?.caption}
+              </p>
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
+                  {trek.title}
+                </span>
+                <span className="text-white/40 font-bold text-xs">
+                  {lightboxIndex + 1} / {items.length}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
@@ -2593,8 +2532,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ─── ONE DAY GALLERY ─── */}
-      <OneDayGallery />
+
     </div>
   );
 };
