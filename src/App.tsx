@@ -757,6 +757,104 @@ const TREKS: Trek[] = [
       'Kalasa Temple (Dakshina Kashi)',
       'Belur Temple'
     ]
+  },
+  {
+    id: '10',
+    slug: 'bandaje-waterfalls-trek',
+    title: 'Bandaje Waterfalls Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Chikmagalur, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '1,029 m',
+    minAge: '8 Years',
+    currentPrice: 4199,
+    originalPrice: 4999,
+    discount: '5% OFF (3+ GROUPS)',
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    description: 'Trek through the gorgeous grasslands of the Western Ghats to the stunning Bandaje Waterfalls. High cascading waters meeting lush green valleys create a dramatic landscape you will never forget.',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg'
+    ],
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: '📍HSR Layout' },
+          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
+          { time: '08:45 PM', activity: '📍Domlur Post Office' },
+          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
+          { time: '09:30 PM', activity: '📍Yeshwantpur' },
+          { time: '10:00 PM', activity: '📍Gorguntepalya' },
+          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🥾',
+        items: [
+          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in, Freshen up & Relax' },
+          { time: '07:30 AM', activity: '🍽️ Breakfast and Trek Briefing' },
+          { time: '08:30 AM', activity: '🚍 Transfer to Trek Base in local vehicles' },
+          { time: '09:00 AM', activity: '🧗 Start Trek through beautiful shola forests' },
+          { time: '01:00 PM', activity: '⛰️ Reach top of Bandaje falls, enjoy packed lunch' },
+          { time: '02:00 PM', activity: '🌳 Explore valley viewpoints & pristine water trails' },
+          { time: '03:00 PM', activity: '⬇️ Descend back to the base' },
+          { time: '05:30 PM', activity: '🍵 Return to Homestay for Hot Tea & Evening Snacks' },
+          { time: '07:30 PM', activity: '🔥 Campfire, music, delicious local Dinner & Rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌅',
+        items: [
+          { time: '07:00 AM', activity: '☕ Wake up, enjoy morning coffee' },
+          { time: '08:00 AM', activity: '🍳 Breakfast and Homestay Checkout' },
+          { time: '08:30 AM', activity: '⛰️ Rani Jhari View point (Witness spectacular valleys)' },
+          { time: '10:00 AM', activity: '🌊 Visit Kodige Falls (Enjoy pristine forest bath)' },
+          { time: '11:30 AM', activity: '🍃 Stroll through Tea Estate gardens' },
+          { time: '01:00 PM', activity: '🍛 Kottigehara Local Lunch (Self-sponsored/Local café)' },
+          { time: '02:30 PM', activity: '🏛️ Visit Historic Belur Temple (Hoysala architecture)' },
+          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore with sweet memories' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation (Bangalore to Bangalore)',
+      'Accommodations in Homestay/Tents (Multiple sharing)',
+      'Meals: 2 Breakfasts, 1 Packed Lunch (Day 1), 1 Dinner',
+      'Forest entry permissions, trek permits & Guide fees',
+      'Professional Trek Leads',
+      'First Aid Support'
+    ],
+    exclusions: [
+      'Day 2 Lunch & Dinner (Self-sponsored)',
+      'Personal emergency expenditures',
+      'Anything not explicitly mentioned in inclusions'
+    ],
+    thingsToCarry: [
+      'Small backpack (10-20L)',
+      'Two pairs of comfortable clothes',
+      'Trekking shoes with sturdy grip',
+      'Raincoat/Poncho (essential in monsoons)',
+      'Water bottles (min 2L)',
+      'Personal emergency medicines',
+      'Sunglasses & Sunhat'
+    ],
+    placesCovered: [
+      'Bandaje Waterfalls Trek',
+      'Rani Jhari View point',
+      'Kodige Falls',
+      'Tea Estate',
+      'Belur Temple'
+    ]
   }
 ];
 
@@ -1355,6 +1453,8 @@ const TrekDetailsPage = () => {
     );
   }
 
+
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -1855,8 +1955,8 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
-        {/* ─── TREK SPECIFIC GALLERY ─── */}
-        <TrekGallery trek={trek} />
+        {/* ─── ONE DAY GALLERY (CONDITIONAL) ─── */}
+        {trek.duration.toLowerCase().includes('1 day') && <OneDayGallery />}
 
         {/* ─── POLICY ─── */}
         <section className="space-y-10">
@@ -2111,64 +2211,169 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
   );
 };
 
-const TrekGallery = ({ trek }: { trek: Trek }) => {
-  // Combine trek cover, trek gallery, and some relevant community images
-  const baseImages = [trek.image, ...(trek.gallery || [])];
-  
-  // Add some beautiful general group/scenic pictures that fit the theme
-  const communityAdditions = [
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
-    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg"
-  ];
+interface GalleryItem {
+  url: string;
+  category: 'one-day' | 'western-ghats' | 'community';
+  caption: string;
+}
 
-  const uniqueImages: string[] = [];
-  const seen = new Set<string>();
-
-  baseImages.forEach(img => {
-    if (img && !seen.has(img)) {
-      uniqueImages.push(img);
-      seen.add(img);
-    }
-  });
-
-  for (const img of communityAdditions) {
-    if (uniqueImages.length >= 8) break;
-    if (!seen.has(img)) {
-      uniqueImages.push(img);
-      seen.add(img);
-    }
+const EXPEDITION_GALLERY: GalleryItem[] = [
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_2607_esvkdr.jpg",
+    category: 'one-day',
+    caption: 'Mist over the Western Hills'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
+    category: 'community',
+    caption: 'A passionate stride forward'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/3_snpy8h.jpg",
+    category: 'one-day',
+    caption: 'Rocky ridge line ascent'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590559/2_fisfsx.jpg",
+    category: 'one-day',
+    caption: 'Steep granite monolith climbing'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
+    category: 'community',
+    caption: 'Bonding around the trails'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/4_cgzqva.jpg",
+    category: 'one-day',
+    caption: 'Gazing into the scenic plains'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
+    category: 'community',
+    caption: 'Warm smiles at the peaks'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5621_qhbc3b.jpg",
+    category: 'community',
+    caption: 'Shared joy on the path'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5628_xnbiec.jpg",
+    category: 'community',
+    caption: 'Together to the cloud line'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_6090_mgegx2.jpg",
+    category: 'one-day',
+    caption: 'Lush greenery of mountain foothills'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590555/IMG_3743_dinczl.jpg",
+    category: 'one-day',
+    caption: 'Stunning rocky trail gate'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
+    category: 'community',
+    caption: 'The trail brings us together'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
+    category: 'community',
+    caption: 'The mountaineers squad'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591371/WhatsApp_Image_2026-05-12_at_6.38.22_PM_ty88zx.jpg",
+    category: 'one-day',
+    caption: 'Vibrant colors of the twilight summit'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.12_PM_n44wjf.jpg",
+    category: 'one-day',
+    caption: 'Sunset views over the valleys'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.18_PM_yximiw.jpg",
+    category: 'one-day',
+    caption: 'Windswept peaks of Karnataka'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg",
+    category: 'one-day',
+    caption: 'Conquering heights step by step'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440973/2_bckyhk.jpg",
+    category: 'one-day',
+    caption: 'Skandagiri Sunsets'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440971/3_itucgf.jpg",
+    category: 'one-day',
+    caption: 'Kaiwara Betta Vistas'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440970/4_iby5xb.jpg",
+    category: 'one-day',
+    caption: 'Channarayana Durga Fortresses'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440967/5_ylvihq.jpg",
+    category: 'one-day',
+    caption: 'Uttari Betta Dawn'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440965/6_u5qtbo.jpg",
+    category: 'one-day',
+    caption: 'Kunti Betta Peak Trail'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg",
+    category: 'western-ghats',
+    caption: 'Kodaikanal Valley Mist'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg",
+    category: 'western-ghats',
+    caption: 'Tadiandamol Coorg Slopes'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png",
+    category: 'western-ghats',
+    caption: 'Nethravathi Peak Ridge'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png",
+    category: 'western-ghats',
+    caption: 'Cascades near Bandaje Falls'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png",
+    category: 'western-ghats',
+    caption: 'Bandaje Grassland Slopes'
+  },
+  {
+    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png",
+    category: 'western-ghats',
+    caption: 'Freshwater stream on Bandaje Trail'
   }
+];
 
-  const items = uniqueImages.map((url) => {
-    let caption: string;
-    if (url === trek.image) {
-      caption = `The Majestic Summit of ${trek.title}`;
-    } else if (url.includes('1.33.54_PM')) {
-      caption = `Our Wonderful Fellow Explorers Squad!`;
-    } else if (url.includes('IMG_5569') || url.includes('IMG_6197')) {
-      caption = `Conquering Trails Together`;
-    } else if (url.includes('IMG_5667') || url.includes('IMG_5646')) {
-      caption = `Shared Smiles & Lifelong Bonds`;
-    } else if (url.includes('6.38.09_PM') || url.includes('IMG_5628')) {
-      caption = `Pushing Limits on Scenic Steps`;
-    } else {
-      caption = `Vibrant Summit Vistas at ${trek.title}`;
-    }
-    return { url, caption };
-  });
-
+const OneDayGallery = () => {
+  const [filter, setFilter] = useState<'all' | 'one-day' | 'western-ghats' | 'community'>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const filteredItems = filter === 'all' 
+    ? EXPEDITION_GALLERY 
+    : EXPEDITION_GALLERY.filter(item => item.category === filter);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
-        return prev === 0 ? items.length - 1 : prev - 1;
+        return prev === 0 ? filteredItems.length - 1 : prev - 1;
       });
     }
   };
@@ -2178,27 +2383,52 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
-        return prev === items.length - 1 ? 0 : prev + 1;
+        return prev === filteredItems.length - 1 ? 0 : prev + 1;
       });
     }
   };
 
   return (
-    <section id="trek-gallery-section" className="py-20 bg-white overflow-hidden border-t border-slate-100">
+    <section id="gallery-section" className="py-20 md:py-32 bg-white overflow-hidden border-t border-slate-50">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         <div className="text-center space-y-4">
-          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Authentic Expeditions</div>
-          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
-            Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
+          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Expedition Moments</div>
+          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+            Our Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
           </h2>
           <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
-            Real snaps from our actual {trek.title} groups. Breathtaking views, challenging steps, and incredible trail camaraderie.
+            A window into the wild. Authentic captures from our sunrise trails, monolithic climbs, and the vibrant community that calls the mountains home.
           </p>
+        </div>
+
+        {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 pb-4">
+          {[
+            { id: 'all', label: 'All Explorer Views' },
+            { id: 'one-day', label: 'One-Day Trails' },
+            { id: 'western-ghats', label: 'Western Ghats & Getaways' },
+            { id: 'community', label: 'Community Highlights' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setFilter(tab.id as 'all' | 'one-day' | 'western-ghats' | 'community');
+                setLightboxIndex(null);
+              }}
+              className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all shadow-sm border ${
+                filter === tab.id
+                  ? 'bg-brand-orange text-white border-brand-orange shadow-brand-orange/20 scale-105'
+                  : 'bg-slate-50 text-slate-500 border-slate-100 hover:border-brand-orange/20 hover:text-brand-orange'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         {/* Gallery Symmetrical Square Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {items.map((img, i) => (
+          {filteredItems.map((img, i) => (
             <motion.div
               key={img.url + i}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -2221,7 +2451,10 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
                    <Mountain size={18} />
                  </div>
                  <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
+                   <span className="text-[8px] font-black uppercase tracking-widest text-brand-orange bg-white px-2 py-0.5 rounded">
+                     {img.category === 'one-day' ? 'One Day' : img.category === 'western-ghats' ? 'Western Ghats' : 'Community'}
+                   </span>
+                   <p className="text-white text-xs font-black tracking-wide leading-tight mt-1">{img.caption}</p>
                  </div>
               </div>
             </motion.div>
@@ -2266,8 +2499,8 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.25 }}
-                src={items[lightboxIndex]?.url} 
-                alt={items[lightboxIndex]?.caption}
+                src={filteredItems[lightboxIndex]?.url} 
+                alt={filteredItems[lightboxIndex]?.caption}
                 className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
                 referrerPolicy="no-referrer"
               />
@@ -2285,14 +2518,14 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
             {/* Caption & Index Display */}
             <div className="text-center mt-6 space-y-2 z-10 select-none">
               <p className="text-white text-base md:text-lg font-black tracking-wide">
-                {items[lightboxIndex]?.caption}
+                {filteredItems[lightboxIndex]?.caption}
               </p>
               <div className="flex items-center justify-center gap-2">
                 <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
-                  {trek.title}
+                  {filteredItems[lightboxIndex]?.category === 'one-day' ? 'One Day' : filteredItems[lightboxIndex]?.category === 'western-ghats' ? 'Western Ghats' : 'Community'}
                 </span>
                 <span className="text-white/40 font-bold text-xs">
-                  {lightboxIndex + 1} / {items.length}
+                  {lightboxIndex + 1} / {filteredItems.length}
                 </span>
               </div>
             </div>
@@ -2532,7 +2765,8 @@ const HomePage = () => {
         </div>
       </section>
 
-
+      {/* ─── ONE DAY GALLERY ─── */}
+      <OneDayGallery />
     </div>
   );
 };
