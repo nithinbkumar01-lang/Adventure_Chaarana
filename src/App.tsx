@@ -22,7 +22,8 @@ import {
   Instagram,
   Facebook,
   Mail,
-  Phone
+  Phone,
+  Menu
 } from 'lucide-react';
 
 interface ItineraryItem {
@@ -767,18 +768,19 @@ const TREKS: Trek[] = [
     location: 'Chikmagalur, Karnataka',
     duration: '2 Days / 1 Night',
     difficulty: 'Moderate',
-    elevation: '1,029 m',
-    minAge: '8 Years',
+    elevation: '1,012 m',
+    minAge: '5 Years',
     currentPrice: 4199,
-    originalPrice: 4999,
+    originalPrice: 5199,
     discount: '5% OFF (3+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
-    description: 'Trek through the gorgeous grasslands of the Western Ghats to the stunning Bandaje Waterfalls. High cascading waters meeting lush green valleys create a dramatic landscape you will never forget.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
+    description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Samse Tea Estate, and the ancient Hoysala temples of Belur.',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
     gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg'
     ],
     itinerary: [
@@ -799,30 +801,28 @@ const TREKS: Trek[] = [
         label: 'Day 1',
         emoji: '🥾',
         items: [
-          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in, Freshen up & Relax' },
+          { time: '06:00 AM', activity: '🚍 Reach Homestay near Charmadi - Check-in & Freshen up' },
           { time: '07:30 AM', activity: '🍽️ Breakfast and Trek Briefing' },
-          { time: '08:30 AM', activity: '🚍 Transfer to Trek Base in local vehicles' },
-          { time: '09:00 AM', activity: '🧗 Start Trek through beautiful shola forests' },
-          { time: '01:00 PM', activity: '⛰️ Reach top of Bandaje falls, enjoy packed lunch' },
-          { time: '02:00 PM', activity: '🌳 Explore valley viewpoints & pristine water trails' },
-          { time: '03:00 PM', activity: '⬇️ Descend back to the base' },
-          { time: '05:30 PM', activity: '🍵 Return to Homestay for Hot Tea & Evening Snacks' },
-          { time: '07:30 PM', activity: '🔥 Campfire, music, delicious local Dinner & Rest' }
+          { time: '08:30 AM', activity: '🥾 Reach Trek Base and Start climbing the Bandaje Waterfalls trail' },
+          { time: '01:00 PM', activity: '⛰️ Reach the stunning waterfall cliff edge & enjoy packed lunch by the stream' },
+          { time: '02:00 PM', activity: '📸 Explore the pristine forest landscape and capture panoramic valley views' },
+          { time: '03:00 PM', activity: '⬇️ Descend back to the base village' },
+          { time: '06:00 PM', activity: '🍵 Reach Homestay - High Tea & Hot Snacks' },
+          { time: '08:00 PM', activity: '🔥 Engage in group bonding, Campfire, Dinner & overnight stay' }
         ]
       },
       {
         label: 'Day 2',
-        emoji: '🌅',
+        emoji: '🌿',
         items: [
-          { time: '07:00 AM', activity: '☕ Wake up, enjoy morning coffee' },
-          { time: '08:00 AM', activity: '🍳 Breakfast and Homestay Checkout' },
-          { time: '08:30 AM', activity: '⛰️ Rani Jhari View point (Witness spectacular valleys)' },
-          { time: '10:00 AM', activity: '🌊 Visit Kodige Falls (Enjoy pristine forest bath)' },
-          { time: '11:30 AM', activity: '🍃 Stroll through Tea Estate gardens' },
-          { time: '01:00 PM', activity: '🍛 Kottigehara Local Lunch (Self-sponsored/Local café)' },
-          { time: '02:30 PM', activity: '🏛️ Visit Historic Belur Temple (Hoysala architecture)' },
-          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
-          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore with sweet memories' }
+          { time: '07:00 AM', activity: '🍳 Breakfast and Checkout from Homestay' },
+          { time: '08:00 AM', activity: '⛰️ Rani Jhari View Point (Gaze at the breathtaking mist-lined valleys)' },
+          { time: '09:30 AM', activity: '🌊 Kodige Falls Visit (Play in the safe, refreshing natural cascades)' },
+          { time: '11:00 AM', activity: '🍃 Samse Tea Estate Visit (Walk through lush, emerald tea gardens)' },
+          { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Traditional local Malnad style food - self sponsored)' },
+          { time: '02:30 PM', activity: '🛕 Visit Historic Belur Temple (Marvel at the exquisite Hoysala carvings)' },
+          { time: '04:00 PM', activity: '🚌 Start return journey to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore with fond memories' }
         ]
       }
     ],
@@ -830,26 +830,26 @@ const TREKS: Trek[] = [
       'Transportation (Bangalore to Bangalore)',
       'Accommodations in Homestay/Tents (Multiple sharing)',
       'Meals: 2 Breakfasts, 1 Packed Lunch (Day 1), 1 Dinner',
-      'Forest entry permissions, trek permits & Guide fees',
+      'Forest entry permissions & Guide fees',
       'Professional Trek Leads',
       'First Aid Support'
     ],
     exclusions: [
-      'Day 2 Lunch & Dinner (Self-sponsored)',
-      'Personal emergency expenditures',
-      'Anything not explicitly mentioned in inclusions'
+      'Day 2: Lunch & Dinner',
+      'Personal snacks & Water bottles',
+      'Anything not mentioned in inclusions'
     ],
     thingsToCarry: [
       'Small backpack (10-20L)',
-      'Two pairs of comfortable clothes',
-      'Trekking shoes with sturdy grip',
-      'Raincoat/Poncho (essential in monsoons)',
+      'Two pairs of clothes',
+      'Trekking shoes with good grip',
+      'Raincoat/Poncho (Mandatory in monsoons)',
       'Water bottles (min 2L)',
-      'Personal emergency medicines',
-      'Sunglasses & Sunhat'
+      'Personal emergency medicine',
+      'Sunglasses & Hat'
     ],
     placesCovered: [
-      'Bandaje Waterfalls Trek',
+      'Bandaje Waterfalls',
       'Rani Jhari View point',
       'Kodige Falls',
       'Tea Estate',
@@ -908,6 +908,160 @@ const Background = () => {
   );
 };
 
+const Header = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
+  const isDetailsPage = location.pathname.startsWith('/trek/');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu on page transition
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const navLinks = [
+    { label: 'Upcoming Treks', path: '/#treks-section', isAnchor: true },
+    { label: 'Community Showcase', path: '/#gallery-section', isAnchor: true },
+    { label: 'Safety Code', path: '/safety-code', isAnchor: false },
+    { label: 'Terms & Conditions', path: '/terms', isAnchor: false },
+    { label: 'Refund Policy', path: '/refund-policy', isAnchor: false }
+  ];
+
+  const handleLinkClick = (link: typeof navLinks[0]) => {
+    if (link.isAnchor) {
+      const targetId = link.path.split('#')[1] || 'treks-section';
+      if (isHomePage) {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate('/');
+        // Use timeout to allow home page mount before scrolling
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 120);
+      }
+    } else {
+      navigate(link.path);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  if (isDetailsPage) return null;
+
+  const headerClass = isHomePage
+    ? isScrolled
+      ? 'bg-brand-dark/95 backdrop-blur-md text-white border-b border-white/5 shadow-lg'
+      : 'bg-transparent text-white'
+    : 'bg-white/90 backdrop-blur-md border-b border-slate-100 text-[#0F0F0F] shadow-sm';
+
+  return (
+    <header className={`${headerClass} fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 md:h-24 flex items-center`}>
+      <div className="max-w-7xl mx-auto w-full px-6 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <img 
+            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+            alt="Adventure Chaarana Logo" 
+            className="h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            referrerPolicy="no-referrer"
+          />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => handleLinkClick(link)}
+              className="text-xs transition-colors hover:text-brand-orange uppercase font-black tracking-widest cursor-pointer"
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href={`https://wa.me/919980489494?text=${encodeURIComponent("Hey Adventure Chaarana! I am looking for upcoming adventures.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 hover:scale-105 active:scale-95 transition-all"
+          >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
+            Join Community
+          </a>
+        </div>
+
+        {/* Mobile Menu Trigger */}
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg transition-all focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          {isMobileMenuOpen ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className={`absolute top-20 left-0 right-0 p-6 md:hidden shadow-2xl flex flex-col gap-6 border-b z-40 ${
+              isHomePage && !isScrolled
+                ? 'bg-brand-dark border-white/10 text-white'
+                : 'bg-white border-slate-100 text-brand-dark'
+            }`}
+          >
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => handleLinkClick(link)}
+                  className="text-left text-xs uppercase font-black tracking-widest py-2 border-b border-slate-100/10 hover:text-brand-orange transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+            <a
+              href={`https://wa.me/919980489494?text=${encodeURIComponent("Hey Adventure Chaarana! I am looking for upcoming adventures.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-4 rounded-xl text-xs font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
+              Join Community
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+};
+
 const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNode; showPromo: boolean; setShowPromo: (v: boolean) => void }) => {
   const location = useLocation();
   const isDetailsPage = location.pathname.startsWith('/trek/');
@@ -915,6 +1069,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
   return (
     <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
       {!isDetailsPage && <Background />}
+      {!isDetailsPage && <Header />}
       
       <main className="relative z-10 flex-1 pt-0">
         {isDetailsPage && <Breadcrumbs />}
@@ -1403,6 +1558,7 @@ const SafetyPage = () => {
 
 const TrekDetailsPage = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
   const getUpcomingBatches = (trek: Trek) => {
@@ -1453,7 +1609,7 @@ const TrekDetailsPage = () => {
     );
   }
 
-
+  const onBack = () => navigate(-1);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -1512,6 +1668,15 @@ const TrekDetailsPage = () => {
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
       <header className="relative pt-16 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
+        {/* Inline Back Button */}
+        <button 
+          onClick={onBack}
+          className="absolute top-6 left-6 z-20 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/75 hover:text-white transition-all group bg-brand-dark/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"
+        >
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          Back
+        </button>
+
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1955,8 +2120,8 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
-        {/* ─── ONE DAY GALLERY (CONDITIONAL) ─── */}
-        {trek.duration.toLowerCase().includes('1 day') && <OneDayGallery />}
+        {/* ─── TREK SPECIFIC GALLERY ─── */}
+        <TrekGallery trek={trek} />
 
         {/* ─── POLICY ─── */}
         <section className="space-y-10">
@@ -2211,169 +2376,64 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
   );
 };
 
-interface GalleryItem {
-  url: string;
-  category: 'one-day' | 'western-ghats' | 'community';
-  caption: string;
-}
+const TrekGallery = ({ trek }: { trek: Trek }) => {
+  // Combine trek cover, trek gallery, and some relevant community images
+  const baseImages = [trek.image, ...(trek.gallery || [])];
+  
+  // Add some beautiful general group/scenic pictures that fit the theme
+  const communityAdditions = [
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
+    "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg"
+  ];
 
-const EXPEDITION_GALLERY: GalleryItem[] = [
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_2607_esvkdr.jpg",
-    category: 'one-day',
-    caption: 'Mist over the Western Hills'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg",
-    category: 'community',
-    caption: 'A passionate stride forward'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/3_snpy8h.jpg",
-    category: 'one-day',
-    caption: 'Rocky ridge line ascent'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590559/2_fisfsx.jpg",
-    category: 'one-day',
-    caption: 'Steep granite monolith climbing'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590558/IMG_5667_t9uf2n.jpg",
-    category: 'community',
-    caption: 'Bonding around the trails'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590560/4_cgzqva.jpg",
-    category: 'one-day',
-    caption: 'Gazing into the scenic plains'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590557/IMG_5646_jvzjm2.jpg",
-    category: 'community',
-    caption: 'Warm smiles at the peaks'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5621_qhbc3b.jpg",
-    category: 'community',
-    caption: 'Shared joy on the path'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_5628_xnbiec.jpg",
-    category: 'community',
-    caption: 'Together to the cloud line'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590556/IMG_6090_mgegx2.jpg",
-    category: 'one-day',
-    caption: 'Lush greenery of mountain foothills'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590555/IMG_3743_dinczl.jpg",
-    category: 'one-day',
-    caption: 'Stunning rocky trail gate'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591373/IMG_6197_ltwjvy.jpg",
-    category: 'community',
-    caption: 'The trail brings us together'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
-    category: 'community',
-    caption: 'The mountaineers squad'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591371/WhatsApp_Image_2026-05-12_at_6.38.22_PM_ty88zx.jpg",
-    category: 'one-day',
-    caption: 'Vibrant colors of the twilight summit'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.12_PM_n44wjf.jpg",
-    category: 'one-day',
-    caption: 'Sunset views over the valleys'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591370/WhatsApp_Image_2026-05-12_at_6.38.18_PM_yximiw.jpg",
-    category: 'one-day',
-    caption: 'Windswept peaks of Karnataka'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778591369/WhatsApp_Image_2026-05-12_at_6.38.09_PM_xosgii.jpg",
-    category: 'one-day',
-    caption: 'Conquering heights step by step'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440973/2_bckyhk.jpg",
-    category: 'one-day',
-    caption: 'Skandagiri Sunsets'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440971/3_itucgf.jpg",
-    category: 'one-day',
-    caption: 'Kaiwara Betta Vistas'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440970/4_iby5xb.jpg",
-    category: 'one-day',
-    caption: 'Channarayana Durga Fortresses'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440967/5_ylvihq.jpg",
-    category: 'one-day',
-    caption: 'Uttari Betta Dawn'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440965/6_u5qtbo.jpg",
-    category: 'one-day',
-    caption: 'Kunti Betta Peak Trail'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg",
-    category: 'western-ghats',
-    caption: 'Kodaikanal Valley Mist'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg",
-    category: 'western-ghats',
-    caption: 'Tadiandamol Coorg Slopes'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png",
-    category: 'western-ghats',
-    caption: 'Nethravathi Peak Ridge'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png",
-    category: 'western-ghats',
-    caption: 'Cascades near Bandaje Falls'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png",
-    category: 'western-ghats',
-    caption: 'Bandaje Grassland Slopes'
-  },
-  {
-    url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png",
-    category: 'western-ghats',
-    caption: 'Freshwater stream on Bandaje Trail'
+  const uniqueImages: string[] = [];
+  const seen = new Set<string>();
+
+  baseImages.forEach(img => {
+    if (img && !seen.has(img)) {
+      uniqueImages.push(img);
+      seen.add(img);
+    }
+  });
+
+  for (const img of communityAdditions) {
+    if (uniqueImages.length >= 8) break;
+    if (!seen.has(img)) {
+      uniqueImages.push(img);
+      seen.add(img);
+    }
   }
-];
 
-const OneDayGallery = () => {
-  const [filter, setFilter] = useState<'all' | 'one-day' | 'western-ghats' | 'community'>('all');
+  const items = uniqueImages.map((url) => {
+    let caption: string;
+    if (url === trek.image) {
+      caption = `The Majestic Summit of ${trek.title}`;
+    } else if (url.includes('1.33.54_PM')) {
+      caption = `Our Wonderful Fellow Explorers Squad!`;
+    } else if (url.includes('IMG_5569') || url.includes('IMG_6197')) {
+      caption = `Conquering Trails Together`;
+    } else if (url.includes('IMG_5667') || url.includes('IMG_5646')) {
+      caption = `Shared Smiles & Lifelong Bonds`;
+    } else if (url.includes('6.38.09_PM') || url.includes('IMG_5628')) {
+      caption = `Pushing Limits on Scenic Steps`;
+    } else {
+      caption = `Vibrant Summit Vistas at ${trek.title}`;
+    }
+    return { url, caption };
+  });
+
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const filteredItems = filter === 'all' 
-    ? EXPEDITION_GALLERY 
-    : EXPEDITION_GALLERY.filter(item => item.category === filter);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
-        return prev === 0 ? filteredItems.length - 1 : prev - 1;
+        return prev === 0 ? items.length - 1 : prev - 1;
       });
     }
   };
@@ -2383,52 +2443,27 @@ const OneDayGallery = () => {
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
-        return prev === filteredItems.length - 1 ? 0 : prev + 1;
+        return prev === items.length - 1 ? 0 : prev + 1;
       });
     }
   };
 
   return (
-    <section id="gallery-section" className="py-20 md:py-32 bg-white overflow-hidden border-t border-slate-50">
+    <section id="trek-gallery-section" className="py-20 bg-white overflow-hidden border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         <div className="text-center space-y-4">
-          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Expedition Moments</div>
-          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
-            Our Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
+          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Authentic Expeditions</div>
+          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+            Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
           </h2>
           <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
-            A window into the wild. Authentic captures from our sunrise trails, monolithic climbs, and the vibrant community that calls the mountains home.
+            Real snaps from our actual {trek.title} groups. Breathtaking views, challenging steps, and incredible trail camaraderie.
           </p>
-        </div>
-
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 pb-4">
-          {[
-            { id: 'all', label: 'All Explorer Views' },
-            { id: 'one-day', label: 'One-Day Trails' },
-            { id: 'western-ghats', label: 'Western Ghats & Getaways' },
-            { id: 'community', label: 'Community Highlights' }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                setFilter(tab.id as 'all' | 'one-day' | 'western-ghats' | 'community');
-                setLightboxIndex(null);
-              }}
-              className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all shadow-sm border ${
-                filter === tab.id
-                  ? 'bg-brand-orange text-white border-brand-orange shadow-brand-orange/20 scale-105'
-                  : 'bg-slate-50 text-slate-500 border-slate-100 hover:border-brand-orange/20 hover:text-brand-orange'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
         </div>
 
         {/* Gallery Symmetrical Square Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {filteredItems.map((img, i) => (
+          {items.map((img, i) => (
             <motion.div
               key={img.url + i}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -2451,10 +2486,7 @@ const OneDayGallery = () => {
                    <Mountain size={18} />
                  </div>
                  <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                   <span className="text-[8px] font-black uppercase tracking-widest text-brand-orange bg-white px-2 py-0.5 rounded">
-                     {img.category === 'one-day' ? 'One Day' : img.category === 'western-ghats' ? 'Western Ghats' : 'Community'}
-                   </span>
-                   <p className="text-white text-xs font-black tracking-wide leading-tight mt-1">{img.caption}</p>
+                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
                  </div>
               </div>
             </motion.div>
@@ -2499,8 +2531,8 @@ const OneDayGallery = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.25 }}
-                src={filteredItems[lightboxIndex]?.url} 
-                alt={filteredItems[lightboxIndex]?.caption}
+                src={items[lightboxIndex]?.url} 
+                alt={items[lightboxIndex]?.caption}
                 className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
                 referrerPolicy="no-referrer"
               />
@@ -2518,14 +2550,14 @@ const OneDayGallery = () => {
             {/* Caption & Index Display */}
             <div className="text-center mt-6 space-y-2 z-10 select-none">
               <p className="text-white text-base md:text-lg font-black tracking-wide">
-                {filteredItems[lightboxIndex]?.caption}
+                {items[lightboxIndex]?.caption}
               </p>
               <div className="flex items-center justify-center gap-2">
                 <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
-                  {filteredItems[lightboxIndex]?.category === 'one-day' ? 'One Day' : filteredItems[lightboxIndex]?.category === 'western-ghats' ? 'Western Ghats' : 'Community'}
+                  {trek.title}
                 </span>
                 <span className="text-white/40 font-bold text-xs">
-                  {lightboxIndex + 1} / {filteredItems.length}
+                  {lightboxIndex + 1} / {items.length}
                 </span>
               </div>
             </div>
@@ -2610,6 +2642,161 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
         </motion.div>
       )}
     </AnimatePresence>
+  );
+};
+
+const COMMUNITY_IMAGES = [
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440973/2_bckyhk.jpg", caption: "Dawn's first light on a misty peak" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440971/3_itucgf.jpg", caption: "Kaiwara Betta gold sunrise view" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440970/4_iby5xb.jpg", caption: "Green rolling valleys of Karnataka" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440967/5_ylvihq.jpg", caption: "Steep ridges of the Western Ghats range" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440965/6_u5qtbo.jpg", caption: "Misty mountain paths surrounded by fog" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg", caption: "The beautiful Bandaje Waterfalls trek" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg", caption: "Sunset across the endless emerald hills" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg", caption: "Our joyful group booking memorable journeys" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png", caption: "The steep, wind-swept ridges of Nethravathi Peak" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png", caption: "Overlooking standard western-ghats clouds" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png", caption: "Trekking through lush green slopes of Western Ghats" },
+  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png", caption: "The misty grasslands trails of Kudremukh Forest" }
+];
+
+const CommunityGallery = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (lightboxIndex !== null) {
+      setLightboxIndex(prev => {
+        if (prev === null) return null;
+        return prev === 0 ? COMMUNITY_IMAGES.length - 1 : prev - 1;
+      });
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (lightboxIndex !== null) {
+      setLightboxIndex(prev => {
+        if (prev === null) return null;
+        return prev === COMMUNITY_IMAGES.length - 1 ? 0 : prev + 1;
+      });
+    }
+  };
+
+  return (
+    <section id="gallery-section" className="py-20 bg-brand-paper overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
+        <div className="text-center space-y-4">
+          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Captured Travels</div>
+          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+            Explorer <span className="text-brand-orange italic font-serif">Showcase Gallery</span>
+          </h2>
+          <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
+            A hand-picked mosaic of unforgettable shared moments across raw expeditions, sunrise summits, and stunning landscapes.
+          </p>
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {COMMUNITY_IMAGES.map((img, i) => (
+            <motion.div
+              key={img.url + i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: (i % 4) * 0.05 }}
+              onClick={() => setLightboxIndex(i)}
+              className="relative overflow-hidden rounded-[2rem] border border-slate-100/10 group aspect-[4/3] cursor-pointer shadow-md hover:shadow-xl transition-all duration-500"
+            >
+              <img 
+                src={img.url} 
+                alt={img.caption}
+                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 bg-brand-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                 <div className="self-end w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                   <Compass size={18} />
+                 </div>
+                 <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
+                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxIndex(null)}
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-xl p-4 md:p-8"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 z-[110] bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer"
+              aria-label="Close Lightbox"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Image Container */}
+            <div className="relative max-w-5xl w-full h-[65vh] md:h-[75vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
+              <button 
+                onClick={handlePrev}
+                className="absolute left-2 md:left-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                aria-label="Previous Image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              <motion.img 
+                key={lightboxIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.25 }}
+                src={COMMUNITY_IMAGES[lightboxIndex]?.url} 
+                alt={COMMUNITY_IMAGES[lightboxIndex]?.caption}
+                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
+                referrerPolicy="no-referrer"
+              />
+
+              <button 
+                onClick={handleNext}
+                className="absolute right-2 md:right-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                aria-label="Next Image"
+              >
+                <ArrowRight size={24} />
+              </button>
+            </div>
+
+            {/* Caption Indicator */}
+            <div className="text-center mt-6 space-y-2 z-10 select-none">
+              <p className="text-white text-base md:text-lg font-black tracking-wide">
+                {COMMUNITY_IMAGES[lightboxIndex]?.caption}
+              </p>
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
+                  Adventure Community
+                </span>
+                <span className="text-white/40 font-bold text-xs">
+                  {lightboxIndex + 1} / {COMMUNITY_IMAGES.length}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
@@ -2765,8 +2952,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ─── ONE DAY GALLERY ─── */}
-      <OneDayGallery />
+      <CommunityGallery />
+
     </div>
   );
 };
