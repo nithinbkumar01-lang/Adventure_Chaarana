@@ -1390,7 +1390,7 @@ const Header = () => {
             onClick={() => handleLinkClick(menuLinks.join)}
             className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-3.5 h-3.5 invert" referrerPolicy="no-referrer" />
+            <img src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779808098/2ef2dd8a-fad0-482b-95d7-19e047dfae07.png" alt="WhatsApp" className="w-4 h-4 object-contain" referrerPolicy="no-referrer" />
             Join Community
           </button>
         </div>
@@ -1441,7 +1441,7 @@ const Header = () => {
                 onClick={() => handleLinkClick(menuLinks.join)}
                 className="flex items-center justify-center gap-2 py-3 mt-2 rounded-xl text-xs font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 cursor-pointer"
               >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
+                <img src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779808098/2ef2dd8a-fad0-482b-95d7-19e047dfae07.png" alt="WhatsApp" className="w-[18px] h-[18px] object-contain" referrerPolicy="no-referrer" />
                 Join Community
               </button>
             </div>
@@ -1488,7 +1488,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
                 {[
                   { icon: <Instagram size={18} />, url: 'https://www.instagram.com/adventure_chaarana/', label: 'Instagram' },
                   { 
-                    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-[18px] h-[18px]" referrerPolicy="no-referrer" />, 
+                    icon: <img src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779808098/2ef2dd8a-fad0-482b-95d7-19e047dfae07.png" alt="WhatsApp" className="w-5 h-5 object-contain" referrerPolicy="no-referrer" />, 
                     url: `https://wa.me/919980489494?text=${encodeURIComponent("Hey, I'm ready for adventure")}`, 
                     label: 'WhatsApp' 
                   },
@@ -2944,6 +2944,66 @@ const TrekDetailsPage = () => {
             </div>
           </div>
         </section>
+
+        {/* ─── INSTAGRAM & WHATSAPP SOCIAL HUB ─── */}
+        <section className="space-y-10 pt-4">
+          <div className="text-center space-y-2 max-w-lg mx-auto">
+            <span className="text-brand-orange text-[9px] font-black uppercase tracking-[0.3em] block mb-1">💬 Connect Live</span>
+            <h3 className="text-3xl md:text-4xl font-black italic tracking-tight text-brand-dark">Stay Close to the <span className="text-brand-orange">Action</span></h3>
+            <p className="text-slate-500 text-xs md:text-sm font-semibold leading-relaxed">
+              Explore our historic trail diaries, active trek stories, and book slots instantly with our adventure leads.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+            {/* Instagram Card */}
+            <a 
+              href="https://www.instagram.com/adventure_chaarana/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center p-8 bg-gradient-to-b from-[#1E112A] to-slate-950 border border-slate-800/50 hover:border-pink-500/30 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(219,39,119,0.06)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+            >
+              {/* Decorative radial blur gradient */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-[40px] pointer-events-none group-hover:bg-pink-500/20 transition-all duration-300" />
+              
+              <div className="w-16 h-16 bg-gradient-to-tr from-yellow-500 via-red-500 to-pink-500 text-white rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-[0_8px_30px_rgb(236,72,153,0.3)]">
+                <Instagram size={32} />
+              </div>
+              
+              <h4 className="text-[10px] font-black text-pink-400 uppercase tracking-widest mb-1.5">Instagram page</h4>
+              <p className="text-2xl font-black text-white hover:text-pink-400 transition-colors">@adventure_chaarana</p>
+              <span className="text-white/40 text-[11px] font-medium leading-relaxed max-w-xs mt-3">
+                Watch our latest reels, raw expedition videos, and join a vibrant trekking family.
+              </span>
+            </a>
+
+            {/* WhatsApp Card */}
+            <a 
+              href="https://wa.me/919980489494?text=Hi!%20I'm%20interested%20in%20your%20treks."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center p-8 bg-gradient-to-b from-[#0B1E13] to-slate-950 border border-slate-800/50 hover:border-[#25D366]/30 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(37,211,102,0.06)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+            >
+              {/* Decorative radial blur gradient */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#25D366]/10 rounded-full blur-[40px] pointer-events-none group-hover:bg-[#25D366]/20 transition-all duration-300" />
+              
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-305 overflow-hidden shadow-[0_8px_30px_rgba(37,211,102,0.2)]">
+                <img 
+                  src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779808098/2ef2dd8a-fad0-482b-95d7-19e047dfae07.png" 
+                  alt="WhatsApp Logo" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              
+              <h4 className="text-[10px] font-black text-[#25D366] uppercase tracking-widest mb-1.5">Direct WhatsApp query</h4>
+              <p className="text-2xl font-black text-white hover:text-[#25D366] transition-colors">9980489494</p>
+              <span className="text-white/40 text-[11px] font-medium leading-relaxed max-w-xs mt-3">
+                Get lightning-fast assistance with payments, custom pickup requests, corporate bookings, or peak availability updates.
+              </span>
+            </a>
+          </div>
+        </section>
       </div>
 
       {/* ─── FLOATING CTA ─── */}
@@ -2958,7 +3018,7 @@ const TrekDetailsPage = () => {
             }}
             className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
           >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" className="w-6 h-6 brightness-0 invert" />
+            <img src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779808098/2ef2dd8a-fad0-482b-95d7-19e047dfae07.png" alt="WA" className="w-6 h-6 object-contain" referrerPolicy="no-referrer" />
             Confirm My Slot
           </motion.button>
         </div>
@@ -2992,6 +3052,11 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
           <Mountain size={14} className="text-brand-orange" />
           <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest">{trek.category.replace('-', ' ')}</span>
         </div>
+        {trek.discount && (
+          <div className="absolute top-4 right-4 bg-brand-orange text-white px-3.5 py-1.5 rounded-2xl flex items-center shadow-[0_8px_20px_rgba(249,115,22,0.3)] border border-white/15">
+            <span className="text-[9px] font-black tracking-widest uppercase">{trek.discount}</span>
+          </div>
+        )}
       </div>
       
       <div className="p-8 pt-4 flex flex-col flex-1">
@@ -3020,11 +3085,6 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">Expedition from</span>
             <span className="text-2xl font-black text-slate-900 tracking-tight">₹{trek.currentPrice.toLocaleString()}</span>
           </div>
-          {trek.discount && (
-            <div className="bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/20">
-              <span className="text-[8px] font-black text-brand-orange uppercase tracking-wider">{trek.discount}</span>
-            </div>
-          )}
           <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-400 group-hover:text-brand-orange group-hover:scale-110 transition-all border border-slate-100">
             <ArrowRight size={20} />
           </div>
