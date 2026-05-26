@@ -23,7 +23,8 @@ import {
   Facebook,
   Mail,
   Phone,
-  Menu
+  Menu,
+  MessageCircle
 } from 'lucide-react';
 
 interface ItineraryItem {
@@ -56,6 +57,10 @@ interface Trek {
   elevation?: string;
   distance?: string;
   minAge?: string;
+  timeHours?: string;
+  modeRating?: string;
+  permitNotice?: string;
+  withoutTransportPrice?: number;
   itinerary: ItineraryDay[];
   inclusions: string[];
   exclusions: string[];
@@ -632,18 +637,22 @@ const TREKS: Trek[] = [
       }
     ],
     inclusions: [
-      'Transportation (Non-AC Tempo Traveller / Mini Bus)',
-      'Trek permits & entry fees',
-      'Experienced trek guide',
-      'Accommodation (sharing basis)',
-      'Meals: 2 Breakfast, 1 Packed Lunch (Day 1), 1 Dinner',
-      'Sightseeing as per itinerary',
-      'Finishing Badges & Achievement Certificates'
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
     ],
     exclusions: [
-      'Day 2 Lunch & Dinner',
-      'Any personal expenses',
-      'Anything not mentioned in inclusions'
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
     ],
     thingsToCarry: [
       'Government ID (soft copy)',
@@ -669,21 +678,32 @@ const TREKS: Trek[] = [
     title: 'Nethravathi Peak Trek',
     host: 'Adventure Chaarana',
     date: 'Every Friday Night',
-    location: 'Kudremukh, Karnataka',
+    location: 'Chikamagaluru',
     duration: '2 Days / 1 Night',
     difficulty: 'Moderate',
-    elevation: '1,520 m',
-    minAge: '5 Years',
-    currentPrice: 4200,
-    originalPrice: 5200,
+    elevation: '4500ft+',
+    distance: '12km(Round)',
+    minAge: '5+',
+    timeHours: '8Hrs',
+    modeRating: 'Easy - Moderate',
+    permitNotice: 'Forest permits are limited to just 300 trekkers per day. Book at least 15–20 days in advance.',
+    currentPrice: 4199,
+    originalPrice: 4499,
+    withoutTransportPrice: 3199,
     discount: '5% OFF (3+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440961/8_yga9f8.jpg',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440973/2_bckyhk.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440971/3_itucgf.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440970/4_iby5xb.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440967/5_ylvihq.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440965/6_u5qtbo.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440963/7_bs3g3k.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png',
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png'
     ],
     itinerary: [
@@ -719,44 +739,58 @@ const TREKS: Trek[] = [
         items: [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
           { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
-          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge Visit' },
-          { time: '11:00 AM', activity: '🏛️ Kalasa Temple (Dakshina Kashi)' },
-          { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
-          { time: '02:30 PM', activity: '🏛️ Visit Historic Belur Temple' },
-          { time: '04:00 PM', activity: '🚌 Start journey back to Bangalore' },
-          { time: '10:00 PM', activity: '🏡 Final drop-offs in Bangalore' }
+          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
+          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
+          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
+          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
+          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
         ]
       }
     ],
     inclusions: [
-      'Transportation (Bangalore to Bangalore)',
-      'Accommodations in Homestay/Tents (Multiple sharing)',
-      'Meals: 2 Breakfasts, 1 Lunch, 1 Dinner',
-      'Forest entry permissions & Guide fees',
-      'Professional Trek Leads',
-      'First Aid Support'
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
     ],
     exclusions: [
-      'Day 2: Lunch & Dinner',
-      'Personal snacks & Water bottles',
-      'Anything not mentioned in inclusions'
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
     ],
     thingsToCarry: [
-      'Small backpack (10-20L)',
-      'Two pairs of clothes',
-      'Trekking shoes with good grip',
-      'Raincoat/Poncho (Mandatory in monsoons)',
-      'Water bottles (min 2L)',
-      'Personal emergency medicine',
-      'Sunglasses & Hat'
+      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
+      'Raincoat (essential!)',
+      'Trekking / Hiking shoes',
+      'Trekking stick',
+      'Polybag for wet clothes',
+      'Sandals / flip flops',
+      'Small backpack',
+      'Water Bottle and Lunch Box',
+      'Toiletries',
+      'Sweater / Jacket',
+      'Torch / Flashlight',
+      'Energy bars, dry fruits, Glucon-D',
+      'Suncap & sunglasses',
+      'Waterproof phone cover',
+      'Charger / Power bank',
+      'Personal medications & Dettol'
     ],
     placesCovered: [
       'Nethravathi Peak',
       'Kudremukh Forest Area',
       'Samse Tea Estate',
-      'Kalasa Hanging Bridge',
-      'Kalasa Temple (Dakshina Kashi)',
-      'Belur Temple'
+      'Kalasa Hanging Bridge / KPP Prathistana',
+      'Kalasa Temple',
+      'Horanadu Temple / Belur Temple'
     ]
   },
   {
@@ -827,17 +861,22 @@ const TREKS: Trek[] = [
       }
     ],
     inclusions: [
-      'Transportation (Bangalore to Bangalore)',
-      'Accommodations in Homestay/Tents (Multiple sharing)',
-      'Meals: 2 Breakfasts, 1 Packed Lunch (Day 1), 1 Dinner',
-      'Forest entry permissions & Guide fees',
-      'Professional Trek Leads',
-      'First Aid Support'
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee & Bandekallu Falls entry fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
     ],
     exclusions: [
-      'Day 2: Lunch & Dinner',
-      'Personal snacks & Water bottles',
-      'Anything not mentioned in inclusions'
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
     ],
     thingsToCarry: [
       'Small backpack (10-20L)',
@@ -929,16 +968,10 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const navLinks = [
-    { label: 'Upcoming Treks', path: '/#treks-section', isAnchor: true },
-    { label: 'Community Showcase', path: '/#gallery-section', isAnchor: true },
-    { label: 'Safety Code', path: '/safety-code', isAnchor: false },
-    { label: 'Terms & Conditions', path: '/terms', isAnchor: false },
-    { label: 'Refund Policy', path: '/refund-policy', isAnchor: false }
-  ];
-
-  const handleLinkClick = (link: typeof navLinks[0]) => {
-    if (link.isAnchor) {
+  const handleLinkClick = (link: { label: string; path: string; isAnchor?: boolean; isExternal?: boolean }) => {
+    if (link.isExternal) {
+      window.open(link.path, '_blank', 'noopener,noreferrer');
+    } else if (link.isAnchor) {
       const targetId = link.path.split('#')[1] || 'treks-section';
       if (isHomePage) {
         const el = document.getElementById(targetId);
@@ -969,57 +1002,68 @@ const Header = () => {
       : 'bg-transparent text-white'
     : 'bg-white/90 backdrop-blur-md border-b border-slate-100 text-[#0F0F0F] shadow-sm';
 
+  const menuLinks = {
+    treks: { label: 'Upcoming Treks', path: '/#treks-section', isAnchor: true },
+    contact: { label: 'Contact Us', path: '/#footer', isAnchor: true },
+    join: { label: 'Join Community', path: 'https://wa.me/919980489494?text=Hey%20Adventure%20Chaarana!%20I%20am%20looking%20for%20upcoming%20adventures.', isExternal: true }
+  };
+
   return (
     <header className={`${headerClass} fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 md:h-24 flex items-center`}>
-      <div className="max-w-7xl mx-auto w-full px-6 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <img 
-            src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
-            alt="Adventure Chaarana Logo" 
-            className="h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => handleLinkClick(link)}
-              className="text-xs transition-colors hover:text-brand-orange uppercase font-black tracking-widest cursor-pointer"
-            >
-              {link.label}
-            </button>
-          ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href={`https://wa.me/919980489494?text=${encodeURIComponent("Hey Adventure Chaarana! I am looking for upcoming adventures.")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 hover:scale-105 active:scale-95 transition-all"
+      <div className="max-w-7xl mx-auto w-full px-6 relative flex items-center justify-between md:grid md:grid-cols-3">
+        {/* Left Column - Upcoming Treks & Contact Us */}
+        <div className="hidden md:flex items-center justify-start gap-8">
+          <button
+            onClick={() => handleLinkClick(menuLinks.treks)}
+            className="text-xs transition-colors hover:text-brand-orange uppercase font-black tracking-widest cursor-pointer"
           >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
-            Join Community
-          </a>
+            Upcoming Treks
+          </button>
+          <button
+            onClick={() => handleLinkClick(menuLinks.contact)}
+            className="text-xs transition-colors hover:text-brand-orange uppercase font-black tracking-widest cursor-pointer whitespace-nowrap"
+          >
+            Contact Us
+          </button>
         </div>
 
-        {/* Mobile Menu Trigger */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg transition-all focus:outline-none"
-          aria-label="Toggle Menu"
-        >
-          {isMobileMenuOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
-        </button>
+        {/* Center Column - Logo */}
+        <div className="flex items-center justify-center flex-1 md:flex-initial">
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+              alt="Adventure Chaarana Logo" 
+              className="h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          </Link>
+        </div>
+
+        {/* Right Column - Join Community CTA Button */}
+        <div className="hidden md:flex items-center justify-end">
+          <button
+            onClick={() => handleLinkClick(menuLinks.join)}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+          >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-3.5 h-3.5 invert" referrerPolicy="no-referrer" />
+            Join Community
+          </button>
+        </div>
+
+        {/* Mobile Hamburger Trigger */}
+        <div className="md:hidden absolute right-6 top-1/2 -translate-y-1/2">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-lg transition-all focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? (
+              <X size={24} />
+            ) : (
+              <Menu size={24} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -1036,25 +1080,26 @@ const Header = () => {
             }`}
           >
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.label}
-                  onClick={() => handleLinkClick(link)}
-                  className="text-left text-xs uppercase font-black tracking-widest py-2 border-b border-slate-100/10 hover:text-brand-orange transition-colors"
-                >
-                  {link.label}
-                </button>
-              ))}
+              <button
+                onClick={() => handleLinkClick(menuLinks.treks)}
+                className="text-left text-xs uppercase font-black tracking-widest py-2 border-b border-slate-100/10 hover:text-brand-orange transition-colors"
+              >
+                Upcoming Treks
+              </button>
+              <button
+                onClick={() => handleLinkClick(menuLinks.contact)}
+                className="text-left text-xs uppercase font-black tracking-widest py-2 border-b border-slate-100/10 hover:text-brand-orange transition-colors"
+              >
+                Contact Us
+              </button>
+              <button
+                onClick={() => handleLinkClick(menuLinks.join)}
+                className="flex items-center justify-center gap-2 py-3 mt-2 rounded-xl text-xs font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20 cursor-pointer"
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
+                Join Community
+              </button>
             </div>
-            <a
-              href={`https://wa.me/919980489494?text=${encodeURIComponent("Hey Adventure Chaarana! I am looking for upcoming adventures.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-4 rounded-xl text-xs font-black uppercase tracking-widest text-white bg-brand-orange shadow-md shadow-brand-orange/20"
-            >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4 invert" referrerPolicy="no-referrer" />
-              Join Community
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -1556,42 +1601,51 @@ const SafetyPage = () => {
   );
 };
 
+interface Batch {
+  start: string;
+  end: string;
+  year: number;
+  dayName: string;
+  monthGroup: string;
+}
+
 const TrekDetailsPage = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
-  const getUpcomingBatches = (trek: Trek) => {
-    const batches = [];
-    const today = new Date();
+  const getUpcomingBatches = (trek: Trek): Batch[] => {
+    const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // Start of next month
-    const startOfNextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+    // We want to generate dates exclusively for June and July 2026
+    const startDateLimit = new Date(2026, 5, 1); // June 1st, 2026
+    const endDateLimit = new Date(2026, 6, 31);   // July 31st, 2026
     
-    // Check up to 35 days from the start of next month to find upcoming weekend slots
-    for (let i = 0; i < 35; i++) {
-      const date = new Date(startOfNextMonth);
-      date.setDate(startOfNextMonth.getDate() + i);
-      const day = date.getDay(); // 0: Sun, 5: Fri, 6: Sat
+    const tempDate = new Date(startDateLimit);
+    let safetyCounter = 0;
+    while (tempDate <= endDateLimit && safetyCounter < 150) {
+      safetyCounter++;
+      const day = tempDate.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
       // One day: Fri & Sat departures
       // Two day: Only Fri departures
       if (day === 5 || (isOneDay && day === 6)) {
-        const startDate = new Date(date);
-        const endDate = new Date(date);
+        const startDate = new Date(tempDate);
+        const endDate = new Date(tempDate);
         endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
 
-        const formatDate = (d: Date) => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+        const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
+        const monthGroup = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
         
         batches.push({
           start: formatDate(startDate),
           end: formatDate(endDate),
           year: startDate.getFullYear(),
-          dayName: startDate.toLocaleDateString('en-IN', { weekday: 'short' })
+          dayName: startDate.toLocaleDateString('en-US', { weekday: 'short' }),
+          monthGroup
         });
       }
-      if (batches.length >= 4) break;
+      tempDate.setDate(tempDate.getDate() + 1);
     }
     return batches;
   };
@@ -1609,7 +1663,7 @@ const TrekDetailsPage = () => {
     );
   }
 
-  const onBack = () => navigate(-1);
+
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -1668,14 +1722,6 @@ const TrekDetailsPage = () => {
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
       <header className="relative pt-16 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
-        {/* Inline Back Button */}
-        <button 
-          onClick={onBack}
-          className="absolute top-6 left-6 z-20 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/75 hover:text-white transition-all group bg-brand-dark/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10"
-        >
-          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Back
-        </button>
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -1711,33 +1757,92 @@ const TrekDetailsPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-6 text-white/50 font-bold text-[10px] uppercase tracking-widest pt-2"
+              className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3.5 text-white/50 font-bold text-[10.5px] uppercase tracking-widest pt-2 max-w-4xl mx-auto"
             >
-              <span className="flex items-center gap-1.5">🏔️ {trek.elevation}</span>
-              {trek.distance && <span className="flex items-center gap-1.5">📏 {trek.distance} Total</span>}
-              <span className="flex items-center gap-1.5">📍 {trek.location}</span>
-              <span className="flex items-center gap-1.5">👶 Age {trek.minAge}+</span>
+              <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">🏔️</span> Max Alt: {trek.elevation}</span>
+              {trek.distance && <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">📏</span> Distance: {trek.distance}</span>}
+              {trek.timeHours && <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">⏱️</span> Time: {trek.timeHours}</span>}
+              {trek.modeRating && <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">⚡</span> Mode: {trek.modeRating}</span>}
+              <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">📍</span> {trek.location}</span>
+              <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">👶</span> Age: {trek.minAge}</span>
             </motion.div>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
-          >
-            <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
-              <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
-              <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
-                <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-                <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+          {trek.withoutTransportPrice ? (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col md:flex-row items-stretch justify-center gap-6 pt-4 max-w-4xl mx-auto w-full"
+            >
+              {/* Option 1: With Transport */}
+              <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 bg-brand-orange text-[8px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-xl text-white">
+                  Popular
+                </div>
+                <div className="space-y-4 text-center md:text-left">
+                  <div>
+                    <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-widest block mb-1">Travel Package</span>
+                    <h4 className="text-lg font-black text-white italic tracking-tight">With <span className="text-brand-orange">Transport</span></h4>
+                  </div>
+                  <div className="flex items-baseline justify-center md:justify-start gap-3">
+                    <span className="text-4xl font-extrabold text-white">₹{trek.currentPrice.toLocaleString()}</span>
+                    <span className="text-sm font-bold text-white/35 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                  </div>
+                  <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
+                    Includes hassle-free round-trip transportation from Bangalore and all standard inclusions.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
-                <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+
+              {/* Option 2: Without Transport */}
+              <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                <div className="space-y-4 text-center md:text-left">
+                  <div>
+                    <span className="text-[9px] font-black text-cyan-400-glow uppercase tracking-widest block mb-1">Self-Travel</span>
+                    <h4 className="text-lg font-black text-white italic tracking-tight">Without <span className="text-cyan-400">Transport</span></h4>
+                  </div>
+                  <div className="flex items-baseline justify-center md:justify-start gap-3">
+                    <span className="text-4xl font-extrabold text-white">₹{trek.withoutTransportPrice.toLocaleString()}</span>
+                  </div>
+                  <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
+                    Make your own way there. All other inclusions and professional tour services remain exactly the same.
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+            >
+              <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
+                <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
+                <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
+                  <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                  <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                  <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {trek.permitNotice && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="max-w-2xl mx-auto mt-6 bg-amber-500/10 border border-amber-500/20 backdrop-blur-md px-5 py-3.5 rounded-2xl flex items-center justify-center gap-3.5 text-center text-amber-200/90 text-[11px] font-semibold leading-relaxed shadow-[0_4px_20px_rgba(245,158,11,0.05)]"
+            >
+              <span className="text-base shrink-0">🎫</span>
+              <p>{trek.permitNotice}</p>
+            </motion.div>
+          )}
         </div>
       </header>
 
@@ -1772,82 +1877,189 @@ const TrekDetailsPage = () => {
           </section>
         )}
 
+        {/* ─── DM TO BOOK BANNER ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-brand-dark text-white p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="space-y-2 text-center md:text-left z-10">
+            <span className="text-brand-orange text-[9px] font-black uppercase tracking-[0.3em] block mb-1">📅 Reserve Your Slot</span>
+            <h3 className="text-2xl md:text-3xl font-black italic tracking-tight">Ready to book your slots?</h3>
+            <p className="text-white/60 text-xs md:text-sm font-semibold max-w-xl">
+              DM us directly on WhatsApp to secure your slots instantly or clear any queries about your upcoming adventure.
+            </p>
+          </div>
+          <a
+            href={`https://wa.me/919980489494?text=Hi!%20I'd%20like%20to%20book%20slots%20for%20the%20${encodeURIComponent(trek.title)}.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold text-xs tracking-wider uppercase px-8 py-4.5 rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.3)] hover:-translate-y-0.5 transition-all duration-300 shrink-0 z-10 font-sans"
+          >
+            <MessageCircle size={18} className="fill-white" />
+            <span>DM TO 9980489494</span>
+          </a>
+        </motion.div>
+
         {/* ─── BATCHES & PICKUPS ─── */}
         <section className="grid lg:grid-cols-2 gap-8 sticky-trigger">
           {/* Upcoming Batches */}
-          <div className="space-y-6">
+          <div className="space-y-5">
             <div className="flex items-center gap-3">
               <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📆 Available Batches</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
             
             <div className="space-y-4">
-              <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
-              <div className="grid gap-3">
-                {getUpcomingBatches(trek).map((batch, idx) => {
-                  const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
-                  const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
-
+              <div className="space-y-1">
+                <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
+                {(() => {
+                  const batches = getUpcomingBatches(trek);
+                  const departureDays = Array.from(new Set(batches.map(b => b.dayName)));
+                  const departureText = departureDays.includes('Fri') && departureDays.includes('Sat')
+                    ? 'Departures every Friday & Saturday Night'
+                    : departureDays.includes('Fri')
+                    ? 'Departures every Friday Night'
+                    : 'Weekend Departures';
                   return (
-                    <a 
-                      key={idx} 
-                      href={waLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group bg-white border border-slate-100 p-5 rounded-2xl flex items-center justify-between hover:border-brand-orange/30 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer"
-                    >
-                      <div className="flex items-center gap-5">
-                        <div className="flex flex-col items-center justify-center w-14 h-14 rounded-2xl bg-slate-50 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                          <span className="text-[10px] font-black uppercase tracking-tighter opacity-60">{batch.dayName}</span>
-                          <span className="text-lg font-black">{batch.start.split(' ')[0]}</span>
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-black text-brand-orange uppercase tracking-widest mb-0.5">Booking Open</p>
-                          <p className="font-bold text-slate-800 text-sm">{batch.start} - {batch.end}, {batch.year}</p>
-                        </div>
-                      </div>
-                      <button className="bg-slate-50 text-slate-400 group-hover:bg-brand-orange group-hover:text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
-                        Book Now
-                      </button>
-                    </a>
+                    <p className="text-[10px] uppercase font-black tracking-widest text-brand-orange/80 italic">
+                      {departureText}
+                    </p>
                   );
-                })}
+                })()}
               </div>
+              
+              {(() => {
+                const grouped = getUpcomingBatches(trek).reduce((acc, batch) => {
+                  const group = batch.monthGroup || 'Upcoming Batches';
+                  if (!acc[group]) acc[group] = [];
+                  acc[group].push(batch);
+                  return acc;
+                }, {} as Record<string, Batch[]>);
+
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    {Object.keys(grouped).map((monthGroup) => {
+                      const monthBatches = grouped[monthGroup] || [];
+                      return (
+                        <div key={monthGroup} className="space-y-4 bg-slate-50/60 hover:bg-white border border-slate-200/50 p-6 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-brand-orange">
+                          <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-brand-orange/5 border border-brand-orange/10 px-3 py-1.5 rounded-full w-fit">
+                            {monthGroup}
+                          </h4>
+                          <div className="flex flex-col gap-2">
+                            {monthBatches.map((batch, idx) => {
+                              const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the ${trek.title} for the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
+                              const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
+
+                              return (
+                                <a 
+                                  key={idx} 
+                                  href={waLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="group bg-white border border-slate-100 hover:bg-brand-orange/[0.03] hover:border-brand-orange/30 p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer"
+                                >
+                                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                                  <p className="font-bold text-slate-800 text-xs tracking-tight">
+                                    {batch.start} - {batch.end}
+                                  </p>
+                                </a>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </div>
           </div>
 
           {/* Pickup Points */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="text-cyan-500 text-[8px] font-black uppercase tracking-[0.4em]">🚍 Boarding Points</span>
+              <span className="text-cyan-500 text-[8px] font-black uppercase tracking-[0.4em]">🚍 Pickup Locations</span>
               <div className="flex-1 h-px bg-slate-100" />
             </div>
 
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Compass size={120} className="text-white animate-spin-slow" />
+            <div className="bg-slate-950 border border-slate-850 rounded-[2rem] p-6 text-white relative overflow-hidden group shadow-[0_12px_36px_-6px_rgba(15,23,42,0.6)] hover:shadow-[0_24px_48px_-8px_rgba(15,23,42,0.8)] hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Compass size={60} className="text-white animate-spin-slow" />
               </div>
               
-              <div className="relative z-10 space-y-8">
-                <div className="space-y-1">
-                   <h3 className="text-2xl font-black tracking-tight text-white italic">Pickup <span className="text-cyan-400">Locations</span></h3>
-                   <p className="text-[10px] uppercase font-black tracking-widest text-white/40 italic">Departures from Bangalore</p>
-                </div>
+              <div className="relative z-10 space-y-5">
+                {(() => {
+                  const allPickups = trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || [];
+                  const hassanPickups = allPickups.filter(p => p.activity.toLowerCase().includes('hassan'));
+                  const bangalorePickups = allPickups.filter(p => !p.activity.toLowerCase().includes('hassan'));
 
-                <div className="space-y-6">
-                  {(trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || []).map((p, idx, filtered) => (
-                    <div key={idx} className="flex gap-4 group/point">
-                      <div className="flex flex-col items-center gap-1 shrink-0">
-                         <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
-                         {idx < filtered.length - 1 && <div className="w-px flex-1 bg-white/10" />}
-                      </div>
-                      <div className="pb-4">
-                        <span className="text-[9px] font-black text-cyan-400 uppercase tracking-widest">{p.time}</span>
-                        <p className="font-bold text-sm text-white/90">{p.activity.replace('📍', '').trim()}</p>
-                        <p className="text-[9px] text-white/40 font-medium uppercase tracking-tighter mt-0.5">Boarding Point</p>
-                      </div>
+                  return (
+                    <div className="space-y-6">
+                      {bangalorePickups.length > 0 && (
+                        <div className="space-y-3">
+                          <h3 className="text-xs font-black tracking-widest text-white/50 uppercase">Bangalore <span className="text-cyan-400">Pickups</span></h3>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {bangalorePickups.map((p, idx) => (
+                              <div key={idx} className="bg-white/5 border border-white/5 hover:bg-white/10 hover:border-cyan-400/20 p-3 rounded-xl flex items-center gap-3 transition-all duration-300 shadow-inner">
+                                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                                <div className="min-w-0">
+                                  <span className="text-[8px] font-bold text-cyan-400 tracking-wider block uppercase">{p.time}</span>
+                                  <p className="font-bold text-xs text-white/95 leading-tight truncate">{p.activity.replace('📍', '').trim()}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {hassanPickups.length > 0 && (
+                        <div className="space-y-3 border-t border-white/5 pt-4">
+                          <h3 className="text-xs font-black tracking-widest text-white/50 uppercase">Hassan <span className="text-brand-orange">Pickup</span></h3>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {hassanPickups.map((p, idx) => (
+                              <div key={idx} className="bg-white/5 border border-brand-orange/10 hover:bg-white/10 hover:border-brand-orange/30 p-3 rounded-xl flex items-center gap-3 transition-all duration-300 shadow-inner border-l-2 border-l-brand-orange">
+                                <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0 animate-pulse" />
+                                <div className="min-w-0">
+                                  <span className="text-[8px] font-bold text-brand-orange tracking-wider block uppercase">{p.time}</span>
+                                  <p className="font-bold text-xs text-white/95 leading-tight truncate">{p.activity.replace('📍', '').trim()}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  ))}
+                  );
+                })()}
+              </div>
+            </div>
+
+            {/* Important Notes */}
+            <div className="bg-white hover:bg-slate-50/50 border border-slate-100 hover:border-brand-orange/20 p-5 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 duration-300 transition-all border-l-4 border-l-cyan-400 space-y-3.5">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-cyan-400/5 border border-cyan-400/10 px-3 py-1.5 rounded-full w-fit">
+                📢 Important Notes
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-xs mt-0.5 shrink-0">🕒</span>
+                  <p className="text-xs text-slate-600 font-bold leading-relaxed">
+                    Timings are tentative and subject to change. Updates shared before departure.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2.5 bg-brand-orange/5 border border-brand-orange/10 p-2.5 rounded-xl">
+                  <span className="text-xs mt-0.5 shrink-0">⚠️</span>
+                  <p className="text-xs text-slate-850 font-black leading-relaxed">
+                    Please arrive <span className="text-brand-orange uppercase underline decoration-wavy decoration-brand-orange/30">10 MINUTES EARLY</span>
+                  </p>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-xs mt-0.5 shrink-0">💬</span>
+                  <p className="text-xs text-slate-600 font-bold leading-relaxed">
+                    WhatsApp group created 24 hours before departure.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1879,45 +2091,39 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-            <div className="space-y-12">
-               {trek.itinerary.map((day, dIdx) => (
-                 <div key={dIdx} className="space-y-4">
-                   <div className="flex items-center gap-3">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
-                        {day.emoji} {day.label}
-                      </span>
-                      <div className="flex-1 h-px bg-slate-100" />
-                   </div>
-                   
-                   <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                      {day.items.map((item, idx) => {
-                        const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
-                        return (
-                          <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
-                            <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                            <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                              <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                              <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-[11px]' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
-                              {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
-                            </div>
+          <div className={`grid grid-cols-1 gap-6 md:gap-8 items-start ${
+            trek.itinerary.length === 1 
+              ? 'max-w-xl mx-auto' 
+              : trek.itinerary.length === 2 
+              ? 'md:grid-cols-2 max-w-4xl mx-auto' 
+              : 'md:grid-cols-2 lg:grid-cols-3'
+          }`}>
+             {trek.itinerary.map((day, dIdx) => (
+               <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                 <div className="flex items-center gap-3 mb-6">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                      {day.emoji} {day.label}
+                    </span>
+                    <div className="flex-1 h-px bg-slate-100" />
+                 </div>
+                 
+                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                    {day.items.map((item, idx) => {
+                      const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                      return (
+                        <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                          <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                          <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                            <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                            <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-[11px]' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
+                            {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
                           </div>
-                        );
-                      })}
-                   </div>
+                        </div>
+                      );
+                    })}
                  </div>
-               ))}
-            </div>
-
-            <div className="hidden lg:block sticky top-20 h-fit">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
-                 <img src={trek.gallery?.[1] || trek.image} alt={`Expedition Highlights - ${trek.title}`} className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-105" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                 <div className="absolute bottom-4 left-4 text-white">
-                   <p className="text-xl font-black leading-tight italic">"Where steps lead to <br/> better views."</p>
-                 </div>
-              </div>
-            </div>
+               </div>
+             ))}
           </div>
         </section>
 
@@ -1964,7 +2170,7 @@ const TrekDetailsPage = () => {
               { icon: '👤', title: 'Professional Guidance', desc: 'Safety-first navigation by our certified mountaineers and local trek veterans who know the terrain inside out.' },
               { icon: '🎫', title: 'Smooth Clearances', desc: 'We handle all necessary forest permissions and entry permits, so you can focus solely on your adventure.' },
               { icon: '🏅', title: 'Summit Mementos', desc: 'Receive a premium physical metal badge—a badge of honor to remember your mountain conquest.' },
-              { icon: '📜', title: 'Official Recognition', desc: 'Get a signed digital certificate of achievement, documenting your grit and successful summit.' }
+              { icon: '📜', title: 'Official Recognition', desc: 'Get a signed certificate of achievement, documenting your grit and successful summit.' }
             ].map((item, i) => (
               <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
@@ -2045,7 +2251,7 @@ const TrekDetailsPage = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
               {trek.thingsToCarry.map((item, i) => {
                 const getIcon = (text: string) => {
                   const t = text.toLowerCase();
@@ -2063,14 +2269,11 @@ const TrekDetailsPage = () => {
                   return '📍';
                 };
                 return (
-                  <div key={i} className="flex gap-4 group">
-                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-brand-orange transition-colors">
-                      <span className="text-2xl">{getIcon(item)}</span>
+                  <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-orange/30 p-3 rounded-2xl transition-all duration-300">
+                    <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                      {getIcon(item)}
                     </div>
-                    <div className="space-y-1">
-                      <h5 className="font-bold text-white text-sm">{item}</h5>
-                      <p className="text-white/30 text-[10px] leading-tight">Must-have essential</p>
-                    </div>
+                    <p className="font-semibold text-xs leading-tight text-white/90">{item}</p>
                   </div>
                 );
               })}
@@ -2285,6 +2488,86 @@ const TrekDetailsPage = () => {
                    Important: Due to unforeseen circumstances such as natural disasters, roadblocks, local unrest, government mandates, or severe traffic, certain locations in the itinerary may become inaccessible. In such events, Adventure Chaarana shall not be held liable, and no refunds, alternative arrangements, or compensatory claims will be provided.
                  </p>
                </div>
+            </div>
+          </div>
+        </section>
+        {/* ─── PROMINENT CANCELLATION POLICY ─── */}
+        <section className="space-y-10 pt-4">
+          <div className="bg-white border-2 border-brand-orange/20 rounded-[2.5rem] p-6 md:p-12 shadow-[0_20px_50px_rgba(249,115,22,0.06)] space-y-8 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 via-brand-orange to-sky-500" />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
+              <div className="space-y-2">
+                <span className="bg-brand-orange/10 text-brand-orange font-extrabold text-[9px] uppercase tracking-[0.25em] px-3 py-1 rounded-full border border-brand-orange/15 inline-block font-sans">
+                  Booking Safeguards
+                </span>
+                <h4 className="text-2xl md:text-3xl font-black text-brand-dark tracking-tight leading-none font-sans">
+                  Official Refund & <span className="text-brand-orange italic font-serif">Cancellation Policy</span>
+                </h4>
+              </div>
+              <p className="text-[11px] text-slate-400 font-bold max-w-sm leading-relaxed uppercase tracking-tight md:text-right font-sans">
+                🛡️ Verified transparent refund rates and conditions governing your booking.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+              {/* Card 1: Within 48 Hours */}
+              <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9px] font-black uppercase tracking-widest bg-red-600 text-white px-3 py-1 rounded-full font-mono">
+                      Within 48 Hrs
+                    </span>
+                    <span className="text-xl">🚨</span>
+                  </div>
+                  <h6 className="font-extrabold text-brand-dark text-[13px] uppercase tracking-wider font-sans">Strict Protection Period</h6>
+                  <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">0% Refund</p>
+                </div>
+                <p className="text-xs text-slate-600 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
+                  No refund, no credit voucher & no rescheduling — <span className="text-red-700 font-extrabold underline decoration-wavy underline-offset-2">no exceptions</span>.
+                </p>
+              </div>
+
+              {/* Card 2: BEFORE 48 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
+              <div className="p-7 rounded-[2rem] bg-amber-50 border-2 border-amber-400 shadow-[0_15px_45px_rgba(245,158,11,0.15)] transform md:-translate-y-1 hover:-translate-y-2 transition-all duration-300 space-y-4 flex flex-col justify-between relative overflow-hidden z-20">
+                <div className="absolute top-0 right-0 bg-amber-500 text-white text-[8px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
+                  ⚠️ ACTIVE OPTION
+                </div>
+                <div className="space-y-3 relative">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9.5px] font-black uppercase tracking-widest bg-amber-500 text-white px-3.5 py-1 rounded-full font-sans font-extrabold animate-pulse">
+                      Before 48 Hours
+                    </span>
+                    <span className="text-2xl">⏳</span>
+                  </div>
+                  <h6 className="font-extrabold text-amber-950 text-[13px] uppercase tracking-wider font-sans">Cancellation in Advance</h6>
+                  <p className="text-3xl font-black text-amber-600 tracking-tight leading-none font-sans">45% Fee</p>
+                </div>
+                <div className="space-y-2 pt-3 border-t border-amber-200 text-slate-700 font-sans">
+                  <p className="text-xs font-bold leading-relaxed">
+                    Charges are limited to <span className="text-amber-600 font-black">45% of overall price</span>.
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                    Enjoy refund execution processed directly back to source in <span className="underline decoration-dotted font-bold text-slate-700">5–7 working days</span>. No rescheduling.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Natural Calamity */}
+              <div className="p-6 rounded-3xl bg-sky-50 border border-sky-200 hover:border-sky-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9px] font-black uppercase tracking-widest bg-sky-600 text-white px-3 py-1 rounded-full font-mono font-sans">
+                      Calamity Cover
+                    </span>
+                    <span className="text-xl">⛈️</span>
+                  </div>
+                  <h6 className="font-extrabold text-[#0f0f0f] text-[13px] uppercase tracking-wider font-sans">Force Majeure</h6>
+                  <p className="text-2xl font-black text-sky-700 tracking-tight leading-none font-sans font-extrabold">50/50 Coverage Plan</p>
+                </div>
+                <p className="text-xs text-slate-600 font-semibold leading-relaxed pt-2 border-t border-sky-100 font-sans">
+                  50% Cash refund + 50% travel voucher valid for 12 months. GST & gateway charges apply.
+                </p>
+              </div>
             </div>
           </div>
         </section>
