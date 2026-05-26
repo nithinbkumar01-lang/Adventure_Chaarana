@@ -540,7 +540,7 @@ const TREKS: Trek[] = [
       }
     ],
     inclusions: [
-      'Transportation - Non-AC seater (Tempo Traveller / Mini Bus / Bus depending on group size)',
+      'Transportation - Non-AC seater (TT/ Mini bus/ Bus depending on group size)',
       'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
       'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
       'All entry fees as per itinerary'
@@ -2451,7 +2451,7 @@ const TrekDetailsPage = () => {
               <div className="space-y-1">
                 <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">📅 Timeline</div>
                 <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
-                  Departure <span className="text-brand-orange-glow italic font-serif">Schedule</span>
+                  Trek <span className="text-brand-orange-glow italic font-serif">Itinerary</span>
                 </h2>
               </div>
               <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-3">
@@ -2471,32 +2471,42 @@ const TrekDetailsPage = () => {
               ? 'md:grid-cols-2 max-w-4xl mx-auto' 
               : 'md:grid-cols-2 lg:grid-cols-3'
           }`}>
-             {trek.itinerary.map((day, dIdx) => (
-               <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                 <div className="flex items-center gap-3 mb-6">
-                    <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
-                      {day.emoji} {day.label}
-                    </span>
-                    <div className="flex-1 h-px bg-slate-100" />
-                 </div>
-                 
-                 <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                    {day.items.map((item, idx) => {
-                      const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
-                      return (
-                        <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
-                          <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                          <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                            <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                            <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
-                            {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+             {trek.itinerary.map((originalDay, dIdx) => {
+               const day = originalDay.label.toLowerCase() === 'day 0'
+                 ? {
+                     ...originalDay,
+                     items: [
+                       { time: '08:00 PM', activity: 'Departure from Bangalore time 8PM' }
+                     ]
+                   }
+                 : originalDay;
+               return (
+                 <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                   <div className="flex items-center gap-3 mb-6">
+                      <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                        {day.emoji} {day.label}
+                      </span>
+                      <div className="flex-1 h-px bg-slate-100" />
+                   </div>
+                   
+                   <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                      {day.items.map((item, idx) => {
+                        const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                        return (
+                          <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                            <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                            <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                              <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                              <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
+                              {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                   </div>
                  </div>
-               </div>
-             ))}
+               );
+             })}
           </div>
         </section>
 
@@ -2539,11 +2549,11 @@ const TrekDetailsPage = () => {
 
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
             {[
-              { icon: '🚌', title: 'Comfortable Transit', desc: 'Round-trip from Bangalore in Tempo Travelers.' },
+              { icon: '🚌', title: 'Comfortable Transit', desc: 'Round-trip from Bangalore in TT/ Mini bus/ Bus.' },
               { icon: '👤', title: 'Expert Guides', desc: 'Safety-first navigation by certified mountaineers.' },
               { icon: '🎫', title: 'Permissions', desc: 'All forest clearances and entry permits handled.' },
               { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' },
-              { icon: '📜', title: 'Signed Certificate', desc: 'Achievement Signed certificate of achievement.' }
+              { icon: '📜', title: 'Accomplished Certificate', desc: 'Official accomplished certificate of achievement.' }
             ].map((item, i) => (
               <div key={i} className={`group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300 ${i === 4 ? 'col-span-2 lg:col-span-1' : ''}`}>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-brand-orange/10 transition-all font-bold">
@@ -2578,14 +2588,28 @@ const TrekDetailsPage = () => {
                 <h4 className="text-xs md:text-sm font-black text-brand-dark uppercase tracking-wider">Inclusions</h4>
               </div>
               <ul className="space-y-2 md:space-y-4">
-                {trek.inclusions.map((item, idx) => (
-                  <li key={idx} className="flex gap-2 group">
-                    <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
-                      <span className="text-[8px] font-black">✓</span>
-                    </div>
-                    <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
-                  </li>
-                ))}
+                {trek.inclusions.map((originalItem, idx) => {
+                  let item = originalItem;
+                  item = item.replace(/Tempo Traveller, Mini Bus, or Bus/g, 'TT/ Mini bus/ Bus');
+                  item = item.replace(/Tempo Traveller \/ Mini Bus \/ Bus/gi, 'TT/ Mini bus/ Bus');
+                  item = item.replace(/Tempo Traveller/gi, 'TT/ Mini bus/ Bus');
+                  item = item.replace(/Tempo Travelers/gi, 'TT/ Mini bus/ Bus');
+                  item = item.replace(/Signed Certificate/gi, 'Accomplished Certificate');
+                  item = item.replace(/signed certificate/gi, 'accomplished certificate');
+                  item = item.replace(/E-Certificate of achievement/gi, 'Accomplished Certificate of achievement');
+                  item = item.replace(/E-Certificate/gi, 'Accomplished Certificate');
+                  if (item.toLowerCase().includes('certificate') && !item.toLowerCase().includes('accomplished')) {
+                    item = item.replace(/certificate/gi, 'accomplished certificate');
+                  }
+                  return (
+                    <li key={idx} className="flex gap-2 group">
+                      <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
+                        <span className="text-[8px] font-black">✓</span>
+                      </div>
+                      <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -2628,18 +2652,19 @@ const TrekDetailsPage = () => {
               {trek.thingsToCarry.map((item, i) => {
                 const getIcon = (text: string) => {
                   const t = text.toLowerCase();
-                  if (t.includes('shoe')) return '👟';
+                  if (text.includes('shoe') || t.includes('hiking') || t.includes('sturdy') || t.includes('footwear')) return '🥾';
                   if (t.includes('torch') || t.includes('headlamp')) return '🔦';
                   if (t.includes('water') || t.includes('bottle')) return '💧';
-                  if (t.includes('jacket') || t.includes('sweater') || t.includes('clothes')) return '🧥';
-                  if (t.includes('id') || t.includes('proof')) return '🪪';
-                  if (t.includes('medication') || t.includes('aid')) return '🩹';
-                  if (t.includes('power') || t.includes('charger')) return '🔋';
-                  if (t.includes('bag') || t.includes('pack')) return '🎒';
-                  if (t.includes('rain') || t.includes('umbrella')) return '☔';
-                  if (t.includes('toiletries') || t.includes('brush')) return '🪥';
-                  if (t.includes('snack') || t.includes('fruit')) return '🍎';
-                  return '📍';
+                  if (t.includes('jacket') || t.includes('sweater') || t.includes('clothes') || t.includes('wear') || t.includes('pant')) return '🧥';
+                  if (t.includes('id') || t.includes('proof') || t.includes('pan') || t.includes('dl') || t.includes('voter') || t.includes('govt')) return '🪪';
+                  if (t.includes('medication') || t.includes('aid') || t.includes('kit')) return '🩹';
+                  if (t.includes('power') || t.includes('charger') || t.includes('battery')) return '🔋';
+                  if (t.includes('bag') || t.includes('pack') || t.includes('polybag')) return '🎒';
+                  if (t.includes('rain') || t.includes('umbrella') || t.includes('poncho') || t.includes('coat') || t.includes('essential')) return '☔';
+                  if (t.includes('toiletries') || t.includes('brush') || t.includes('brush') || t.includes('soap')) return '🪥';
+                  if (t.includes('snack') || t.includes('fruit') || t.includes('snack') || t.includes('food') || t.includes('energy')) return '🍎';
+                  if (t.includes('stick') || t.includes('pole') || t.includes('staff')) return '🦯';
+                  return '🌲';
                 };
                 return (
                   <div key={i} className="flex items-center gap-2 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-orange/30 p-2 rounded-xl transition-all duration-350">
