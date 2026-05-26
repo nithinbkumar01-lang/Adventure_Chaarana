@@ -2464,50 +2464,69 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className={`grid grid-cols-1 gap-6 md:gap-8 items-start ${
-            trek.itinerary.length === 1 
-              ? 'max-w-xl mx-auto' 
-              : trek.itinerary.length === 2 
-              ? 'md:grid-cols-2 max-w-4xl mx-auto' 
-              : 'md:grid-cols-2 lg:grid-cols-3'
-          }`}>
-             {trek.itinerary.map((originalDay, dIdx) => {
-               const day = originalDay.label.toLowerCase() === 'day 0'
-                 ? {
-                     ...originalDay,
-                     items: [
-                       { time: '08:00 PM', activity: 'Departure from Bangalore time 8PM' }
-                     ]
-                   }
-                 : originalDay;
-               return (
-                 <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                   <div className="flex items-center gap-3 mb-6">
+          {/* Day 0 Header Card when available */}
+          {(() => {
+            const day0 = trek.itinerary.find(d => d.label.toLowerCase() === 'day 0');
+            return day0 ? (
+              <div className="max-w-4xl mx-auto w-full mb-8">
+                <div className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
                       <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
-                        {day.emoji} {day.label}
+                        🌌 Day 0
                       </span>
-                      <div className="flex-1 h-px bg-slate-100" />
-                   </div>
-                   
-                   <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                      {day.items.map((item, idx) => {
-                        const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
-                        return (
-                          <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
-                            <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                            <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                              <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                              <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
-                              {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                      <span className="text-xs font-bold text-slate-400">Departure Night</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-brand-orange/[0.04] border border-brand-orange/10 px-4 py-3 rounded-2xl flex-1 sm:flex-none">
+                      <span className="text-xs font-mono font-black text-brand-orange shrink-0">08:00 PM</span>
+                      <p className="font-bold text-slate-705 text-xs md:text-sm">Departure from Bangalore time 8PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null;
+          })()}
+
+          {/* Day 1 & Day 2 Side-by-Side Grid */}
+          {(() => {
+            const otherDays = trek.itinerary.filter(d => d.label.toLowerCase() !== 'day 0');
+            return (
+              <div className={`grid grid-cols-1 gap-6 md:gap-8 items-start ${
+                otherDays.length === 1 
+                  ? 'max-w-xl mx-auto' 
+                  : otherDays.length === 2 
+                  ? 'md:grid-cols-2 max-w-4xl mx-auto' 
+                  : 'md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
+              }`}>
+                 {otherDays.map((day, dIdx) => (
+                   <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                     <div className="flex items-center gap-3 mb-6">
+                        <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                          {day.emoji} {day.label}
+                        </span>
+                        <div className="flex-1 h-px bg-slate-100" />
+                     </div>
+                     
+                     <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                        {day.items.map((item, idx) => {
+                          const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                          return (
+                            <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                              <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                              <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                                <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                                <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
+                                {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                     </div>
                    </div>
-                 </div>
-               );
-             })}
-          </div>
+                 ))}
+              </div>
+            );
+          })()}
         </section>
 
         {/* ─── FULL SCREEN COMPACT QUOTE ─── */}
