@@ -1613,6 +1613,17 @@ const TrekDetailsPage = () => {
   const { slug } = useParams();
   const trek = TREKS.find(t => t.slug === slug);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
@@ -1637,6 +1648,11 @@ const TrekDetailsPage = () => {
         const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
         const monthGroup = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
         
+        if (isMobile && monthGroup.includes('July')) {
+          tempDate.setDate(tempDate.getDate() + 1);
+          continue;
+        }
+
         batches.push({
           start: formatDate(startDate),
           end: formatDate(endDate),
@@ -2101,7 +2117,7 @@ const TrekDetailsPage = () => {
              {trek.itinerary.map((day, dIdx) => (
                <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                    <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
                       {day.emoji} {day.label}
                     </span>
                     <div className="flex-1 h-px bg-slate-100" />
@@ -2114,9 +2130,9 @@ const TrekDetailsPage = () => {
                         <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
                           <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
                           <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                            <span className="text-[8px] font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                            <p className={`font-bold leading-tight ${isHighlight ? 'text-brand-dark text-[11px]' : 'text-slate-600 text-xs'}`}>{item.activity}</p>
-                            {isHighlight && <p className="text-[7px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                            <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                            <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
+                            {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
                           </div>
                         </div>
                       );
@@ -2150,84 +2166,84 @@ const TrekDetailsPage = () => {
         </section>
 
         {/* ─── EXPEDITION PERKS ─── */}
-        <section className="space-y-8">
-          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+        <section className="space-y-6 md:space-y-8">
+          <div className="relative rounded-2xl overflow-hidden p-5 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-xl">
             <div className="absolute inset-0 z-0">
                <img src={trek.gallery?.[1] || trek.image} alt={`Trekking perks at ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
               <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">✨ Included</div>
-              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+              <h2 className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
                 Expedition <span className="text-brand-orange-glow italic font-serif">Perks</span>
               </h2>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
             {[
-              { icon: '🚌', title: 'Comfortable Transit', desc: 'Hassle-free round-trip travel from Bangalore in our well-maintained and sanitized push-back Tempo Travelers.' },
-              { icon: '👤', title: 'Professional Guidance', desc: 'Safety-first navigation by our certified mountaineers and local trek veterans who know the terrain inside out.' },
-              { icon: '🎫', title: 'Smooth Clearances', desc: 'We handle all necessary forest permissions and entry permits, so you can focus solely on your adventure.' },
-              { icon: '🏅', title: 'Summit Mementos', desc: 'Receive a premium physical metal badge—a badge of honor to remember your mountain conquest.' },
-              { icon: '📜', title: 'Official Recognition', desc: 'Get a signed certificate of achievement, documenting your grit and successful summit.' }
+              { icon: '🚌', title: 'Comfortable Transit', desc: 'Round-trip from Bangalore in Tempo Travelers.' },
+              { icon: '👤', title: 'Expert Guides', desc: 'Safety-first navigation by certified mountaineers.' },
+              { icon: '🎫', title: 'Permissions', desc: 'All forest clearances and entry permits handled.' },
+              { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' },
+              { icon: '📜', title: 'Signed Certificate', desc: 'Achievement Signed certificate of achievement.' }
             ].map((item, i) => (
-              <div key={i} className="group p-8 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-orange/10 transition-all font-bold">
-                  <span className="text-3xl">{item.icon}</span>
+              <div key={i} className={`group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300 ${i === 4 ? 'col-span-2 lg:col-span-1' : ''}`}>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-brand-orange/10 transition-all font-bold">
+                  <span className="text-xl md:text-2xl">{item.icon}</span>
                 </div>
-                <h4 className="text-lg font-black text-brand-dark mb-2 group-hover:text-brand-orange transition-colors">{item.title}</h4>
-                <p className="text-slate-500 text-xs font-medium leading-relaxed">{item.desc}</p>
+                <h4 className="text-xs md:text-sm font-black text-brand-dark mb-1 group-hover:text-brand-orange transition-colors">{item.title}</h4>
+                <p className="text-slate-500 text-[10px] leading-relaxed font-semibold">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ─── INCLUSIONS & EXCLUSIONS ─── */}
-        <section className="space-y-10">
-          <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
+        <section className="space-y-6 md:space-y-10">
+          <div className="relative rounded-2xl overflow-hidden p-5 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-xl">
             <div className="absolute inset-0 z-0">
                <img src={trek.image} alt={`Trek inclusions and exclusions for ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
               <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em] drop-shadow-lg">📑 Logistics</div>
-              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
+              <h3 className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-xl">
                 Inclusions & <span className="text-brand-orange-glow italic font-serif">Exclusions</span>
               </h3>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-emerald-500/20 pb-4">
-                <span className="text-2xl">✅</span>
-                <h4 className="text-xl font-black text-brand-dark uppercase tracking-tight">What's Included</h4>
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-12">
+            <div className="space-y-4 md:space-y-6 border border-slate-100 bg-white/50 p-4 md:p-5 rounded-2xl md:bg-transparent md:border-none">
+              <div className="flex items-center gap-2 border-b border-emerald-500/10 pb-3">
+                <span className="text-lg md:text-xl">✅</span>
+                <h4 className="text-xs md:text-sm font-black text-brand-dark uppercase tracking-wider">Inclusions</h4>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-2 md:space-y-4">
                 {trek.inclusions.map((item, idx) => (
-                  <li key={idx} className="flex gap-4 group">
-                    <div className="w-6 h-6 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
-                      <span className="text-[10px] font-black">✓</span>
+                  <li key={idx} className="flex gap-2 group">
+                    <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
+                      <span className="text-[8px] font-black">✓</span>
                     </div>
-                    <p className="text-slate-600 font-bold text-xs leading-relaxed">{item}</p>
+                    <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-red-500/20 pb-4">
-                <span className="text-2xl">❌</span>
-                <h4 className="text-xl font-black text-brand-dark uppercase tracking-tight">What's Excluded</h4>
+            <div className="space-y-4 md:space-y-6 border border-slate-100 bg-white/50 p-4 md:p-5 rounded-2xl md:bg-transparent md:border-none">
+              <div className="flex items-center gap-2 border-b border-red-500/10 pb-3">
+                <span className="text-lg md:text-xl">❌</span>
+                <h4 className="text-xs md:text-sm font-black text-brand-dark uppercase tracking-wider">Exclusions</h4>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-2 md:space-y-4">
                 {trek.exclusions.map((item, idx) => (
-                  <li key={idx} className="flex gap-4 group">
-                    <div className="w-6 h-6 rounded-full bg-red-50 border border-red-100 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all text-red-600">
-                      <span className="text-[10px] font-black">✕</span>
+                  <li key={idx} className="flex gap-2 group">
+                    <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-red-50 border border-red-100 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all text-red-600">
+                      <span className="text-[8px] font-black">✕</span>
                     </div>
-                    <p className="text-slate-600 font-bold text-xs leading-relaxed">{item}</p>
+                    <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
                   </li>
                 ))}
               </ul>
@@ -2236,22 +2252,22 @@ const TrekDetailsPage = () => {
         </section>
 
         {/* ─── CHECKLIST ─── */}
-        <section className="bg-slate-900 text-white p-8 md:p-14 rounded-[3rem] relative overflow-hidden">
+        <section className="bg-slate-900 text-white p-6 md:p-14 rounded-3xl md:rounded-[3rem] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(232,117,26,0.1),transparent)]" />
           
-          <div className="relative z-10 grid lg:grid-cols-3 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="space-y-3">
-                <div className="text-brand-orange text-[9px] font-black uppercase tracking-[0.4em]">🎒 Checklist</div>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-none">Gear Up for <br/> the Wild</h2>
+          <div className="relative z-10 grid lg:grid-cols-3 gap-6 md:gap-12 items-center">
+            <div className="space-y-3">
+              <div className="space-y-1">
+                <div className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">🎒 Checklist</div>
+                <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none">Gear Up for <br className="hidden md:block" /> the Wild</h2>
               </div>
-              <p className="text-white/40 font-bold text-sm leading-relaxed max-w-xs">Pack light, pack smart. These essential items ensure you enjoy the rugged mountain terrain without discomfort.</p>
-              <div className="p-5 bg-white/5 rounded-2xl border border-white/10 text-white/50 text-[10px] font-bold leading-tight">
-                💡 Pro Tip: Wear full-length trekking pants to avoid scratches from wild shrubs and rough rocks.
+              <p className="text-white/45 font-bold text-[10px] md:text-[11px] leading-relaxed max-w-xs">Pack light, pack smart. Essential checklist for the rugged trails.</p>
+              <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-white/50 text-[9px] leading-tight">
+                💡 Wear full trekking pants to avoid scratches.
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
+            <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {trek.thingsToCarry.map((item, i) => {
                 const getIcon = (text: string) => {
                   const t = text.toLowerCase();
@@ -2269,11 +2285,11 @@ const TrekDetailsPage = () => {
                   return '📍';
                 };
                 return (
-                  <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-orange/30 p-3 rounded-2xl transition-all duration-300">
-                    <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                  <div key={i} className="flex items-center gap-2 bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-orange/30 p-2 rounded-xl transition-all duration-350">
+                    <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center shrink-0 text-base">
                       {getIcon(item)}
                     </div>
-                    <p className="font-semibold text-xs leading-tight text-white/90">{item}</p>
+                    <p className="font-semibold text-[10px] leading-tight text-white/90">{item}</p>
                   </div>
                 );
               })}
@@ -2354,7 +2370,7 @@ const TrekDetailsPage = () => {
                 <span className="text-3xl shrink-0 p-1 bg-white rounded-xl shadow-sm">{item.icon}</span>
                 <div className="space-y-1">
                   <h6 className="font-bold text-brand-dark">{item.label}</h6>
-                  <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -2372,14 +2388,14 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 text-slate-600">
+          <div className="grid lg:grid-cols-2 gap-12 text-slate-705">
             <div className="space-y-8">
               <div className="space-y-4">
                 <h5 className="font-black text-brand-dark uppercase tracking-tight flex items-center gap-2">
                   <span className="w-2 h-2 bg-brand-orange rounded-full" />
                   Important Note
                 </h5>
-                <ul className="space-y-3 text-[10px] md:text-[11px] font-medium leading-relaxed list-disc pl-4 marker:text-brand-orange">
+                <ul className="space-y-3 text-xs md:text-sm font-medium leading-relaxed list-disc pl-4 marker:text-brand-orange text-slate-705">
                   <li>If you want the Trip to be a memorable experience, you need to cooperate with your Trip captain.</li>
                   <li>Strictly no drinking & smoking during the entire duration of trip.</li>
                   <li>Do not create any nuisances on the way by throwing any kind of plastic waste.</li>
@@ -2403,7 +2419,7 @@ const TrekDetailsPage = () => {
                   <span className="w-2 h-2 bg-brand-orange rounded-full" />
                   Code of Conduct & Environment
                 </h5>
-                <div className="space-y-4 text-[10px] md:text-[11px] font-medium leading-relaxed">
+                <div className="space-y-4 text-xs md:text-sm font-medium leading-relaxed text-slate-705">
                   <p>Participants need to respect the ethnicity, culture, environment of the place of visit & fellow trekkers. Any behavior deemed disrespectful, harmful, or illegal may result in immediate expulsion without refund.</p>
                   <p>Littering, damaging, or any illegal activities that harm the ecosystem is strictly prohibited. We maintain a strict "Leave No Trace" policy.</p>
                 </div>
@@ -2414,15 +2430,15 @@ const TrekDetailsPage = () => {
                   <span className="w-2 h-2 bg-brand-orange rounded-full" />
                   Emergency & Risks
                 </h5>
-                <div className="space-y-4 text-[10px] md:text-[11px] font-medium leading-relaxed">
+                <div className="space-y-4 text-xs md:text-sm font-medium leading-relaxed text-slate-705">
                   <p className="font-bold text-slate-900 mb-2">Natural Hazards:</p>
-                  <ul className="list-disc pl-4 space-y-1 text-slate-500">
+                  <ul className="list-disc pl-4 space-y-1.5 text-slate-600 text-xs md:text-sm">
                     <li>Extreme weather (rain, flash floods, thunderstorms, lighting)</li>
                     <li>Wildlife encounters (bears, snakes, insects) or harmful plants</li>
                     <li>Natural disasters (landslides, earthquakes, whiteouts)</li>
                   </ul>
-                  <p className="font-bold text-slate-900 mb-2 mt-4">Altitude & Physical Injury:</p>
-                  <ul className="list-disc pl-4 space-y-1 text-slate-500">
+                  <p className="font-bold text-slate-900 mb-2 mt-4 text-xs md:text-sm">Altitude & Physical Injury:</p>
+                  <ul className="list-disc pl-4 space-y-1.5 text-slate-600 text-xs md:text-sm">
                     <li>AMS, Pulminary Edema (HAPE), Cerebral Edema (HACE)</li>
                     <li>Slips, falls, exposure to sun/cold (frostbite, hypothermia)</li>
                     <li>Difficulty in emergency evacuation from remote locations</li>
@@ -2437,8 +2453,8 @@ const TrekDetailsPage = () => {
                   <h5 className="font-black text-brand-orange uppercase tracking-widest text-xs">Preparation Guidelines</h5>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <p className="text-[10px] font-black uppercase text-white/40 tracking-widest">Prepare 15 days before:</p>
-                      <ul className="text-[10px] md:text-[11px] list-disc pl-4 space-y-1 text-white/60">
+                      <p className="text-xs font-black uppercase text-white/50 tracking-widest">Prepare 15 days before:</p>
+                      <ul className="text-xs md:text-sm list-disc pl-4 space-y-1.5 text-white/80">
                         <li>Brisk walk/jog 10-12 km daily</li>
                         <li>Stair climbing (10-15 floors)</li>
                         <li>Strength training for legs/core</li>
@@ -2447,8 +2463,8 @@ const TrekDetailsPage = () => {
                       </ul>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-[10px] font-black uppercase text-white/40 tracking-widest">30 Days Before (Avoid):</p>
-                      <ul className="text-[10px] md:text-[11px] list-disc pl-4 space-y-1 text-white/60">
+                      <p className="text-xs font-black uppercase text-white/50 tracking-widest">30 Days Before (Avoid):</p>
+                      <ul className="text-xs md:text-sm list-disc pl-4 space-y-1.5 text-white/80">
                         <li>Smoking, Alcohol, Vaping</li>
                         <li>Sleep Deprivation & Junk Food</li>
                         <li>Sudden intense new workouts</li>
@@ -2462,29 +2478,29 @@ const TrekDetailsPage = () => {
                    <span className="w-2 h-2 bg-brand-orange rounded-full" />
                    Termination Policy
                  </h5>
-                 <p className="text-[10px] md:text-[11px] font-medium leading-relaxed">
+                 <p className="text-xs md:text-sm font-medium leading-relaxed text-slate-705">
                    Adventure Chaarana reserves the right to terminate a participant's trip for:
-                   <span className="block mt-2 font-bold text-red-500 underline underline-offset-4 decoration-red-500/20">Smoking, drinking, sexual misconduct, physical/verbal abuse, lack of fitness affecting the team, or ignoring safety rules.</span>
+                   <span className="block mt-2 font-bold text-red-500 underline underline-offset-4 decoration-red-500/20 text-xs md:text-sm">Smoking, drinking, sexual misconduct, physical/verbal abuse, lack of fitness affecting the team, or ignoring safety rules.</span>
                    No refunds will be provided in case of termination.
                  </p>
                </div>
 
                <div className="p-6 border-2 border-brand-orange/20 rounded-2xl bg-brand-orange/5">
                  <h6 className="font-black text-brand-orange uppercase tracking-tight text-xs mb-2">Photography Rights</h6>
-                 <p className="text-[9px] md:text-[10px] font-medium text-slate-500 leading-relaxed italic">
+                 <p className="text-xs md:text-sm font-medium text-slate-600 leading-relaxed italic">
                    Adventure Chaarana reserves the right to use trip photos/videos for promotional purposes. Booking grants us a royalty-free license. If you wish to opt-out, notify us before the journey starts.
                  </p>
                </div>
 
                <div className="space-y-4 p-6 bg-slate-50 rounded-2xl border border-slate-100">
                  <h5 className="font-black text-slate-900 uppercase tracking-tight text-xs">Liability Clause</h5>
-                 <p className="text-[9px] md:text-[10px] font-medium text-slate-500 leading-relaxed">
+                 <p className="text-xs md:text-sm font-medium text-slate-600 leading-relaxed">
                    Participants join at their own risk. Adventure Chaarana is not liable for injuries, accidents, death, or loss of personal belongings. Insurance is mandatory.
                  </p>
                </div>
 
                <div className="p-6 bg-brand-orange/10 border-2 border-brand-orange rounded-2xl">
-                 <p className="text-[10px] md:text-[11px] font-black text-brand-orange leading-relaxed uppercase tracking-tight">
+                 <p className="text-xs md:text-sm font-black text-brand-orange leading-relaxed uppercase tracking-tight">
                    Important: Due to unforeseen circumstances such as natural disasters, roadblocks, local unrest, government mandates, or severe traffic, certain locations in the itinerary may become inaccessible. In such events, Adventure Chaarana shall not be held liable, and no refunds, alternative arrangements, or compensatory claims will be provided.
                  </p>
                </div>
@@ -2497,14 +2513,14 @@ const TrekDetailsPage = () => {
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 via-brand-orange to-sky-500" />
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
               <div className="space-y-2">
-                <span className="bg-brand-orange/10 text-brand-orange font-extrabold text-[9px] uppercase tracking-[0.25em] px-3 py-1 rounded-full border border-brand-orange/15 inline-block font-sans">
+                <span className="bg-brand-orange/10 text-brand-orange font-extrabold text-xs uppercase tracking-[0.25em] px-3 py-1 rounded-full border border-brand-orange/15 inline-block font-sans">
                   Booking Safeguards
                 </span>
                 <h4 className="text-2xl md:text-3xl font-black text-brand-dark tracking-tight leading-none font-sans">
                   Official Refund & <span className="text-brand-orange italic font-serif">Cancellation Policy</span>
                 </h4>
               </div>
-              <p className="text-[11px] text-slate-400 font-bold max-w-sm leading-relaxed uppercase tracking-tight md:text-right font-sans">
+              <p className="text-xs md:text-sm text-slate-500 font-bold max-w-sm leading-relaxed uppercase tracking-tight md:text-right font-sans">
                 🛡️ Verified transparent refund rates and conditions governing your booking.
               </p>
             </div>
@@ -2514,39 +2530,39 @@ const TrekDetailsPage = () => {
               <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-black uppercase tracking-widest bg-red-600 text-white px-3 py-1 rounded-full font-mono">
+                    <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-mono">
                       Within 48 Hrs
                     </span>
                     <span className="text-xl">🚨</span>
                   </div>
-                  <h6 className="font-extrabold text-brand-dark text-[13px] uppercase tracking-wider font-sans">Strict Protection Period</h6>
+                  <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Strict Protection Period</h6>
                   <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">0% Refund</p>
                 </div>
-                <p className="text-xs text-slate-600 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
+                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
                   No refund, no credit voucher & no rescheduling — <span className="text-red-700 font-extrabold underline decoration-wavy underline-offset-2">no exceptions</span>.
                 </p>
               </div>
 
               {/* Card 2: BEFORE 48 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
               <div className="p-7 rounded-[2rem] bg-amber-50 border-2 border-amber-400 shadow-[0_15px_45px_rgba(245,158,11,0.15)] transform md:-translate-y-1 hover:-translate-y-2 transition-all duration-300 space-y-4 flex flex-col justify-between relative overflow-hidden z-20">
-                <div className="absolute top-0 right-0 bg-amber-500 text-white text-[8px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
+                <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
                   ⚠️ ACTIVE OPTION
                 </div>
                 <div className="space-y-3 relative">
                   <div className="flex items-center justify-between">
-                    <span className="text-[9.5px] font-black uppercase tracking-widest bg-amber-500 text-white px-3.5 py-1 rounded-full font-sans font-extrabold animate-pulse">
+                    <span className="text-xs font-black uppercase tracking-widest bg-amber-500 text-white px-4 py-1.5 rounded-full font-sans font-extrabold animate-pulse">
                       Before 48 Hours
                     </span>
                     <span className="text-2xl">⏳</span>
                   </div>
-                  <h6 className="font-extrabold text-amber-950 text-[13px] uppercase tracking-wider font-sans">Cancellation in Advance</h6>
+                  <h6 className="font-extrabold text-amber-955 text-sm md:text-base uppercase tracking-wider font-sans">Cancellation in Advance</h6>
                   <p className="text-3xl font-black text-amber-600 tracking-tight leading-none font-sans">45% Fee</p>
                 </div>
                 <div className="space-y-2 pt-3 border-t border-amber-200 text-slate-700 font-sans">
-                  <p className="text-xs font-bold leading-relaxed">
+                  <p className="text-xs md:text-sm font-bold leading-relaxed">
                     Charges are limited to <span className="text-amber-600 font-black">45% of overall price</span>.
                   </p>
-                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                  <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
                     Enjoy refund execution processed directly back to source in <span className="underline decoration-dotted font-bold text-slate-700">5–7 working days</span>. No rescheduling.
                   </p>
                 </div>
@@ -2556,15 +2572,15 @@ const TrekDetailsPage = () => {
               <div className="p-6 rounded-3xl bg-sky-50 border border-sky-200 hover:border-sky-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-black uppercase tracking-widest bg-sky-600 text-white px-3 py-1 rounded-full font-mono font-sans">
+                    <span className="text-xs font-black uppercase tracking-widest bg-sky-600 text-white px-3.5 py-1.5 rounded-full font-mono font-sans">
                       Calamity Cover
                     </span>
                     <span className="text-xl">⛈️</span>
                   </div>
-                  <h6 className="font-extrabold text-[#0f0f0f] text-[13px] uppercase tracking-wider font-sans">Force Majeure</h6>
+                  <h6 className="font-extrabold text-[#0f0f0f] text-sm md:text-base uppercase tracking-wider font-sans">Force Majeure</h6>
                   <p className="text-2xl font-black text-sky-700 tracking-tight leading-none font-sans font-extrabold">50/50 Coverage Plan</p>
                 </div>
-                <p className="text-xs text-slate-600 font-semibold leading-relaxed pt-2 border-t border-sky-100 font-sans">
+                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-sky-100 font-sans">
                   50% Cash refund + 50% travel voucher valid for 12 months. GST & gateway charges apply.
                 </p>
               </div>
@@ -2590,6 +2606,8 @@ const TrekDetailsPage = () => {
           </motion.button>
         </div>
       </div>
+
+
     </motion.div>
   );
 };
@@ -2732,20 +2750,20 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
   };
 
   return (
-    <section id="trek-gallery-section" className="py-20 bg-white overflow-hidden border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
-        <div className="text-center space-y-4">
+    <section id="trek-gallery-section" className="py-10 md:py-20 bg-white overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 space-y-8 md:space-y-16">
+        <div className="text-center space-y-2 md:space-y-4">
           <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Authentic Expeditions</div>
-          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
             Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
           </h2>
-          <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
+          <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide max-w-xl mx-auto">
             Real snaps from our actual {trek.title} groups. Breathtaking views, challenging steps, and incredible trail camaraderie.
           </p>
         </div>
 
         {/* Gallery Symmetrical Square Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-6">
           {items.map((img, i) => (
             <motion.div
               key={img.url + i}
@@ -2754,7 +2772,7 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
               viewport={{ once: true }}
               transition={{ delay: (i % 8) * 0.05 }}
               onClick={() => setLightboxIndex(i)}
-              className="relative overflow-hidden rounded-[2rem] border border-slate-100 group aspect-square cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-orange/10 transition-all duration-500"
+              className="relative overflow-hidden rounded-xl md:rounded-[2rem] border border-slate-100 group aspect-square cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-orange/10 transition-all duration-500"
             >
               <img 
                 src={img.url} 
