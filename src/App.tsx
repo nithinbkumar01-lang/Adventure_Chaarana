@@ -1751,14 +1751,17 @@ const TrekDetailsPage = () => {
         </div>
         
         <div className="max-w-4xl mx-auto w-full relative z-10 space-y-8">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-orange text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full mx-auto"
-          >
-            ⛰️ Karnataka Trekking Expedition
-          </motion.div>
-          
+          <div className="flex justify-center items-center">
+            <motion.img 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+              alt="Adventure Chaarana Logo" 
+              className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
           <div className="space-y-4">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -2084,6 +2087,15 @@ const TrekDetailsPage = () => {
 
         {/* ─── COMPACT TIMELINE ─── */}
         <section className="space-y-8">
+          <div className="flex justify-center items-center py-2">
+            <img 
+              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+              alt="Adventure Chaarana Logo" 
+              className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
             <div className="absolute inset-0 z-0">
                <img src={trek.image} alt={`Trek Timeline - ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
