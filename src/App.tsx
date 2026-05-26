@@ -1174,7 +1174,8 @@ const TREKS: Trek[] = [
           { time: '06:00 AM', activity: '🛞 Jeep ride to Balgal base point' },
           { time: '07:00 AM', activity: '🥾 Kudremukha Trek start and scale the horse-face peak' },
           { time: '01:00 PM', activity: '⛰️ Reach majestic Kudremukha peak & enjoy packed lunch' },
-          { time: '05:00 PM', activity: '🏡 Complete descent and reach back to homestay' },
+          { time: '04:30 PM', activity: '🌊 Visit pristine Mullodi Falls during descent' },
+          { time: '05:30 PM', activity: '🏡 Reach back to homestay' },
           { time: '06:00 PM', activity: '🍵 High Tea & Evening Snacks' },
           { time: '08:00 PM', activity: '🔥 Campfire, group games, and traditional local Dinner' }
         ]
@@ -1232,6 +1233,7 @@ const TREKS: Trek[] = [
     ],
     placesCovered: [
       'Kudremukha Peak',
+      'Mullodi Falls',
       'Off-Road Jeep Ride to Balgal',
       'Kudremukh Forest Area',
       'Samse Tea Estate',
