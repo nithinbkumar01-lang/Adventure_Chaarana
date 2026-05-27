@@ -1793,12 +1793,16 @@ const RefundPolicyPage = () => {
             <div className="bg-slate-900 text-white p-10 rounded-[3rem] space-y-6">
               <h3 className="text-xl font-black">Standard Cancellations</h3>
               <div className="space-y-4">
+                <div className="p-4 bg-brand-orange/10 rounded-xl border border-brand-orange/20">
+                  <span className="text-brand-orange font-black text-xs block mb-1">🌅 ONE DAY & SUNRISE TREKS</span>
+                  <p className="text-xs font-semibold leading-relaxed">Bookings for all One Day and Sunrise Treks are strictly non-refundable and non-rescheduleable under any circumstances. No refunds or slot changes are allowed.</p>
+                </div>
                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <span className="text-brand-orange font-black text-xs block mb-1">48 HOURS OR MORE</span>
+                  <span className="text-cyan-400 font-black text-xs block mb-1">OTHER TREKS: 48 HOURS OR MORE</span>
                   <p className="text-sm font-medium">45% of total package amount will be deducted as cancellation charges.</p>
                 </div>
                 <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
-                  <span className="text-red-400 font-black text-xs block mb-1">WITHIN 48 HOURS</span>
+                  <span className="text-red-400 font-black text-xs block mb-1">OTHER TREKS: WITHIN 48 HOURS</span>
                   <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed under any circumstances.</p>
                 </div>
               </div>
@@ -1961,6 +1965,7 @@ interface Batch {
 const TrekDetailsPage = () => {
   const { slug } = useParams();
   const trek = TREKS.find(t => t.slug === slug);
+  const isOneDayTrek = trek?.duration?.toLowerCase() === '1 day';
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -2574,15 +2579,14 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {[
               { icon: '🚌', title: 'Comfortable Transit', desc: 'Round-trip from Bangalore in TT/ Mini bus/ Bus.' },
               { icon: '👤', title: 'Expert Guides', desc: 'Safety-first navigation by certified mountaineers.' },
               { icon: '🎫', title: 'Permissions', desc: 'All forest clearances and entry permits handled.' },
-              { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' },
-              { icon: '📜', title: 'Accomplished Certificate', desc: 'Official accomplished certificate of achievement.' }
+              { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' }
             ].map((item, i) => (
-              <div key={i} className={`group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300 ${i === 4 ? 'col-span-2 lg:col-span-1' : ''}`}>
+              <div key={i} className="group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-brand-orange/10 transition-all font-bold">
                   <span className="text-xl md:text-2xl">{item.icon}</span>
                 </div>
@@ -2615,28 +2619,32 @@ const TrekDetailsPage = () => {
                 <h4 className="text-xs md:text-sm font-black text-brand-dark uppercase tracking-wider">Inclusions</h4>
               </div>
               <ul className="space-y-2 md:space-y-4">
-                {trek.inclusions.map((originalItem, idx) => {
-                  let item = originalItem;
-                  item = item.replace(/Tempo Traveller, Mini Bus, or Bus/g, 'TT/ Mini bus/ Bus');
-                  item = item.replace(/Tempo Traveller \/ Mini Bus \/ Bus/gi, 'TT/ Mini bus/ Bus');
-                  item = item.replace(/Tempo Traveller/gi, 'TT/ Mini bus/ Bus');
-                  item = item.replace(/Tempo Travelers/gi, 'TT/ Mini bus/ Bus');
-                  item = item.replace(/Signed Certificate/gi, 'Accomplished Certificate');
-                  item = item.replace(/signed certificate/gi, 'accomplished certificate');
-                  item = item.replace(/E-Certificate of achievement/gi, 'Accomplished Certificate of achievement');
-                  item = item.replace(/E-Certificate/gi, 'Accomplished Certificate');
-                  if (item.toLowerCase().includes('certificate') && !item.toLowerCase().includes('accomplished')) {
-                    item = item.replace(/certificate/gi, 'accomplished certificate');
-                  }
-                  return (
-                    <li key={idx} className="flex gap-2 group">
-                      <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
-                        <span className="text-[8px] font-black">✓</span>
-                      </div>
-                      <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
-                    </li>
-                  );
-                })}
+                {trek.inclusions
+                  .map((originalItem) => {
+                    let item = originalItem;
+                    item = item.replace(/Tempo Traveller, Mini Bus, or Bus/g, 'TT/ Mini bus/ Bus');
+                    item = item.replace(/Tempo Traveller \/ Mini Bus \/ Bus/gi, 'TT/ Mini bus/ Bus');
+                    item = item.replace(/Tempo Traveller/gi, 'TT/ Mini bus/ Bus');
+                    item = item.replace(/Tempo Travelers/gi, 'TT/ Mini bus/ Bus');
+                    item = item.replace(/(Completion\s+)?certificate\s+&\s+/gi, '');
+                    item = item.replace(/(Completion\s+)?Certificate\s+&\s+/gi, '');
+                    item = item.replace(/(Complimentary\s+)?participation\s+badge\s+or\s+certificate/gi, 'Complimentary participation badge');
+                    return item;
+                  })
+                  .filter((item) => {
+                    const lower = item.toLowerCase();
+                    return !['e-certificate of achievement', 'e-certificate', 'accomplished certificate', 'certificate', 'accomplished certificate of achievement'].includes(lower);
+                  })
+                  .map((item, idx) => {
+                    return (
+                      <li key={idx} className="flex gap-2 group">
+                        <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all text-emerald-600">
+                          <span className="text-[8px] font-black">✓</span>
+                        </div>
+                        <p className="text-slate-755 font-bold text-[10px] md:text-xs leading-relaxed">{item}</p>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
 
@@ -2768,7 +2776,13 @@ const TrekDetailsPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: '⚖️', label: 'Reservation Policy', desc: 'Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable.' },
+              { 
+                icon: '⚖️', 
+                label: 'Reservation Policy', 
+                desc: isOneDayTrek 
+                  ? 'Bookings for One Day Treks are strictly non-refundable and non-rescheduleable. No refund and no rescheduling under any circumstances.' 
+                  : 'Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable.' 
+              },
               { icon: '⛈️', label: 'Unforeseen Circumstances', desc: 'Safety first! Full refunds (minus standard fees) issued if trips are cancelled by us due to natural events or government restrictions.' },
               { icon: '🚧', label: 'On-the-Road Logic', desc: 'We aren\'t responsible for delays caused by traffic, weather, or sudden local authority changes once the journey has begun.' },
               { icon: '🚫', label: 'Conduct Code', desc: 'We are a strictly dry/smoke-free community. Any substance use will lead to immediate removal and a permanent ban from our trips.' },
@@ -2934,66 +2948,104 @@ const TrekDetailsPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-              {/* Card 1: Within 48 Hours */}
-              <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-mono">
-                      Within 48 Hrs
-                    </span>
-                    <span className="text-xl">🚨</span>
+            {isOneDayTrek ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
+                {/* One Day Trek Card 1: No Refund */}
+                <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-sans tracking-tight">
+                        CANCELLATION
+                      </span>
+                      <span className="text-xl">🚨</span>
+                    </div>
+                    <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Payment Safeguard</h6>
+                    <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">No refund</p>
                   </div>
-                  <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Strict Protection Period</h6>
-                  <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">0% Refund</p>
-                </div>
-                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
-                  No refund, no credit voucher & no rescheduling — <span className="text-red-700 font-extrabold underline decoration-wavy underline-offset-2">no exceptions</span>.
-                </p>
-              </div>
-
-              {/* Card 2: BEFORE 48 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
-              <div className="p-7 rounded-[2rem] bg-amber-50 border-2 border-amber-400 shadow-[0_15px_45px_rgba(245,158,11,0.15)] transform md:-translate-y-1 hover:-translate-y-2 transition-all duration-300 space-y-4 flex flex-col justify-between relative overflow-hidden z-20">
-                <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
-                  ⚠️ ACTIVE OPTION
-                </div>
-                <div className="space-y-3 relative">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-widest bg-amber-500 text-white px-4 py-1.5 rounded-full font-sans font-extrabold animate-pulse">
-                      Before 48 Hours
-                    </span>
-                    <span className="text-2xl">⏳</span>
-                  </div>
-                  <h6 className="font-extrabold text-amber-955 text-sm md:text-base uppercase tracking-wider font-sans">Cancellation in Advance</h6>
-                  <p className="text-3xl font-black text-amber-600 tracking-tight leading-none font-sans">45% Fee</p>
-                </div>
-                <div className="space-y-2 pt-3 border-t border-amber-200 text-slate-700 font-sans">
-                  <p className="text-xs md:text-sm font-bold leading-relaxed">
-                    Charges are limited to <span className="text-amber-600 font-black">45% of overall price</span>.
+                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
+                    Bookings for all One Day treks are strictly non-refundable under any conditions. No partial or full refunds can be processed.
                   </p>
-                  <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
-                    Enjoy refund execution processed directly back to source in <span className="underline decoration-dotted font-bold text-slate-700">5–7 working days</span>. No rescheduling.
+                </div>
+
+                {/* One Day Trek Card 2: No Rescheduling */}
+                <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-sans tracking-tight">
+                        DATE MODIFICATION
+                      </span>
+                      <span className="text-xl">🚫</span>
+                    </div>
+                    <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Date Lock</h6>
+                    <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">No rescheduling</p>
+                  </div>
+                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
+                    Slot transfers or rescheduling to future batches are strictly not permitted. Your booking is valid only for the scheduled date.
                   </p>
                 </div>
               </div>
-
-              {/* Card 3: Natural Calamity */}
-              <div className="p-6 rounded-3xl bg-sky-50 border border-sky-200 hover:border-sky-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-widest bg-sky-600 text-white px-3.5 py-1.5 rounded-full font-mono font-sans">
-                      Calamity Cover
-                    </span>
-                    <span className="text-xl">⛈️</span>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                {/* Card 1: Within 48 Hours */}
+                <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-mono">
+                        Within 48 Hrs
+                      </span>
+                      <span className="text-xl">🚨</span>
+                    </div>
+                    <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Strict Protection Period</h6>
+                    <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">0% Refund</p>
                   </div>
-                  <h6 className="font-extrabold text-[#0f0f0f] text-sm md:text-base uppercase tracking-wider font-sans">Force Majeure</h6>
-                  <p className="text-2xl font-black text-sky-700 tracking-tight leading-none font-sans font-extrabold">50/50 Coverage Plan</p>
+                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
+                    No refund, no credit voucher & no rescheduling — <span className="text-red-700 font-extrabold underline decoration-wavy underline-offset-2">no exceptions</span>.
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-sky-100 font-sans">
-                  50% Cash refund + 50% travel voucher valid for 12 months. GST & gateway charges apply.
-                </p>
+
+                {/* Card 2: BEFORE 48 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
+                <div className="p-7 rounded-[2rem] bg-amber-50 border-2 border-amber-400 shadow-[0_15px_45px_rgba(245,158,11,0.15)] transform md:-translate-y-1 hover:-translate-y-2 transition-all duration-300 space-y-4 flex flex-col justify-between relative overflow-hidden z-20">
+                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
+                    ⚠️ ACTIVE OPTION
+                  </div>
+                  <div className="space-y-3 relative">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase tracking-widest bg-amber-500 text-white px-4 py-1.5 rounded-full font-sans font-extrabold animate-pulse">
+                        Before 48 Hours
+                      </span>
+                      <span className="text-2xl">⏳</span>
+                    </div>
+                    <h6 className="font-extrabold text-amber-955 text-sm md:text-base uppercase tracking-wider font-sans">Cancellation in Advance</h6>
+                    <p className="text-3xl font-black text-amber-600 tracking-tight leading-none font-sans">45% Fee</p>
+                  </div>
+                  <div className="space-y-2 pt-3 border-t border-amber-200 text-slate-700 font-sans">
+                    <p className="text-xs md:text-sm font-bold leading-relaxed">
+                      Charges are limited to <span className="text-amber-600 font-black">45% of overall price</span>.
+                    </p>
+                    <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+                      Enjoy refund execution processed directly back to source in <span className="underline decoration-dotted font-bold text-slate-700">5–7 working days</span>. No rescheduling.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 3: Natural Calamity */}
+                <div className="p-6 rounded-3xl bg-sky-50 border border-sky-200 hover:border-sky-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase tracking-widest bg-sky-600 text-white px-3.5 py-1.5 rounded-full font-mono font-sans">
+                        Calamity Cover
+                      </span>
+                      <span className="text-xl">⛈️</span>
+                    </div>
+                    <h6 className="font-extrabold text-[#0f0f0f] text-sm md:text-base uppercase tracking-wider font-sans">Force Majeure</h6>
+                    <p className="text-2xl font-black text-sky-700 tracking-tight leading-none font-sans font-extrabold">50/50 Coverage Plan</p>
+                  </div>
+                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-sky-100 font-sans">
+                    50% Cash refund + 50% travel voucher valid for 12 months. GST & gateway charges apply.
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
 
