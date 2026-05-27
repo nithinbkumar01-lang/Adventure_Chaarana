@@ -2491,8 +2491,8 @@ const TrekDetailsPage = () => {
                       <span className="text-xs font-bold text-slate-400">Departure Night</span>
                     </div>
                     <div className="flex items-center gap-3 bg-brand-orange/[0.04] border border-brand-orange/10 px-4 py-3 rounded-2xl flex-1 sm:flex-none">
-                      <span className="text-xs font-mono font-black text-brand-orange shrink-0">08:00 PM</span>
-                      <p className="font-bold text-slate-705 text-xs md:text-sm">Departure from Bangalore time 8PM</p>
+                      <span className="text-xs font-mono font-black text-brand-orange shrink-0">{isOneDayTrek ? '09:30 PM' : '08:00 PM'}</span>
+                      <p className="font-bold text-slate-755 text-xs md:text-sm">Departure from Bangalore time {isOneDayTrek ? '9.30 PM' : '8PM'}</p>
                     </div>
                   </div>
                 </div>
