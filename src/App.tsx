@@ -1966,6 +1966,7 @@ const TrekDetailsPage = () => {
   const { slug } = useParams();
   const trek = TREKS.find(t => t.slug === slug);
   const isOneDayTrek = trek?.duration?.toLowerCase() === '1 day';
+  const isTwoDayWesternGhat = trek?.duration?.toLowerCase()?.includes('2 day') && trek?.category === 'western-ghats';
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -2595,14 +2596,15 @@ const TrekDetailsPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className={`grid grid-cols-2 ${isTwoDayWesternGhat ? 'lg:grid-cols-5' : 'lg:grid-cols-4'} gap-3 md:gap-6`}>
             {[
               { icon: '🚌', title: 'Comfortable Transit', desc: 'Round-trip from Bangalore in TT/ Mini bus/ Bus.' },
               { icon: '👤', title: 'Expert Guides', desc: 'Safety-first navigation by certified mountaineers.' },
               { icon: '🎫', title: 'Permissions', desc: 'All forest clearances and entry permits handled.' },
-              { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' }
+              { icon: '🏅', title: 'Physical Badge', desc: 'A premium physical summit metal badge of honor.' },
+              ...(isTwoDayWesternGhat ? [{ icon: '📜', title: 'Accomplished Certificate', desc: 'Official accomplished certificate of achievement.' }] : [])
             ].map((item, i) => (
-              <div key={i} className="group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <div key={i} className={`group p-4 md:p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-lg transition-all duration-300 ${isTwoDayWesternGhat && i === 4 ? 'col-span-2 lg:col-span-1' : ''}`}>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-brand-orange/10 transition-all font-bold">
                   <span className="text-xl md:text-2xl">{item.icon}</span>
                 </div>
@@ -2642,12 +2644,17 @@ const TrekDetailsPage = () => {
                     item = item.replace(/Tempo Traveller \/ Mini Bus \/ Bus/gi, 'TT/ Mini bus/ Bus');
                     item = item.replace(/Tempo Traveller/gi, 'TT/ Mini bus/ Bus');
                     item = item.replace(/Tempo Travelers/gi, 'TT/ Mini bus/ Bus');
-                    item = item.replace(/(Completion\s+)?certificate\s+&\s+/gi, '');
-                    item = item.replace(/(Completion\s+)?Certificate\s+&\s+/gi, '');
-                    item = item.replace(/(Complimentary\s+)?participation\s+badge\s+or\s+certificate/gi, 'Complimentary participation badge');
+                    if (isTwoDayWesternGhat) {
+                      item = item.replace(/(Complimentary\s+)?participation\s+badge\s+or\s+certificate/gi, 'Complimentary participation badge & Accomplished Certificate');
+                    } else {
+                      item = item.replace(/(Completion\s+)?certificate\s+&\s+/gi, '');
+                      item = item.replace(/(Completion\s+)?Certificate\s+&\s+/gi, '');
+                      item = item.replace(/(Complimentary\s+)?participation\s+badge\s+or\s+certificate/gi, 'Complimentary participation badge');
+                    }
                     return item;
                   })
                   .filter((item) => {
+                    if (isTwoDayWesternGhat) return true;
                     const lower = item.toLowerCase();
                     return !['e-certificate of achievement', 'e-certificate', 'accomplished certificate', 'certificate', 'accomplished certificate of achievement'].includes(lower);
                   })
