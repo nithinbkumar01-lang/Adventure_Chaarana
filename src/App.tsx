@@ -1795,7 +1795,7 @@ const RefundPolicyPage = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-brand-orange/10 rounded-xl border border-brand-orange/20">
                   <span className="text-brand-orange font-black text-xs block mb-1">🌅 ONE DAY & SUNRISE TREKS</span>
-                  <p className="text-xs font-semibold leading-relaxed">Bookings for all One Day and Sunrise Treks are strictly non-refundable and non-rescheduleable under any circumstances. No refunds or slot changes are allowed.</p>
+                  <p className="text-xs font-semibold leading-relaxed">Bookings are strictly non-refundable under any circumstances. However, slot rescheduling is allowed up to 24 hours before departure for One Day treks.</p>
                 </div>
                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
                   <span className="text-cyan-400 font-black text-xs block mb-1">OTHER TREKS: 48 HOURS OR MORE</span>
@@ -2780,7 +2780,7 @@ const TrekDetailsPage = () => {
                 icon: '⚖️', 
                 label: 'Reservation Policy', 
                 desc: isOneDayTrek 
-                  ? 'Bookings for One Day Treks are strictly non-refundable and non-rescheduleable. No refund and no rescheduling under any circumstances.' 
+                  ? 'Bookings for One Day Treks are strictly non-refundable. However, free slot rescheduling is allowed up to 24 hours before departure.' 
                   : 'Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable.' 
               },
               { icon: '⛈️', label: 'Unforeseen Circumstances', desc: 'Safety first! Full refunds (minus standard fees) issued if trips are cancelled by us due to natural events or government restrictions.' },
@@ -2963,24 +2963,24 @@ const TrekDetailsPage = () => {
                     <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">No refund</p>
                   </div>
                   <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
-                    Bookings for all One Day treks are strictly non-refundable under any conditions. No partial or full refunds can be processed.
+                    Bookings for all One Day treks are strictly non-refundable under any conditions. No cash refunds or payment reversals.
                   </p>
                 </div>
 
-                {/* One Day Trek Card 2: No Rescheduling */}
-                <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
+                {/* One Day Trek Card 2: Rescheduling Allowed */}
+                <div className="p-6 rounded-3xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-sans tracking-tight">
+                      <span className="text-xs font-black uppercase tracking-widest bg-emerald-600 text-white px-3.5 py-1.5 rounded-full font-sans tracking-tight">
                         DATE MODIFICATION
                       </span>
-                      <span className="text-xl">🚫</span>
+                      <span className="text-xl">🔄</span>
                     </div>
-                    <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Date Lock</h6>
-                    <p className="text-3xl font-black text-red-600 tracking-tight leading-none font-sans">No rescheduling</p>
+                    <h6 className="font-extrabold text-brand-dark text-sm md:text-base uppercase tracking-wider font-sans">Slot Transfer</h6>
+                    <p className="text-3xl font-black text-emerald-600 tracking-tight leading-none font-sans">Rescheduling Allowed</p>
                   </div>
-                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-rose-100 font-sans">
-                    Slot transfers or rescheduling to future batches are strictly not permitted. Your booking is valid only for the scheduled date.
+                  <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed pt-2 border-t border-emerald-100 font-sans">
+                    You can reschedule your trek or transfer slots up to <span className="text-emerald-700 font-black">24 hours before your scheduled departure time</span>.
                   </p>
                 </div>
               </div>
