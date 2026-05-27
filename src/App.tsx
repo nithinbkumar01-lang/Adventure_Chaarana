@@ -302,7 +302,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 749,
+    currentPrice: 699,
     discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729197/image_3_swk6mc.jpg',
     gallery: [
@@ -364,7 +364,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 749,
+    currentPrice: 699,
     discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802809/82e28a63-fc59-44a2-bac3-2b774cba36ee.png',
     gallery: [
@@ -426,7 +426,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
-    currentPrice: 749,
+    currentPrice: 699,
     discount: '5% OFF (3+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802763/de1cb9df-c637-419f-883e-da3138f91ea5.png',
     gallery: [
@@ -937,7 +937,9 @@ const TREKS: Trek[] = [
           { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
           { time: '09:30 PM', activity: '📍Yeshwantpur' },
           { time: '10:00 PM', activity: '📍Gorguntepalya' },
-          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+          { time: '11:30 PM', activity: '📍Tumkur' },
+          { time: '01:00 AM', activity: '📍Chitradurga' },
+          { time: '03:00 AM', activity: '📍Shivamogga' }
         ]
       },
       {
@@ -2359,8 +2361,12 @@ const TrekDetailsPage = () => {
               <div className="relative z-10 space-y-5">
                 {(() => {
                   const allPickups = trek.itinerary[0]?.items.filter(item => item.activity.includes('📍')) || [];
-                  const hassanPickups = allPickups.filter(p => p.activity.toLowerCase().includes('hassan'));
-                  const bangalorePickups = allPickups.filter(p => !p.activity.toLowerCase().includes('hassan'));
+                  const enRouteKeywords = ['hassan', 'tumkur', 'chitradurga', 'shivamogga', 'shimoga'];
+                  const enRoutePickups = allPickups.filter(p => {
+                    const actLower = p.activity.toLowerCase();
+                    return enRouteKeywords.some(kw => actLower.includes(kw)) && !actLower.includes('road');
+                  });
+                  const bangalorePickups = allPickups.filter(p => !enRoutePickups.includes(p));
 
                   return (
                     <div className="space-y-6">
@@ -2381,11 +2387,11 @@ const TrekDetailsPage = () => {
                         </div>
                       )}
 
-                      {hassanPickups.length > 0 && (
+                      {enRoutePickups.length > 0 && (
                         <div className="space-y-3 border-t border-white/5 pt-4">
-                          <h3 className="text-xs font-black tracking-widest text-white/50 uppercase">Hassan <span className="text-brand-orange">Pickup</span></h3>
+                          <h3 className="text-xs font-black tracking-widest text-white/50 uppercase">En-route <span className="text-brand-orange">Pickups</span></h3>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {hassanPickups.map((p, idx) => (
+                            {enRoutePickups.map((p, idx) => (
                               <div key={idx} className="bg-white/5 border border-brand-orange/10 hover:bg-white/10 hover:border-brand-orange/30 p-3 rounded-xl flex items-center gap-3 transition-all duration-300 shadow-inner border-l-2 border-l-brand-orange">
                                 <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0 animate-pulse" />
                                 <div className="min-w-0">
