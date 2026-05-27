@@ -84,8 +84,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 749,
-    discount: '5% OFF (3+ GROUPS)',
+    currentPrice: 699,
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729654/image_1_bnw4tp.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -163,7 +163,7 @@ const TREKS: Trek[] = [
     description: 'One of the most famous night treks in Karnataka, offering a spectacular \'sea of clouds\' sunrise view from the ancient Kalavara Durga fort.',
     originalPrice: 2200,
     currentPrice: 1299,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802982/86ce7479-7313-47db-b5af-7ae6c8e9fb11.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474738/7078b1c9-a8d1-4e26-84b3-d4acd604a705.png',
@@ -240,7 +240,7 @@ const TREKS: Trek[] = [
     description: 'A beginner-friendly night trek leading to a beautiful sunrise over the Kolar plains, visiting ancient fort ruins.',
     originalPrice: 2200,
     currentPrice: 1299,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802923/00106417-19b2-46ab-8b9e-c4c5c56e79e7.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474887/4bea2954-7177-4485-910b-014e64cd2e4e.png',
@@ -303,7 +303,7 @@ const TREKS: Trek[] = [
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
     currentPrice: 699,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729197/image_3_swk6mc.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -365,7 +365,7 @@ const TREKS: Trek[] = [
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
     currentPrice: 699,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802809/82e28a63-fc59-44a2-bac3-2b774cba36ee.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
@@ -427,7 +427,7 @@ const TREKS: Trek[] = [
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
     currentPrice: 699,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802763/de1cb9df-c637-419f-883e-da3138f91ea5.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
@@ -592,7 +592,7 @@ const TREKS: Trek[] = [
     originalPrice: 4499,
     currentPrice: 4199,
     withoutTransportPrice: 3199,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803084/f50903b9-53b1-436e-9f47-506c3a7e29f5.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
@@ -691,7 +691,7 @@ const TREKS: Trek[] = [
     currentPrice: 4199,
     originalPrice: 4499,
     withoutTransportPrice: 3199,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
@@ -808,7 +808,7 @@ const TREKS: Trek[] = [
     currentPrice: 4199,
     originalPrice: 5199,
     withoutTransportPrice: 3199,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Samse Tea Estate, and the ancient Hoysala temples of Belur.',
@@ -913,7 +913,7 @@ const TREKS: Trek[] = [
     originalPrice: 4999,
     currentPrice: 3999,
     withoutTransportPrice: 2999,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_2_xahwhm.webp',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_1_zeockn.webp',
@@ -1023,7 +1023,7 @@ const TREKS: Trek[] = [
     currentPrice: 3999,
     originalPrice: 4499,
     withoutTransportPrice: 2999,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to Gangadikallu (also known as the Dzukou Valley of the south), a hidden paradise in the Kudremukh forest range. Experience pristine wind-swept green grasslands, misty rolling hills, and breathtaking vistas away from the crowd.',
@@ -1142,7 +1142,7 @@ const TREKS: Trek[] = [
     currentPrice: 3999,
     originalPrice: 4499,
     withoutTransportPrice: 2999,
-    discount: '5% OFF (3+ GROUPS)',
+    discount: '₹200 OFF (5+ GROUPS)',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
@@ -2142,48 +2142,62 @@ const TrekDetailsPage = () => {
           </div>
 
           {trek.withoutTransportPrice ? (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col md:flex-row items-stretch justify-center gap-6 pt-4 max-w-4xl mx-auto w-full"
-            >
-              {/* Option 1: With Transport */}
-              <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 bg-brand-orange text-[8px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-xl text-white">
-                  Popular
-                </div>
-                <div className="space-y-4 text-center md:text-left">
-                  <div>
-                    <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-widest block mb-1">Travel Package</span>
-                    <h4 className="text-lg font-black text-white italic tracking-tight">With <span className="text-brand-orange">Transport</span></h4>
+            <div className="space-y-4 max-w-4xl mx-auto w-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col md:flex-row items-stretch justify-center gap-6 pt-4 w-full"
+              >
+                {/* Option 1: With Transport */}
+                <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 bg-brand-orange text-[8px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-xl text-white">
+                    Popular
                   </div>
-                  <div className="flex items-baseline justify-center md:justify-start gap-3">
-                    <span className="text-4xl font-extrabold text-white">₹{trek.currentPrice.toLocaleString()}</span>
-                    <span className="text-sm font-bold text-white/35 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                  <div className="space-y-4 text-center md:text-left">
+                    <div>
+                      <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-widest block mb-1">Travel Package</span>
+                      <h4 className="text-lg font-black text-white italic tracking-tight">With <span className="text-brand-orange">Transport</span></h4>
+                    </div>
+                    <div className="flex items-baseline justify-center md:justify-start gap-3">
+                      <span className="text-4xl font-extrabold text-white">₹{trek.currentPrice.toLocaleString()}</span>
+                      <span className="text-sm font-bold text-white/35 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                    </div>
+                    <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
+                      Includes hassle-free round-trip transportation from Bangalore and all standard inclusions.
+                    </p>
                   </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
-                    Includes hassle-free round-trip transportation from Bangalore and all standard inclusions.
-                  </p>
                 </div>
-              </div>
 
-              {/* Option 2: Without Transport */}
-              <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
-                <div className="space-y-4 text-center md:text-left">
-                  <div>
-                    <span className="text-[9px] font-black text-cyan-400-glow uppercase tracking-widest block mb-1">Self-Travel</span>
-                    <h4 className="text-lg font-black text-white italic tracking-tight">Without <span className="text-cyan-400">Transport</span></h4>
+                {/* Option 2: Without Transport */}
+                <div className="flex-1 flex flex-col justify-between bg-black/40 backdrop-blur-xl p-6.5 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                  <div className="space-y-4 text-center md:text-left">
+                    <div>
+                      <span className="text-[9px] font-black text-cyan-400-glow uppercase tracking-widest block mb-1">Self-Travel</span>
+                      <h4 className="text-lg font-black text-white italic tracking-tight">Without <span className="text-cyan-400">Transport</span></h4>
+                    </div>
+                    <div className="flex items-baseline justify-center md:justify-start gap-3">
+                      <span className="text-4xl font-extrabold text-white">₹{trek.withoutTransportPrice.toLocaleString()}</span>
+                    </div>
+                    <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
+                      Make your own way there. All other inclusions and professional tour services remain exactly the same.
+                    </p>
                   </div>
-                  <div className="flex items-baseline justify-center md:justify-start gap-3">
-                    <span className="text-4xl font-extrabold text-white">₹{trek.withoutTransportPrice.toLocaleString()}</span>
-                  </div>
-                  <p className="text-[10px] text-white/60 leading-relaxed font-semibold">
-                    Make your own way there. All other inclusions and professional tour services remain exactly the same.
-                  </p>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+              
+              {trek.discount && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.35 }}
+                  className="bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md px-5 py-3.5 rounded-2xl flex items-center justify-center gap-3 text-emerald-300 text-[11px] font-semibold tracking-wide text-center"
+                >
+                  <span className="text-sm shrink-0">🎉</span>
+                  <span><strong>Group Offer:</strong> Get a <span className="text-emerald-400 font-extrabold">₹200 discount per person</span> for groups of more than 5 members across all 2-day Western Ghats expeditions.</span>
+                </motion.div>
+              )}
+            </div>
           ) : (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -2197,10 +2211,12 @@ const TrekDetailsPage = () => {
                   <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
                   <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
-                  <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
-                </div>
+                {trek.discount && (
+                  <div className="flex flex-col">
+                    <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                    <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
@@ -3429,16 +3445,16 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
               <div className="text-center space-y-3">
                 <p className="text-[#f2711c] font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px]">Group Special</p>
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                  Flat 5% Group Discount <br/>
-                  <span className="text-[#f15a24] italic uppercase text-xl">for groups above 3 people</span>
+                  ₹200 Group Discount <br/>
+                  <span className="text-[#f15a24] italic uppercase text-xl">for groups above 5 people</span>
                 </h3>
               </div>
 
               <div className="bg-slate-50 p-6 rounded-2xl text-center border border-slate-100 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 <p className="text-slate-600 font-bold leading-relaxed relative z-10">
-                  Join with your team and save! <br/> 
-                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">Available for all upcoming adventures</span>.
+                  Join with your team (5+ members) and save! <br/> 
+                  <span className="text-slate-900 font-black uppercase tracking-widest text-xs">Available on all 2-Day Western Ghats expeditions</span>.
                 </p>
               </div>
 
@@ -3446,7 +3462,7 @@ const PromoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const message = "Hi! I'd like to claim the 5% group discount for groups above 3. How can I proceed?";
+                  const message = "Hi! I'd like to claim the ₹200 group discount for groups of more than 5. How can I proceed?";
                   const waUrl = `https://wa.me/919980489494?text=${encodeURIComponent(message)}`;
                   window.open(waUrl, '_blank');
                   onClose();
