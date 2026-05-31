@@ -2521,39 +2521,57 @@ const TrekDetailsPage = () => {
           {(() => {
             const otherDays = trek.itinerary.filter(d => d.label.toLowerCase() !== 'day 0');
             return (
-              <div className={`grid grid-cols-1 gap-6 md:gap-8 items-start ${
-                otherDays.length === 1 
-                  ? 'max-w-xl mx-auto' 
-                  : otherDays.length === 2 
-                  ? 'md:grid-cols-2 max-w-4xl mx-auto' 
-                  : 'md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
-              }`}>
-                 {otherDays.map((day, dIdx) => (
-                   <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
-                          {day.emoji} {day.label}
-                        </span>
-                        <div className="flex-1 h-px bg-slate-100" />
-                     </div>
-                     
-                     <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                        {day.items.map((item, idx) => {
-                          const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
-                          return (
-                            <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
-                              <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                              <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                                <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                                <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
-                                {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+              <div className="space-y-6 max-w-4xl mx-auto w-full">
+                <div className={`grid grid-cols-1 gap-6 md:gap-8 items-start ${
+                  otherDays.length === 1 
+                    ? 'max-w-xl mx-auto' 
+                    : otherDays.length === 2 
+                    ? 'md:grid-cols-2 w-full' 
+                    : 'md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
+                }`}>
+                   {otherDays.map((day, dIdx) => (
+                     <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                       <div className="flex items-center gap-3 mb-6">
+                          <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                            {day.emoji} {day.label}
+                          </span>
+                          <div className="flex-1 h-px bg-slate-100" />
+                       </div>
+                       
+                       <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                          {day.items.map((item, idx) => {
+                            const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                            return (
+                              <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                                <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                                <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                                  <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                                  <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
+                                  {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                                </div>
                               </div>
-                            </div>
-                          );
-                        })}
+                            );
+                          })}
+                       </div>
                      </div>
-                   </div>
-                 ))}
+                   ))}
+                </div>
+
+                {isTwoDayWesternGhat && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-amber-500/[0.03] border border-amber-500/20 p-5 rounded-3xl flex gap-4 text-xs font-semibold leading-relaxed text-amber-900 shadow-sm relative overflow-hidden"
+                  >
+                    <div className="absolute inset-y-0 left-0 w-1.5 bg-amber-500" />
+                    <span className="text-2xl shrink-0 select-none">📌</span>
+                    <p className="text-slate-700">
+                      <strong className="text-amber-600 font-extrabold uppercase tracking-wider text-[11px] block mb-1">Forest Permit & Itinerary Policy</strong>
+                      There are certain limitations when it comes to forest permit tickets (only 300 members allowed per day to Netravathi Peak). As a result of this, the trek may be conducted either on Saturday or on Sunday. So the Day-1 & Day-2 itineraries may get interchanged without prior notice. Itinerary briefing will be provided at the time of departure.
+                    </p>
+                  </motion.div>
+                )}
               </div>
             );
           })()}
