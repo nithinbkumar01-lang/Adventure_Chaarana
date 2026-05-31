@@ -489,7 +489,7 @@ const TREKS: Trek[] = [
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 5499,
     currentPrice: 5299,
-    discount: 'LIMITED PRICE',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
@@ -592,7 +592,7 @@ const TREKS: Trek[] = [
     originalPrice: 4499,
     currentPrice: 4199,
     withoutTransportPrice: 3199,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803084/f50903b9-53b1-436e-9f47-506c3a7e29f5.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
@@ -691,7 +691,7 @@ const TREKS: Trek[] = [
     currentPrice: 4199,
     originalPrice: 4499,
     withoutTransportPrice: 3199,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
@@ -808,7 +808,7 @@ const TREKS: Trek[] = [
     currentPrice: 4199,
     originalPrice: 5199,
     withoutTransportPrice: 3199,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Samse Tea Estate, and the ancient Hoysala temples of Belur.',
@@ -913,7 +913,7 @@ const TREKS: Trek[] = [
     originalPrice: 4999,
     currentPrice: 3999,
     withoutTransportPrice: 2999,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_2_xahwhm.webp',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_1_zeockn.webp',
@@ -1023,7 +1023,7 @@ const TREKS: Trek[] = [
     currentPrice: 3999,
     originalPrice: 4499,
     withoutTransportPrice: 2999,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to Gangadikallu (also known as the Dzukou Valley of the south), a hidden paradise in the Kudremukh forest range. Experience pristine wind-swept green grasslands, misty rolling hills, and breathtaking vistas away from the crowd.',
@@ -1142,7 +1142,7 @@ const TREKS: Trek[] = [
     currentPrice: 3999,
     originalPrice: 4499,
     withoutTransportPrice: 2999,
-    discount: '₹200 OFF (5+ GROUPS)',
+    discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
@@ -3805,13 +3805,6 @@ const HomePage = () => {
 
 export default function App() {
   const [showPromo, setShowPromo] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPromo(true);
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <HelmetProvider>
