@@ -1243,6 +1243,122 @@ const TREKS: Trek[] = [
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
     ]
+  },
+  {
+    id: '14',
+    slug: 'kurinjal-peak-trek',
+    title: 'Kurinjal Peak Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Chikamagaluru',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '1,159 m',
+    distance: '14 km (total)',
+    minAge: '5+',
+    timeHours: '7Hrs',
+    modeRating: 'Easy - Moderate',
+    permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
+    currentPrice: 3999,
+    originalPrice: 4499,
+    withoutTransportPrice: 2999,
+    discount: '',
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    description: 'Trek to the spectacular Kurinjal Peak in the Kudremukh forest range. Walk through high altitude shola grasslands, wind-swept ridges, and find yourself surrounded by the majestic peaks of the Kudremukh National Park.',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330392/38acb9eb-6924-425a-a369-98a05b1ae6b9.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330407/a231c7c1-0f72-45bf-8ec1-f7181e6efd3c.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330415/1a02c7a2-b532-41c1-bb8e-bd1acb220818.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330426/9f3abcef-37ae-453a-9a80-69edd894dbb1.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330441/8707191c-f602-4653-a267-5cfe93cbd003.png'
+    ],
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: '📍HSR Layout' },
+          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
+          { time: '08:45 PM', activity: '📍Domlur Post Office' },
+          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
+          { time: '09:30 PM', activity: '📍Yeshwantpur' },
+          { time: '10:00 PM', activity: '📍Gorguntepalya' },
+          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '⛰️',
+        items: [
+          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in & Freshen up' },
+          { time: '07:00 AM', activity: '🍽️ Breakfast and Trek Briefing' },
+          { time: '08:00 AM', activity: '🥾 Reach Trek Base and Start Climbing' },
+          { time: '12:00 PM', activity: '⛰️ Reach Kurinjal Peak & enjoy packed lunch' },
+          { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
+          { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire & Rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌿',
+        items: [
+          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
+          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
+          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
+          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
+          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
+          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
+          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
+    ],
+    exclusions: [
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
+    ],
+    thingsToCarry: [
+      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
+      'Raincoat (essential!)',
+      'Trekking / Hiking shoes',
+      'Trekking stick',
+      'Polybag for wet clothes',
+      'Sandals / flip flops',
+      'Small backpack',
+      'Water Bottle and Lunch Box',
+      'Toiletries',
+      'Sweater / Jacket',
+      'Torch / Flashlight',
+      'Energy bars, dry fruits, Glucon-D',
+      'Suncap & sunglasses',
+      'Waterproof phone cover',
+      'Charger / Power bank',
+      'Personal medications & Dettol'
+    ],
+    placesCovered: [
+      'Kurinjal Peak',
+      'Kudremukh Forest Area',
+      'Samse Tea Estate',
+      'Kalasa Hanging Bridge / KPP Prathistana',
+      'Kalasa Temple',
+      'Horanadu Temple / Belur Temple'
+    ]
   }
 ];
 
