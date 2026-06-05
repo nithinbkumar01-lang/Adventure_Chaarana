@@ -911,8 +911,8 @@ const TREKS: Trek[] = [
     minAge: '8 Years',
     description: 'Trek to the majestic Kodachadri peak in the Western Ghats, passing through dense tropical rainforests, the stunning Hidlumane waterfalls, and ending at the historical Sarvagna Peeta. Admire rich flora, stunning ridge walks, and deep valleys.',
     originalPrice: 4999,
-    currentPrice: 4499,
-    withoutTransportPrice: 3499,
+    currentPrice: 4199,
+    withoutTransportPrice: 3199,
     discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_2_xahwhm.webp',
     gallery: [
