@@ -739,7 +739,6 @@ const TREKS: Trek[] = [
         emoji: '🌿',
         items: [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
           { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
           { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
           { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
@@ -788,7 +787,6 @@ const TREKS: Trek[] = [
     placesCovered: [
       'Nethravathi Peak',
       'Kudremukh Forest Area',
-      'Samse Tea Estate',
       'Kalasa Hanging Bridge / KPP Prathistana',
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
@@ -811,7 +809,7 @@ const TREKS: Trek[] = [
     discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
-    description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Samse Tea Estate, and the ancient Hoysala temples of Belur.',
+    description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Kelgur Tea Estate, and the ancient Hoysala temples of Belur.',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803469/6030ae08-a7a3-4ddb-9d9e-3c135b4aea19.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg',
@@ -854,7 +852,7 @@ const TREKS: Trek[] = [
           { time: '07:00 AM', activity: '🍳 Breakfast and Checkout from Homestay' },
           { time: '08:00 AM', activity: '⛰️ Rani Jhari View Point (Gaze at the breathtaking mist-lined valleys)' },
           { time: '09:30 AM', activity: '🌊 Kodige Falls Visit (Play in the safe, refreshing natural cascades)' },
-          { time: '11:00 AM', activity: '🍃 Samse Tea Estate Visit (Walk through lush, emerald tea gardens)' },
+          { time: '11:00 AM', activity: '🍃 Kelgur Tea Estate Visit (Walk through lush, emerald tea gardens)' },
           { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Traditional local Malnad style food - self sponsored)' },
           { time: '02:30 PM', activity: '🛕 Visit Historic Belur Temple (Marvel at the exquisite Hoysala carvings)' },
           { time: '04:00 PM', activity: '🚌 Start return journey to Bangalore' },
@@ -893,7 +891,7 @@ const TREKS: Trek[] = [
       'Bandaje Waterfalls',
       'Rani Jhari View point',
       'Kodige Falls',
-      'Tea Estate',
+      'Kelgur Tea Estate',
       'Belur Temple'
     ]
   },
@@ -1069,7 +1067,6 @@ const TREKS: Trek[] = [
         emoji: '🌿',
         items: [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
           { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
           { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
           { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
@@ -1118,7 +1115,6 @@ const TREKS: Trek[] = [
     placesCovered: [
       'Gangadikallu Peak',
       'Kudremukh Forest Area',
-      'Samse Tea Estate',
       'Kalasa Hanging Bridge / KPP Prathistana',
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
@@ -1173,7 +1169,7 @@ const TREKS: Trek[] = [
         label: 'Day 1',
         emoji: '⛰️',
         items: [
-          { time: '06:00 AM', activity: '🛞 Jeep ride to Balgal base point' },
+          { time: '06:00 AM', activity: '🛞 Only Jeep ride' },
           { time: '07:00 AM', activity: '🥾 Kudremukha Trek start and scale the horse-face peak' },
           { time: '01:00 PM', activity: '⛰️ Reach majestic Kudremukha peak & enjoy packed lunch' },
           { time: '04:30 PM', activity: '🌊 Visit pristine Mullodi Falls during descent' },
@@ -1187,7 +1183,6 @@ const TREKS: Trek[] = [
         emoji: '🌿',
         items: [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
           { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
           { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
           { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
@@ -1236,9 +1231,8 @@ const TREKS: Trek[] = [
     placesCovered: [
       'Kudremukha Peak',
       'Mullodi Falls',
-      'Off-Road Jeep Ride to Balgal',
+      'Only Jeep ride',
       'Kudremukh Forest Area',
-      'Samse Tea Estate',
       'Kalasa Hanging Bridge / KPP Prathistana',
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
@@ -1305,7 +1299,6 @@ const TREKS: Trek[] = [
         emoji: '🌿',
         items: [
           { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '08:30 AM', activity: '🍃 Samse Tea Estate Visit' },
           { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
           { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
           { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
@@ -1354,7 +1347,6 @@ const TREKS: Trek[] = [
     placesCovered: [
       'Kurinjal Peak',
       'Kudremukh Forest Area',
-      'Samse Tea Estate',
       'Kalasa Hanging Bridge / KPP Prathistana',
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
