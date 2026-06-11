@@ -84,8 +84,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 699,
-    discount: '',
+    currentPrice: 749,
+    discount: '5% Group Off (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729654/image_1_bnw4tp.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -302,8 +302,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 699,
-    discount: '',
+    currentPrice: 749,
+    discount: '5% Group Off (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729197/image_3_swk6mc.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -364,8 +364,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 699,
-    discount: '',
+    currentPrice: 749,
+    discount: '5% Group Off (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802809/82e28a63-fc59-44a2-bac3-2b774cba36ee.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
@@ -2308,26 +2308,40 @@ const TrekDetailsPage = () => {
               )}
             </div>
           ) : (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
-            >
-              <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
-                <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
-                <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
-                  <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
-                  <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
-                </div>
-                {trek.discount && (
-                  <div className="flex flex-col">
-                    <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
-                    <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+            <div className="space-y-4 max-w-4xl mx-auto w-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+              >
+                <div className="flex items-center gap-5 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-3xl border border-white/10 shadow-2xl">
+                  <span className="text-4xl font-black text-white">₹{trek.currentPrice.toLocaleString()}</span>
+                  <div className="flex flex-col items-start pr-4 border-r border-white/10 mr-4">
+                    <span className="text-[11px] font-bold text-white/30 line-through">₹{trek.originalPrice.toLocaleString()}</span>
+                    <span className="text-[9px] font-black text-brand-orange-glow uppercase tracking-tighter">All Inclusive</span>
                   </div>
-                )}
-              </div>
-            </motion.div>
+                  {trek.discount && (
+                    <div className="flex flex-col">
+                      <span className="text-[8px] font-black text-brand-orange-glow uppercase tracking-[0.2em] mb-1">Current Offer</span>
+                      <span className="text-[10px] font-black text-white uppercase tracking-wider">{trek.discount}</span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+
+              {['1', '4', '5'].includes(trek.id) && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.35 }}
+                  className="bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md px-5 py-3.5 rounded-2xl flex items-center justify-center gap-3 text-emerald-300 text-[11px] font-semibold tracking-wide text-center"
+                >
+                  <span className="text-sm shrink-0">🎉</span>
+                  <span><strong>Group Offer:</strong> Get a <span className="text-emerald-400 font-extrabold">5% discount</span> for groups of <span className="text-emerald-400 font-extrabold">3+ members</span> on this sunrise trek!</span>
+                </motion.div>
+              )}
+            </div>
           )}
 
           {trek.permitNotice && (
