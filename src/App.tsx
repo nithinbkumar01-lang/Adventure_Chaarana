@@ -75,7 +75,7 @@ const TREKS: Trek[] = [
     slug: 'shivagange-sunrise-trek',
     title: 'Shivagange Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'May 3, 2026',
+    date: 'July 5, 2026',
     location: 'Tumkur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -522,7 +522,7 @@ const TREKS: Trek[] = [
           { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
           { time: '02:00 PM', activity: '🍫 Chocolate Factory, Bryant Park, Coaker’s Walk' },
           { time: '04:30 PM', activity: '🛶 Kodaikanal Lake (boating & activities self-sponsored)' },
-          { time: '08:00 PM', activity: '🔥 Dinner & Campfire overnight stay' }
+          { time: '08:00 PM', activity: '🔥 Dinner & Campfire (if weather permits) overnight stay' }
         ]
       },
       {
@@ -621,7 +621,7 @@ const TREKS: Trek[] = [
           { time: '01:00 PM', activity: '⛰️ Reach summit & enjoy packed lunch' },
           { time: '02:30 PM', activity: '⬇️ Descend back to base' },
           { time: '04:30 PM', activity: '🏰 Visit Nalknad Palace' },
-          { time: '08:00 PM', activity: '🔥 Dinner, Campfire & overnight stay' }
+          { time: '08:00 PM', activity: '🔥 Dinner, Campfire (if weather permits) & overnight stay' }
         ]
       },
       {
@@ -731,7 +731,7 @@ const TREKS: Trek[] = [
           { time: '12:00 PM', activity: '⛰️ Reach Nethravathi Peak & Packed Lunch' },
           { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
           { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '06:00 PM', activity: '🔥 Group Games, Campfire & Rest' }
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire (if weather permits) & Rest' }
         ]
       },
       {
@@ -842,7 +842,7 @@ const TREKS: Trek[] = [
           { time: '02:00 PM', activity: '📸 Explore the pristine forest landscape and capture panoramic valley views' },
           { time: '03:00 PM', activity: '⬇️ Descend back to the base village' },
           { time: '06:00 PM', activity: '🍵 Reach Homestay - High Tea & Hot Snacks' },
-          { time: '08:00 PM', activity: '🔥 Engage in group bonding, Campfire, Dinner & overnight stay' }
+          { time: '08:00 PM', activity: '🔥 Engage in group bonding, Campfire (if weather permits), Dinner & overnight stay' }
         ]
       },
       {
@@ -950,7 +950,7 @@ const TREKS: Trek[] = [
           { time: '01:00 PM', activity: '🛞 High energy off-road Jeep ride back and lunch stop' },
           { time: '03:00 PM', activity: '⛰️ Scenic ridge trek to Sarvagna Peeta' },
           { time: '05:00 PM', activity: '🛞 Sunset Jeep ride back to Homestay' },
-          { time: '08:00 PM', activity: '🔥 Warm Campfire, group activities, and delicious traditional local Dinner' }
+          { time: '08:00 PM', activity: '🔥 Warm Campfire (if weather permits), group activities, and delicious traditional local Dinner' }
         ]
       },
       {
@@ -1059,7 +1059,7 @@ const TREKS: Trek[] = [
           { time: '12:00 PM', activity: '⛰️ Reach Gangadikallu Peak & enjoy packed lunch' },
           { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
           { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '06:00 PM', activity: '🔥 Group Games, Campfire & Rest' }
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire (if weather permits) & Rest' }
         ]
       },
       {
@@ -1175,7 +1175,7 @@ const TREKS: Trek[] = [
           { time: '04:30 PM', activity: '🌊 Visit pristine Mullodi Falls during descent' },
           { time: '05:30 PM', activity: '🏡 Reach back to homestay' },
           { time: '06:00 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '08:00 PM', activity: '🔥 Campfire, group games, and traditional local Dinner' }
+          { time: '08:00 PM', activity: '🔥 Campfire (if weather permits), group games, and traditional local Dinner' }
         ]
       },
       {
@@ -1291,7 +1291,7 @@ const TREKS: Trek[] = [
           { time: '12:00 PM', activity: '⛰️ Reach Kurinjal Peak & enjoy packed lunch' },
           { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
           { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '06:00 PM', activity: '🔥 Group Games, Campfire & Rest' }
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire (if weather permits) & Rest' }
         ]
       },
       {
@@ -1350,6 +1350,121 @@ const TREKS: Trek[] = [
       'Kalasa Hanging Bridge / KPP Prathistana',
       'Kalasa Temple',
       'Horanadu Temple / Belur Temple'
+    ]
+  },
+  {
+    id: '15',
+    slug: 'wayanad-adventure-trip',
+    title: 'Wayanad Adventure Trip',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Wayanad, Kerala',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '950 m',
+    distance: 'Flexible',
+    minAge: '5 Years',
+    description: 'An action-packed adventure and leisure getaway tracing pristine water bodies, lush tea estates, and misty landscapes. Take an off-road jeep ride to 900 Kandi, walk on the thrilling glass bridge, look over India’s largest earth dam, explore Karlad Lake, and marvel at magnificent waterfalls.',
+    originalPrice: 5999,
+    currentPrice: 4999,
+    withoutTransportPrice: 3999,
+    discount: '',
+    image: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200',
+    gallery: [
+      'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1545244014-f57689189371?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1627664813831-268db4d687af?auto=format&fit=crop&q=80&w=1200'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '09:45 PM', activity: '⚡ Bangalore Departure: Pick up from Majestic (Near Metro station)' },
+          { time: '10:15 PM', activity: '⚡ Pick up from Nayandanahalli metro station' },
+          { time: '10:30 PM', activity: '⚡ Pick up from Kengeri bus stand' },
+          { time: '12:30 AM', activity: '⚡ Mysore Pick up: KSRTC bus stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏞️',
+        items: [
+          { time: '06:00 AM', activity: '🚍 Reach Wayanad in the morning & witness the beautiful sceneries' },
+          { time: '07:00 AM', activity: '🏠 Reach homestay, freshen up & hot delicious breakfast' },
+          { time: '08:15 AM', activity: '🎒 Pack a day backpack & board our local transit vehicle' },
+          { time: '09:00 AM', activity: '🍃 Visit scenic Wayanad Tea Estates (Lush, emerald gardens)' },
+          { time: '10:15 AM', activity: '🧗 Visit the longest zipline hub (You can indulge in activities like zipline & zipcycle at your own cost)' },
+          { time: '01:00 PM', activity: '🍛 Delicious lunch break' },
+          { time: '02:00 PM', activity: '🛞 Enjoy off-road jeep ride in Wayanad with picturesque valley views' },
+          { time: '02:45 PM', activity: '⛰️ Head to 900 Kandi (Indulge in activities like Sky Walk, Burma Bridge, Archery, Rifle shooting)' },
+          { time: '03:30 PM', activity: '🌉 Walk on the thrilling Glass Bridge & Sky hanging swing' },
+          { time: '04:30 PM', activity: '🌊 Visit and experience Meenumutty Waterfalls' },
+          { time: '06:00 PM', activity: '🏡 Head back to homestay for evening relaxation' },
+          { time: '08:30 PM', activity: '🔥 Dinner, campfire (if weather permits) & cozy overnight stay' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🚣',
+        items: [
+          { time: '07:30 AM', activity: '🍳 Freshen up, have breakfast & check-out from the homestay' },
+          { time: '09:00 AM', activity: '🧱 Visit Banasurasagar Dam, the largest earth dam in India (Indulge in speed boating, Kayaking & Zorbing at your own cost - 2 hours permitted)' },
+          { time: '11:45 AM', activity: '⛵ Head to Karlad Lake for outdoor fun (Burma bridge, zipcycling, kayaking, zorbing)' },
+          { time: '01:00 PM', activity: '🍛 Traditional self-sponsored local Malnad/Kerala lunch' },
+          { time: '02:00 PM', activity: '🚍 Start your return journey to hometown' },
+          { time: '05:30 PM', activity: '🌻 If time permits, stop at Gudlupete to see the gorgeous Sunflower farm' },
+          { time: '06:00 PM', activity: '🦌 Cross Bandipura Forest checkpoint (Before strict 6 PM curfew)' },
+          { time: '08:00 PM', activity: '🍽️ Reach Mysore & stop for a hearty dinner' },
+          { time: '10:00 PM', activity: '🏡 Reach Bangalore (drop timings may vary depending on the ground situation)' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation: non-AC seater vehicle (Tempo Traveler / mini bus / Bus depending on the number of people)',
+      'Meals: simple South Indian vegetarian food (Day 1 Breakfast & Dinner, Day 2 Breakfast)',
+      'Accommodation: basic homestay accommodation (shared rooms / dormitory, separate for men & women, common/sharing washroom)',
+      'All entry fees as per standard itinerary',
+      'Kerala state permit charges',
+      'Certified Tour Guide / First Aid Responder'
+    ],
+    exclusions: [
+      'Any other personal expenses incurred apart from inclusions',
+      'Any meals not mentioned in inclusions',
+      'Any additional expenses due to emergencies / natural calamities',
+      'Jeep ride charge & entry fee to 900 Kandi',
+      'Travel & Medical insurance',
+      'Any individual rides, zip cycling, kayaking, zorbing, speed boating, or sightseeing activities at the parks',
+      'Any travel expenses arising due to vehicle breakdown'
+    ],
+    thingsToCarry: [
+      'Soft copy of your identity card (Aadhar card / any other Govt. ID)',
+      'Additional clothes & extra pants/shorts',
+      'Sandals / flip flops',
+      'Small backpack to carry your essentials',
+      'Water bottle (please avoid single-use plastics)',
+      'A polybag to carry any wet clothes',
+      'Toiletries & towel',
+      'Cold protective clothes - Sweaters / Jackets',
+      'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
+      'Sunscreen, Suncap & sunglasses (for sunny days)',
+      'Raincoat / Umbrella (for monsoon days)',
+      'Charger / power bank for electronics',
+      'Personal medications if any'
+    ],
+    placesCovered: [
+      '900 Kandi canopy & forest',
+      'Glass bridge',
+      'Sky hanging swing',
+      'Meenumutty Waterfalls',
+      'Banasurasagar Dam (Largest earth dam)',
+      'Karlad Lake',
+      'Wayanad Tea Estates',
+      'Gudlupete Sunflower Farm',
+      'Bandipur Forest checkpoint'
     ]
   }
 ];
@@ -2076,23 +2191,12 @@ const TrekDetailsPage = () => {
   const isOneDayTrek = trek?.duration?.toLowerCase() === '1 day';
   const isTwoDayWesternGhat = trek?.duration?.toLowerCase()?.includes('2 day') && trek?.category === 'western-ghats';
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // We want to generate dates exclusively for June and July 2026
-    const startDateLimit = new Date(2026, 5, 1); // June 1st, 2026
+    // We want to generate dates exclusively for July 2026
+    const startDateLimit = new Date(2026, 6, 1); // July 1st, 2026
     const endDateLimit = new Date(2026, 6, 31);   // July 31st, 2026
     
     const tempDate = new Date(startDateLimit);
@@ -2110,11 +2214,6 @@ const TrekDetailsPage = () => {
 
         const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
         const monthGroup = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-        
-        if (isMobile && monthGroup.includes('July')) {
-          tempDate.setDate(tempDate.getDate() + 1);
-          continue;
-        }
 
         batches.push({
           start: formatDate(startDate),
