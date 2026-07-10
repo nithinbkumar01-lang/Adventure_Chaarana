@@ -2190,6 +2190,7 @@ const TrekDetailsPage = () => {
   const trek = TREKS.find(t => t.slug === slug);
   const isOneDayTrek = trek?.duration?.toLowerCase() === '1 day';
   const isTwoDayWesternGhat = trek?.duration?.toLowerCase()?.includes('2 day') && trek?.category === 'western-ghats';
+  const isTwoDayTrek = trek?.duration?.toLowerCase()?.includes('2 day');
 
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
@@ -2791,6 +2792,37 @@ const TrekDetailsPage = () => {
                       <strong className="text-amber-600 font-extrabold uppercase tracking-wider text-[11px] block mb-1">Forest Permit & Itinerary Policy</strong>
                       There are certain limitations when it comes to forest permit tickets (only 300 members allowed per day to Netravathi Peak). As a result of this, the trek may be conducted either on Saturday or on Sunday. So the Day-1 & Day-2 itineraries may get interchanged without prior notice. Itinerary briefing will be provided at the time of departure.
                     </p>
+                  </motion.div>
+                )}
+
+                {isTwoDayTrek && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-cyan-500/[0.03] border border-cyan-500/20 p-6 rounded-3xl flex gap-4 text-xs font-semibold leading-relaxed text-slate-700 shadow-sm relative overflow-hidden"
+                  >
+                    <div className="absolute inset-y-0 left-0 w-1.5 bg-cyan-500" />
+                    <span className="text-2xl shrink-0 select-none">🚍</span>
+                    <div className="space-y-3">
+                      <strong className="text-cyan-600 font-extrabold uppercase tracking-wider text-[11px] block">
+                        Important Note – Return & Drop Timings
+                      </strong>
+                      <ul className="list-disc pl-4 space-y-2 text-slate-650 text-xs font-medium">
+                        <li>
+                          For all Day 2 (weekend) treks, the return journey begins after the trek, and drop-offs will be on the following morning (typically Monday morning, depending on the itinerary).
+                        </li>
+                        <li>
+                          Our expected drop-off in Bangalore is as per the itinerary. However, delays may occur due to factors beyond our control, such as weather, traffic, road conditions, or unforeseen circumstances.
+                        </li>
+                        <li>
+                          Safety is our priority. If the estimated arrival time falls during hours when public transport is unavailable or unsafe, especially for solo travellers and female participants, we may schedule the final drop by Monday, around 4:00 AM, to ensure safer onward travel.
+                        </li>
+                        <li>
+                          We request all participants to plan their return schedules accordingly and avoid booking time-sensitive commitments immediately after the trek.
+                        </li>
+                      </ul>
+                    </div>
                   </motion.div>
                 )}
               </div>
