@@ -487,8 +487,8 @@ const TREKS: Trek[] = [
     distance: '',
     minAge: '5 Years',
     description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
-    originalPrice: 5499,
-    currentPrice: 5299,
+    originalPrice: 5999,
+    currentPrice: 5499,
     discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
     gallery: [
