@@ -1466,6 +1466,128 @@ const TREKS: Trek[] = [
       'Gudlupete Sunflower Farm',
       'Bandipur Forest checkpoint'
     ]
+  },
+  {
+    id: '16',
+    slug: 'munnar-kolukkumalai',
+    title: 'Munnar (with Kolukkumalai)',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Munnar & Kolukkumalai, Kerala',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '2,160 m',
+    distance: 'Flexible',
+    minAge: '5 Years',
+    description: 'An enchanting escape to Munnar and Kolukkumalai—home to the world\'s highest organic tea plantations. Enjoy an adventurous off-road jeep safari, capture breathtaking sunrise views at Jaguar Rock, trek through lush tea estates, and witness gorgeous waterfalls, gardens, and viewpoints.',
+    originalPrice: 7499,
+    currentPrice: 6499,
+    withoutTransportPrice: 5499,
+    discount: '',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004377/e9b00515-f281-420b-bb50-4becfa70c50a.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004377/e9b00515-f281-420b-bb50-4becfa70c50a.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004328/d88dbc0a-e24a-45af-bb7b-b17e5db4c650.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004287/907c81a6-2a74-4931-8093-79cab585a747.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004042/d7afedf9-83e7-49ea-a3a2-624ea1db858e.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004009/1bdba3e0-b878-47e3-86c8-2e0d0e520792.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌌',
+        items: [
+          { time: '07:40 PM', activity: '📍 Majestic metro station' },
+          { time: '08:35 PM', activity: '📍 Koramangala - opp to Forum mall' },
+          { time: '08:45 PM', activity: '📍 Silk board - near Renault showroom' },
+          { time: '09:05 PM', activity: '📍 Electronic city - Toll plaza' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏞️',
+        items: [
+          { time: '08:00 AM', activity: '🏠 Arrive at your stay in Munnar' },
+          { time: '08:30 AM', activity: '🍳 Freshen up & hot delicious breakfast' },
+          { time: '09:15 AM', activity: '🎒 Pack a day backpack & board our local transit vehicle' },
+          { time: '10:15 AM', activity: '🌊 Visit Echo Point' },
+          { time: '11:45 AM', activity: '🌺 Visit Botanical Garden / Rose Garden' },
+          { time: '01:00 PM', activity: '🍛 Delicious lunch break' },
+          { time: '02:00 PM', activity: '📸 Visit Photo Point: It\'s a chain of hills completely covered with tea estates' },
+          { time: '03:00 PM', activity: '🧗 You can do zipline activity through the panoramic view tea estates (self-sponsored)' },
+          { time: '04:30 PM', activity: '⛰️ Visit Phantom Hills & enjoy the beautiful sunset' },
+          { time: '06:30 PM', activity: '🏡 Head back to stay for evening relaxation' },
+          { time: '08:30 PM', activity: '🔥 Campfire (if weather permits), group bonding & dinner' },
+          { time: '10:00 PM', activity: '🛌 Rest for the night' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌅',
+        items: [
+          { time: '04:30 AM', activity: '🌅 Wake up & freshen up' },
+          { time: '05:00 AM', activity: '🛞 Adventurous Jeep ride to Kolukkumalai hills' },
+          { time: '06:00 AM', activity: '⛰️ Visit Jaguar Rock View Point & experience the sunrise (or post-sunrise)' },
+          { time: '08:00 AM', activity: '🛞 Jeep ride back to base point through the most beautiful Munnar hill station covered with tea estates' },
+          { time: '09:00 AM', activity: '🍳 Pack your bags, checkout from the stay & have breakfast' },
+          { time: '10:30 AM', activity: '⛰️ Visit Munnar Gap Road view point' },
+          { time: '11:45 AM', activity: '⛰️ Visit Anamudi view point' },
+          { time: '01:00 PM', activity: '🍛 Have delicious local lunch' },
+          { time: '02:00 PM', activity: '🌊 Visit Lakkom Waterfalls' },
+          { time: '04:00 PM', activity: '🚍 Start your journey back to Bangalore' },
+          { time: '08:00 PM', activity: '🍽️ Dinner on the way' },
+          { time: '05:00 AM', activity: '🏡 Reach Bangalore on Monday early morning (drop timings may vary depending on the ground situation)' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation: non A/C, seater vehicle (Tempo Traveler / mini bus / Bus depending on the number of people)',
+      'Meals: South Indian Vegetarian food (Day 1 → breakfast & dinner, Day 2 → breakfast)',
+      'Basic accommodation: Shared rooms / Dormitory / tent - any one of it will be provided (Separate for men & women, common/sharing washroom, no option to choose the accommodation type)',
+      'All Entry fee as per itinerary',
+      'Jeep ride charges for Kolukkumalai',
+      'Certified Guide / First Aid Responder',
+      'Tamil Nadu state & Kerala state permit',
+      'E pass'
+    ],
+    exclusions: [
+      'Any other expenses incurred apart from inclusions',
+      'Any meals not mentioned in inclusions',
+      'Any additional expenses due to emergencies / natural calamities',
+      'Travel & Medical insurance',
+      'Any activities, Any additional service & sightseeing',
+      'Any travel expenses arising due to vehicle breakdown'
+    ],
+    thingsToCarry: [
+      'Govt ID (either Aadhar / PAN / DL / Voter)',
+      'Raincoat / Umbrella (essential for monsoon days)',
+      'Trekking / hiking shoes or comfortable walking shoes',
+      'Small backpack to carry your essentials',
+      'Water bottle (please avoid single-use plastics)',
+      'A polybag to carry any wet clothes',
+      'Toiletries & towel',
+      'Cold protective clothes - Sweaters / Jackets',
+      'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
+      'Sunscreen, Suncap & sunglasses (for sunny days)',
+      'Charger / power bank for electronics',
+      'Personal medications if any'
+    ],
+    placesCovered: [
+      'Lakkom Waterfalls',
+      'Tea estates',
+      'Kolukkumalai',
+      'Longest dual zipline',
+      'Jeep Ride Kolukkumalai',
+      'Jaguar rock view point',
+      'Gap Road',
+      'Anamudi',
+      'Phantom Hills',
+      'Rose garden',
+      'Echo point',
+      'Photo point'
+    ]
   }
 ];
 
@@ -2823,6 +2945,22 @@ const TrekDetailsPage = () => {
                         </li>
                       </ul>
                     </div>
+                  </motion.div>
+                )}
+
+                {trek.slug === 'munnar-kolukkumalai' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-amber-500/[0.03] border border-amber-500/20 p-5 rounded-3xl flex gap-4 text-xs font-semibold leading-relaxed text-amber-900 shadow-sm relative overflow-hidden animate-pulse"
+                  >
+                    <div className="absolute inset-y-0 left-0 w-1.5 bg-amber-500" />
+                    <span className="text-2xl shrink-0 select-none">🌅</span>
+                    <p className="text-slate-700">
+                      <strong className="text-amber-600 font-extrabold uppercase tracking-wider text-[11px] block mb-1">Kolukkumalai Sunrise/Post-Sunrise Notice</strong>
+                      Please note that we will be taking you to Kolukkumalai hills either during sunrise or post sunrise. There is no option for participants to choose or switch their batch.
+                    </p>
                   </motion.div>
                 )}
               </div>
