@@ -1588,6 +1588,112 @@ const TREKS: Trek[] = [
       'Echo point',
       'Photo point'
     ]
+  },
+  {
+    id: '17',
+    slug: 'dudhsagar-falls-trek',
+    title: 'Dudhsagar Falls Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday - 6:00 PM',
+    location: 'Dudhsagar Falls, Goa & Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '310 m',
+    distance: '22 KM',
+    minAge: '5 Years',
+    description: 'Embark on the legendary Dudhsagar Falls trek, a thrilling 22 KM trail through the lush rainforests of the Western Ghats. Witness the spectacular four-tiered "Sea of Milk" waterfall, explore the scenic Magodu Falls, and stand atop Jenukallu Gudda for breathtaking panoramic vistas.',
+    originalPrice: 6499,
+    currentPrice: 5500,
+    withoutTransportPrice: 4500,
+    discount: '',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784047018/e1767409-c47c-4194-8380-e24ff071e7d6.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046787/2e0ee361-8207-4b7c-86e2-346256870949.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046960/6291355a-f8e6-4b43-848b-495eaeb75393.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046993/3675b1e3-96fd-4ef8-a687-fc15669db9ef.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌌',
+        items: [
+          { time: '06:00 PM', activity: '📍 Majestic, Bangalore - First boarding point. Be 10 minutes early.' },
+          { time: '06:20 PM', activity: '📍 Rajajinagar Metro Station' },
+          { time: '06:40 PM', activity: '📍 Yeshwantpura Metro Station' },
+          { time: '07:00 PM', activity: '📍 Goraguntepalya — KLE Dental College (Use metro to avoid traffic)' },
+          { time: 'Overnight', activity: '🚍 Overnight journey to Kulem, Goa. Sit back & relax!' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏞️',
+        items: [
+          { time: '07:00 AM', activity: '🏠 Reach Base — Arrive at Kulem base. Freshen up & enjoy a hot South Indian vegetarian breakfast (Included)' },
+          { time: '08:00 AM', activity: '🥾 Trek Begins! Start the 22 KM trail through lush Western Ghats rainforest with certified guide' },
+          { time: '01:00 PM', activity: '🌊 Dudhsagar Falls — Reach the iconic four-tiered falls ("Sea of Milk"), enjoy packed lunch & rest (Lunch included)' },
+          { time: 'Afternoon', activity: '⬇️ Trek Back to Base through forest, enjoying the sights and sounds at dusk' },
+          { time: '10:00 PM', activity: '🏕️ Reach Camping Site — Check in at Dandeli Resort. Unwind with campfire, dinner & stargazing (Dinner included, separate rooms for men & women)' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌅',
+        items: [
+          { time: '07:00 AM', activity: '🍳 Wake Up, Freshen Up & Breakfast at resort (Included)' },
+          { time: 'Morning', activity: '🌊 Visit Magodu Falls — A serene, hidden gem cascade surrounded by dense forest canopy' },
+          { time: 'Mid Morning', activity: '⛰️ Visit Jenukallu Gudda Viewpoint — Panoramic views of the Western Ghats' },
+          { time: 'Afternoon', activity: '🍛 Leisure & Departure — Self-sponsored lunch & free time before return journey' }
+        ]
+      },
+      {
+        label: 'Day 3',
+        emoji: '🚍',
+        items: [
+          { time: '06:00 AM', activity: '🏡 Arrive Bangalore — Drop at same pickup points. Subject to traffic and road conditions' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Return transportation from Bangalore (Bus / Tempo Traveller based on group size)',
+      'Accommodation: Rooms, Dormitory or Tent (subject to availability)',
+      'Meals: 2 Breakfasts (Veg) + 1 Lunch (Veg) + 1 Dinner (Veg / Non-Veg)',
+      'Tea / Coffee & evening snacks',
+      'Forest entry permit fees',
+      'Certified Trek Guide with Basic First Aid support',
+      'Campfire arrangement at base camp',
+      'Complimentary participation certificate / badge'
+    ],
+    exclusions: [
+      'Sunday lunch & dinner on return day',
+      'Any personal expenses beyond listed inclusions',
+      'Costs from medical emergencies or natural calamities',
+      'Travel insurance (available on request at extra cost)',
+      'Extra activities or sightseeing not in itinerary',
+      'Payment gateway charges & GST on website bookings'
+    ],
+    thingsToCarry: [
+      'Govt ID (either Aadhar / PAN / DL / Voter)',
+      'Raincoat / Umbrella (essential for monsoon days)',
+      'Trekking / hiking shoes or comfortable walking shoes',
+      'Small backpack to carry your essentials',
+      'Water bottle (please avoid single-use plastics)',
+      'A polybag to carry any wet clothes',
+      'Toiletries & towel',
+      'Cold protective clothes - Sweaters / Jackets',
+      'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
+      'Sunscreen, Suncap & sunglasses (for sunny days)',
+      'Charger / power bank for electronics',
+      'Personal medications if any'
+    ],
+    placesCovered: [
+      'Dudhsagar Falls',
+      'Magodu Falls',
+      'Jenukallu Gudda'
+    ]
   }
 ];
 
@@ -2318,9 +2424,9 @@ const TrekDetailsPage = () => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // We want to generate dates exclusively for July 2026
+    // We want to generate dates exclusively for July and August 2026
     const startDateLimit = new Date(2026, 6, 1); // July 1st, 2026
-    const endDateLimit = new Date(2026, 6, 31);   // July 31st, 2026
+    const endDateLimit = new Date(2026, 7, 31);   // August 31st, 2026
     
     const tempDate = new Date(startDateLimit);
     let safetyCounter = 0;
