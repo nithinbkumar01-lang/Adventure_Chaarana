@@ -3018,7 +3018,17 @@ const TrekDetailsPage = () => {
                     <span className="text-2xl shrink-0 select-none">📌</span>
                     <p className="text-slate-700">
                       <strong className="text-amber-600 font-extrabold uppercase tracking-wider text-[11px] block mb-1">Forest Permit & Itinerary Policy</strong>
-                      There are certain limitations when it comes to forest permit tickets (only 300 members allowed per day to Netravathi Peak). As a result of this, the trek may be conducted either on Saturday or on Sunday. So the Day-1 & Day-2 itineraries may get interchanged without prior notice. Itinerary briefing will be provided at the time of departure.
+                      There are certain limitations when it comes to forest permit tickets (only 300 members allowed per day to {(() => {
+                        const s = trek.slug.toLowerCase();
+                        if (s.includes('nethravathi')) return 'Nethravathi Peak';
+                        if (s.includes('kudremukh')) return 'Kudremukh Peak';
+                        if (s.includes('kurinjal')) return 'Kurinjal Peak';
+                        if (s.includes('gangadikallu')) return 'Gangadikallu Peak';
+                        if (s.includes('bandaje')) return 'Bandaje Peak';
+                        if (s.includes('kodachadri')) return 'Kodachadri Peak';
+                        if (s.includes('dudhsagar')) return 'Dudhsagar Falls';
+                        return trek.title.replace(/\s+Trek.*/i, '');
+                      })()}). As a result of this, the trek may be conducted either on Saturday or on Sunday. So the Day-1 & Day-2 itineraries may get interchanged without prior notice. Itinerary briefing will be provided at the time of departure.
                     </p>
                   </motion.div>
                 )}
