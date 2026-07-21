@@ -809,7 +809,7 @@ const TREKS: Trek[] = [
     discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
-    description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Kelgur Tea Estate, and the ancient Hoysala temples of Belur.',
+    description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Kelgur Tea Estate / KPP, and the ancient Hoysala temples of Belur.',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803469/6030ae08-a7a3-4ddb-9d9e-3c135b4aea19.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg',
@@ -852,7 +852,7 @@ const TREKS: Trek[] = [
           { time: '07:00 AM', activity: '🍳 Breakfast and Checkout from Homestay' },
           { time: '08:00 AM', activity: '⛰️ Rani Jhari View Point (Gaze at the breathtaking mist-lined valleys)' },
           { time: '09:30 AM', activity: '🌊 Kodige Falls Visit (Play in the safe, refreshing natural cascades)' },
-          { time: '11:00 AM', activity: '🍃 Kelgur Tea Estate Visit (Walk through lush, emerald tea gardens)' },
+          { time: '11:00 AM', activity: '🍃 Kelgur Tea Estate / KPP Visit (Walk through lush, emerald tea gardens)' },
           { time: '01:00 PM', activity: '🍛 Kottigehara Lunch (Traditional local Malnad style food - self sponsored)' },
           { time: '02:30 PM', activity: '🛕 Visit Historic Belur Temple (Marvel at the exquisite Hoysala carvings)' },
           { time: '04:00 PM', activity: '🚌 Start return journey to Bangalore' },
@@ -891,7 +891,7 @@ const TREKS: Trek[] = [
       'Bandaje Waterfalls',
       'Rani Jhari View point',
       'Kodige Falls',
-      'Kelgur Tea Estate',
+      'Kelgur Tea Estate / KPP',
       'Belur Temple'
     ]
   },
