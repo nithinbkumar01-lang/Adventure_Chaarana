@@ -2420,12 +2420,28 @@ const TrekDetailsPage = () => {
   const isTwoDayWesternGhat = trek?.duration?.toLowerCase()?.includes('2 day') && trek?.category === 'western-ghats';
   const isTwoDayTrek = trek?.duration?.toLowerCase()?.includes('2 day');
 
+  const isWeekdayEligible = trek?.slug ? [
+    'nethravathi-peak-trek',
+    'bandaje-waterfalls-trek',
+    'kurinjal-peak-trek',
+    'gangadikallu-trek-dzukou-valley-of-the-south'
+  ].includes(trek.slug) : false;
+
+  const weekdaySlots: Batch[] = [
+    { start: 'Aug 4', end: 'Aug 6', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
+    { start: 'Aug 12', end: 'Aug 14', year: 2026, dayName: 'Wed', monthGroup: 'August 2026' },
+    { start: 'Aug 18', end: 'Aug 20', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
+    { start: 'Aug 20', end: 'Aug 22', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' },
+    { start: 'Aug 25', end: 'Aug 27', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
+    { start: 'Aug 27', end: 'Aug 29', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' }
+  ];
+
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // We want to generate dates exclusively for July and August 2026
-    const startDateLimit = new Date(2026, 6, 1); // July 1st, 2026
+    // We want to generate dates exclusively for July and August 2026 from July 21st onwards
+    const startDateLimit = new Date(2026, 6, 21); // July 21st, 2026
     const endDateLimit = new Date(2026, 7, 31);   // August 31st, 2026
     
     const tempDate = new Date(startDateLimit);
@@ -2815,6 +2831,51 @@ const TrekDetailsPage = () => {
                   </div>
                 );
               })()}
+
+              {isWeekdayEligible && (
+                <div className="space-y-4 pt-6 border-t border-slate-100">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Weekday <span className="text-cyan-500">Slots</span></h3>
+                    <p className="text-[10px] uppercase font-black tracking-widest text-cyan-500/80 italic">
+                      Special Mid-week Departures (August 2026)
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    <div className="space-y-4 bg-slate-50/60 hover:bg-white border border-slate-200/50 p-6 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-cyan-500">
+                      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-cyan-400/5 border border-cyan-400/10 px-3 py-1.5 rounded-full w-fit">
+                        August 2026
+                      </h4>
+                      <div className="flex flex-col gap-2">
+                        {weekdaySlots.map((batch, idx) => {
+                          const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the Weekday Slot for ${trek.title} on the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
+                          const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
+
+                          return (
+                            <a 
+                              key={idx} 
+                              href={waLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group bg-white border border-slate-100 hover:bg-cyan-500/[0.03] hover:border-cyan-500/30 p-3.5 rounded-xl flex items-center justify-between shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse shrink-0" />
+                                <p className="font-bold text-slate-800 text-xs tracking-tight">
+                                  {batch.start} - {batch.end}
+                                </p>
+                              </div>
+                              <span className="text-[9px] font-extrabold text-cyan-600 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded uppercase tracking-wider scale-90">
+                                {batch.dayName}
+                              </span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
