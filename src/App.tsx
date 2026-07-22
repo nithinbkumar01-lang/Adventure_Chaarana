@@ -2027,7 +2027,7 @@ const TermsPage = () => {
     {
       icon: "⚖️",
       title: "Reservation Policy",
-      description: "Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable."
+      description: "Prioritize your slot. Cancellations 72h prior incur a 45% fee. No-shows or last-minute changes (within 72h) are strictly non-refundable."
     },
     {
       icon: "⛈️",
@@ -2225,7 +2225,7 @@ const RefundPolicyPage = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Refund & Cancellation Policy | Adventure Chaarana</title>
-        <meta name="description" content="Understand our refund process and cancellation charges. 48h cancellation rules and calamity refunds explained." />
+        <meta name="description" content="Understand our refund process and cancellation charges. 72h cancellation rules and calamity refunds explained." />
         <link rel="canonical" href="https://adventurechaarana.com/refund-policy" />
       </Helmet>
       <div className="h-24" />
@@ -2249,11 +2249,11 @@ const RefundPolicyPage = () => {
                   <p className="text-xs font-semibold leading-relaxed">Bookings are strictly non-refundable under any circumstances. However, slot rescheduling is allowed up to 24 hours before departure for One Day treks.</p>
                 </div>
                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <span className="text-cyan-400 font-black text-xs block mb-1">OTHER TREKS: 48 HOURS OR MORE</span>
+                  <span className="text-cyan-400 font-black text-xs block mb-1">OTHER TREKS: 72 HOURS OR MORE</span>
                   <p className="text-sm font-medium">45% of total package amount will be deducted as cancellation charges.</p>
                 </div>
                 <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
-                  <span className="text-red-400 font-black text-xs block mb-1">OTHER TREKS: WITHIN 48 HOURS</span>
+                  <span className="text-red-400 font-black text-xs block mb-1">OTHER TREKS: WITHIN 72 HOURS</span>
                   <p className="text-sm font-medium">Strictly no refunds or rescheduling allowed under any circumstances.</p>
                 </div>
               </div>
@@ -3390,7 +3390,7 @@ const TrekDetailsPage = () => {
                 label: 'Reservation Policy', 
                 desc: isOneDayTrek 
                   ? 'Bookings for One Day Treks are strictly non-refundable. However, free slot rescheduling is allowed up to 24 hours before departure.' 
-                  : 'Prioritize your slot. Cancellations 48h prior incur a 45% fee. No-shows or last-minute changes (within 48h) are strictly non-refundable.' 
+                  : 'Prioritize your slot. Cancellations 72h prior incur a 45% fee. No-shows or last-minute changes (within 72h) are strictly non-refundable.' 
               },
               { icon: '⛈️', label: 'Unforeseen Circumstances', desc: 'Safety first! Full refunds (minus standard fees) issued if trips are cancelled by us due to natural events or government restrictions.' },
               { icon: '🚧', label: 'On-the-Road Logic', desc: 'We aren\'t responsible for delays caused by traffic, weather, or sudden local authority changes once the journey has begun.' },
@@ -3595,12 +3595,12 @@ const TrekDetailsPage = () => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                {/* Card 1: Within 48 Hours */}
+                {/* Card 1: Within 72 Hours */}
                 <div className="p-6 rounded-3xl bg-rose-50 border border-rose-200 hover:border-red-300 transition-all duration-300 space-y-4 flex flex-col justify-between group">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-black uppercase tracking-widest bg-red-600 text-white px-3.5 py-1.5 rounded-full font-mono">
-                        Within 48 Hrs
+                        Within 72 Hrs
                       </span>
                       <span className="text-xl">🚨</span>
                     </div>
@@ -3612,7 +3612,7 @@ const TrekDetailsPage = () => {
                   </p>
                 </div>
 
-                {/* Card 2: BEFORE 48 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
+                {/* Card 2: BEFORE 72 HOURS (ULTRA PROMINENT / TOTALLY VISIBLE) */}
                 <div className="p-7 rounded-[2rem] bg-amber-50 border-2 border-amber-400 shadow-[0_15px_45px_rgba(245,158,11,0.15)] transform md:-translate-y-1 hover:-translate-y-2 transition-all duration-300 space-y-4 flex flex-col justify-between relative overflow-hidden z-20">
                   <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-bl-2xl shadow-sm font-sans">
                     ⚠️ ACTIVE OPTION
@@ -3620,7 +3620,7 @@ const TrekDetailsPage = () => {
                   <div className="space-y-3 relative">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-black uppercase tracking-widest bg-amber-500 text-white px-4 py-1.5 rounded-full font-sans font-extrabold animate-pulse">
-                        Before 48 Hours
+                        Before 72 Hours
                       </span>
                       <span className="text-2xl">⏳</span>
                     </div>
