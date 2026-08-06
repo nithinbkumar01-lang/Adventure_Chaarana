@@ -84,7 +84,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
-    currentPrice: 749,
+    currentPrice: 680,
     discount: '5% Group Off (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729654/image_1_bnw4tp.jpg',
     gallery: [
@@ -302,7 +302,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
-    currentPrice: 749,
+    currentPrice: 680,
     discount: '5% Group Off (3+)',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729197/image_3_swk6mc.jpg',
     gallery: [
@@ -364,13 +364,19 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 749,
+    currentPrice: 680,
     discount: '5% Group Off (3+)',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802809/82e28a63-fc59-44a2-bac3-2b774cba36ee.png',
+    image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786011848/3b3e86da-2db5-49b7-8358-a29a421ea941.png',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475034/360f9b85-adf6-480e-b547-adf94014e7f3.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475056/167b04de-82fe-4163-b580-3fc1e6368cdf.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475125/ef67324c-eacb-462e-be2f-4c3d412a5855.png'
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012104/IMG_2005_v3slue.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012102/original_f3f2f62d-eaf2-4301-99e0-51a15e4e0126_IMG_20260509_031333699_HDR_bb2bnb.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012107/PXL_20260614_012424943_yut4bj.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012106/IMG_20260614_071109498_HDR_PCT_aq9qqc.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012115/img_5_lcqsei.webp',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012118/20260614_070012_aff8w1.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012120/20260614_081409_p8zuul.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012127/img4_tez7df.webp',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012122/img_7_gjueta.webp'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
@@ -426,7 +432,7 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A beautiful trek near Mandya, offering stunning views of Tonnur Lake and the surrounding lush green fields.',
     originalPrice: 1100,
-    currentPrice: 699,
+    currentPrice: 680,
     discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802763/de1cb9df-c637-419f-883e-da3138f91ea5.png',
     gallery: [
@@ -1144,12 +1150,15 @@ const TREKS: Trek[] = [
     description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801697/kudremukh-trek-image-1_s1oax6.webp',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801698/img_3_khbvwx.webp',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801697/img2_opcg2z.webp',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801697/img1_cxxmma.webp',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801696/img_6_icag3v.webp',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801660/img_5_smh7lw.webp',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801650/img_4_fvqsuo.webp'
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013169/IMG_20260712_084211737_sxgci7.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013168/IMG_7920_s3ekwi.heic',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013165/20260712_090452_0_dajnhh.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013164/IMG_5565_srz9kn.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_055850778_opdayi.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_063440975.PORTRAIT_turbq6.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013162/PXL_20260711_040047979_t4rhb3.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013173/IMG_7810_h5yfaw.heic'
     ],
     itinerary: [
       {
@@ -1831,7 +1840,7 @@ const Header = () => {
         <div className="flex items-center justify-center flex-1 md:flex-initial">
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779805799/logo_eng_oaejh9.png" 
+              src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
               alt="Adventure Chaarana Logo" 
               className="h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               referrerPolicy="no-referrer"
@@ -1930,7 +1939,7 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
                 className="inline-block"
               >
                 <img 
-                  src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777088068/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_lpgwqd.png" 
+                  src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011643/ChatGPT_Image_Apr_25_2026_08_58_47_AM-Photoroom_jso4lv.png" 
                   alt="Adventure Chaarana Footer Logo" 
                   className="h-24 md:h-32 w-auto object-contain opacity-90 transition-all hover:opacity-100"
                   referrerPolicy="no-referrer"
@@ -2562,7 +2571,7 @@ const TrekDetailsPage = () => {
             <motion.img 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779805799/logo_eng_oaejh9.png" 
+              src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
               alt="Adventure Chaarana Logo" 
               className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
               referrerPolicy="no-referrer"
@@ -2975,7 +2984,7 @@ const TrekDetailsPage = () => {
         <section className="space-y-8">
           <div className="flex justify-center items-center py-2">
             <img 
-              src="https://res.cloudinary.com/dofg6bsom/image/upload/v1779805799/logo_eng_oaejh9.png" 
+              src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
               alt="Adventure Chaarana Logo" 
               className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
               referrerPolicy="no-referrer"
@@ -4257,7 +4266,7 @@ const HomePage = () => {
         <meta property="og:url" content="https://adventurechaarana.com/" />
         <meta property="og:title" content="Adventure Chaarana | Premium Trekking & Adventure Community" />
         <meta property="og:description" content="Explore the pure wild with Bangalore's most active trekking community." />
-        <meta property="og:image" content="https://res.cloudinary.com/dofg6bsom/image/upload/v1778076321/logo_eng_v7tdfe.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative z-20 min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden">
