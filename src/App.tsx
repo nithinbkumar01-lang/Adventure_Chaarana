@@ -1771,16 +1771,22 @@ const TREKS: Trek[] = [
       }
     ],
     inclusions: [
-      'Non AC Transportation (Bangalore to Bangalore)',
-      'Accommodation (Homestay)',
-      'Breakfast & Dinner',
-      'Trip Captain'
+      'Transportation: non A/C, seater vehicle (Tempo Traveler / mini bus / Bus depending on the number of people)',
+      'Meals: South Indian Vegetarian food (Day 1 → breakfast & dinner, Day 2 → breakfast)',
+      'Basic accommodation: Shared rooms / Dormitory / tent - any one of it will be provided (Separate for men & women, common/sharing washroom, no option to choose the accommodation type)',
+      'All Entry fee as per itinerary',
+      'Jeep ride charges for Kolukkumalai',
+      'Certified Guide / First Aid Responder',
+      'Tamil Nadu state & Kerala state permit',
+      'E pass'
     ],
     exclusions: [
-      'Entry Tickets',
-      'Lunch',
-      'Jeep Safari Charges',
-      'Personal Expenses'
+      'Any other expenses incurred apart from inclusions',
+      'Any meals not mentioned in inclusions',
+      'Any additional expenses due to emergencies / natural calamities',
+      'Travel & Medical insurance',
+      'Any activities, Any additional service & sightseeing',
+      'Any travel expenses arising due to vehicle breakdown'
     ],
     thingsToCarry: [
       'Government ID card (Aadhar / Driving License)',
