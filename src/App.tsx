@@ -1703,6 +1703,104 @@ const TREKS: Trek[] = [
       'Magodu Falls',
       'Jenukallu Gudda'
     ]
+  },
+  {
+    id: '18',
+    slug: 'coorg-weekend-getaway',
+    title: 'Coorg Weekend Getaway – 2 Days / 1 Night',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Coorg, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Easy',
+    elevation: '1,525 m',
+    distance: '',
+    minAge: '5 Years',
+    description: 'Escape into the "Scotland of India" for a captivating 2 Days / 1 Night weekend getaway. Experience sunrise over Mandalpatti, mist at Abbey Falls, Talakaveri, Raja\'s Seat, Namdroling Tibetan Monastery, and the majestic Mysore Palace.',
+    originalPrice: 5499,
+    currentPrice: 4499,
+    withoutTransportPrice: 3499,
+    discount: '',
+    image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080405/coorg_2_miry9o.jpg',
+    gallery: [
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080403/coorg_1_xdkd9p.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080126/6fd0afa8-38fb-46cd-9eb6-ca499c4da06d.png',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080096/c7374b4b-7f6f-43c9-b7de-d5e4483e07e2.png',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080057/7ea4fa8c-cec5-4105-b34b-36c080d984ae.png',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786080054/5f8ded74-04fb-4f51-9901-2dbd6eb36341.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Day 1',
+        emoji: '🚌',
+        items: [
+          { time: '09:00 PM', activity: '📍 Majestic (Shanthala Silks) - Boarding point' },
+          { time: '09:30 PM', activity: '📍 Nayandanahalli Metro Station' },
+          { time: '09:45 PM', activity: '📍 Kengeri Metro Station' },
+          { time: 'Overnight', activity: '<ctrl42> Comfortable overnight journey from Bangalore towards Coorg 🌿' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌄',
+        items: [
+          { time: '05:30 AM', activity: '🌅 Sunrise visit to Mandalpatti Peak' },
+          { time: '08:30 AM', activity: '🏠 Check-in & freshen up at homestay 🏡' },
+          { time: '09:30 AM', activity: '🍳 Breakfast at homestay' },
+          { time: '10:30 AM', activity: '🌊 Visit the beautiful Abbey Falls' },
+          { time: '01:00 PM', activity: '🌿 Visit Talakaveri View Point – Origin of River Kaveri' },
+          { time: '02:30 PM', activity: '🛕 Explore Bhagamandala Triveni Sangam' },
+          { time: '05:30 PM', activity: '🌅 Enjoy sunset views at Raja’s Seat' },
+          { time: '08:00 PM', activity: '🔥 Campfire & Music at Homestay (Weather Permitting) & Dinner 🎶' }
+        ]
+      },
+      {
+        label: 'Day 3',
+        emoji: '🏞️',
+        items: [
+          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout from Homestay' },
+          { time: '09:00 AM', activity: '🛕 Visit Omkareshwara Temple' },
+          { time: '11:00 AM', activity: '🌊 Explore the peaceful Chiklihole Reservoir' },
+          { time: '01:00 PM', activity: '✨ Visit Namdroling Monastery (Golden Temple) & experience Tibetan culture' },
+          { time: '03:30 PM', activity: '🌟 Explore the majestic Mysore Palace' },
+          { time: '06:00 PM', activity: '🚌 Start return journey to Bangalore' },
+          { time: '11:30 PM', activity: '🏡 Late-night arrival in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Non AC Transportation (Bangalore to Bangalore)',
+      'Accommodation (Homestay)',
+      'Breakfast & Dinner',
+      'Trip Captain'
+    ],
+    exclusions: [
+      'Entry Tickets',
+      'Lunch',
+      'Jeep Safari Charges',
+      'Personal Expenses'
+    ],
+    thingsToCarry: [
+      'Government ID card (Aadhar / Driving License)',
+      'Comfortable clothing & extra set of clothes',
+      'Light jacket / sweater (cold weather)',
+      'Raincoat / umbrella (weather dependent)',
+      'Water bottle & personal toiletries',
+      'Personal medications & Power bank'
+    ],
+    placesCovered: [
+      'Mandalpatti Peak',
+      'Abbey Falls',
+      'Talakaveri View Point',
+      'Bhagamandala Triveni Sangam',
+      'Raja’s Seat',
+      'Omkareshwara Temple',
+      'Chiklihole Reservoir',
+      'Namdroling Monastery',
+      'Mysore Palace'
+    ]
   }
 ];
 
