@@ -71,11 +71,11 @@ interface Trek {
 
 const TREKS: Trek[] = [
   {
-    id: '1',
+id: '1',
     slug: 'shivagange-sunrise-trek',
     title: 'Shivagange Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'July 5, 2026',
+    date: 'Every Weekend',
     location: 'Tumkur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -85,7 +85,7 @@ const TREKS: Trek[] = [
     description: 'Known as Dakshina Kashi, this trek offers a vertical climb with stunning sunrise views from the peak.',
     originalPrice: 1100,
     currentPrice: 680,
-    discount: '5% Group Off (3+)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729654/image_1_bnw4tp.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777382282/f7dd769a-8865-4ad9-9ade-ee2516d72c29.png',
@@ -149,7 +149,7 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '2',
+id: '2',
     slug: 'skandagiri-sunrise-trek',
     title: 'Skandagiri Sunrise Trek',
     host: 'Adventure Chaarana',
@@ -226,7 +226,7 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '3',
+id: '3',
     slug: 'kaiwara-betta-sunrise-trek',
     title: 'Kaiwara Betta Sunrise Trek',
     host: 'Adventure Chaarana',
@@ -289,7 +289,7 @@ const TREKS: Trek[] = [
     thingsToCarry: ['Water bottle', 'Small backpack', 'Suncap', 'Raincoat', 'Torch (Mandatory)']
   },
   {
-    id: '4',
+id: '4',
     slug: 'channarayana-durga-fort-trek',
     title: 'Channarayana Durga Fort Trek',
     host: 'Adventure Chaarana',
@@ -303,7 +303,7 @@ const TREKS: Trek[] = [
     description: 'Explore one of the most historic and strategic forts in Karnataka, featuring multiple layers of fortifications and stunning architecture.',
     originalPrice: 1200,
     currentPrice: 680,
-    discount: '5% Group Off (3+)',
+    discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779729197/image_3_swk6mc.jpg',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777474969/18f3337e-eda7-416e-8136-06cb6d9b31fe.png',
@@ -351,7 +351,7 @@ const TREKS: Trek[] = [
     thingsToCarry: ['Water bottle (2L)', 'Backpack', 'Govt ID', 'Trekking shoes', 'Torch']
   },
   {
-    id: '5',
+id: '5',
     slug: 'uttari-betta-sunrise-trek',
     title: 'Uttari Betta Sunrise Trek',
     host: 'Adventure Chaarana',
@@ -364,8 +364,8 @@ const TREKS: Trek[] = [
     minAge: '4 Years',
     description: 'A trek to one of the most scenic hills near Kunigal, known for its beautiful trails through rocky gates and historic fort remnants.',
     originalPrice: 1100,
-    currentPrice: 680,
-    discount: '5% Group Off (3+)',
+    currentPrice: 499,
+    discount: '🇮🇳 Independence Day Offer · ₹499',
     image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786011848/3b3e86da-2db5-49b7-8358-a29a421ea941.png',
     gallery: [
       'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012104/IMG_2005_v3slue.jpg',
@@ -419,7 +419,7 @@ const TREKS: Trek[] = [
     thingsToCarry: ['Water bottle', 'Backpack', 'Sturdy shoes', 'Govt ID']
   },
   {
-    id: '6',
+id: '6',
     slug: 'kunti-betta-sunrise-trek',
     title: 'Kunti Betta Sunrise Trek',
     host: 'Adventure Chaarana',
@@ -481,206 +481,7 @@ const TREKS: Trek[] = [
     thingsToCarry: ['Water bottle', 'Daypack', 'Trekking shoes', 'Govt ID']
   },
   {
-    id: '7',
-    slug: 'kodaikanal-weekend-getaway',
-    title: 'Kodaikanal Weekend Getaway',
-    host: 'Adventure Chaarana',
-    date: 'Every Friday Night',
-    location: 'Kodaikanal',
-    duration: '2 Days / 1 Night',
-    difficulty: 'Easy',
-    elevation: '2,133 m',
-    distance: '',
-    minAge: '5 Years',
-    description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
-    originalPrice: 5999,
-    currentPrice: 5499,
-    discount: '',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
-    gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882199/40410f69-c7c3-44ee-9379-2d45205093c8.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882191/b9c456a5-419d-4e76-acef-d92892f1de02.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882179/c470f8bc-4a6f-4a45-b2f4-00e014a114f1.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882164/81ce5ec6-5f5a-4cdb-8e7a-b075fe6964bd.png'
-    ],
-    badgeColor: 'bg-brand-orange',
-    category: 'weekend',
-    itinerary: [
-      {
-        label: 'Pickups',
-        emoji: '🚌',
-        items: [
-          { time: '08:15 PM', activity: '📍Majestic (Shanthala Silks)' },
-          { time: '08:45 PM', activity: '📍Koramangala (Forum Mall)' },
-          { time: '09:15 PM', activity: '📍Silk Board (Renault Showroom)' },
-          { time: '09:45 PM', activity: '📍Electronic City (M5 Flyover)' }
-        ]
-      },
-      {
-        label: 'Day 1',
-        emoji: '🏞️',
-        items: [
-          { time: '07:00 AM', activity: '🏠 Arrival & check-in at homestay' },
-          { time: '08:30 AM', activity: '🍽️ Have breakfast and start day 1 itinerary' },
-          { time: '09:00 AM', activity: '🏔️ Upper Lake View, Vattakanal Falls' },
-          { time: '11:00 AM', activity: '🥾 Dolphin’s Nose (1.5 km trek)' },
-          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
-          { time: '02:00 PM', activity: '🍫 Chocolate Factory, Bryant Park, Coaker’s Walk' },
-          { time: '04:30 PM', activity: '🛶 Kodaikanal Lake (boating & activities self-sponsored)' },
-          { time: '08:00 PM', activity: '🔥 Dinner & Campfire (if weather permits) overnight stay' }
-        ]
-      },
-      {
-        label: 'Day 2',
-        emoji: '🌲',
-        items: [
-          { time: '08:30 AM', activity: '🍽️ Breakfast & check-out' },
-          { time: '09:30 AM', activity: '📸 Pillar Rocks, Guna Caves, Pine Forest' },
-          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
-          { time: '02:00 PM', activity: '🏛️ Natural History Museum' },
-          { time: '05:00 PM', activity: '🌊 Silver Cascade Falls' },
-          { time: '09:00 PM', activity: '🚌 Departure to Bangalore' },
-          { time: '04:00 AM', activity: '🏠 Arrival in Bangalore (Monday)' }
-        ]
-      }
-    ],
-    inclusions: [
-      'Transportation - Non-AC seater (TT/ Mini bus/ Bus depending on group size)',
-      'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
-      'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
-      'All entry fees as per itinerary'
-    ],
-    exclusions: [
-      'Any other expenses incurred apart from inclusions',
-      'Any meals not mentioned in inclusions',
-      'Any additional expenses due to emergencies / natural calamities',
-      'Travel & Medical insurance',
-      'Any activities, additional services & sightseeing',
-      'Any travel expenses arising due to vehicle breakdown'
-    ],
-    thingsToCarry: [
-      'Government ID (soft copy)',
-      'Extra clothes & small backpack',
-      'Water bottle & Toiletries',
-      'Jacket/sweater (cold weather)',
-      'Raincoat/umbrella',
-      'Personal medication & Power bank'
-    ],
-    placesCovered: [
-      'Upper Lake View',
-      'Vattakanal Falls',
-      'Dolphin’s Nose',
-      'Chocolate Factory',
-      'Bryant Park',
-      'Coaker’s Walk',
-      'Kodaikanal Lake',
-      'Pillar Rocks',
-      'Guna Caves',
-      'Pine Forest',
-      'Natural History Museum',
-      'Silver Cascade Falls'
-    ]
-  },
-  {
-    id: '8',
-    slug: 'tadiandamol-trek-coorg',
-    title: 'Tadiandamol Trek - Coorg',
-    host: 'Adventure Chaarana',
-    date: 'Every Friday Night',
-    location: 'Coorg, Karnataka',
-    duration: '2 Days / 1 Night',
-    difficulty: 'Moderate',
-    elevation: '1,748 m',
-    distance: '10 km (5+5)',
-    minAge: '8 Years',
-    description: 'Trek to the highest peak of Coorg. Experience the lush shola forests and rolling grasslands of the Western Ghats, culminating in a visit to the golden temple and Mysore.',
-    originalPrice: 4999,
-    currentPrice: 4499,
-    withoutTransportPrice: 3499,
-    discount: '',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803084/f50903b9-53b1-436e-9f47-506c3a7e29f5.png',
-    gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988091/2e6f0d33-147c-499e-bb9b-10e9b6da0cd9.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777988362/0742d8da-17a0-4c46-883e-e3a665d9e345.png'
-    ],
-    badgeColor: 'bg-brand-orange',
-    category: 'western-ghats',
-    itinerary: [
-      {
-        label: 'Day 0',
-        emoji: '🌃',
-        items: [
-          { time: '09:00 PM', activity: '📍 Majestic (Shantala Silks) - Pickup' },
-          { time: '09:30 PM', activity: '📍 Nayandanahalli Metro - Pickup' },
-          { time: '09:45 PM', activity: '📍 Kengeri Metro - Pickup' },
-          { time: '10:00 PM', activity: '🚍 Overnight journey from Bangalore' }
-        ]
-      },
-      {
-        label: 'Day 1',
-        emoji: '🥾',
-        items: [
-          { time: '05:00 AM', activity: '🏠 Arrival at homestay & freshen up' },
-          { time: '07:00 AM', activity: '🍽️ Breakfast and briefing' },
-          { time: '07:30 AM', activity: '🧗 Trek start' },
-          { time: '01:00 PM', activity: '⛰️ Reach summit & enjoy packed lunch' },
-          { time: '02:30 PM', activity: '⬇️ Descend back to base' },
-          { time: '04:30 PM', activity: '🏰 Visit Nalknad Palace' },
-          { time: '08:00 PM', activity: '🔥 Dinner, Campfire (if weather permits) & overnight stay' }
-        ]
-      },
-      {
-        label: 'Day 2',
-        emoji: '🌄',
-        items: [
-          { time: '08:00 AM', activity: '🌊 Visit Cheluvara Falls' },
-          { time: '11:00 AM', activity: '🚧 Visit Chiklihole Dam' },
-          { time: '01:00 PM', activity: '🍽️ Lunch (Self-sponsored)' },
-          { time: '02:00 PM', activity: '🛕 Visit Namdroling Monastery (Golden Temple)' },
-          { time: '04:00 PM', activity: '🚌 Return journey to Bangalore' },
-          { time: '11:00 PM', activity: '🏠 Reach Bangalore (approx.)' }
-        ]
-      }
-    ],
-    inclusions: [
-      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
-      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
-      'Shared homestay accommodation with separate rooms and washrooms for men & women',
-      'Off-road Jeep ride to and from the Forest Department trek start point',
-      'Forest entry permit fee',
-      'Certified Trek Guide with First Aid training',
-      'Local guide throughout the experience',
-      'Complimentary participation badge or certificate'
-    ],
-    exclusions: [
-      'Friday night dinner and Sunday lunch & dinner on the return journey',
-      'Any personal expenses beyond what is listed above',
-      'Costs arising from medical emergencies or natural calamities',
-      'Travel insurance of any kind — available on request at additional cost',
-      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
-      'Payment gateway charges & GST applicable on website bookings'
-    ],
-    thingsToCarry: [
-      'Government ID (soft copy)',
-      'Extra clothes & small backpack',
-      'Water bottle & Toiletries',
-      'Sturdy trekking shoes',
-      'Raincoat/umbrella',
-      'Personal medication & Power bank',
-      'Energy snacks (Dry fruits, etc.)'
-    ],
-    placesCovered: [
-      'Tadiandamol Trek',
-      'Nalknad Palace',
-      'Cheluvara Falls',
-      'Chiklihole Dam',
-      'Kushalnagara Lunch',
-      'Namdroling Monastery'
-    ]
-  },
-  {
-    id: '9',
+id: '7',
     slug: 'nethravathi-peak-trek',
     title: 'Nethravathi Peak Trek',
     host: 'Adventure Chaarana',
@@ -694,7 +495,7 @@ const TREKS: Trek[] = [
     timeHours: '8Hrs',
     modeRating: 'Easy - Moderate',
     permitNotice: 'Forest permits are limited to just 300 trekkers per day. Book at least 15–20 days in advance.',
-    currentPrice: 4499,
+    currentPrice: 4199,
     originalPrice: 4999,
     withoutTransportPrice: 3499,
     discount: '',
@@ -799,7 +600,128 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '10',
+id: '8',
+    slug: 'kudremukh-trek',
+    title: 'Kudremukh Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Chikamagaluru',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Difficult',
+    elevation: '1,894 m (6,214 ft)',
+    distance: '20 km (total)',
+    minAge: '8+',
+    timeHours: '12Hrs',
+    modeRating: 'Moderate - Difficult',
+    permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
+    currentPrice: 4199,
+    originalPrice: 4999,
+    withoutTransportPrice: 3499,
+    discount: '',
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
+    image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
+    gallery: [
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013169/IMG_20260712_084211737_sxgci7.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013168/IMG_7920_s3ekwi.heic',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013165/20260712_090452_0_dajnhh.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013164/IMG_5565_srz9kn.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_055850778_opdayi.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_063440975.PORTRAIT_turbq6.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013162/PXL_20260711_040047979_t4rhb3.jpg',
+      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013173/IMG_7810_h5yfaw.heic'
+    ],
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: '📍HSR Layout' },
+          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
+          { time: '08:45 PM', activity: '📍Domlur Post Office' },
+          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
+          { time: '09:30 PM', activity: '📍Yeshwantpur' },
+          { time: '10:00 PM', activity: '📍Gorguntepalya' },
+          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '⛰️',
+        items: [
+          { time: '06:00 AM', activity: '🛞 Only Jeep ride' },
+          { time: '07:00 AM', activity: '🥾 Kudremukha Trek start and scale the horse-face peak' },
+          { time: '01:00 PM', activity: '⛰️ Reach majestic Kudremukha peak & enjoy packed lunch' },
+          { time: '04:30 PM', activity: '🌊 Visit pristine Mullodi Falls during descent' },
+          { time: '05:30 PM', activity: '🏡 Reach back to homestay' },
+          { time: '06:00 PM', activity: '🍵 High Tea & Evening Snacks' },
+          { time: '08:00 PM', activity: '🔥 Campfire (if weather permits), group games, and traditional local Dinner' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌿',
+        items: [
+          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
+          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
+          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
+          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
+          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
+          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
+    ],
+    exclusions: [
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
+    ],
+    thingsToCarry: [
+      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
+      'Raincoat (essential!)',
+      'Trekking / Hiking shoes',
+      'Trekking stick',
+      'Polybag for wet clothes',
+      'Sandals / flip flops',
+      'Small backpack',
+      'Water Bottle and Lunch Box',
+      'Toiletries',
+      'Sweater / Jacket',
+      'Torch / Flashlight',
+      'Energy bars, dry fruits, Glucon-D',
+      'Suncap & sunglasses',
+      'Waterproof phone cover',
+      'Charger / Power bank',
+      'Personal medications & Dettol'
+    ],
+    placesCovered: [
+      'Kudremukha Peak',
+      'Mullodi Falls',
+      'Only Jeep ride',
+      'Kudremukh Forest Area',
+      'Kalasa Hanging Bridge / KPP Prathistana',
+      'Kalasa Temple',
+      'Horanadu Temple / Belur Temple'
+    ]
+  },
+  {
+id: '9',
     slug: 'bandaje-waterfalls-trek',
     title: 'Bandaje Waterfalls Trek',
     host: 'Adventure Chaarana',
@@ -809,7 +731,7 @@ const TREKS: Trek[] = [
     difficulty: 'Moderate',
     elevation: '1,012 m',
     minAge: '5 Years',
-    currentPrice: 4499,
+    currentPrice: 4199,
     originalPrice: 4999,
     withoutTransportPrice: 3499,
     discount: '',
@@ -902,7 +824,7 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '11',
+id: '10',
     slug: 'kodachadri-trek-hidlumane-falls',
     title: 'Kodachadri Trek with Hidlumane Falls',
     host: 'Adventure Chaarana',
@@ -915,7 +837,7 @@ const TREKS: Trek[] = [
     minAge: '8 Years',
     description: 'Trek to the majestic Kodachadri peak in the Western Ghats, passing through dense tropical rainforests, the stunning Hidlumane waterfalls, and ending at the historical Sarvagna Peeta. Admire rich flora, stunning ridge walks, and deep valleys.',
     originalPrice: 4999,
-    currentPrice: 4499,
+    currentPrice: 4199,
     withoutTransportPrice: 3499,
     discount: '',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779799743/image_2_xahwhm.webp',
@@ -1010,7 +932,227 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '12',
+id: '11',
+    slug: 'dudhsagar-falls-trek',
+    title: 'Dudhsagar Falls Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday - 6:00 PM',
+    location: 'Dudhsagar Falls, Goa & Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '310 m',
+    distance: '22 KM',
+    minAge: '5 Years',
+    description: 'Embark on the legendary Dudhsagar Falls trek, a thrilling 22 KM trail through the lush rainforests of the Western Ghats. Witness the spectacular four-tiered "Sea of Milk" waterfall, explore the scenic Magodu Falls, and stand atop Jenukallu Gudda for breathtaking panoramic vistas.',
+    originalPrice: 6499,
+    currentPrice: 5499,
+    withoutTransportPrice: 4500,
+    discount: '',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784047018/e1767409-c47c-4194-8380-e24ff071e7d6.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046787/2e0ee361-8207-4b7c-86e2-346256870949.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046960/6291355a-f8e6-4b43-848b-495eaeb75393.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046993/3675b1e3-96fd-4ef8-a687-fc15669db9ef.png'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌌',
+        items: [
+          { time: '06:00 PM', activity: '📍 Majestic, Bangalore - First boarding point. Be 10 minutes early.' },
+          { time: '06:20 PM', activity: '📍 Rajajinagar Metro Station' },
+          { time: '06:40 PM', activity: '📍 Yeshwantpura Metro Station' },
+          { time: '07:00 PM', activity: '📍 Goraguntepalya — KLE Dental College (Use metro to avoid traffic)' },
+          { time: 'Overnight', activity: '🚍 Overnight journey to Kulem, Goa. Sit back & relax!' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏞️',
+        items: [
+          { time: '07:00 AM', activity: '🏠 Reach Base — Arrive at Kulem base. Freshen up & enjoy a hot South Indian vegetarian breakfast (Included)' },
+          { time: '08:00 AM', activity: '🥾 Trek Begins! Start the 22 KM trail through lush Western Ghats rainforest with certified guide' },
+          { time: '01:00 PM', activity: '🌊 Dudhsagar Falls — Reach the iconic four-tiered falls ("Sea of Milk"), enjoy packed lunch & rest (Lunch included)' },
+          { time: 'Afternoon', activity: '⬇️ Trek Back to Base through forest, enjoying the sights and sounds at dusk' },
+          { time: '10:00 PM', activity: '🏕️ Reach Camping Site — Check in at Dandeli Resort. Unwind with campfire, dinner & stargazing (Dinner included, separate rooms for men & women)' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌅',
+        items: [
+          { time: '07:00 AM', activity: '🍳 Wake Up, Freshen Up & Breakfast at resort (Included)' },
+          { time: 'Morning', activity: '🌊 Visit Magodu Falls — A serene, hidden gem cascade surrounded by dense forest canopy' },
+          { time: 'Mid Morning', activity: '⛰️ Visit Jenukallu Gudda Viewpoint — Panoramic views of the Western Ghats' },
+          { time: 'Afternoon', activity: '🍛 Leisure & Departure — Self-sponsored lunch & free time before return journey' }
+        ]
+      },
+      {
+        label: 'Day 3',
+        emoji: '🚍',
+        items: [
+          { time: '06:00 AM', activity: '🏡 Arrive Bangalore — Drop at same pickup points. Subject to traffic and road conditions' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Return transportation from Bangalore (Bus / Tempo Traveller based on group size)',
+      'Accommodation: Rooms, Dormitory or Tent (subject to availability)',
+      'Meals: 2 Breakfasts (Veg) + 1 Lunch (Veg) + 1 Dinner (Veg / Non-Veg)',
+      'Tea / Coffee & evening snacks',
+      'Forest entry permit fees',
+      'Certified Trek Guide with Basic First Aid support',
+      'Campfire arrangement at base camp',
+      'Complimentary participation certificate / badge'
+    ],
+    exclusions: [
+      'Sunday lunch & dinner on return day',
+      'Any personal expenses beyond listed inclusions',
+      'Costs from medical emergencies or natural calamities',
+      'Travel insurance (available on request at extra cost)',
+      'Extra activities or sightseeing not in itinerary',
+      'Payment gateway charges & GST on website bookings'
+    ],
+    thingsToCarry: [
+      'Govt ID (either Aadhar / PAN / DL / Voter)',
+      'Raincoat / Umbrella (essential for monsoon days)',
+      'Trekking / hiking shoes or comfortable walking shoes',
+      'Small backpack to carry your essentials',
+      'Water bottle (please avoid single-use plastics)',
+      'A polybag to carry any wet clothes',
+      'Toiletries & towel',
+      'Cold protective clothes - Sweaters / Jackets',
+      'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
+      'Sunscreen, Suncap & sunglasses (for sunny days)',
+      'Charger / power bank for electronics',
+      'Personal medications if any'
+    ],
+    placesCovered: [
+      'Dudhsagar Falls',
+      'Magodu Falls',
+      'Jenukallu Gudda'
+    ]
+  },
+  {
+id: '12',
+    slug: 'kurinjal-peak-trek',
+    title: 'Kurinjal Peak Trek',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Chikamagaluru',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '1,159 m',
+    distance: '14 km (total)',
+    minAge: '5+',
+    timeHours: '7Hrs',
+    modeRating: 'Easy - Moderate',
+    permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
+    currentPrice: 4499,
+    originalPrice: 4999,
+    withoutTransportPrice: 3499,
+    discount: '',
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    description: 'Trek to the spectacular Kurinjal Peak in the Kudremukh forest range. Walk through high altitude shola grasslands, wind-swept ridges, and find yourself surrounded by the majestic peaks of the Kudremukh National Park.',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330392/38acb9eb-6924-425a-a369-98a05b1ae6b9.png',
+    gallery: [
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330407/a231c7c1-0f72-45bf-8ec1-f7181e6efd3c.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330415/1a02c7a2-b532-41c1-bb8e-bd1acb220818.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330426/9f3abcef-37ae-453a-9a80-69edd894dbb1.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330441/8707191c-f602-4653-a267-5cfe93cbd003.png'
+    ],
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: '📍HSR Layout' },
+          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
+          { time: '08:45 PM', activity: '📍Domlur Post Office' },
+          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
+          { time: '09:30 PM', activity: '📍Yeshwantpur' },
+          { time: '10:00 PM', activity: '📍Gorguntepalya' },
+          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '⛰️',
+        items: [
+          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in & Freshen up' },
+          { time: '07:00 AM', activity: '🍽️ Breakfast and Trek Briefing' },
+          { time: '08:00 AM', activity: '🥾 Reach Trek Base and Start Climbing' },
+          { time: '12:00 PM', activity: '⛰️ Reach Kurinjal Peak & enjoy packed lunch' },
+          { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
+          { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
+          { time: '06:00 PM', activity: '🔥 Group Games, Campfire (if weather permits) & Rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌿',
+        items: [
+          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
+          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
+          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
+          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
+          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
+          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
+          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
+      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
+      'Shared homestay accommodation with separate rooms and washrooms for men & women',
+      'Off-road Jeep ride to and from the Forest Department trek start point',
+      'Forest entry permit fee',
+      'Certified Trek Guide with First Aid training',
+      'Local guide throughout the experience',
+      'Complimentary participation badge or certificate'
+    ],
+    exclusions: [
+      'Friday night dinner and Sunday lunch & dinner on the return journey',
+      'Any personal expenses beyond what is listed above',
+      'Costs arising from medical emergencies or natural calamities',
+      'Travel insurance of any kind — available on request at additional cost',
+      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
+      'Payment gateway charges & GST applicable on website bookings'
+    ],
+    thingsToCarry: [
+      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
+      'Raincoat (essential!)',
+      'Trekking / Hiking shoes',
+      'Trekking stick',
+      'Polybag for wet clothes',
+      'Sandals / flip flops',
+      'Small backpack',
+      'Water Bottle and Lunch Box',
+      'Toiletries',
+      'Sweater / Jacket',
+      'Torch / Flashlight',
+      'Energy bars, dry fruits, Glucon-D',
+      'Suncap & sunglasses',
+      'Waterproof phone cover',
+      'Charger / Power bank',
+      'Personal medications & Dettol'
+    ],
+    placesCovered: [
+      'Kurinjal Peak',
+      'Kudremukh Forest Area',
+      'Kalasa Hanging Bridge / KPP Prathistana',
+      'Kalasa Temple',
+      'Horanadu Temple / Belur Temple'
+    ]
+  },
+  {
+id: '13',
     slug: 'gangadikallu-trek-dzukou-valley-of-the-south',
     title: 'Gangadikallu Trek (Dzukou Valley of the South)',
     host: 'Adventure Chaarana',
@@ -1127,357 +1269,109 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '13',
-    slug: 'kudremukh-trek',
-    title: 'Kudremukh Trek',
+id: '14',
+    slug: 'kodaikanal-weekend-getaway',
+    title: 'Kodaikanal Weekend Getaway',
     host: 'Adventure Chaarana',
     date: 'Every Friday Night',
-    location: 'Chikamagaluru',
+    location: 'Kodaikanal',
     duration: '2 Days / 1 Night',
-    difficulty: 'Difficult',
-    elevation: '1,894 m (6,214 ft)',
-    distance: '20 km (total)',
-    minAge: '8+',
-    timeHours: '12Hrs',
-    modeRating: 'Moderate - Difficult',
-    permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
-    currentPrice: 4499,
-    originalPrice: 4999,
-    withoutTransportPrice: 3499,
-    discount: '',
-    badgeColor: 'bg-brand-orange',
-    category: 'western-ghats',
-    description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779801697/kudremukh-trek-image-1_s1oax6.webp',
-    gallery: [
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013169/IMG_20260712_084211737_sxgci7.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013168/IMG_7920_s3ekwi.heic',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013165/20260712_090452_0_dajnhh.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013164/IMG_5565_srz9kn.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_055850778_opdayi.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_063440975.PORTRAIT_turbq6.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013162/PXL_20260711_040047979_t4rhb3.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013173/IMG_7810_h5yfaw.heic'
-    ],
-    itinerary: [
-      {
-        label: 'Day 0',
-        emoji: '🌃',
-        items: [
-          { time: '08:00 PM', activity: '📍HSR Layout' },
-          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
-          { time: '08:45 PM', activity: '📍Domlur Post Office' },
-          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
-          { time: '09:30 PM', activity: '📍Yeshwantpur' },
-          { time: '10:00 PM', activity: '📍Gorguntepalya' },
-          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
-        ]
-      },
-      {
-        label: 'Day 1',
-        emoji: '⛰️',
-        items: [
-          { time: '06:00 AM', activity: '🛞 Only Jeep ride' },
-          { time: '07:00 AM', activity: '🥾 Kudremukha Trek start and scale the horse-face peak' },
-          { time: '01:00 PM', activity: '⛰️ Reach majestic Kudremukha peak & enjoy packed lunch' },
-          { time: '04:30 PM', activity: '🌊 Visit pristine Mullodi Falls during descent' },
-          { time: '05:30 PM', activity: '🏡 Reach back to homestay' },
-          { time: '06:00 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '08:00 PM', activity: '🔥 Campfire (if weather permits), group games, and traditional local Dinner' }
-        ]
-      },
-      {
-        label: 'Day 2',
-        emoji: '🌿',
-        items: [
-          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
-          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
-          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
-          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
-          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
-          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
-        ]
-      }
-    ],
-    inclusions: [
-      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
-      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
-      'Shared homestay accommodation with separate rooms and washrooms for men & women',
-      'Off-road Jeep ride to and from the Forest Department trek start point',
-      'Forest entry permit fee',
-      'Certified Trek Guide with First Aid training',
-      'Local guide throughout the experience',
-      'Complimentary participation badge or certificate'
-    ],
-    exclusions: [
-      'Friday night dinner and Sunday lunch & dinner on the return journey',
-      'Any personal expenses beyond what is listed above',
-      'Costs arising from medical emergencies or natural calamities',
-      'Travel insurance of any kind — available on request at additional cost',
-      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
-      'Payment gateway charges & GST applicable on website bookings'
-    ],
-    thingsToCarry: [
-      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
-      'Raincoat (essential!)',
-      'Trekking / Hiking shoes',
-      'Trekking stick',
-      'Polybag for wet clothes',
-      'Sandals / flip flops',
-      'Small backpack',
-      'Water Bottle and Lunch Box',
-      'Toiletries',
-      'Sweater / Jacket',
-      'Torch / Flashlight',
-      'Energy bars, dry fruits, Glucon-D',
-      'Suncap & sunglasses',
-      'Waterproof phone cover',
-      'Charger / Power bank',
-      'Personal medications & Dettol'
-    ],
-    placesCovered: [
-      'Kudremukha Peak',
-      'Mullodi Falls',
-      'Only Jeep ride',
-      'Kudremukh Forest Area',
-      'Kalasa Hanging Bridge / KPP Prathistana',
-      'Kalasa Temple',
-      'Horanadu Temple / Belur Temple'
-    ]
-  },
-  {
-    id: '14',
-    slug: 'kurinjal-peak-trek',
-    title: 'Kurinjal Peak Trek',
-    host: 'Adventure Chaarana',
-    date: 'Every Friday Night',
-    location: 'Chikamagaluru',
-    duration: '2 Days / 1 Night',
-    difficulty: 'Moderate',
-    elevation: '1,159 m',
-    distance: '14 km (total)',
-    minAge: '5+',
-    timeHours: '7Hrs',
-    modeRating: 'Easy - Moderate',
-    permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
-    currentPrice: 4499,
-    originalPrice: 4999,
-    withoutTransportPrice: 3499,
-    discount: '',
-    badgeColor: 'bg-brand-orange',
-    category: 'western-ghats',
-    description: 'Trek to the spectacular Kurinjal Peak in the Kudremukh forest range. Walk through high altitude shola grasslands, wind-swept ridges, and find yourself surrounded by the majestic peaks of the Kudremukh National Park.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330392/38acb9eb-6924-425a-a369-98a05b1ae6b9.png',
-    gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330407/a231c7c1-0f72-45bf-8ec1-f7181e6efd3c.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330415/1a02c7a2-b532-41c1-bb8e-bd1acb220818.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330426/9f3abcef-37ae-453a-9a80-69edd894dbb1.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330441/8707191c-f602-4653-a267-5cfe93cbd003.png'
-    ],
-    itinerary: [
-      {
-        label: 'Day 0',
-        emoji: '🌃',
-        items: [
-          { time: '08:00 PM', activity: '📍HSR Layout' },
-          { time: '08:30 PM', activity: '📍Sony Signal, Koramangala' },
-          { time: '08:45 PM', activity: '📍Domlur Post Office' },
-          { time: '09:15 PM', activity: '📍KTM Mekhri Circle' },
-          { time: '09:30 PM', activity: '📍Yeshwantpur' },
-          { time: '10:00 PM', activity: '📍Gorguntepalya' },
-          { time: '01:00 AM', activity: '📍Hassan KSRTC Bus Stand' }
-        ]
-      },
-      {
-        label: 'Day 1',
-        emoji: '⛰️',
-        items: [
-          { time: '06:00 AM', activity: '🚍 Reach Homestay - Check-in & Freshen up' },
-          { time: '07:00 AM', activity: '🍽️ Breakfast and Trek Briefing' },
-          { time: '08:00 AM', activity: '🥾 Reach Trek Base and Start Climbing' },
-          { time: '12:00 PM', activity: '⛰️ Reach Kurinjal Peak & enjoy packed lunch' },
-          { time: '03:00 PM', activity: '⬇️ Descent and reach back to Homestay' },
-          { time: '04:30 PM', activity: '🍵 High Tea & Evening Snacks' },
-          { time: '06:00 PM', activity: '🔥 Group Games, Campfire (if weather permits) & Rest' }
-        ]
-      },
-      {
-        label: 'Day 2',
-        emoji: '🌿',
-        items: [
-          { time: '08:00 AM', activity: '🍳 Breakfast and Checkout' },
-          { time: '10:00 AM', activity: '🌉 Kalasa Hanging Bridge / KPP Prathistana' },
-          { time: '11:15 AM', activity: '🛕 Visit Kalasa Temple' },
-          { time: '12:45 PM', activity: '🍛 Kottigehara Lunch (Local Malnad food)' },
-          { time: '02:00 PM', activity: '🛕 Visit Horanadu Temple / Belur Temple' },
-          { time: '04:30 PM', activity: '🚌 Start journey back to Bangalore' },
-          { time: '10:30 PM', activity: '🏡 Final drop-offs in Bangalore' }
-        ]
-      }
-    ],
-    inclusions: [
-      'Return transportation from Bangalore — Tempo Traveller, Mini Bus, or Bus (non-A/C, based on group size)',
-      'All meals as per itinerary — Saturday Breakfast, Lunch & Dinner; Sunday Breakfast (South Indian Vegetarian)',
-      'Shared homestay accommodation with separate rooms and washrooms for men & women',
-      'Off-road Jeep ride to and from the Forest Department trek start point',
-      'Forest entry permit fee',
-      'Certified Trek Guide with First Aid training',
-      'Local guide throughout the experience',
-      'Complimentary participation badge or certificate'
-    ],
-    exclusions: [
-      'Friday night dinner and Sunday lunch & dinner on the return journey',
-      'Any personal expenses beyond what is listed above',
-      'Costs arising from medical emergencies or natural calamities',
-      'Travel insurance of any kind — available on request at additional cost',
-      'Any extra activities, sightseeing, or services not mentioned in the itinerary',
-      'Payment gateway charges & GST applicable on website bookings'
-    ],
-    thingsToCarry: [
-      'Govt ID (either PAN / DL / Voter - whatever document submitted during booking)',
-      'Raincoat (essential!)',
-      'Trekking / Hiking shoes',
-      'Trekking stick',
-      'Polybag for wet clothes',
-      'Sandals / flip flops',
-      'Small backpack',
-      'Water Bottle and Lunch Box',
-      'Toiletries',
-      'Sweater / Jacket',
-      'Torch / Flashlight',
-      'Energy bars, dry fruits, Glucon-D',
-      'Suncap & sunglasses',
-      'Waterproof phone cover',
-      'Charger / Power bank',
-      'Personal medications & Dettol'
-    ],
-    placesCovered: [
-      'Kurinjal Peak',
-      'Kudremukh Forest Area',
-      'Kalasa Hanging Bridge / KPP Prathistana',
-      'Kalasa Temple',
-      'Horanadu Temple / Belur Temple'
-    ]
-  },
-  {
-    id: '15',
-    slug: 'wayanad-adventure-trip',
-    title: 'Wayanad Adventure Trip',
-    host: 'Adventure Chaarana',
-    date: 'Every Friday Night',
-    location: 'Wayanad, Kerala',
-    duration: '2 Days / 1 Night',
-    difficulty: 'Moderate',
-    elevation: '950 m',
-    distance: 'Flexible',
+    difficulty: 'Easy',
+    elevation: '2,133 m',
+    distance: '',
     minAge: '5 Years',
-    description: 'An action-packed adventure and leisure getaway tracing pristine water bodies, lush tea estates, and misty landscapes. Take an off-road jeep ride to 900 Kandi, walk on the thrilling glass bridge, look over India’s largest earth dam, explore Karlad Lake, and marvel at magnificent waterfalls.',
+    description: 'Experience the magic of the "Princess of Hill Stations". From the mist-covered Dolphin\'s Nose to the tranquil Pine Forest, this getaway is the perfect mountain escape.',
     originalPrice: 5999,
-    currentPrice: 4999,
-    withoutTransportPrice: 3999,
+    currentPrice: 5499,
     discount: '',
-    image: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1545244014-f57689189371?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1627664813831-268db4d687af?auto=format&fit=crop&q=80&w=1200'
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882199/40410f69-c7c3-44ee-9379-2d45205093c8.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882191/b9c456a5-419d-4e76-acef-d92892f1de02.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882179/c470f8bc-4a6f-4a45-b2f4-00e014a114f1.png',
+      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882164/81ce5ec6-5f5a-4cdb-8e7a-b075fe6964bd.png'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'weekend',
     itinerary: [
       {
-        label: 'Day 0',
-        emoji: '🌃',
+        label: 'Pickups',
+        emoji: '🚌',
         items: [
-          { time: '09:45 PM', activity: '⚡ Bangalore Departure: Pick up from Majestic (Near Metro station)' },
-          { time: '10:15 PM', activity: '⚡ Pick up from Nayandanahalli metro station' },
-          { time: '10:30 PM', activity: '⚡ Pick up from Kengeri bus stand' },
-          { time: '12:30 AM', activity: '⚡ Mysore Pick up: KSRTC bus stand' }
+          { time: '08:15 PM', activity: '📍Majestic (Shanthala Silks)' },
+          { time: '08:45 PM', activity: '📍Koramangala (Forum Mall)' },
+          { time: '09:15 PM', activity: '📍Silk Board (Renault Showroom)' },
+          { time: '09:45 PM', activity: '📍Electronic City (M5 Flyover)' }
         ]
       },
       {
         label: 'Day 1',
         emoji: '🏞️',
         items: [
-          { time: '06:00 AM', activity: '🚍 Reach Wayanad in the morning & witness the beautiful sceneries' },
-          { time: '07:00 AM', activity: '🏠 Reach homestay, freshen up & hot delicious breakfast' },
-          { time: '08:15 AM', activity: '🎒 Pack a day backpack & board our local transit vehicle' },
-          { time: '09:00 AM', activity: '🍃 Visit scenic Wayanad Tea Estates (Lush, emerald gardens)' },
-          { time: '10:15 AM', activity: '🧗 Visit the longest zipline hub (You can indulge in activities like zipline & zipcycle at your own cost)' },
-          { time: '01:00 PM', activity: '🍛 Delicious lunch break' },
-          { time: '02:00 PM', activity: '🛞 Enjoy off-road jeep ride in Wayanad with picturesque valley views' },
-          { time: '02:45 PM', activity: '⛰️ Head to 900 Kandi (Indulge in activities like Sky Walk, Burma Bridge, Archery, Rifle shooting)' },
-          { time: '03:30 PM', activity: '🌉 Walk on the thrilling Glass Bridge & Sky hanging swing' },
-          { time: '04:30 PM', activity: '🌊 Visit and experience Meenumutty Waterfalls' },
-          { time: '06:00 PM', activity: '🏡 Head back to homestay for evening relaxation' },
-          { time: '08:30 PM', activity: '🔥 Dinner, campfire (if weather permits) & cozy overnight stay' }
+          { time: '07:00 AM', activity: '🏠 Arrival & check-in at homestay' },
+          { time: '08:30 AM', activity: '🍽️ Have breakfast and start day 1 itinerary' },
+          { time: '09:00 AM', activity: '🏔️ Upper Lake View, Vattakanal Falls' },
+          { time: '11:00 AM', activity: '🥾 Dolphin’s Nose (1.5 km trek)' },
+          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
+          { time: '02:00 PM', activity: '🍫 Chocolate Factory, Bryant Park, Coaker’s Walk' },
+          { time: '04:30 PM', activity: '🛶 Kodaikanal Lake (boating & activities self-sponsored)' },
+          { time: '08:00 PM', activity: '🔥 Dinner & Campfire (if weather permits) overnight stay' }
         ]
       },
       {
         label: 'Day 2',
-        emoji: '🚣',
+        emoji: '🌲',
         items: [
-          { time: '07:30 AM', activity: '🍳 Freshen up, have breakfast & check-out from the homestay' },
-          { time: '09:00 AM', activity: '🧱 Visit Banasurasagar Dam, the largest earth dam in India (Indulge in speed boating, Kayaking & Zorbing at your own cost - 2 hours permitted)' },
-          { time: '11:45 AM', activity: '⛵ Head to Karlad Lake for outdoor fun (Burma bridge, zipcycling, kayaking, zorbing)' },
-          { time: '01:00 PM', activity: '🍛 Traditional self-sponsored local Malnad/Kerala lunch' },
-          { time: '02:00 PM', activity: '🚍 Start your return journey to hometown' },
-          { time: '05:30 PM', activity: '🌻 If time permits, stop at Gudlupete to see the gorgeous Sunflower farm' },
-          { time: '06:00 PM', activity: '🦌 Cross Bandipura Forest checkpoint (Before strict 6 PM curfew)' },
-          { time: '08:00 PM', activity: '🍽️ Reach Mysore & stop for a hearty dinner' },
-          { time: '10:00 PM', activity: '🏡 Reach Bangalore (drop timings may vary depending on the ground situation)' }
+          { time: '08:30 AM', activity: '🍽️ Breakfast & check-out' },
+          { time: '09:30 AM', activity: '📸 Pillar Rocks, Guna Caves, Pine Forest' },
+          { time: '01:00 PM', activity: '🍽️ Lunch (self-sponsored)' },
+          { time: '02:00 PM', activity: '🏛️ Natural History Museum' },
+          { time: '05:00 PM', activity: '🌊 Silver Cascade Falls' },
+          { time: '09:00 PM', activity: '🚌 Departure to Bangalore' },
+          { time: '04:00 AM', activity: '🏠 Arrival in Bangalore (Monday)' }
         ]
       }
     ],
     inclusions: [
-      'Transportation: non-AC seater vehicle (Tempo Traveler / mini bus / Bus depending on the number of people)',
-      'Meals: simple South Indian vegetarian food (Day 1 Breakfast & Dinner, Day 2 Breakfast)',
-      'Accommodation: basic homestay accommodation (shared rooms / dormitory, separate for men & women, common/sharing washroom)',
-      'All entry fees as per standard itinerary',
-      'Kerala state permit charges',
-      'Certified Tour Guide / First Aid Responder'
+      'Transportation - Non-AC seater (TT/ Mini bus/ Bus depending on group size)',
+      'Meals: Day 1 Breakfast & Dinner, Day 2 Breakfast',
+      'Accommodation: Basic homestay (Shared rooms/dorms, separate for men & women, common/shared washrooms)',
+      'All entry fees as per itinerary'
     ],
     exclusions: [
-      'Any other personal expenses incurred apart from inclusions',
+      'Any other expenses incurred apart from inclusions',
       'Any meals not mentioned in inclusions',
       'Any additional expenses due to emergencies / natural calamities',
-      'Jeep ride charge & entry fee to 900 Kandi',
       'Travel & Medical insurance',
-      'Any individual rides, zip cycling, kayaking, zorbing, speed boating, or sightseeing activities at the parks',
+      'Any activities, additional services & sightseeing',
       'Any travel expenses arising due to vehicle breakdown'
     ],
     thingsToCarry: [
-      'Soft copy of your identity card (Aadhar card / any other Govt. ID)',
-      'Additional clothes & extra pants/shorts',
-      'Sandals / flip flops',
-      'Small backpack to carry your essentials',
-      'Water bottle (please avoid single-use plastics)',
-      'A polybag to carry any wet clothes',
-      'Toiletries & towel',
-      'Cold protective clothes - Sweaters / Jackets',
-      'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
-      'Sunscreen, Suncap & sunglasses (for sunny days)',
-      'Raincoat / Umbrella (for monsoon days)',
-      'Charger / power bank for electronics',
-      'Personal medications if any'
+      'Government ID (soft copy)',
+      'Extra clothes & small backpack',
+      'Water bottle & Toiletries',
+      'Jacket/sweater (cold weather)',
+      'Raincoat/umbrella',
+      'Personal medication & Power bank'
     ],
     placesCovered: [
-      '900 Kandi canopy & forest',
-      'Glass bridge',
-      'Sky hanging swing',
-      'Meenumutty Waterfalls',
-      'Banasurasagar Dam (Largest earth dam)',
-      'Karlad Lake',
-      'Wayanad Tea Estates',
-      'Gudlupete Sunflower Farm',
-      'Bandipur Forest checkpoint'
+      'Upper Lake View',
+      'Vattakanal Falls',
+      'Dolphin’s Nose',
+      'Chocolate Factory',
+      'Bryant Park',
+      'Coaker’s Walk',
+      'Kodaikanal Lake',
+      'Pillar Rocks',
+      'Guna Caves',
+      'Pine Forest',
+      'Natural History Museum',
+      'Silver Cascade Falls'
     ]
   },
   {
-    id: '16',
+id: '15',
     slug: 'munnar-kolukkumalai',
     title: 'Munnar (with Kolukkumalai)',
     host: 'Adventure Chaarana',
@@ -1599,95 +1493,97 @@ const TREKS: Trek[] = [
     ]
   },
   {
-    id: '17',
-    slug: 'dudhsagar-falls-trek',
-    title: 'Dudhsagar Falls Trek',
+id: '16',
+    slug: 'wayanad-adventure-trip',
+    title: 'Wayanad Adventure Trip',
     host: 'Adventure Chaarana',
-    date: 'Every Friday - 6:00 PM',
-    location: 'Dudhsagar Falls, Goa & Karnataka',
+    date: 'Every Friday Night',
+    location: 'Wayanad, Kerala',
     duration: '2 Days / 1 Night',
     difficulty: 'Moderate',
-    elevation: '310 m',
-    distance: '22 KM',
+    elevation: '950 m',
+    distance: 'Flexible',
     minAge: '5 Years',
-    description: 'Embark on the legendary Dudhsagar Falls trek, a thrilling 22 KM trail through the lush rainforests of the Western Ghats. Witness the spectacular four-tiered "Sea of Milk" waterfall, explore the scenic Magodu Falls, and stand atop Jenukallu Gudda for breathtaking panoramic vistas.',
-    originalPrice: 6499,
-    currentPrice: 5500,
-    withoutTransportPrice: 4500,
+    description: 'An action-packed adventure and leisure getaway tracing pristine water bodies, lush tea estates, and misty landscapes. Take an off-road jeep ride to 900 Kandi, walk on the thrilling glass bridge, look over India’s largest earth dam, explore Karlad Lake, and marvel at magnificent waterfalls.',
+    originalPrice: 5999,
+    currentPrice: 4999,
+    withoutTransportPrice: 3999,
     discount: '',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+    image: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784047018/e1767409-c47c-4194-8380-e24ff071e7d6.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046787/2e0ee361-8207-4b7c-86e2-346256870949.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046960/6291355a-f8e6-4b43-848b-495eaeb75393.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046993/3675b1e3-96fd-4ef8-a687-fc15669db9ef.png'
+      'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1545244014-f57689189371?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1627664813831-268db4d687af?auto=format&fit=crop&q=80&w=1200'
     ],
     badgeColor: 'bg-brand-orange',
-    category: 'western-ghats',
+    category: 'weekend',
     itinerary: [
       {
         label: 'Day 0',
-        emoji: '🌌',
+        emoji: '🌃',
         items: [
-          { time: '06:00 PM', activity: '📍 Majestic, Bangalore - First boarding point. Be 10 minutes early.' },
-          { time: '06:20 PM', activity: '📍 Rajajinagar Metro Station' },
-          { time: '06:40 PM', activity: '📍 Yeshwantpura Metro Station' },
-          { time: '07:00 PM', activity: '📍 Goraguntepalya — KLE Dental College (Use metro to avoid traffic)' },
-          { time: 'Overnight', activity: '🚍 Overnight journey to Kulem, Goa. Sit back & relax!' }
+          { time: '09:45 PM', activity: '⚡ Bangalore Departure: Pick up from Majestic (Near Metro station)' },
+          { time: '10:15 PM', activity: '⚡ Pick up from Nayandanahalli metro station' },
+          { time: '10:30 PM', activity: '⚡ Pick up from Kengeri bus stand' },
+          { time: '12:30 AM', activity: '⚡ Mysore Pick up: KSRTC bus stand' }
         ]
       },
       {
         label: 'Day 1',
         emoji: '🏞️',
         items: [
-          { time: '07:00 AM', activity: '🏠 Reach Base — Arrive at Kulem base. Freshen up & enjoy a hot South Indian vegetarian breakfast (Included)' },
-          { time: '08:00 AM', activity: '🥾 Trek Begins! Start the 22 KM trail through lush Western Ghats rainforest with certified guide' },
-          { time: '01:00 PM', activity: '🌊 Dudhsagar Falls — Reach the iconic four-tiered falls ("Sea of Milk"), enjoy packed lunch & rest (Lunch included)' },
-          { time: 'Afternoon', activity: '⬇️ Trek Back to Base through forest, enjoying the sights and sounds at dusk' },
-          { time: '10:00 PM', activity: '🏕️ Reach Camping Site — Check in at Dandeli Resort. Unwind with campfire, dinner & stargazing (Dinner included, separate rooms for men & women)' }
+          { time: '06:00 AM', activity: '🚍 Reach Wayanad in the morning & witness the beautiful sceneries' },
+          { time: '07:00 AM', activity: '🏠 Reach homestay, freshen up & hot delicious breakfast' },
+          { time: '08:15 AM', activity: '🎒 Pack a day backpack & board our local transit vehicle' },
+          { time: '09:00 AM', activity: '🍃 Visit scenic Wayanad Tea Estates (Lush, emerald gardens)' },
+          { time: '10:15 AM', activity: '🧗 Visit the longest zipline hub (You can indulge in activities like zipline & zipcycle at your own cost)' },
+          { time: '01:00 PM', activity: '🍛 Delicious lunch break' },
+          { time: '02:00 PM', activity: '🛞 Enjoy off-road jeep ride in Wayanad with picturesque valley views' },
+          { time: '02:45 PM', activity: '⛰️ Head to 900 Kandi (Indulge in activities like Sky Walk, Burma Bridge, Archery, Rifle shooting)' },
+          { time: '03:30 PM', activity: '🌉 Walk on the thrilling Glass Bridge & Sky hanging swing' },
+          { time: '04:30 PM', activity: '🌊 Visit and experience Meenumutty Waterfalls' },
+          { time: '06:00 PM', activity: '🏡 Head back to homestay for evening relaxation' },
+          { time: '08:30 PM', activity: '🔥 Dinner, campfire (if weather permits) & cozy overnight stay' }
         ]
       },
       {
         label: 'Day 2',
-        emoji: '🌅',
+        emoji: '🚣',
         items: [
-          { time: '07:00 AM', activity: '🍳 Wake Up, Freshen Up & Breakfast at resort (Included)' },
-          { time: 'Morning', activity: '🌊 Visit Magodu Falls — A serene, hidden gem cascade surrounded by dense forest canopy' },
-          { time: 'Mid Morning', activity: '⛰️ Visit Jenukallu Gudda Viewpoint — Panoramic views of the Western Ghats' },
-          { time: 'Afternoon', activity: '🍛 Leisure & Departure — Self-sponsored lunch & free time before return journey' }
-        ]
-      },
-      {
-        label: 'Day 3',
-        emoji: '🚍',
-        items: [
-          { time: '06:00 AM', activity: '🏡 Arrive Bangalore — Drop at same pickup points. Subject to traffic and road conditions' }
+          { time: '07:30 AM', activity: '🍳 Freshen up, have breakfast & check-out from the homestay' },
+          { time: '09:00 AM', activity: '🧱 Visit Banasurasagar Dam, the largest earth dam in India (Indulge in speed boating, Kayaking & Zorbing at your own cost - 2 hours permitted)' },
+          { time: '11:45 AM', activity: '⛵ Head to Karlad Lake for outdoor fun (Burma bridge, zipcycling, kayaking, zorbing)' },
+          { time: '01:00 PM', activity: '🍛 Traditional self-sponsored local Malnad/Kerala lunch' },
+          { time: '02:00 PM', activity: '🚍 Start your return journey to hometown' },
+          { time: '05:30 PM', activity: '🌻 If time permits, stop at Gudlupete to see the gorgeous Sunflower farm' },
+          { time: '06:00 PM', activity: '🦌 Cross Bandipura Forest checkpoint (Before strict 6 PM curfew)' },
+          { time: '08:00 PM', activity: '🍽️ Reach Mysore & stop for a hearty dinner' },
+          { time: '10:00 PM', activity: '🏡 Reach Bangalore (drop timings may vary depending on the ground situation)' }
         ]
       }
     ],
     inclusions: [
-      'Return transportation from Bangalore (Bus / Tempo Traveller based on group size)',
-      'Accommodation: Rooms, Dormitory or Tent (subject to availability)',
-      'Meals: 2 Breakfasts (Veg) + 1 Lunch (Veg) + 1 Dinner (Veg / Non-Veg)',
-      'Tea / Coffee & evening snacks',
-      'Forest entry permit fees',
-      'Certified Trek Guide with Basic First Aid support',
-      'Campfire arrangement at base camp',
-      'Complimentary participation certificate / badge'
+      'Transportation: non-AC seater vehicle (Tempo Traveler / mini bus / Bus depending on the number of people)',
+      'Meals: simple South Indian vegetarian food (Day 1 Breakfast & Dinner, Day 2 Breakfast)',
+      'Accommodation: basic homestay accommodation (shared rooms / dormitory, separate for men & women, common/sharing washroom)',
+      'All entry fees as per standard itinerary',
+      'Kerala state permit charges',
+      'Certified Tour Guide / First Aid Responder'
     ],
     exclusions: [
-      'Sunday lunch & dinner on return day',
-      'Any personal expenses beyond listed inclusions',
-      'Costs from medical emergencies or natural calamities',
-      'Travel insurance (available on request at extra cost)',
-      'Extra activities or sightseeing not in itinerary',
-      'Payment gateway charges & GST on website bookings'
+      'Any other personal expenses incurred apart from inclusions',
+      'Any meals not mentioned in inclusions',
+      'Any additional expenses due to emergencies / natural calamities',
+      'Jeep ride charge & entry fee to 900 Kandi',
+      'Travel & Medical insurance',
+      'Any individual rides, zip cycling, kayaking, zorbing, speed boating, or sightseeing activities at the parks',
+      'Any travel expenses arising due to vehicle breakdown'
     ],
     thingsToCarry: [
-      'Govt ID (either Aadhar / PAN / DL / Voter)',
-      'Raincoat / Umbrella (essential for monsoon days)',
-      'Trekking / hiking shoes or comfortable walking shoes',
+      'Soft copy of your identity card (Aadhar card / any other Govt. ID)',
+      'Additional clothes & extra pants/shorts',
+      'Sandals / flip flops',
       'Small backpack to carry your essentials',
       'Water bottle (please avoid single-use plastics)',
       'A polybag to carry any wet clothes',
@@ -1695,17 +1591,24 @@ const TREKS: Trek[] = [
       'Cold protective clothes - Sweaters / Jackets',
       'Fresh fruits, juice, Glucon-D, dry fruits, energy bars',
       'Sunscreen, Suncap & sunglasses (for sunny days)',
+      'Raincoat / Umbrella (for monsoon days)',
       'Charger / power bank for electronics',
       'Personal medications if any'
     ],
     placesCovered: [
-      'Dudhsagar Falls',
-      'Magodu Falls',
-      'Jenukallu Gudda'
+      '900 Kandi canopy & forest',
+      'Glass bridge',
+      'Sky hanging swing',
+      'Meenumutty Waterfalls',
+      'Banasurasagar Dam (Largest earth dam)',
+      'Karlad Lake',
+      'Wayanad Tea Estates',
+      'Gudlupete Sunflower Farm',
+      'Bandipur Forest checkpoint'
     ]
   },
   {
-    id: '18',
+id: '17',
     slug: 'coorg-weekend-getaway',
     title: 'Coorg Weekend Getaway – 2 Days / 1 Night',
     host: 'Adventure Chaarana',
@@ -1860,7 +1763,69 @@ const Background = () => {
   );
 };
 
-const Header = () => {
+const IndependenceDayBanner = ({
+  isOpen,
+  onClose
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  const navigate = useNavigate();
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.aside
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: 'auto', opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.25, ease: 'easeInOut' }}
+          className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-orange-500/25 shadow-md overflow-hidden"
+          aria-label="Independence Day Special Announcement"
+        >
+          {/* Subtle Tricolor Top Accent Line */}
+          <div className="h-[2px] w-full bg-gradient-to-r from-[#ff9933] via-white to-[#138808]" />
+
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex items-center justify-between gap-2.5 sm:gap-4">
+            {/* Promo Text & Badge */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 shrink-0">
+                🇮🇳 Independence Day Special
+              </span>
+              <p className="text-[11px] sm:text-xs font-semibold text-slate-200 truncate">
+                <span className="text-white font-extrabold">Uttari Betta Sunrise Trek</span> at just{' '}
+                <span className="text-emerald-400 font-black text-xs sm:text-sm">₹499/person</span>!
+                <span className="hidden md:inline text-slate-400 font-medium ml-1.5">(Limited festival slots available)</span>
+              </p>
+            </div>
+
+            {/* Actions: Direct Link & Close Button */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              <button
+                id="banner-book-uttari-btn"
+                onClick={() => navigate('/trek/uttari-betta-sunrise-trek')}
+                className="px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+              >
+                Book at ₹499
+              </button>
+
+              <button
+                id="close-independence-banner"
+                onClick={onClose}
+                aria-label="Close Independence Day Banner"
+                className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </div>
+        </motion.aside>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const Header = ({ isBannerOpen = false }: { isBannerOpen?: boolean }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -1922,7 +1887,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`${headerClass} fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 md:h-24 flex items-center`}>
+    <header className={`${headerClass} fixed ${isBannerOpen ? 'top-[36px] sm:top-[38px]' : 'top-0'} left-0 right-0 z-40 transition-all duration-300 h-20 md:h-24 flex items-center`}>
       <div className="max-w-7xl mx-auto w-full px-6 relative flex items-center justify-between md:grid md:grid-cols-3">
         {/* Left Column - Upcoming Treks & Contact Us */}
         <div className="hidden md:flex items-center justify-start gap-8">
@@ -2023,13 +1988,15 @@ const Header = () => {
 const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNode; showPromo: boolean; setShowPromo: (v: boolean) => void }) => {
   const location = useLocation();
   const isDetailsPage = location.pathname.startsWith('/trek/');
+  const [isBannerOpen, setIsBannerOpen] = useState(true);
 
   return (
     <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
       {!isDetailsPage && <Background />}
-      {!isDetailsPage && <Header />}
+      <IndependenceDayBanner isOpen={isBannerOpen} onClose={() => setIsBannerOpen(false)} />
+      {!isDetailsPage && <Header isBannerOpen={isBannerOpen} />}
       
-      <main className="relative z-10 flex-1 pt-0">
+      <main className={`relative z-10 flex-1 ${isBannerOpen && isDetailsPage ? 'pt-9 sm:pt-10' : 'pt-0'} transition-all duration-300`}>
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -2541,21 +2508,28 @@ const TrekDetailsPage = () => {
   ].includes(trek.slug) : false;
 
   const weekdaySlots: Batch[] = [
-    { start: 'Aug 4', end: 'Aug 6', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
-    { start: 'Aug 12', end: 'Aug 14', year: 2026, dayName: 'Wed', monthGroup: 'August 2026' },
     { start: 'Aug 18', end: 'Aug 20', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
     { start: 'Aug 20', end: 'Aug 22', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' },
     { start: 'Aug 25', end: 'Aug 27', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
-    { start: 'Aug 27', end: 'Aug 29', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' }
+    { start: 'Aug 27', end: 'Aug 29', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' },
+    { start: 'Sep 1', end: 'Sep 3', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
+    { start: 'Sep 3', end: 'Sep 5', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
+    { start: 'Sep 8', end: 'Sep 10', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
+    { start: 'Sep 10', end: 'Sep 12', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
+    { start: 'Sep 15', end: 'Sep 17', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
+    { start: 'Sep 17', end: 'Sep 19', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
+    { start: 'Sep 22', end: 'Sep 24', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
+    { start: 'Sep 24', end: 'Sep 26', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
+    { start: 'Sep 29', end: 'Oct 1', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' }
   ];
 
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
     
-    // We want to generate dates exclusively for July and August 2026 from July 21st onwards
-    const startDateLimit = new Date(2026, 6, 21); // July 21st, 2026
-    const endDateLimit = new Date(2026, 7, 31);   // August 31st, 2026
+    // Generate dates for upcoming batches starting from August 13, 2026 through September 30, 2026
+    const startDateLimit = new Date(2026, 7, 13); // August 13th, 2026
+    const endDateLimit = new Date(2026, 8, 30);   // September 30th, 2026
     
     const tempDate = new Date(startDateLimit);
     let safetyCounter = 0;
@@ -2751,18 +2725,6 @@ const TrekDetailsPage = () => {
                   </div>
                 </div>
               </motion.div>
-              
-              {trek.discount && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.35 }}
-                  className="bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md px-5 py-3.5 rounded-2xl flex items-center justify-center gap-3 text-emerald-300 text-[11px] font-semibold tracking-wide text-center"
-                >
-                  <span className="text-sm shrink-0">🎉</span>
-                  <span><strong>Group Offer:</strong> Get a <span className="text-emerald-400 font-extrabold">₹200 discount per person</span> for groups of more than 5 members across all 2-day Western Ghats expeditions.</span>
-                </motion.div>
-              )}
             </div>
           ) : (
             <div className="space-y-4 max-w-4xl mx-auto w-full">
@@ -2786,18 +2748,6 @@ const TrekDetailsPage = () => {
                   )}
                 </div>
               </motion.div>
-
-              {['1', '4', '5'].includes(trek.id) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.35 }}
-                  className="bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md px-5 py-3.5 rounded-2xl flex items-center justify-center gap-3 text-emerald-300 text-[11px] font-semibold tracking-wide text-center"
-                >
-                  <span className="text-sm shrink-0">🎉</span>
-                  <span><strong>Group Offer:</strong> Get a <span className="text-emerald-400 font-extrabold">5% discount</span> for groups of <span className="text-emerald-400 font-extrabold">3+ members</span> on this sunrise trek!</span>
-                </motion.div>
-              )}
             </div>
           )}
 
@@ -2950,42 +2900,56 @@ const TrekDetailsPage = () => {
                   <div className="space-y-1">
                     <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Weekday <span className="text-cyan-500">Slots</span></h3>
                     <p className="text-[10px] uppercase font-black tracking-widest text-cyan-500/80 italic">
-                      Special Mid-week Departures (August 2026)
+                      Special Mid-week Departures (August & September 2026)
                     </p>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                    <div className="space-y-4 bg-slate-50/60 hover:bg-white border border-slate-200/50 p-6 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-cyan-500">
-                      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-cyan-400/5 border border-cyan-400/10 px-3 py-1.5 rounded-full w-fit">
-                        August 2026
-                      </h4>
-                      <div className="flex flex-col gap-2">
-                        {weekdaySlots.map((batch, idx) => {
-                          const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the Weekday Slot for ${trek.title} on the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
-                          const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
+                    {(() => {
+                      const groupedWeekday = weekdaySlots.reduce((acc, batch) => {
+                        const group = batch.monthGroup || 'Weekday Slots';
+                        if (!acc[group]) acc[group] = [];
+                        acc[group].push(batch);
+                        return acc;
+                      }, {} as Record<string, Batch[]>);
 
-                          return (
-                            <a 
-                              key={idx} 
-                              href={waLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="group bg-white border border-slate-100 hover:bg-cyan-500/[0.03] hover:border-cyan-500/30 p-3.5 rounded-xl flex items-center justify-between shadow-sm hover:shadow-md transition-all cursor-pointer"
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse shrink-0" />
-                                <p className="font-bold text-slate-800 text-xs tracking-tight">
-                                  {batch.start} - {batch.end}
-                                </p>
-                              </div>
-                              <span className="text-[9px] font-extrabold text-cyan-600 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded uppercase tracking-wider scale-90">
-                                {batch.dayName}
-                              </span>
-                            </a>
-                          );
-                        })}
-                      </div>
-                    </div>
+                      return Object.keys(groupedWeekday).map((monthGroup) => {
+                        const slots = groupedWeekday[monthGroup] || [];
+                        return (
+                          <div key={monthGroup} className="space-y-4 bg-slate-50/60 hover:bg-white border border-slate-200/50 p-6 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-cyan-500">
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-cyan-400/5 border border-cyan-400/10 px-3 py-1.5 rounded-full w-fit">
+                              {monthGroup}
+                            </h4>
+                            <div className="flex flex-col gap-2">
+                              {slots.map((batch, idx) => {
+                                const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the Weekday Slot for ${trek.title} on the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
+                                const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
+
+                                return (
+                                  <a 
+                                    key={idx} 
+                                    href={waLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group bg-white border border-slate-100 hover:bg-cyan-500/[0.03] hover:border-cyan-500/30 p-3.5 rounded-xl flex items-center justify-between shadow-sm hover:shadow-md transition-all cursor-pointer"
+                                  >
+                                    <div className="flex items-center gap-3">
+                                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse shrink-0" />
+                                      <p className="font-bold text-slate-800 text-xs tracking-tight">
+                                        {batch.start} - {batch.end}
+                                      </p>
+                                    </div>
+                                    <span className="text-[9px] font-extrabold text-cyan-600 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded uppercase tracking-wider scale-90">
+                                      {batch.dayName}
+                                    </span>
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      });
+                    })()}
                   </div>
                 </div>
               )}
@@ -4363,7 +4327,7 @@ const HomePage = () => {
       <Helmet>
         <title>Adventure Chaarana | Premium Trekking & Adventure Community in Bangalore</title>
         <meta name="description" content="Explore the pure wild with Adventure Chaarana. We offer the best sunrise treks, weekend getaways, and western ghats expeditions from Bangalore. Join our active adventure community." />
-        <meta name="keywords" content="trekking bangalore, sunrise treks bangalore, adventure community bangalore, western ghats trek, kodaikanal trip, tadiandamol trek, adventure chaarana" />
+        <meta name="keywords" content="trekking bangalore, sunrise treks bangalore, adventure community bangalore, western ghats trek, kodaikanal trip, adventure chaarana" />
         <link rel="canonical" href="https://adventurechaarana.com/" />
         
         <meta property="og:type" content="website" />
