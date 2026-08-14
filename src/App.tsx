@@ -1649,7 +1649,7 @@ id: '17',
         label: 'Day 2',
         emoji: '🌄',
         items: [
-          { time: '05:30 AM', activity: '🌅 Sunrise visit to Mandalpatti Peak' },
+          { time: '05:30 AM', activity: '🌅 Sunrise visit to Mandalpatti Peak (Mandalpatti Jeep ride is self-sponsored)' },
           { time: '08:30 AM', activity: '🏠 Check-in & freshen up at homestay 🏡' },
           { time: '09:30 AM', activity: '🍳 Breakfast at homestay' },
           { time: '10:30 AM', activity: '🌊 Visit the beautiful Abbey Falls' },
@@ -1678,12 +1678,10 @@ id: '17',
       'Meals: South Indian Vegetarian food (Day 1 → breakfast & dinner, Day 2 → breakfast)',
       'Basic accommodation: Shared rooms / Dormitory / tent - any one of it will be provided (Separate for men & women, common/sharing washroom, no option to choose the accommodation type)',
       'All Entry fee as per itinerary',
-      'Jeep ride charges for Kolukkumalai',
-      'Certified Guide / First Aid Responder',
-      'Tamil Nadu state & Kerala state permit',
-      'E pass'
+      'Certified Guide / First Aid Responder'
     ],
     exclusions: [
+      'Mandalpatti Jeep ride charges (Self-sponsored)',
       'Any other expenses incurred apart from inclusions',
       'Any meals not mentioned in inclusions',
       'Any additional expenses due to emergencies / natural calamities',
