@@ -372,17 +372,25 @@ id: '5',
     originalPrice: 1100,
     currentPrice: 499,
     discount: '🇮🇳 Independence Day Offer · ₹499',
-    image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786011848/3b3e86da-2db5-49b7-8358-a29a421ea941.png',
+    image: 'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0965.jpeg',
     gallery: [
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012104/IMG_2005_v3slue.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012102/original_f3f2f62d-eaf2-4301-99e0-51a15e4e0126_IMG_20260509_031333699_HDR_bb2bnb.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012107/PXL_20260614_012424943_yut4bj.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012106/IMG_20260614_071109498_HDR_PCT_aq9qqc.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012115/img_5_lcqsei.webp',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012118/20260614_070012_aff8w1.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012120/20260614_081409_p8zuul.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012127/img4_tez7df.webp',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786012122/img_7_gjueta.webp'
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0825.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/20260823_071033.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_7920.heif',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/20260823_063809.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/PXL_20260614_012424943.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0961.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0866.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0877.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0903.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/20260614_081409.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/20260614_070405.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0850.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_20260614_072048536_HDR_PCT.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_2006.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0880.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_20260614_071109498_HDR_PCT.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Uttari/original_f3f2f62d-eaf2-4301-99e0-51a15e4e0126_IMG_20260509_031333699_HDR.jpg'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'sunrise',
@@ -966,13 +974,16 @@ id: '11',
     currentPrice: 5499,
     withoutTransportPrice: 4500,
     discount: '',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
+    image: 'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_0882.HEIC?updatedAt=1789978870669',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046935/82f2fbdb-e66a-4702-83b4-ece719a2d35d.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784047018/e1767409-c47c-4194-8380-e24ff071e7d6.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046787/2e0ee361-8207-4b7c-86e2-346256870949.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046960/6291355a-f8e6-4b43-848b-495eaeb75393.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1784046993/3675b1e3-96fd-4ef8-a687-fc15669db9ef.png'
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_1125.HEIC?updatedAt=1789978872018',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_1022.HEIC?updatedAt=1789978871649',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_0803.HEIC?updatedAt=1789978869017',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_0909.HEIC?updatedAt=1789978866718',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_7321.HEIC?updatedAt=1789978861356',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_0874.HEIC?updatedAt=1789978854540',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/Dudhsagar-Waterfalls.webp?updatedAt=1789978842785',
+      'https://ik.imagekit.io/phj6ifoni/Dudhsagar/thewanderlostguy_20211014_220452-Copy-min.webp?updatedAt=1789978842871'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
@@ -1731,6 +1742,132 @@ id: '17',
       'Chiklihole Reservoir',
       'Namdroling Monastery',
       'Mysore Palace'
+    ]
+  },
+  {
+    id: '18',
+    slug: 'gokarna-beach-trek-weekend-trip',
+    title: 'Gokarna Beach Trek & Camping',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Gokarna & Kumta, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Easy',
+    elevation: 'Sea Level',
+    distance: '8 KM (Beach Trek)',
+    minAge: '5 Years',
+    description: 'Escape to the sun-kissed coastline of Gokarna and Kumta for an unforgettable weekend adventure. Camp right beside the Arabian Sea in 2-sharing tents, trek along golden sands and cliff trails from Belkan Beach to Om Beach, explore historic Mirjan Fort, witness sunrise boating in Honnavara mangroves, marvel at the towering Murudeshwara Shiva temple, and behold the world-famous Jog Falls.',
+    originalPrice: 5999,
+    currentPrice: 4999,
+    withoutTransportPrice: 3999,
+    discount: '',
+    image: 'https://ik.imagekit.io/phj6ifoni/Gokarna/_%20Lost%20in%20the%20rhythm%20of%20waves,%20where%20every%20sunset%20feels%20like%20a%20story%20and%20every%20breeze%20whispers.jpg',
+    gallery: [
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/7.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/6.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/13.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/9.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/10.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/12.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/4.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/3.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/11.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/2.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/8.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Gokarna/1.jpeg'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Pickups',
+        emoji: '🚌',
+        items: [
+          { time: '08:00 PM', activity: '📍 HSR Layout (Bangalore Pickup)' },
+          { time: '08:30 PM', activity: '📍 Koramangala, Sony Signal (Bangalore Pickup)' },
+          { time: '08:45 PM', activity: '📍 Domlur Post Office (Bangalore Pickup)' },
+          { time: '09:15 PM', activity: '📍 KTM Mekhri Circle (Bangalore Pickup)' },
+          { time: '09:30 PM', activity: '📍 Yeshwanthpura (Bangalore Pickup)' },
+          { time: '10:00 PM', activity: '📍 Gorguntepalya (Bangalore Pickup)' },
+          { time: '12:00 AM', activity: '📍 Tumkur - Batwadi Bypass (Enroute Pickup)' },
+          { time: '01:30 AM', activity: '📍 Chitradurga KSRTC Bus Stop (Enroute Pickup)' },
+          { time: '03:00 AM', activity: '📍 Shivamogga KSRTC Bus Stop (Enroute Pickup)' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏖️',
+        items: [
+          { time: '07:30 AM', activity: '⛺ Reach the beach-facing campsite at Kumta Beach in the morning, freshen up and have breakfast' },
+          { time: '09:30 AM', activity: '🏰 Visit the historic Mirjan Fort and explore its rich heritage' },
+          { time: '11:30 AM', activity: '🛕 Explore Gokarna’s traditional streets and experience the local culture' },
+          { time: '01:00 PM', activity: '🍽️ Have lunch and get ready for the beach trek' },
+          { time: '02:30 PM', activity: '🥾 Start the beach trek from Belkan Beach to Om Beach' },
+          { time: '05:30 PM', activity: '🌅 Reach Om Beach and enjoy a beautiful sunset by the sea' },
+          { time: '07:00 PM', activity: '🚌 Drive back to the campsite, freshen up and relax' },
+          { time: '08:00 PM', activity: '🌊 Spend some peaceful time by the beach' },
+          { time: '08:30 PM', activity: '🍽️ Enjoy dinner at the campsite' },
+          { time: '09:30 PM', activity: '🔥 Campfire by the beach, depending on weather conditions' },
+          { time: '10:00 PM', activity: '🏮 Light a sky lantern over the sea and end the day on a magical note' },
+          { time: '10:30 PM', activity: '⛺ Overnight stay in a beach-facing tent under the stars' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌊',
+        items: [
+          { time: '06:00 AM', activity: '🌅 Wake up early in the morning, freshen up, have breakfast and check out from the campsite' },
+          { time: '07:30 AM', activity: '🛶 Watch the sunrise with Honnavara Boating (self-sponsored)' },
+          { time: '09:00 AM', activity: '🌿 Explore the beautiful Sharavathi Kandla Mangrove Forest' },
+          { time: '10:15 AM', activity: '🌉 Visit the scenic Sharavathi Hanging Bridge' },
+          { time: '11:30 AM', activity: '🍽️ Have lunch and get ready for the next leg of the journey' },
+          { time: '01:00 PM', activity: '🔱 Drive towards Murudeshwara and visit the magnificent Shiva Temple by the beach' },
+          { time: '02:30 PM', activity: '📸 Explore the iconic Shiva Statue and enjoy the coastal views' },
+          { time: '04:00 PM', activity: '🌊 Continue the journey towards Jog Falls' },
+          { time: '05:15 PM', activity: '💦 Visit Jog Falls and enjoy the breathtaking views' },
+          { time: '07:30 PM', activity: '🚌 Start the journey back to Bangalore' },
+          { time: '05:00 AM', activity: '🏠 Reach Bangalore the next morning at approximately 5:00 AM' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Transportation: Non-A/C seater vehicle throughout the trip (Tempo Traveller / Mini Bus / Bus arranged based on group size)',
+      'Meals: Authentic South Indian Vegetarian Meals (Saturday: Breakfast & Dinner, Sunday: Breakfast)',
+      'Accommodation: Beach-facing campsite – 2-sharing tent accommodation (Separate accommodation for men & women, common/shared washroom facilities)',
+      'All entry fees mentioned in the itinerary',
+      'Certified Guide / First Aid Responder from Adventure Chaarana'
+    ],
+    exclusions: [
+      'Any expenses incurred other than those specifically mentioned under the inclusions',
+      'Friday’s Dinner, Saturday’s Lunch, Sunday’s Lunch & Dinner during the return journey',
+      'Honnavara boating & water activities (self-sponsored)',
+      'Any additional expenses arising due to emergencies, natural calamities, unforeseen circumstances, or changes in itinerary',
+      'Travel & Medical Insurance',
+      'Charges for activities not specifically mentioned in the itinerary',
+      'Any additional services, personal expenses, or sightseeing not mentioned in the itinerary',
+      'Any additional travel expenses arising due to vehicle breakdown or unforeseen transportation issues'
+    ],
+    thingsToCarry: [
+      'Government ID card (original or soft copy)',
+      'Comfortable clothes & extra beachwear / change of clothes',
+      'Trekking shoes or sturdy sandals with grip for beach and rocks',
+      'Water bottle (at least 2L)',
+      'Sunscreen, sunglasses & beach hat',
+      'Personal toiletries & quick-dry towel',
+      'Personal medications & first aid kit',
+      'Power bank & torch / headlamp'
+    ],
+    placesCovered: [
+      'Kumta Beach Campsite',
+      'Mirjan Fort',
+      'Gokarna Traditional Streets',
+      'Belkan Beach',
+      'Om Beach',
+      'Honnavara Boating',
+      'Sharavathi Kandla Mangrove Forest',
+      'Sharavathi Hanging Bridge',
+      'Murudeshwara Shiva Temple & Statue',
+      'Jog Falls'
     ]
   }
 ];
@@ -4038,6 +4175,86 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     let caption: string;
     if (url === trek.image) {
       caption = `The Majestic Summit of ${trek.title}`;
+    } else if (url.includes('Uttari/IMG_0965') || (url.includes('IMG_0965') && trek.slug.includes('uttari'))) {
+      caption = `Golden Sunrise Over the Historic Fort of Uttari Betta`;
+    } else if (url.includes('Uttari/IMG_0825') || (url.includes('IMG_0825') && trek.slug.includes('uttari'))) {
+      caption = `Trekker Ascent Through Ancient Stone Fort Gates`;
+    } else if (url.includes('20260823_071033')) {
+      caption = `Panoramic Horizon and Cloud Inversion at Sunrise`;
+    } else if (url.includes('20260823_063809')) {
+      caption = `First Glimmer of Dawn from the Summit Plateau`;
+    } else if (url.includes('PXL_20260614_012424943')) {
+      caption = `Starlit Night Hike Ascending the Rocky Trails`;
+    } else if (url.includes('IMG_0961')) {
+      caption = `Sunbeams Piercing Morning Mist on the Slopes`;
+    } else if (url.includes('IMG_0866')) {
+      caption = `Navigating the Scenic Stone Steps of Hutridurga`;
+    } else if (url.includes('IMG_0877')) {
+      caption = `Summit Explorers Celebrating Dawn above the Clouds`;
+    } else if (url.includes('IMG_0903')) {
+      caption = `Expansive 360-Degree Tumkur Countryside Vistas`;
+    } else if (url.includes('20260614_081409')) {
+      caption = `Morning Sunlight Illuminating Ancient Fort Walls`;
+    } else if (url.includes('20260614_070405')) {
+      caption = `Rolling Green Foothills Under Early Morning Skies`;
+    } else if (url.includes('IMG_0850')) {
+      caption = `Group Fellowship Along the Boulder Ridgeline`;
+    } else if (url.includes('072048536')) {
+      caption = `Lush Monsoonal Greenery along the Mountain Trail`;
+    } else if (url.includes('IMG_2006')) {
+      caption = `Dramatic Rocky Escarpments of Uttari Betta`;
+    } else if (url.includes('IMG_0880')) {
+      caption = `Summit Moments of Wonder and Mountain Breeze`;
+    } else if (url.includes('071109498')) {
+      caption = `Golden Morning Glow Over the Valley Plains`;
+    } else if (url.includes('031333699')) {
+      caption = `Pre-Dawn Gathering Under the Starry Night Canopy`;
+    } else if (url.includes('IMG_0882')) {
+      caption = `The Roaring "Sea of Milk" at Dudhsagar Falls`;
+    } else if (url.includes('IMG_1125')) {
+      caption = `Railway Viaduct Crossing over Roaring Dudhsagar Falls`;
+    } else if (url.includes('IMG_1022')) {
+      caption = `Trekking Along the Historic Western Ghats Railway Line`;
+    } else if (url.includes('IMG_0803')) {
+      caption = `Misty Rainforest Trails Leading to the Cascades`;
+    } else if (url.includes('IMG_0909')) {
+      caption = `Spectacular Four-Tiered Waterfall Plunge in Full Force`;
+    } else if (url.includes('IMG_7321')) {
+      caption = `Fellow Explorers Immersed in the Natural Water Mist`;
+    } else if (url.includes('IMG_0874')) {
+      caption = `Crystal Clear Streams & Forest Canopies of Bhagwan Mahaveer Sanctuary`;
+    } else if (url.includes('Dudhsagar-Waterfalls')) {
+      caption = `Iconic Vista of Dudhsagar Waterfalls & Train Overpass`;
+    } else if (url.includes('thewanderlostguy')) {
+      caption = `Deep Green Jungle Trails of Dudhsagar Trek`;
+    } else if (url.includes('Gokarna')) {
+      if (url.includes('7.jpeg')) {
+        caption = 'Gokarna Coastal Waves & Golden Sandy Shores';
+      } else if (url.includes('6.jpeg')) {
+        caption = 'Trekking Along the Scenic Rocky Ocean Cliffs';
+      } else if (url.includes('13.jpeg')) {
+        caption = 'Peaceful Golden Hour at Kumta Beach Campsite';
+      } else if (url.includes('9.jpeg')) {
+        caption = 'Beachside Palms & Soothing Ocean Breezes';
+      } else if (url.includes('10.jpeg')) {
+        caption = 'Iconic Sunset Vista by the Sea at Om Beach';
+      } else if (url.includes('12.jpeg')) {
+        caption = 'Exploring the Historic Stone Bastions of Mirjan Fort';
+      } else if (url.includes('4.jpeg')) {
+        caption = 'Boardwalk Through Sharavathi Kandla Mangrove Forest';
+      } else if (url.includes('3.jpeg')) {
+        caption = 'Scenic Sharavathi Hanging Bridge Crossing';
+      } else if (url.includes('11.jpeg')) {
+        caption = 'Murudeshwara Beachside Shiva Temple & Monumental Statue';
+      } else if (url.includes('2.jpeg')) {
+        caption = 'Spectacular Cascades & Misty Vistas of Jog Falls';
+      } else if (url.includes('8.jpeg')) {
+        caption = 'Beach-Facing Tents Under the Evening Star Canopy';
+      } else if (url.includes('1.jpeg')) {
+        caption = 'Magical Sky Lantern Released Over the Arabian Sea';
+      } else {
+        caption = 'Lost in the Rhythm of Waves Along the Gokarna Coastline';
+      }
     } else if (url.includes('pooja.jpg.jpeg')) {
       caption = `Scenic Mountain Vistas of Kodaikanal Hills & Valleys`;
     } else if (url.includes('IMG_4727')) {
