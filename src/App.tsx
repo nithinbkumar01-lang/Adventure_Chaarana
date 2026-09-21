@@ -12,6 +12,7 @@ import {
   MapPin,
   Heart,
   ArrowRight,
+  ArrowLeft,
   Mountain,
   Sun,
   Compass,
@@ -19,6 +20,11 @@ import {
   X,
   ChevronDown,
   ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  Maximize2,
+  Camera,
+  Play,
   Instagram,
   Facebook,
   Mail,
@@ -75,7 +81,7 @@ id: '1',
     slug: 'shivagange-sunrise-trek',
     title: 'Shivagange Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Tumkur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -153,7 +159,7 @@ id: '2',
     slug: 'skandagiri-sunrise-trek',
     title: 'Skandagiri Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Chikkaballapur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -230,7 +236,7 @@ id: '3',
     slug: 'kaiwara-betta-sunrise-trek',
     title: 'Kaiwara Betta Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Kolar',
     duration: '1 day',
     difficulty: 'Easy',
@@ -293,7 +299,7 @@ id: '4',
     slug: 'channarayana-durga-fort-trek',
     title: 'Channarayana Durga Fort Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Tumkur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -355,7 +361,7 @@ id: '5',
     slug: 'uttari-betta-sunrise-trek',
     title: 'Uttari Betta Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Tumkur',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -423,7 +429,7 @@ id: '6',
     slug: 'kunti-betta-sunrise-trek',
     title: 'Kunti Betta Sunrise Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Weekend',
+    date: 'Every Saturday Night',
     location: 'Mandya',
     duration: '1 day',
     difficulty: 'Moderate',
@@ -502,17 +508,20 @@ id: '7',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440961/8_yga9f8.jpg',
+    image: 'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_6990.JPG',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440973/2_bckyhk.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440971/3_itucgf.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440970/4_iby5xb.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440967/5_ylvihq.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440965/6_u5qtbo.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440963/7_bs3g3k.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png'
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_7065.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/20260613_101857.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_0674.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_5350.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_5381.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/6.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/New%20img%204.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/New%20img%201.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/New%20img%203.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_6951.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_6468.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Nethravathi/New%20img%205.JPG'
     ],
     itinerary: [
       {
@@ -621,17 +630,26 @@ id: '8',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
-    image: 'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
+    image: 'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260712_101200.jpg',
     gallery: [
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013166/IMG_6081_wjyhhd.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013169/IMG_20260712_084211737_sxgci7.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013168/IMG_7920_s3ekwi.heic',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013165/20260712_090452_0_dajnhh.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013164/IMG_5565_srz9kn.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_055850778_opdayi.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013163/PXL_20260712_063440975.PORTRAIT_turbq6.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013162/PXL_20260711_040047979_t4rhb3.jpg',
-      'https://res.cloudinary.com/dmez9koqz/image/upload/v1786013173/IMG_7810_h5yfaw.heic'
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260712_101200.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260711_040047979.jpg?updatedAt=1789706171807',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260627_075857.jpg?tr=orig-true',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260712_031031643.MP.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_20260712_084211737.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_7920.heif',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260712_090452(0).jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_8937.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_8905.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_0399.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260711_084554.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_5565.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260821_083333.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260808_092509.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_6081.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_7810.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_4745.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260712_063440975.PORTRAIT.jpg?updatedAt=1789705967546'
     ],
     itinerary: [
       {
@@ -1284,13 +1302,19 @@ id: '14',
     originalPrice: 5999,
     currentPrice: 5499,
     discount: '',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg',
+    image: 'https://ik.imagekit.io/phj6ifoni/Kodaikanal/pooja.jpg.jpeg',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882260/36c3c181-ff93-449f-a2b9-88cc2363886c.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882199/40410f69-c7c3-44ee-9379-2d45205093c8.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882191/b9c456a5-419d-4e76-acef-d92892f1de02.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882179/c470f8bc-4a6f-4a45-b2f4-00e014a114f1.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1777882164/81ce5ec6-5f5a-4cdb-8e7a-b075fe6964bd.png'
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_4727.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_5156.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7839.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7931.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_8064.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7910.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7986.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7883.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7865.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7776.JPG',
+      'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_7960.JPG'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'weekend',
@@ -1713,30 +1737,51 @@ id: '17',
 
 const Breadcrumbs = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
 
   if (!trek) return null;
 
+  const handleGoBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
-    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center gap-2.5 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-      <ol className="flex items-center gap-2.5" itemScope itemType="https://schema.org/BreadcrumbList">
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <Link to="/" itemProp="item" className="hover:text-brand-orange transition-colors">
-            <span itemProp="name">Home</span>
-          </Link>
-          <meta itemProp="position" content="1" />
-        </li>
-        <ArrowRight size={10} className="text-slate-300" />
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <span itemProp="name" className="text-slate-300">Treks</span>
-          <meta itemProp="position" content="2" />
-        </li>
-        <ArrowRight size={10} className="text-slate-300" />
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <span itemProp="name" className="text-brand-orange">{trek.title}</span>
-          <meta itemProp="position" content="3" />
-        </li>
-      </ol>
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 md:px-12 py-4 md:py-6 flex items-center justify-between gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+      <div className="flex items-center gap-3">
+        <button
+          id="breadcrumb-back-button"
+          onClick={handleGoBack}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-brand-orange/40 text-slate-700 hover:text-brand-orange shadow-sm text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer group shrink-0"
+          aria-label="Go back to previous page"
+        >
+          <ArrowLeft size={13} className="text-slate-400 group-hover:text-brand-orange transition-colors" />
+          <span>Back</span>
+        </button>
+
+        <ol className="flex items-center gap-2.5 overflow-x-auto no-scrollbar" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link to="/" itemProp="item" className="hover:text-brand-orange transition-colors whitespace-nowrap">
+              <span itemProp="name">Home</span>
+            </Link>
+            <meta itemProp="position" content="1" />
+          </li>
+          <ArrowRight size={10} className="text-slate-300 shrink-0" />
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="name" className="text-slate-300 whitespace-nowrap">Treks</span>
+            <meta itemProp="position" content="2" />
+          </li>
+          <ArrowRight size={10} className="text-slate-300 shrink-0" />
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="name" className="text-brand-orange truncate max-w-[180px] sm:max-w-[280px] md:max-w-none">{trek.title}</span>
+            <meta itemProp="position" content="3" />
+          </li>
+        </ol>
+      </div>
     </nav>
   );
 };
@@ -1905,14 +1950,27 @@ const Header = ({ isBannerOpen = false }: { isBannerOpen?: boolean }) => {
 
         {/* Center Column - Logo */}
         <div className="flex items-center justify-center flex-1 md:flex-initial">
-          <Link to="/" className="flex items-center gap-3 group">
+          <button
+            onClick={() => {
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else if (window.history.length > 1) {
+                navigate(-1);
+              } else {
+                navigate('/');
+              }
+            }}
+            className="flex items-center gap-3 group cursor-pointer focus:outline-none"
+            aria-label="Adventure Chaarana Logo - Go back"
+            title="Click to go back"
+          >
             <img 
               src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
               alt="Adventure Chaarana Logo" 
               className="h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-          </Link>
+          </button>
         </div>
 
         {/* Right Column - Join Community CTA Button */}
@@ -2493,10 +2551,19 @@ interface Batch {
 
 const TrekDetailsPage = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const trek = TREKS.find(t => t.slug === slug);
   const isOneDayTrek = trek?.duration?.toLowerCase() === '1 day';
   const isTwoDayWesternGhat = trek?.duration?.toLowerCase()?.includes('2 day') && trek?.category === 'western-ghats';
   const isTwoDayTrek = trek?.duration?.toLowerCase()?.includes('2 day');
+
+  const handleGoBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
 
   const isWeekdayEligible = trek?.slug ? [
     'nethravathi-peak-trek',
@@ -2535,9 +2602,9 @@ const TrekDetailsPage = () => {
       safetyCounter++;
       const day = tempDate.getDay(); // 0: Sun, 5: Fri, 6: Sat
 
-      // One day: Fri & Sat departures
+      // One day: Only Sat departures
       // Two day: Only Fri departures
-      if (day === 5 || (isOneDay && day === 6)) {
+      if (isOneDay ? day === 6 : day === 5) {
         const startDate = new Date(tempDate);
         const endDate = new Date(tempDate);
         endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
@@ -2631,6 +2698,19 @@ const TrekDetailsPage = () => {
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
       <header className="relative pt-16 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">
 
+        {/* Small Back Button in Hero */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-8 z-20">
+          <button
+            id="trek-hero-back-btn"
+            onClick={handleGoBack}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 md:px-4 md:py-2 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/20 hover:border-white/40 text-white text-[10px] md:text-xs font-black uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all cursor-pointer group"
+            aria-label="Go back to explorations"
+          >
+            <ArrowLeft size={13} className="text-slate-300 group-hover:text-white transition-colors" />
+            <span>Back</span>
+          </button>
+        </div>
+
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -2644,14 +2724,21 @@ const TrekDetailsPage = () => {
         
         <div className="max-w-4xl mx-auto w-full relative z-10 space-y-8">
           <div className="flex justify-center items-center">
-            <motion.img 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
-              alt="Adventure Chaarana Logo" 
-              className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
+            <button
+              onClick={handleGoBack}
+              className="cursor-pointer group focus:outline-none transition-transform duration-300 hover:scale-105 inline-block"
+              aria-label="Adventure Chaarana Logo - Click to go back"
+              title="Click to go back"
+            >
+              <motion.img 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
+                alt="Adventure Chaarana Logo" 
+                className="h-20 md:h-28 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </button>
           </div>
 
           <div className="space-y-4">
@@ -2837,6 +2924,8 @@ const TrekDetailsPage = () => {
                   const departureDays = Array.from(new Set(batches.map(b => b.dayName)));
                   const departureText = departureDays.includes('Fri') && departureDays.includes('Sat')
                     ? 'Departures every Friday & Saturday Night'
+                    : departureDays.includes('Sat')
+                    ? 'Departures every Saturday Night'
                     : departureDays.includes('Fri')
                     ? 'Departures every Friday Night'
                     : 'Weekend Departures';
@@ -3049,12 +3138,19 @@ const TrekDetailsPage = () => {
         {/* ─── COMPACT TIMELINE ─── */}
         <section className="space-y-8">
           <div className="flex justify-center items-center py-2">
-            <img 
-              src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
-              alt="Adventure Chaarana Logo" 
-              className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
+            <button
+              onClick={handleGoBack}
+              className="cursor-pointer group focus:outline-none transition-transform duration-300 hover:scale-105 inline-block"
+              aria-label="Adventure Chaarana Logo - Click to go back"
+              title="Click to go back"
+            >
+              <img 
+                src="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" 
+                alt="Adventure Chaarana Logo" 
+                className="h-20 md:h-28 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </button>
           </div>
 
           <div className="relative rounded-2xl overflow-hidden p-6 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-2xl">
@@ -3070,11 +3166,22 @@ const TrekDetailsPage = () => {
                   Trek <span className="text-brand-orange-glow italic font-serif">Itinerary</span>
                 </h2>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-3">
-                <span className="text-xl">🗓️</span>
-                <div>
-                  <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
-                  <p className="font-bold text-white text-[10px]">Friday Night Departure</p>
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <button
+                  id="itinerary-header-back-btn"
+                  onClick={handleGoBack}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-wider transition-all cursor-pointer group shadow-sm hover:scale-105 active:scale-95"
+                  aria-label="Go back to previous page"
+                >
+                  <ArrowLeft size={13} className="text-slate-300 group-hover:text-white transition-colors" />
+                  <span>Back</span>
+                </button>
+                <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                  <span className="text-xl">🗓️</span>
+                  <div>
+                    <p className="text-[8px] font-black uppercase tracking-widest text-white/50">Batches</p>
+                    <p className="font-bold text-white text-[10px]">{isOneDayTrek ? 'Saturday Night Departure' : 'Friday Night Departure'}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3223,7 +3330,11 @@ const TrekDetailsPage = () => {
         {/* ─── FULL SCREEN COMPACT QUOTE ─── */}
         <section className="relative h-[30vh] md:h-[40vh] rounded-[2.5rem] overflow-hidden flex items-center justify-center text-center px-6">
           <div className="absolute inset-0">
-             <img src={trek.gallery?.[0] || trek.image} alt={`Mountain views from ${trek.title}`} className="w-full h-full object-cover" />
+             <img 
+               src={trek.gallery?.find(u => !u.toLowerCase().endsWith('.mov')) || trek.image} 
+               alt={`Mountain views from ${trek.title}`} 
+               className="w-full h-full object-cover" 
+             />
              <div className="absolute inset-0 bg-brand-dark/50 backdrop-blur-[1px]" />
           </div>
           <motion.div 
@@ -3246,7 +3357,11 @@ const TrekDetailsPage = () => {
         <section className="space-y-6 md:space-y-8">
           <div className="relative rounded-2xl overflow-hidden p-5 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-xl">
             <div className="absolute inset-0 z-0">
-               <img src={trek.gallery?.[1] || trek.image} alt={`Trekking perks at ${trek.title}`} className="w-full h-full object-cover opacity-20 grayscale" />
+               <img 
+                 src={trek.gallery?.find((u, idx) => !u.toLowerCase().endsWith('.mov') && idx > 0) || trek.image} 
+                 alt={`Trekking perks at ${trek.title}`} 
+                 className="w-full h-full object-cover opacity-20 grayscale" 
+               />
                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
             </div>
             <div className="space-y-1 relative z-10">
@@ -3914,10 +4029,67 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     }
   }
 
+  const isVideoUrl = (url: string) => url.toLowerCase().endsWith('.mov') || url.toLowerCase().endsWith('.mp4') || url.includes('.mov');
+  const getPosterUrl = (url: string) => isVideoUrl(url) ? `${url}/ik-thumbnail.jpg` : url;
+
   const items = uniqueImages.map((url) => {
+    const isVideo = isVideoUrl(url);
+    const posterUrl = getPosterUrl(url);
     let caption: string;
     if (url === trek.image) {
       caption = `The Majestic Summit of ${trek.title}`;
+    } else if (url.includes('pooja.jpg.jpeg')) {
+      caption = `Scenic Mountain Vistas of Kodaikanal Hills & Valleys`;
+    } else if (url.includes('IMG_4727')) {
+      caption = `Pine Forest Trails & Mountain Mist in Kodaikanal`;
+    } else if (url.includes('IMG_5156')) {
+      caption = `Panoramic Valley Views from Dolphin's Nose Ridge`;
+    } else if (url.includes('IMG_7839')) {
+      caption = `Charming Hill Station Landscapes of Kodaikanal`;
+    } else if (url.includes('IMG_7931')) {
+      caption = `Explorers Wandering Among the Majestic Pine Trees`;
+    } else if (url.includes('IMG_8064')) {
+      caption = `Tranquil Lakes & Misty Hills of Kodaikanal`;
+    } else if (url.includes('IMG_7910')) {
+      caption = `Serene Forest Pathways & Mountain Breezes`;
+    } else if (url.includes('IMG_7986')) {
+      caption = `Pillar Rocks & Dramatic Valley Drop-offs`;
+    } else if (url.includes('IMG_7883')) {
+      caption = `Coaker's Walk Panoramic Edge Views`;
+    } else if (url.includes('IMG_7865')) {
+      caption = `Vibrant Mountain Escapes across Kodaikanal`;
+    } else if (url.includes('IMG_7776')) {
+      caption = `Vattakanal Falls & Cascading Mountain Streams`;
+    } else if (url.includes('IMG_7960')) {
+      caption = `Memorable Travel Moments in Kodaikanal`;
+    } else if (url.includes('IMG_6990')) {
+      caption = `The Majestic Summit View of Nethravathi Peak`;
+    } else if (url.includes('11.mov')) {
+      caption = `Ridge Winds & Mountain Trail Motion at ${trek.title}`;
+    } else if (url.includes('IMG_7065')) {
+      caption = `Panoramic Grasslands & Shola Clouds from Nethravathi Ridge`;
+    } else if (url.includes('IMG_0674')) {
+      caption = `Trekker Fellowship on the High Western Ghats Escarpment`;
+    } else if (url.includes('IMG_5350')) {
+      caption = `Ascending through the Emerald Kudremukh Hills`;
+    } else if (url.includes('IMG_5381')) {
+      caption = `Pushing the Limits along the Serpentine Peak Trail`;
+    } else if (url.includes('/6.JPG') || url.endsWith('/6.JPG')) {
+      caption = `Expedition Squad Against the Endless Green Horizon`;
+    } else if (url.includes('New%20img%204') || url.includes('New img 4')) {
+      caption = `Sweeping Vistas of Kudremukh Forest Valleys`;
+    } else if (url.includes('New%20img%201') || url.includes('New img 1')) {
+      caption = `Golden Hour Glow across the High Elevation Slopes`;
+    } else if (url.includes('New%20img%203') || url.includes('New img 3')) {
+      caption = `Navigating Pristine Mountain Streams and Forest Trails`;
+    } else if (url.includes('IMG_6951')) {
+      caption = `Dramatic Cloud Formations Over Nethravathi Peak`;
+    } else if (url.includes('IMG_6468')) {
+      caption = `Untouched Shola Forest and Fresh Waterways`;
+    } else if (url.includes('New%20img%205') || url.includes('New img 5')) {
+      caption = `Triumphant Explorer Summit Celebrations at Nethravathi`;
+    } else if (url.includes('20260613_101857')) {
+      caption = `Breathtaking Morning Vista from Nethravathi Peak`;
     } else if (url.includes('1.33.54_PM')) {
       caption = `Our Wonderful Fellow Explorers Squad!`;
     } else if (url.includes('IMG_5569') || url.includes('IMG_6197')) {
@@ -3926,16 +4098,66 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
       caption = `Shared Smiles & Lifelong Bonds`;
     } else if (url.includes('6.38.09_PM') || url.includes('IMG_5628')) {
       caption = `Pushing Limits on Scenic Steps`;
+    } else if (url.includes('040047979')) {
+      caption = `Misty Morning Trails through Shola Forests`;
+    } else if (url.includes('075857')) {
+      caption = `Rolling Green Grasslands of Kudremukha`;
+    } else if (url.includes('031031643')) {
+      caption = `Scaling the Horse-Face Mountain Ridges`;
+    } else if (url.includes('084211737')) {
+      caption = `Pristine Western Ghats Horizon`;
+    } else if (url.includes('7920')) {
+      caption = `Panoramic Views across Kudremukh National Park`;
+    } else if (url.includes('090452')) {
+      caption = `Trailblazing the Lush Green Shola Ridges`;
+    } else if (url.includes('8937')) {
+      caption = `Misty Slopes and Cloud Cover at Kudremukha`;
+    } else if (url.includes('8905')) {
+      caption = `Unwinding amidst the Emerald Hills`;
+    } else if (url.includes('0399')) {
+      caption = `Trekker Fellowship on the Kudremukh Trail`;
+    } else if (url.includes('084554')) {
+      caption = `Cascading Mountain Breezes & Shola Valleys`;
+    } else if (url.includes('5565')) {
+      caption = `Crossing Bababudan & Kudremukh Streams`;
+    } else if (url.includes('083333')) {
+      caption = `Spectacular Ridge Walk under Floating Clouds`;
+    } else if (url.includes('092509')) {
+      caption = `Untouched Wilderness of the Western Ghats`;
+    } else if (url.includes('6081')) {
+      caption = `Reaching the Iconic Horse-Face Peak Point`;
+    } else if (url.includes('7810')) {
+      caption = `Moments of Solitude at the Summit Ridge`;
+    } else if (url.includes('4745')) {
+      caption = `Vibrant Green Carpet of Kudremukha Hills`;
+    } else if (url.includes('063440975')) {
+      caption = `Victorious Trekkers at Kudremukha`;
     } else {
       caption = `Vibrant Summit Vistas at ${trek.title}`;
     }
-    return { url, caption };
+    return { url, caption, isVideo, posterUrl };
   });
 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex(prev => (prev === null || prev === 0 ? items.length - 1 : prev - 1));
+      } else if (e.key === 'ArrowRight') {
+        setLightboxIndex(prev => (prev === null || prev === items.length - 1 ? 0 : prev + 1));
+      } else if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, items.length]);
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
@@ -3944,8 +4166,8 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     }
   };
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
@@ -3954,49 +4176,174 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     }
   };
 
+  // Helper for Bento Big and Small configuration
+  const getTileConfig = (i: number, total: number) => {
+    if (items[i]?.isVideo) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-2',
+        isBig: true,
+        badge: 'Trail Reel 🎥',
+        typeLabel: 'Video Reel'
+      };
+    }
+    const remaining = total - i;
+    if (remaining === 1) {
+      return {
+        spanClass: 'col-span-2 md:col-span-4 row-span-1 md:row-span-2',
+        isBig: true,
+        badge: 'Expedition Panorama',
+        typeLabel: 'Panoramic Vista'
+      };
+    }
+    if (remaining === 2) {
+      return {
+        spanClass: 'col-span-1 md:col-span-2 row-span-1',
+        isBig: false,
+        badge: 'Scenic Horizon',
+        typeLabel: 'Wide Vista'
+      };
+    }
+    const cycle = i % 8;
+    if (cycle === 0) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-2',
+        isBig: true,
+        badge: i === 0 ? 'Summit Feature' : 'Expedition Highlight',
+        typeLabel: 'Featured Big'
+      };
+    }
+    if (cycle === 7) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-2',
+        isBig: true,
+        badge: 'Iconic Peak Wonder',
+        typeLabel: 'Featured Big'
+      };
+    }
+    if (cycle === 3 || cycle === 6) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-1',
+        isBig: false,
+        badge: 'Scenic Trailway',
+        typeLabel: 'Landscape Wide'
+      };
+    }
+    return {
+      spanClass: 'col-span-1 md:col-span-1 row-span-1',
+      isBig: false,
+      badge: null,
+      typeLabel: 'Trail Snap'
+    };
+  };
+
   return (
-    <section id="trek-gallery-section" className="py-10 md:py-20 bg-white overflow-hidden border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 space-y-8 md:space-y-16">
-        <div className="text-center space-y-2 md:space-y-4">
-          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Authentic Expeditions</div>
-          <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
-            Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
-          </h2>
-          <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide max-w-xl mx-auto">
-            Real snaps from our actual {trek.title} groups. Breathtaking views, challenging steps, and incredible trail camaraderie.
-          </p>
+    <section id="trek-gallery-section" className="py-12 md:py-24 bg-white overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 md:space-y-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-[10px] font-black uppercase tracking-[0.3em]">
+              <Camera size={13} className="text-brand-orange" />
+              <span>Authentic Trail Snaps</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+              Expedition <span className="text-brand-orange italic font-serif">Moments Gallery</span>
+            </h2>
+            <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide max-w-xl">
+              Real, unedited shots captured by our leaders and fellow trekkers across {trek.title}. Experience the raw peaks, misty ridge trails, and triumphant summits.
+            </p>
+          </div>
+
+          {/* Quick Counter Badge */}
+          <div className="flex items-center gap-3">
+            <div className="px-4 py-2 bg-slate-50 border border-slate-200/80 rounded-2xl flex items-center gap-2.5 shadow-sm">
+              <Sparkles size={16} className="text-brand-orange" />
+              <div className="text-left">
+                <p className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Curated Collection</p>
+                <p className="text-sm font-black text-brand-dark">{items.length} High-Res Moments</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Gallery Symmetrical Square Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-6">
-          {items.map((img, i) => (
-            <motion.div
-              key={img.url + i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 8) * 0.05 }}
-              onClick={() => setLightboxIndex(i)}
-              className="relative overflow-hidden rounded-xl md:rounded-[2rem] border border-slate-100 group aspect-square cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-orange/10 transition-all duration-500"
-            >
-              <img 
-                src={img.url} 
-                alt={img.caption}
-                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-              />
-              {/* Overlay on Hover */}
-              <div className="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
-                 <div className="self-end w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                   <Mountain size={18} />
-                 </div>
-                 <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
-                 </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Gallery Bento Grid with Big & Small Sections */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[160px] sm:auto-rows-[190px] md:auto-rows-[220px] lg:auto-rows-[240px] grid-flow-dense">
+          {items.map((img, i) => {
+            const tile = getTileConfig(i, items.length);
+            return (
+              <motion.div
+                key={img.url + i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 8) * 0.04 }}
+                onClick={() => setLightboxIndex(i)}
+                className={`relative overflow-hidden rounded-2xl md:rounded-[2rem] border group cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 ${tile.spanClass} ${
+                  tile.isBig 
+                    ? 'border-brand-orange/30 shadow-brand-orange/5 hover:border-brand-orange ring-1 ring-brand-orange/20' 
+                    : 'border-slate-200/80 hover:border-brand-orange/40 bg-slate-50'
+                }`}
+              >
+                <img 
+                  src={img.posterUrl} 
+                  alt={img.caption}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Video Play Button Indicator */}
+                {img.isVideo && (
+                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-orange/95 text-white flex items-center justify-center shadow-2xl backdrop-blur-sm border-2 border-white group-hover:scale-110 group-hover:bg-brand-orange transition-all duration-300">
+                      <Play size={20} className="fill-white translate-x-0.5" />
+                    </div>
+                  </div>
+                )}
+
+                {/* Subtle dark gradient for legibility */}
+                <div className={`absolute inset-0 transition-opacity duration-300 ${
+                  tile.isBig 
+                    ? 'bg-gradient-to-t from-black/80 via-black/20 to-transparent' 
+                    : 'bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100'
+                }`} />
+
+                {/* Top Badge for Big Sections */}
+                {tile.badge && (
+                  <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] font-black uppercase tracking-wider shadow-lg">
+                      <Sparkles size={11} className="text-brand-orange" />
+                      {tile.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Top Right Expand Icon Button */}
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10 w-8 h-8 md:w-9 md:h-9 bg-black/40 hover:bg-brand-orange text-white rounded-full backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20 shadow-lg scale-90 group-hover:scale-100">
+                  <Maximize2 size={14} />
+                </div>
+
+                {/* Bottom Caption Overlay */}
+                <div className={`absolute inset-x-0 bottom-0 p-3 md:p-5 flex flex-col justify-end z-10 transition-all duration-300 ${
+                  tile.isBig 
+                    ? 'opacity-100' 
+                    : 'opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0'
+                }`}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span className="text-brand-orange font-black uppercase tracking-[0.25em] text-[8px] md:text-[9px]">
+                      {img.isVideo ? 'Video Reel' : tile.isBig ? 'Featured View' : 'Trail Snap'}
+                    </span>
+                  </div>
+                  <p className={`text-white font-bold leading-tight drop-shadow-md line-clamp-2 ${
+                    tile.isBig ? 'text-sm md:text-base font-black' : 'text-xs'
+                  }`}>
+                    {img.caption}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
@@ -4008,63 +4355,108 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightboxIndex(null)}
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-xl p-4 md:p-8"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-brand-dark/95 backdrop-blur-2xl p-3 md:p-6"
           >
-            {/* Close Button */}
-            <button 
-              onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 z-[110] bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer"
-              aria-label="Close Lightbox"
-            >
-              <X size={20} />
-            </button>
+            {/* Top Bar with Info & Close Button */}
+            <div className="w-full max-w-6xl flex items-center justify-between z-[110] select-none py-2 px-2" onClick={e => e.stopPropagation()}>
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-full bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5">
+                  <Camera size={12} /> {trek.title} Expedition
+                </span>
+                <span className="text-white/60 font-bold text-xs">
+                  {lightboxIndex + 1} of {items.length}
+                </span>
+              </div>
 
-            {/* Container for Image & Controls */}
-            <div className="relative max-w-5xl w-full h-[65vh] md:h-[75vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
-              {/* Back Button */}
+              <button 
+                onClick={() => setLightboxIndex(null)}
+                className="bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer border border-white/10"
+                aria-label="Close Lightbox"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Main Image Container & Navigation Controls */}
+            <div className="relative max-w-5xl w-full flex-1 flex items-center justify-center my-2" onClick={e => e.stopPropagation()}>
+              {/* Previous Button */}
               <button 
                 onClick={handlePrev}
-                className="absolute left-2 md:left-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
-                aria-label="Previous Image"
+                className="absolute left-2 md:left-4 z-20 bg-black/50 hover:bg-brand-orange text-white rounded-full p-3 md:p-4 transition-all backdrop-blur-md hover:scale-110 active:scale-95 cursor-pointer border border-white/10 shadow-2xl"
+                aria-label="Previous Media"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={22} />
               </button>
 
-              {/* Main Image */}
-              <motion.img 
-                key={lightboxIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
-                src={items[lightboxIndex]?.url} 
-                alt={items[lightboxIndex]?.caption}
-                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
-                referrerPolicy="no-referrer"
-              />
+              {/* Active Image or Video */}
+              {items[lightboxIndex]?.isVideo ? (
+                <video
+                  key={lightboxIndex}
+                  src={items[lightboxIndex]?.url}
+                  poster={items[lightboxIndex]?.posterUrl}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10"
+                />
+              ) : (
+                <motion.img 
+                  key={lightboxIndex}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.2 }}
+                  src={items[lightboxIndex]?.url} 
+                  alt={items[lightboxIndex]?.caption}
+                  className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10 select-none"
+                  referrerPolicy="no-referrer"
+                />
+              )}
 
               {/* Next Button */}
               <button 
                 onClick={handleNext}
-                className="absolute right-2 md:right-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
-                aria-label="Next Image"
+                className="absolute right-2 md:right-4 z-20 bg-black/50 hover:bg-brand-orange text-white rounded-full p-3 md:p-4 transition-all backdrop-blur-md hover:scale-110 active:scale-95 cursor-pointer border border-white/10 shadow-2xl"
+                aria-label="Next Media"
               >
-                <ArrowRight size={24} />
+                <ChevronRight size={22} />
               </button>
             </div>
 
-            {/* Caption & Index Display */}
-            <div className="text-center mt-6 space-y-2 z-10 select-none">
-              <p className="text-white text-base md:text-lg font-black tracking-wide">
-                {items[lightboxIndex]?.caption}
-              </p>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
-                  {trek.title}
-                </span>
-                <span className="text-white/40 font-bold text-xs">
-                  {lightboxIndex + 1} / {items.length}
-                </span>
+            {/* Caption & Thumbnail Strip at Bottom */}
+            <div className="w-full max-w-5xl space-y-3 z-10 select-none" onClick={e => e.stopPropagation()}>
+              {/* Caption */}
+              <div className="text-center px-4">
+                <p className="text-white text-sm md:text-base font-bold tracking-wide">
+                  {items[lightboxIndex]?.caption}
+                </p>
+              </div>
+
+              {/* Thumbnail Strip */}
+              <div className="flex items-center justify-center gap-2 overflow-x-auto py-2 px-4 no-scrollbar max-w-full">
+                {items.map((item, idx) => (
+                  <button
+                    key={item.url + idx}
+                    onClick={() => setLightboxIndex(idx)}
+                    className={`relative shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer ${
+                      idx === lightboxIndex 
+                        ? 'ring-2 ring-brand-orange scale-110 shadow-lg border-2 border-white' 
+                        : 'opacity-40 hover:opacity-90 hover:scale-105 border border-white/10'
+                    }`}
+                  >
+                    <img 
+                      src={item.posterUrl} 
+                      alt={`Thumbnail ${idx + 1}`} 
+                      className="w-full h-full object-cover" 
+                      referrerPolicy="no-referrer"
+                    />
+                    {item.isVideo && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                        <Play size={14} className="fill-white text-white translate-x-0.5" />
+                      </div>
+                    )}
+                  </button>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -4160,17 +4552,32 @@ const COMMUNITY_IMAGES = [
   { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440963/7_bs3g3k.jpg", caption: "The beautiful Bandaje Waterfalls trek" },
   { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg", caption: "Sunset across the endless emerald hills" },
   { url: "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg", caption: "Our joyful group booking memorable journeys" },
-  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087865/4ddc58ad-9e2c-4c78-949f-9931b0659405.png", caption: "The steep, wind-swept ridges of Nethravathi Peak" },
-  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png", caption: "Overlooking standard western-ghats clouds" },
-  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png", caption: "Trekking through lush green slopes of Western Ghats" },
-  { url: "https://res.cloudinary.com/dofg6bsom/image/upload/v1778087805/d176da77-e447-4b01-824c-a7af18f91cdb.png", caption: "The misty grasslands trails of Kudremukh Forest" }
+  { url: "https://ik.imagekit.io/phj6ifoni/Nethravathi/20260613_101857.jpg", caption: "The steep, wind-swept ridges of Nethravathi Peak" },
+  { url: "https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_7065.JPG", caption: "Overlooking rolling green hills of Kudremukh Forest" },
+  { url: "https://ik.imagekit.io/phj6ifoni/Nethravathi/IMG_5350.jpg", caption: "Trekking through lush green slopes of Western Ghats" },
+  { url: "https://ik.imagekit.io/phj6ifoni/Nethravathi/New%20img%204.JPG", caption: "The pristine grasslands and cloud vistas of Nethravathi" }
 ];
 
 const CommunityGallery = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex(prev => (prev === null || prev === 0 ? COMMUNITY_IMAGES.length - 1 : prev - 1));
+      } else if (e.key === 'ArrowRight') {
+        setLightboxIndex(prev => (prev === null || prev === COMMUNITY_IMAGES.length - 1 ? 0 : prev + 1));
+      } else if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex]);
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
@@ -4179,8 +4586,8 @@ const CommunityGallery = () => {
     }
   };
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (lightboxIndex !== null) {
       setLightboxIndex(prev => {
         if (prev === null) return null;
@@ -4189,49 +4596,137 @@ const CommunityGallery = () => {
     }
   };
 
+  // Helper for Bento Big and Small configuration
+  const getCommunityTileConfig = (i: number, total: number) => {
+    const remaining = total - i;
+    if (remaining === 1) {
+      return {
+        spanClass: 'col-span-2 md:col-span-4 row-span-1 md:row-span-2',
+        isBig: true,
+        badge: 'Panoramic Vista'
+      };
+    }
+    if (remaining === 2) {
+      return {
+        spanClass: 'col-span-1 md:col-span-2 row-span-1',
+        isBig: false,
+        badge: 'Scenic Valley'
+      };
+    }
+    const cycle = i % 8;
+    if (cycle === 0) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-2',
+        isBig: true,
+        badge: i === 0 ? 'Golden Dawn' : 'Expedition Showcase'
+      };
+    }
+    if (cycle === 7) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-2',
+        isBig: true,
+        badge: 'Sunset Serenity'
+      };
+    }
+    if (cycle === 3 || cycle === 6) {
+      return {
+        spanClass: 'col-span-2 md:col-span-2 row-span-1',
+        isBig: false,
+        badge: 'Mountain Ridge'
+      };
+    }
+    return {
+      spanClass: 'col-span-1 md:col-span-1 row-span-1',
+      isBig: false,
+      badge: null
+    };
+  };
+
   return (
-    <section id="gallery-section" className="py-20 bg-brand-paper overflow-hidden border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
-        <div className="text-center space-y-4">
-          <div className="text-brand-orange text-[10px] font-black uppercase tracking-[0.4em]">📸 Captured Travels</div>
-          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+    <section id="gallery-section" className="py-16 md:py-24 bg-brand-paper overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10 md:space-y-14">
+        <div className="text-center space-y-3 md:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-[10px] font-black uppercase tracking-[0.35em]">
+            <Camera size={13} className="text-brand-orange" />
+            <span>Captured Travels</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
             Explorer <span className="text-brand-orange italic font-serif">Showcase Gallery</span>
           </h2>
-          <p className="text-slate-500 font-bold text-sm tracking-wide max-w-xl mx-auto">
-            A hand-picked mosaic of unforgettable shared moments across raw expeditions, sunrise summits, and stunning landscapes.
+          <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide max-w-xl mx-auto">
+            A dynamic mosaic of raw expeditions, golden sunrises, sweeping grasslands, and triumphant moments shared by our adventurers.
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {COMMUNITY_IMAGES.map((img, i) => (
-            <motion.div
-              key={img.url + i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 4) * 0.05 }}
-              onClick={() => setLightboxIndex(i)}
-              className="relative overflow-hidden rounded-[2rem] border border-slate-100/10 group aspect-[4/3] cursor-pointer shadow-md hover:shadow-xl transition-all duration-500"
-            >
-              <img 
-                src={img.url} 
-                alt={img.caption}
-                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-              />
-              {/* Overlay on Hover */}
-              <div className="absolute inset-0 bg-brand-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
-                 <div className="self-end w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                   <Compass size={18} />
-                 </div>
-                 <div className="text-left space-y-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                   <p className="text-white text-xs font-black tracking-wide leading-tight">{img.caption}</p>
-                 </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Dynamic Bento Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[160px] sm:auto-rows-[190px] md:auto-rows-[220px] lg:auto-rows-[240px] grid-flow-dense">
+          {COMMUNITY_IMAGES.map((img, i) => {
+            const tile = getCommunityTileConfig(i, COMMUNITY_IMAGES.length);
+            return (
+              <motion.div
+                key={img.url + i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 6) * 0.05 }}
+                onClick={() => setLightboxIndex(i)}
+                className={`relative overflow-hidden rounded-2xl md:rounded-[2rem] border group cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 ${tile.spanClass} ${
+                  tile.isBig 
+                    ? 'border-brand-orange/30 shadow-brand-orange/5 hover:border-brand-orange ring-1 ring-brand-orange/20' 
+                    : 'border-slate-200/80 hover:border-brand-orange/40 bg-white'
+                }`}
+              >
+                <img 
+                  src={img.url} 
+                  alt={img.caption}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Gradient Scrim */}
+                <div className={`absolute inset-0 transition-opacity duration-300 ${
+                  tile.isBig 
+                    ? 'bg-gradient-to-t from-black/80 via-black/20 to-transparent' 
+                    : 'bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100'
+                }`} />
+
+                {/* Top Badge for Big Sections */}
+                {tile.badge && (
+                  <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] font-black uppercase tracking-wider shadow-lg">
+                      <Sparkles size={11} className="text-brand-orange" />
+                      {tile.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Expand Icon */}
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10 w-8 h-8 md:w-9 md:h-9 bg-black/40 hover:bg-brand-orange text-white rounded-full backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20 shadow-lg scale-90 group-hover:scale-100">
+                  <Maximize2 size={14} />
+                </div>
+
+                {/* Bottom Caption Overlay */}
+                <div className={`absolute inset-x-0 bottom-0 p-3 md:p-5 flex flex-col justify-end z-10 transition-all duration-300 ${
+                  tile.isBig 
+                    ? 'opacity-100' 
+                    : 'opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0'
+                }`}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
+                    <span className="text-brand-orange font-black uppercase tracking-[0.25em] text-[8px] md:text-[9px]">
+                      {tile.isBig ? 'Featured Shot' : 'Community Moment'}
+                    </span>
+                  </div>
+                  <p className={`text-white font-bold leading-tight drop-shadow-md line-clamp-2 ${
+                    tile.isBig ? 'text-sm md:text-base font-black' : 'text-xs'
+                  }`}>
+                    {img.caption}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
@@ -4243,60 +4738,87 @@ const CommunityGallery = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightboxIndex(null)}
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-xl p-4 md:p-8"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-brand-dark/95 backdrop-blur-2xl p-3 md:p-6"
           >
-            {/* Close Button */}
-            <button 
-              onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 z-[110] bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer"
-              aria-label="Close Lightbox"
-            >
-              <X size={20} />
-            </button>
+            {/* Top Bar */}
+            <div className="w-full max-w-6xl flex items-center justify-between z-[110] select-none py-2 px-2" onClick={e => e.stopPropagation()}>
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-full bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5">
+                  <Compass size={12} /> Adventure Community
+                </span>
+                <span className="text-white/60 font-bold text-xs">
+                  {lightboxIndex + 1} of {COMMUNITY_IMAGES.length}
+                </span>
+              </div>
+
+              <button 
+                onClick={() => setLightboxIndex(null)}
+                className="bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer border border-white/10"
+                aria-label="Close Lightbox"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
             {/* Image Container */}
-            <div className="relative max-w-5xl w-full h-[65vh] md:h-[75vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
+            <div className="relative max-w-5xl w-full flex-1 flex items-center justify-center my-2" onClick={e => e.stopPropagation()}>
               <button 
                 onClick={handlePrev}
-                className="absolute left-2 md:left-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                className="absolute left-2 md:left-4 z-20 bg-black/50 hover:bg-brand-orange text-white rounded-full p-3 md:p-4 transition-all backdrop-blur-md hover:scale-110 active:scale-95 cursor-pointer border border-white/10 shadow-2xl"
                 aria-label="Previous Image"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={22} />
               </button>
 
               <motion.img 
                 key={lightboxIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
                 src={COMMUNITY_IMAGES[lightboxIndex]?.url} 
                 alt={COMMUNITY_IMAGES[lightboxIndex]?.caption}
-                className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5"
+                className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10 select-none"
                 referrerPolicy="no-referrer"
               />
 
               <button 
                 onClick={handleNext}
-                className="absolute right-2 md:right-6 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all backdrop-blur-md hover:scale-105 active:scale-95 cursor-pointer"
+                className="absolute right-2 md:right-4 z-20 bg-black/50 hover:bg-brand-orange text-white rounded-full p-3 md:p-4 transition-all backdrop-blur-md hover:scale-110 active:scale-95 cursor-pointer border border-white/10 shadow-2xl"
                 aria-label="Next Image"
               >
-                <ArrowRight size={24} />
+                <ChevronRight size={22} />
               </button>
             </div>
 
-            {/* Caption Indicator */}
-            <div className="text-center mt-6 space-y-2 z-10 select-none">
-              <p className="text-white text-base md:text-lg font-black tracking-wide">
-                {COMMUNITY_IMAGES[lightboxIndex]?.caption}
-              </p>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-[9px] font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full">
-                  Adventure Community
-                </span>
-                <span className="text-white/40 font-bold text-xs">
-                  {lightboxIndex + 1} / {COMMUNITY_IMAGES.length}
-                </span>
+            {/* Caption Indicator & Thumbnails */}
+            <div className="w-full max-w-5xl space-y-3 z-10 select-none" onClick={e => e.stopPropagation()}>
+              <div className="text-center px-4">
+                <p className="text-white text-sm md:text-base font-bold tracking-wide">
+                  {COMMUNITY_IMAGES[lightboxIndex]?.caption}
+                </p>
+              </div>
+
+              {/* Thumbnail Strip */}
+              <div className="flex items-center justify-center gap-2 overflow-x-auto py-2 px-4 no-scrollbar max-w-full">
+                {COMMUNITY_IMAGES.map((item, idx) => (
+                  <button
+                    key={item.url + idx}
+                    onClick={() => setLightboxIndex(idx)}
+                    className={`relative shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer ${
+                      idx === lightboxIndex 
+                        ? 'ring-2 ring-brand-orange scale-110 shadow-lg border-2 border-white' 
+                        : 'opacity-40 hover:opacity-90 hover:scale-105 border border-white/10'
+                    }`}
+                  >
+                    <img 
+                      src={item.url} 
+                      alt={`Thumbnail ${idx + 1}`} 
+                      className="w-full h-full object-cover" 
+                      referrerPolicy="no-referrer"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
           </motion.div>
