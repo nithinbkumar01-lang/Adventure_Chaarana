@@ -30,7 +30,15 @@ import {
   Mail,
   Phone,
   Menu,
-  MessageCircle
+  MessageCircle,
+  Calendar,
+  Download,
+  FileText,
+  FileDown,
+  Check,
+  Loader2,
+  Search,
+  Users
 } from 'lucide-react';
 
 interface ItineraryItem {
@@ -67,6 +75,7 @@ interface Trek {
   modeRating?: string;
   permitNotice?: string;
   withoutTransportPrice?: number;
+  itineraryPdf?: string;
   itinerary: ItineraryDay[];
   inclusions: string[];
   exclusions: string[];
@@ -962,7 +971,7 @@ id: '11',
     slug: 'dudhsagar-falls-trek',
     title: 'Dudhsagar Falls Trek',
     host: 'Adventure Chaarana',
-    date: 'Every Friday - 6:00 PM',
+    date: 'Every Friday Night (6:00 PM Departure)',
     location: 'Dudhsagar Falls, Goa & Karnataka',
     duration: '2 Days / 1 Night',
     difficulty: 'Moderate',
@@ -1081,19 +1090,33 @@ id: '12',
     timeHours: '7Hrs',
     modeRating: 'Easy - Moderate',
     permitNotice: 'Forest permits are limited. Book at least 15–20 days in advance.',
-    currentPrice: 4499,
+    currentPrice: 4199,
     originalPrice: 4999,
     withoutTransportPrice: 3499,
     discount: '',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to the spectacular Kurinjal Peak in the Kudremukh forest range. Walk through high altitude shola grasslands, wind-swept ridges, and find yourself surrounded by the majestic peaks of the Kudremukh National Park.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330392/38acb9eb-6924-425a-a369-98a05b1ae6b9.png',
+    image: 'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260627_075857.jpg?tr=orig-true',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330407/a231c7c1-0f72-45bf-8ec1-f7181e6efd3c.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330415/1a02c7a2-b532-41c1-bb8e-bd1acb220818.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330426/9f3abcef-37ae-453a-9a80-69edd894dbb1.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/v1780330441/8707191c-f602-4653-a267-5cfe93cbd003.png'
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260627_075857.jpg?tr=orig-true',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260711_040047979.jpg?updatedAt=1789706171807',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260712_101200.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260712_031031643.MP.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_20260712_084211737.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_7920.heif',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260712_090452(0).jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_8937.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_8905.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_0399.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260711_084554.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_5565.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260821_083333.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/20260808_092509.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_6081.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_7810.HEIC',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/IMG_4745.jpg',
+      'https://ik.imagekit.io/phj6ifoni/Kudremukha/PXL_20260712_063440975.PORTRAIT.jpg?updatedAt=1789705967546'
     ],
     itinerary: [
       {
@@ -1761,6 +1784,7 @@ id: '17',
     currentPrice: 3999,
     withoutTransportPrice: 2999,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Gokarna,%20Honnavara,%20Murudeshwara%20and%20Jog%20Falls.pdf',
     image: 'https://ik.imagekit.io/phj6ifoni/Gokarna/_%20Lost%20in%20the%20rhythm%20of%20waves,%20where%20every%20sunset%20feels%20like%20a%20story%20and%20every%20breeze%20whispers.jpg',
     gallery: [
       'https://ik.imagekit.io/phj6ifoni/Gokarna/7.jpeg',
@@ -2709,41 +2733,99 @@ const TrekDetailsPage = () => {
     'gangadikallu-trek-dzukou-valley-of-the-south'
   ].includes(trek.slug) : false;
 
-  const weekdaySlots: Batch[] = [
-    { start: 'Aug 18', end: 'Aug 20', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
-    { start: 'Aug 20', end: 'Aug 22', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' },
-    { start: 'Aug 25', end: 'Aug 27', year: 2026, dayName: 'Tue', monthGroup: 'August 2026' },
-    { start: 'Aug 27', end: 'Aug 29', year: 2026, dayName: 'Thu', monthGroup: 'August 2026' },
-    { start: 'Sep 1', end: 'Sep 3', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
-    { start: 'Sep 3', end: 'Sep 5', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
-    { start: 'Sep 8', end: 'Sep 10', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
-    { start: 'Sep 10', end: 'Sep 12', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
-    { start: 'Sep 15', end: 'Sep 17', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
-    { start: 'Sep 17', end: 'Sep 19', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
-    { start: 'Sep 22', end: 'Sep 24', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' },
-    { start: 'Sep 24', end: 'Sep 26', year: 2026, dayName: 'Thu', monthGroup: 'September 2026' },
-    { start: 'Sep 29', end: 'Oct 1', year: 2026, dayName: 'Tue', monthGroup: 'September 2026' }
-  ];
+  const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
+  const [downloadSuccess, setDownloadSuccess] = useState(false);
+
+  const handleDownloadItineraryPdf = async (url: string, title: string) => {
+    if (!url) return;
+    setIsDownloadingPdf(true);
+    setDownloadSuccess(false);
+
+    const cleanTitle = title.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_');
+    const filename = `${cleanTitle}_Detailed_Itinerary.pdf`;
+    const downloadUrl = url.includes('?') ? `${url}&ik-attachment=true` : `${url}?ik-attachment=true`;
+
+    try {
+      const response = await fetch(downloadUrl);
+      if (!response.ok) throw new Error('Network error');
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(blobUrl);
+      setDownloadSuccess(true);
+      setTimeout(() => setDownloadSuccess(false), 3000);
+    } catch (err) {
+      console.warn('Direct blob download failed, falling back to direct attachment download:', err);
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.setAttribute('download', filename);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setDownloadSuccess(true);
+      setTimeout(() => setDownloadSuccess(false), 3000);
+    } finally {
+      setIsDownloadingPdf(false);
+    }
+  };
+
+  const getUpcomingWeekdaySlots = (): Batch[] => {
+    const slots: Batch[] = [];
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const cur = new Date(today);
+    let count = 0;
+    let safety = 0;
+    while (count < 8 && safety < 120) {
+      safety++;
+      if ((cur.getDay() === 2 || cur.getDay() === 4) && cur >= today) {
+        const startDate = new Date(cur);
+        const endDate = new Date(cur);
+        endDate.setDate(startDate.getDate() + 2);
+
+        const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
+        const monthGroup = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        slots.push({
+          start: formatDate(startDate),
+          end: formatDate(endDate),
+          year: startDate.getFullYear(),
+          dayName: startDate.toLocaleDateString('en-US', { weekday: 'short' }),
+          monthGroup
+        });
+        count++;
+      }
+      cur.setDate(cur.getDate() + 1);
+    }
+    return slots;
+  };
 
   const getUpcomingBatches = (trek: Trek): Batch[] => {
     const batches: Batch[] = [];
     const isOneDay = trek.duration.toLowerCase().includes('1 day');
+    // Friday departure for two-day itineraries (day 5)
+    // Saturday departure for one-day itineraries (day 6)
+    const targetDay = isOneDay ? 6 : 5;
     
-    // Generate dates for upcoming batches starting from August 13, 2026 through September 30, 2026
-    const startDateLimit = new Date(2026, 7, 13); // August 13th, 2026
-    const endDateLimit = new Date(2026, 8, 30);   // September 30th, 2026
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     
-    const tempDate = new Date(startDateLimit);
+    const cur = new Date(today);
+    let count = 0;
     let safetyCounter = 0;
-    while (tempDate <= endDateLimit && safetyCounter < 150) {
+    
+    while (count < 12 && safetyCounter < 180) {
       safetyCounter++;
-      const day = tempDate.getDay(); // 0: Sun, 5: Fri, 6: Sat
-
-      // One day: Only Sat departures
-      // Two day: Only Fri departures
-      if (isOneDay ? day === 6 : day === 5) {
-        const startDate = new Date(tempDate);
-        const endDate = new Date(tempDate);
+      if (cur.getDay() === targetDay && cur >= today) {
+        const startDate = new Date(cur);
+        const endDate = new Date(cur);
         endDate.setDate(startDate.getDate() + (isOneDay ? 1 : 2));
 
         const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
@@ -2756,8 +2838,9 @@ const TrekDetailsPage = () => {
           dayName: startDate.toLocaleDateString('en-US', { weekday: 'short' }),
           monthGroup
         });
+        count++;
       }
-      tempDate.setDate(tempDate.getDate() + 1);
+      cur.setDate(cur.getDate() + 1);
     }
     return batches;
   };
@@ -2900,6 +2983,21 @@ const TrekDetailsPage = () => {
               {trek.modeRating && <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">⚡</span> Mode: {trek.modeRating}</span>}
               <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">📍</span> {trek.location}</span>
               <span className="flex items-center gap-1.5"><span className="text-brand-orange-glow text-[13px]">👶</span> Age: {trek.minAge}</span>
+              <span className="flex items-center gap-1.5 text-white/90 bg-brand-orange/20 border border-brand-orange/40 px-3 py-1 rounded-full">
+                <span className="text-brand-orange-glow text-[13px]">📅</span> 
+                {trek.duration.toLowerCase().includes('1 day') ? 'Saturday Departure (1-Day)' : 'Friday Departure (2-Day)'}
+              </span>
+              <a 
+                href="#get-itinerary-section"
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-full transition-all cursor-pointer ${
+                  trek.itineraryPdf 
+                    ? 'text-white/95 bg-emerald-500/25 border border-emerald-400/50 hover:bg-emerald-500/35'
+                    : 'text-white/80 bg-white/10 border border-white/20 hover:bg-white/20'
+                }`}
+              >
+                <Download size={12} className={trek.itineraryPdf ? "text-emerald-400" : "text-brand-orange"} />
+                <span>{trek.itineraryPdf ? 'PDF Itinerary Ready' : 'Get Itinerary'}</span>
+              </a>
             </motion.div>
           </div>
 
@@ -3057,19 +3155,17 @@ const TrekDetailsPage = () => {
               <div className="space-y-1">
                 <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Upcoming <span className="text-brand-orange">Expeditions</span></h3>
                 {(() => {
-                  const batches = getUpcomingBatches(trek);
-                  const departureDays = Array.from(new Set(batches.map(b => b.dayName)));
-                  const departureText = departureDays.includes('Fri') && departureDays.includes('Sat')
-                    ? 'Departures every Friday & Saturday Night'
-                    : departureDays.includes('Sat')
-                    ? 'Departures every Saturday Night'
-                    : departureDays.includes('Fri')
-                    ? 'Departures every Friday Night'
-                    : 'Weekend Departures';
+                  const isOneDay = trek.duration.toLowerCase().includes('1 day');
+                  const departureText = isOneDay
+                    ? 'Departures every Saturday Night (1-Day Itinerary)'
+                    : 'Departures every Friday Night (2-Day Itinerary)';
                   return (
-                    <p className="text-[10px] uppercase font-black tracking-widest text-brand-orange/80 italic">
-                      {departureText}
-                    </p>
+                    <div className="flex items-center gap-2 pt-1">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                      <p className="text-[11px] uppercase font-black tracking-widest text-brand-orange italic">
+                        {departureText}
+                      </p>
+                    </div>
                   );
                 })()}
               </div>
@@ -3124,13 +3220,13 @@ const TrekDetailsPage = () => {
                   <div className="space-y-1">
                     <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Weekday <span className="text-cyan-500">Slots</span></h3>
                     <p className="text-[10px] uppercase font-black tracking-widest text-cyan-500/80 italic">
-                      Special Mid-week Departures (August & September 2026)
+                      Special Mid-week Departures (Tuesday & Thursday)
                     </p>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
                     {(() => {
-                      const groupedWeekday = weekdaySlots.reduce((acc, batch) => {
+                      const groupedWeekday = getUpcomingWeekdaySlots().reduce((acc, batch) => {
                         const group = batch.monthGroup || 'Weekday Slots';
                         if (!acc[group]) acc[group] = [];
                         acc[group].push(batch);
@@ -3272,6 +3368,145 @@ const TrekDetailsPage = () => {
           </div>
         </section>
 
+        {/* ─── GET ITINERARY SECTION ─── */}
+        <section id="get-itinerary-section" className="space-y-6">
+          <div className="flex items-center gap-3">
+            <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📄 Official Brochure</span>
+            <div className="flex-1 h-px bg-slate-100" />
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+                  Get <span className="text-brand-orange italic font-serif">Itinerary</span>
+                </h2>
+                <p className="text-slate-400 font-medium text-xs max-w-xl mt-1">
+                  Download the complete day-by-day expedition schedule, pickup points, campsite details, inclusion breakdown, and gear checklist in high-resolution PDF format.
+                </p>
+              </div>
+              {trek.itineraryPdf && (
+                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full self-start md:self-auto shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Official PDF Ready
+                </span>
+              )}
+            </div>
+          </div>
+
+          {trek.itineraryPdf ? (
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-900 via-brand-dark to-slate-950 text-white rounded-[2.5rem] p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden group"
+            >
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-orange/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+              
+              <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="flex items-start sm:items-center gap-4 sm:gap-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-brand-orange to-red-600 flex flex-col items-center justify-center text-white shadow-2xl shadow-brand-orange/30 shrink-0 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                    <FileText size={28} className="sm:hidden" />
+                    <FileText size={32} className="hidden sm:block" />
+                    <span className="text-[8px] font-black uppercase tracking-widest mt-0.5">PDF</span>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-[9px] font-black uppercase tracking-[0.2em] px-2.5 py-0.5 rounded-md bg-white/10 text-brand-orange-glow border border-white/10">
+                        Official Expedition Plan
+                      </span>
+                      <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                        Direct Download
+                      </span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                      {trek.title} Detailed Itinerary
+                    </h3>
+                    <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed max-w-xl">
+                      Complete timing breakdown, pickup routes, meals schedule, beach campsite guide, and essential traveler guidelines.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 lg:pt-0 shrink-0">
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={isDownloadingPdf}
+                    onClick={() => handleDownloadItineraryPdf(trek.itineraryPdf!, trek.title)}
+                    className={`px-6 py-4 rounded-2xl font-black text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-2.5 shadow-xl transition-all cursor-pointer border ${
+                      downloadSuccess
+                        ? 'bg-emerald-600 border-emerald-400 text-white shadow-emerald-900/40'
+                        : 'bg-brand-orange hover:bg-brand-orange/90 text-white border-white/20 shadow-brand-orange/30'
+                    }`}
+                  >
+                    {isDownloadingPdf ? (
+                      <>
+                        <Loader2 size={17} className="animate-spin" />
+                        <span>Downloading PDF...</span>
+                      </>
+                    ) : downloadSuccess ? (
+                      <>
+                        <Check size={17} className="text-white stroke-[3]" />
+                        <span>Downloaded!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Download size={17} />
+                        <span>Download Itinerary (PDF)</span>
+                      </>
+                    )}
+                  </motion.button>
+
+                  <a
+                    href={trek.itineraryPdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white border border-white/15 text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
+                    title="Open PDF in new tab"
+                  >
+                    <FileDown size={16} className="text-slate-300" />
+                    <span>View Online</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ) : (
+            <div className="bg-slate-50 border border-slate-200/80 rounded-[2.5rem] p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-slate-200/80 text-slate-600 flex items-center justify-center shrink-0">
+                  <FileText size={26} />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[9px] font-black uppercase tracking-[0.2em] px-2 py-0.5 rounded-md bg-slate-200 text-slate-600">
+                      PDF Document
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-black text-brand-dark tracking-tight">
+                    {trek.title} Detailed Itinerary
+                  </h3>
+                  <p className="text-xs text-slate-500 max-w-xl leading-relaxed">
+                    Official PDF brochure for this trek is updated with seasonal weather and forest permits. Request the latest itinerary file instantly on WhatsApp.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/919980489494?text=Hi!%20Could%20you%20please%20send%20me%20the%20detailed%20itinerary%20PDF%20for%20${encodeURIComponent(trek.title)}%3F`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-lg transition-all self-start md:self-auto shrink-0 cursor-pointer"
+              >
+                <MessageCircle size={17} />
+                <span>Get Itinerary on WhatsApp</span>
+              </a>
+            </div>
+          )}
+        </section>
+
         {/* ─── COMPACT TIMELINE ─── */}
         <section className="space-y-8">
           <div className="flex justify-center items-center py-2">
@@ -3303,7 +3538,7 @@ const TrekDetailsPage = () => {
                   Trek <span className="text-brand-orange-glow italic font-serif">Itinerary</span>
                 </h2>
               </div>
-              <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
                 <button
                   id="itinerary-header-back-btn"
                   onClick={handleGoBack}
@@ -3313,6 +3548,24 @@ const TrekDetailsPage = () => {
                   <ArrowLeft size={13} className="text-slate-300 group-hover:text-white transition-colors" />
                   <span>Back</span>
                 </button>
+                {trek.itineraryPdf ? (
+                  <button
+                    onClick={() => handleDownloadItineraryPdf(trek.itineraryPdf!, trek.title)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-2 rounded-xl bg-brand-orange hover:bg-brand-orange/90 border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-wider transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+                    title="Download Itinerary PDF"
+                  >
+                    <Download size={13} className="text-white" />
+                    <span>Download PDF</span>
+                  </button>
+                ) : (
+                  <a
+                    href="#get-itinerary-section"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-wider transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+                  >
+                    <FileText size={13} className="text-slate-300" />
+                    <span>Get Itinerary</span>
+                  </a>
+                )}
                 <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-3">
                   <span className="text-xl">🗓️</span>
                   <div>
@@ -4048,12 +4301,33 @@ const TrekDetailsPage = () => {
 
       {/* ─── FLOATING CTA ─── */}
       <div className="fixed bottom-6 left-0 right-0 z-[60] px-6 pointer-events-none">
-        <div className="max-w-md mx-auto flex gap-4 pointer-events-auto">
+        <div className="max-w-md mx-auto flex items-center gap-3 pointer-events-auto">
+          {trek.itineraryPdf && (
+            <motion.button
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              disabled={isDownloadingPdf}
+              onClick={() => handleDownloadItineraryPdf(trek.itineraryPdf!, trek.title)}
+              className="bg-slate-900/95 backdrop-blur-md text-white px-4 py-4 rounded-2xl font-black text-xs uppercase tracking-wider shadow-2xl flex items-center justify-center gap-2 border border-white/20 hover:bg-black transition-all cursor-pointer shrink-0"
+              title="Download Itinerary PDF"
+            >
+              {isDownloadingPdf ? (
+                <Loader2 size={16} className="animate-spin text-brand-orange" />
+              ) : downloadSuccess ? (
+                <Check size={16} className="text-emerald-400 stroke-[3]" />
+              ) : (
+                <Download size={16} className="text-brand-orange" />
+              )}
+              <span className="hidden sm:inline">PDF</span>
+            </motion.button>
+          )}
           <motion.button
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {
-              const message = `I want to book the ${trek.title} Expedition! 🧗`;
+              const upcoming = getUpcomingBatches(trek);
+              const nextBatchInfo = upcoming.length > 0 ? ` (Upcoming Batch: ${upcoming[0].start} - ${upcoming[0].end})` : '';
+              const message = `I want to book the ${trek.title} Expedition${nextBatchInfo}! 🧗`;
               window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
             }}
             className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden border border-white/20"
@@ -4109,15 +4383,28 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4 mb-10">
+        <div className="grid grid-cols-2 gap-4 mb-4">
           <div className="flex items-center gap-2 text-slate-400">
             <MapPin size={16} />
-            <span className="text-xs font-bold">{trek.location}</span>
+            <span className="text-xs font-bold truncate">{trek.location}</span>
           </div>
           <div className="flex items-center gap-2 text-slate-400">
             <Clock size={16} />
             <span className="text-xs font-bold">{trek.duration}</span>
           </div>
+        </div>
+
+        {/* Departure Schedule Highlight */}
+        <div className="mb-6 flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-100 text-[11px] font-bold">
+          <div className="flex items-center gap-2 text-slate-700">
+            <Calendar size={14} className="text-brand-orange shrink-0" />
+            <span className="text-[11px] font-extrabold text-slate-800">
+              {trek.duration.toLowerCase().includes('1 day') ? 'Saturday Departure' : 'Friday Departure'}
+            </span>
+          </div>
+          <span className="text-[9px] font-black uppercase tracking-wider text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-2 py-0.5 rounded-lg shrink-0">
+            {trek.duration.toLowerCase().includes('1 day') ? '1-Day' : '2-Day'}
+          </span>
         </div>
 
         <div className="mt-auto flex items-center justify-between bg-slate-50 p-5 rounded-[2rem] border border-slate-100 transition-all group-hover:bg-brand-orange/5 group-hover:border-brand-orange/10 group-hover:shadow-lg group-hover:shadow-brand-orange/5">
@@ -5047,6 +5334,7 @@ const CommunityGallery = () => {
 
 const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState('western-ghats');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const categories = [
     { id: 'all', label: 'All Treks', icon: <Mountain size={14} /> },
@@ -5055,9 +5343,30 @@ const HomePage = () => {
     { id: 'weekend', label: 'Weekend getaways', icon: <Tent size={14} /> },
   ];
 
-  const filteredTreks = TREKS.filter(trek => 
-    activeCategory === 'all' || trek.category === activeCategory
-  );
+  const handleSearchSubmit = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const el = document.getElementById('treks-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const filteredTreks = TREKS.filter(trek => {
+    const q = searchQuery.trim().toLowerCase();
+    
+    if (q) {
+      const matchesQuery = 
+        trek.title.toLowerCase().includes(q) ||
+        trek.location.toLowerCase().includes(q) ||
+        trek.category.toLowerCase().includes(q) ||
+        trek.description.toLowerCase().includes(q) ||
+        (trek.placesCovered && trek.placesCovered.some(p => p.toLowerCase().includes(q)));
+      
+      return matchesQuery;
+    }
+
+    return activeCategory === 'all' || trek.category === activeCategory;
+  });
 
   return (
     <div className="flex flex-col">
@@ -5074,79 +5383,112 @@ const HomePage = () => {
         <meta property="og:image" content="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative z-20 min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden">
+      <section className="relative z-20 min-h-[90vh] sm:min-h-[85vh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden pt-24 pb-16">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777477957/Background_tdfgts.png" 
             alt="Scenic mountain range background for Adventure Chaarana" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
         </div>
         
-        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 relative z-10 text-white pt-10">
+        <div className="w-full max-w-4xl mx-auto text-center space-y-5 sm:space-y-6 relative z-10 text-white">
+          {/* Main Hero Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.8 }}
+            className="py-1 sm:py-2 select-none"
+          >
+            <h1 className="font-bebas text-6xl sm:text-8xl md:text-9xl lg:text-[8.5rem] tracking-[0.04em] leading-[0.9] text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] uppercase">
+              Adventure{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E36] via-[#FFAE34] to-[#FF6542] drop-shadow-[0_4px_25px_rgba(255,101,66,0.4)]">
+                Awaits!!
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Stats Bar */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/5 backdrop-blur-xl rounded-full text-white/50 border border-white/10 font-black tracking-[0.3em] text-[8px] md:text-[10px] uppercase shadow-2xl"
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 md:gap-12 text-white/95 text-xs sm:text-sm md:text-base font-semibold drop-shadow-md pb-2"
           >
-            <Clock size={12} className="animate-pulse text-brand-orange-glow" />
-            Adventure awaits in the wild
+            <div className="flex items-center gap-2">
+              <span className="text-[#FF6542] text-sm sm:text-base font-black">▲</span>
+              <span>50+ Treks</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin size={16} className="text-[#FF6542] fill-[#FF6542]" />
+              <span>10+ Regions</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users size={17} className="text-[#FF6542]" />
+              <span>2000+ Trekkers</span>
+            </div>
           </motion.div>
-          
-          <div className="space-y-6">
-            <motion.h1 
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter text-white drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+
+          {/* Search Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.8 }}
+            className="pt-2 w-full"
+          >
+            <form 
+              onSubmit={handleSearchSubmit}
+              className="w-full max-w-3xl mx-auto bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 shadow-[0_20px_60px_rgba(0,0,0,0.4)] flex items-center gap-3 border border-white/60 focus-within:ring-4 focus-within:ring-[#FF6542]/25 transition-all"
             >
-              Explore the <br className="hidden md:block" /> Pure Wild with <br />
-              <span className="text-brand-orange-glow italic uppercase font-serif block mt-2 md:mt-0 tracking-normal">
-                Adventure Chaarana
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 1 }}
-              className="text-xs md:text-lg text-white/60 font-medium leading-relaxed max-w-xl mx-auto drop-shadow-lg px-6"
-            >
-              Designing genuine wilderness expeditions from Bangalore <br className="hidden md:block" /> 
-              for bold adventurers across the majestic Western Ghats.
-            </motion.p>
-          </div>
+              <Search size={20} className="text-slate-400 shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search treks or regions..."
+                className="w-full bg-transparent text-slate-800 placeholder:text-slate-400 text-sm sm:text-base font-medium focus:outline-none py-1.5"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full transition-colors shrink-0"
+                  title="Clear search"
+                >
+                  <X size={16} />
+                </button>
+              )}
+              <button
+                type="submit"
+                className="bg-[#FF6542] hover:bg-[#ff522b] text-white px-7 sm:px-10 py-3 rounded-full font-bold text-sm sm:text-base shadow-lg shadow-[#FF6542]/30 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer shrink-0"
+              >
+                Search
+              </button>
+            </form>
+          </motion.div>
         </div>
 
         {/* Swipe to Explore Overlay */}
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20 pointer-events-none"
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 pointer-events-none"
         >
-          <div className="flex flex-col items-center gap-1 group">
+          <div className="flex flex-col items-center group">
              <motion.div 
-               animate={{ y: [0, 10, 0] }}
-               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+               animate={{ y: [0, 8, 0] }}
+               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
                className="relative flex flex-col items-center"
              >
-               <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.5em] text-white/60 mb-2 drop-shadow-lg">Swipe to explore treks</span>
-               <div className="w-px h-12 bg-gradient-to-b from-white/60 to-transparent" />
-               <ChevronDown size={24} className="text-white mt-[-8px] drop-shadow-2xl" strokeWidth={3} />
+               <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-1.5 drop-shadow-lg">Swipe to explore treks</span>
+               <ChevronDown size={22} className="text-white drop-shadow-2xl" strokeWidth={3} />
              </motion.div>
           </div>
-          
-          {/* Animated decorative ring */}
-          <motion.div 
-             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.1, 0.3] }}
-             transition={{ duration: 3, repeat: Infinity }}
-             className="absolute -bottom-4 w-32 h-32 rounded-full border border-white/10"
-          />
         </motion.div>
       </section>
 
@@ -5159,6 +5501,20 @@ const HomePage = () => {
           <p className="text-slate-500 font-bold text-xs md:text-sm tracking-wide mb-8 md:mb-12">
             Choose your next thrill from our handpicked collection of curated escapes.
           </p>
+
+          {searchQuery && (
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="text-xs sm:text-sm font-bold text-slate-700 bg-white shadow-sm px-4 py-2 rounded-full border border-slate-200">
+                Found {filteredTreks.length} {filteredTreks.length === 1 ? 'trek' : 'treks'} for "{searchQuery}"
+              </span>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-xs font-black uppercase tracking-wider text-[#FF6542] hover:underline cursor-pointer bg-white px-3 py-2 rounded-full border border-slate-200 shadow-sm"
+              >
+                Clear Search ✕
+              </button>
+            </div>
+          )}
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 md:mb-20 overflow-x-auto pb-4 px-2 no-scrollbar">
             {categories.map((cat) => (

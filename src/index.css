@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-kannada: "Anek Kannada", "Noto Serif Kannada", "Noto Sans Kannada", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-syne: "Syne", sans-serif;
   
   --color-brand-orange: #E8751A;
   --color-brand-orange-glow: #FF9A45;
@@ -12,6 +15,18 @@
   --color-brand-dark: #0F0F0F;
   --color-brand-paper: #FDFCFA;
   --color-brand-surface: #F7F5F1;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-kannada {
+  font-family: 'Anek Kannada', 'Noto Serif Kannada', 'Noto Sans Kannada', system-ui, sans-serif;
 }
 
 @layer base {
