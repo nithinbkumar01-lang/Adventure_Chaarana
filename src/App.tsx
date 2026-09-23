@@ -2023,10 +2023,17 @@ id: '17',
     withoutTransportPrice: 3199,
     discount: '',
     itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Kumaraparvatha%20AC.pdf',
-    image: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.16%20PM.jpeg',
     gallery: [
-      'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop'
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.57%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.27.24%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.56%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.58%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.21%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.23%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.19%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.17%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.56%20PM%20(1).jpeg'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
@@ -2117,10 +2124,17 @@ id: '17',
     withoutTransportPrice: 3199,
     discount: '',
     itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Kumaraparvatha%20Bedahalli%20to%20Kukke%20AC.pdf',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.58%20PM.jpeg',
     gallery: [
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop'
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.16%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.57%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.27.24%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.56%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.21%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.23%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.19%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.26.17%20PM.jpeg',
+      'https://ik.imagekit.io/phj6ifoni/KP/WhatsApp%20Image%202026-09-21%20at%203.28.56%20PM%20(1).jpeg'
     ],
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
@@ -3665,12 +3679,18 @@ const TrekDetailsPage = () => {
 
           {/* Photo Collage Preview (as seen in reference screenshot) */}
           {(() => {
-            const allImgs = [
+            const baseImgs = [
               trek.image,
-              ...(trek.gallery || []).filter(u => !u.toLowerCase().endsWith('.mov')),
+              ...(trek.gallery || []).filter(u => !u.toLowerCase().endsWith('.mov'))
+            ];
+            const fallbackAdditions = [
               "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
               "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg"
             ];
+            const allImgs = [...baseImgs];
+            if (allImgs.length < 4) {
+              allImgs.push(...fallbackAdditions);
+            }
             const featureImg = allImgs[0];
             const secondaryImgs = allImgs.slice(1, 4);
             const totalCount = allImgs.length;
@@ -5165,11 +5185,13 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
     }
   });
 
-  for (const img of communityAdditions) {
-    if (uniqueImages.length >= 8) break;
-    if (!seen.has(img)) {
-      uniqueImages.push(img);
-      seen.add(img);
+  if (uniqueImages.length < 8) {
+    for (const img of communityAdditions) {
+      if (uniqueImages.length >= 8) break;
+      if (!seen.has(img)) {
+        uniqueImages.push(img);
+        seen.add(img);
+      }
     }
   }
 
@@ -5261,6 +5283,30 @@ const TrekGallery = ({ trek }: { trek: Trek }) => {
         caption = 'Magical Sky Lantern Released Over the Arabian Sea';
       } else {
         caption = 'Lost in the Rhythm of Waves Along the Gokarna Coastline';
+      }
+    } else if (url.includes('/KP/')) {
+      if (url.includes('3.26.16')) {
+        caption = 'Majestic View of Kumaraparvatha Peak & Sweeping Shola Ridge';
+      } else if (url.includes('3.28.57')) {
+        caption = 'Traversing the Expansive Panoramic Grasslands of Sheshaparvatha';
+      } else if (url.includes('3.27.24')) {
+        caption = 'High-Altitude Western Ghats Grasslands Under Dramatic Monsoon Clouds';
+      } else if (url.includes('3.28.56%20PM.jpeg') || (url.includes('3.28.56') && !url.includes('(1)'))) {
+        caption = 'Chaarana Trekkers Navigating the Steep Mountain Ridge Trail';
+      } else if (url.includes('3.28.58')) {
+        caption = 'Breathtaking Summit Crest Horizon Overlooking Rolling Mist Valleys';
+      } else if (url.includes('3.26.21')) {
+        caption = 'Atmospheric Morning Trail Ascending Toward the Sacred Peak';
+      } else if (url.includes('3.26.23')) {
+        caption = 'Verdant Green Ridgelines of the Pushpagiri Wildlife Sanctuary';
+      } else if (url.includes('3.26.19')) {
+        caption = 'Conquering the Rocky Summit Ridge of Kumaraparvatha (1,712m)';
+      } else if (url.includes('3.26.17')) {
+        caption = 'Pristine Shola Rainforest Canopy and Mountain Stream Trails';
+      } else if (url.includes('(1)')) {
+        caption = 'Dramatic Cloud Formations and Sunset Glow Across the Western Ghats';
+      } else {
+        caption = 'The Breathtaking Wilderness of Kumaraparvatha Expedition';
       }
     } else if (url.includes('pooja.jpg.jpeg')) {
       caption = `Scenic Mountain Vistas of Kodaikanal Hills & Valleys`;
