@@ -38,7 +38,10 @@ import {
   Check,
   Loader2,
   Search,
-  Users
+  Users,
+  Star,
+  HelpCircle,
+  TrendingUp
 } from 'lucide-react';
 
 interface ItineraryItem {
@@ -67,7 +70,7 @@ interface Trek {
   badgeColor: string;
   category: string;
   duration: string;
-  difficulty: 'Easy' | 'Moderate' | 'Difficult';
+  difficulty: 'Easy' | 'Moderate' | 'Difficult' | 'Moderate - Difficult';
   elevation?: string;
   distance?: string;
   minAge?: string;
@@ -381,6 +384,7 @@ id: '5',
     originalPrice: 1100,
     currentPrice: 499,
     discount: '🇮🇳 Independence Day Offer · ₹499',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Sunrise/Uttari%20Betta%20Sunrise%20Trek%20AC.pdf',
     image: 'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0965.jpeg',
     gallery: [
       'https://ik.imagekit.io/phj6ifoni/Uttari/IMG_0825.jpeg',
@@ -457,6 +461,7 @@ id: '6',
     originalPrice: 1100,
     currentPrice: 680,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Sunrise/Kunthi%20Betta%20AC.pdf',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779802763/de1cb9df-c637-419f-883e-da3138f91ea5.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1777475200/08b8c95a-1ce5-4460-b4b2-97cceb2a5bba.png',
@@ -522,6 +527,7 @@ id: '7',
     originalPrice: 4999,
     withoutTransportPrice: 3499,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Nethravathi%20Trek%20AC.pdf',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Explore the heart of the Kudremukh National Park with the breathtaking Nethravathi Peak trek. Known for its rolling green hills, pristine streams, and spectacular views of the Western Ghats range, this trek offers a perfect escape into the pure wild.',
@@ -644,6 +650,7 @@ id: '8',
     originalPrice: 4999,
     withoutTransportPrice: 3499,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Kudremukha%20AC.pdf',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Scale the second-highest peak in Karnataka! Formed in the shape of a horse face, the Kudremukha Trek provides stunning views of the Western Ghats grasslands, deep valleys, misty clouds, and lush green forests.',
@@ -983,6 +990,7 @@ id: '11',
     currentPrice: 5499,
     withoutTransportPrice: 4500,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Dudhsagar%20Trek%20AC.pdf',
     image: 'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_0882.HEIC?updatedAt=1789978870669',
     gallery: [
       'https://ik.imagekit.io/phj6ifoni/Dudhsagar/IMG_1125.HEIC?updatedAt=1789978872018',
@@ -1336,6 +1344,7 @@ id: '14',
     originalPrice: 5999,
     currentPrice: 5499,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Trips/Kodaikanal%20Trip%20AC.pdf',
     image: 'https://ik.imagekit.io/phj6ifoni/Kodaikanal/pooja.jpg.jpeg',
     gallery: [
       'https://ik.imagekit.io/phj6ifoni/Kodaikanal/IMG_4727.HEIC',
@@ -1445,6 +1454,7 @@ id: '15',
     currentPrice: 6499,
     withoutTransportPrice: 5499,
     discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Trips/Munnar%20Trip%20AC.pdf',
     image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004377/e9b00515-f281-420b-bb50-4becfa70c50a.png',
     gallery: [
       'https://res.cloudinary.com/dofg6bsom/image/upload/v1784004377/e9b00515-f281-420b-bb50-4becfa70c50a.png',
@@ -1784,7 +1794,7 @@ id: '17',
     currentPrice: 3999,
     withoutTransportPrice: 2999,
     discount: '',
-    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Gokarna,%20Honnavara,%20Murudeshwara%20and%20Jog%20Falls.pdf',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Trips/Gokarna,%20Honnavara,%20Murudeshwara%20and%20Jog%20Falls.pdf',
     image: 'https://ik.imagekit.io/phj6ifoni/Gokarna/_%20Lost%20in%20the%20rhythm%20of%20waves,%20where%20every%20sunset%20feels%20like%20a%20story%20and%20every%20breeze%20whispers.jpg',
     gallery: [
       'https://ik.imagekit.io/phj6ifoni/Gokarna/7.jpeg',
@@ -1893,6 +1903,388 @@ id: '17',
       'Murudeshwara Shiva Temple & Statue',
       'Jog Falls'
     ]
+  },
+  {
+    id: '19',
+    slug: 'ooty-trip',
+    title: 'Ooty Trip',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Ooty & Nilgiris, Tamil Nadu',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Easy',
+    elevation: '2,240 m',
+    distance: 'Sightseeing & Nature Trails',
+    minAge: '5 Years',
+    description: 'Escape to the Queen of Hill Stations! Explore vibrant botanical gardens, Doddabetta panoramic vistas, scenic boating, aromatic tea plantations, pine forest trails, and picturesque drives through the Nilgiris, Bandipur, and Mudumalai reserves.',
+    originalPrice: 6499,
+    currentPrice: 5999,
+    withoutTransportPrice: 4999,
+    discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Trips/Ooty%20Trip%20AC.pdf',
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: 'Boarding begins from Bangalore pickup points' },
+          { time: '09:00 PM', activity: 'Scenic night drive through Mysore route to the Nilgiris' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🌄',
+        items: [
+          { time: '08:00 AM', activity: 'Arrive at Ooty stay, freshen up and have breakfast' },
+          { time: '09:30 AM', activity: 'Pack daypack and visit the Government Botanical Garden' },
+          { time: '11:30 AM', activity: 'Head to Doddabetta Peak – highest point in the Nilgiris' },
+          { time: '01:30 PM', activity: 'Visit Ooty Boat House (Mini Toy Train & Boating)' },
+          { time: '02:30 PM', activity: 'Lunch stop at a local restaurant' },
+          { time: '03:45 PM', activity: 'Visit Deer Park and explore tranquil surroundings' },
+          { time: '04:45 PM', activity: 'Explore the vibrant Ooty Rose Garden' },
+          { time: '07:30 PM', activity: 'Return to stay, dinner and relaxing night' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌲',
+        items: [
+          { time: '07:30 AM', activity: 'Freshen up, breakfast & checkout from the stay' },
+          { time: '08:30 AM', activity: 'Visit Karnataka Garden & scenic Pine Forest (Horse riding available)' },
+          { time: '11:00 AM', activity: 'Visit stunning Pykara Waterfalls & Ooty Lake' },
+          { time: '01:00 PM', activity: 'Head to 9th Mile Shooting Point surrounded by rolling hills' },
+          { time: '03:00 PM', activity: 'Visit authentic Tea Estate & Factory for local tea shopping' },
+          { time: '05:00 PM', activity: 'Drive through Mudumalai & Bandipur Tiger Reserve forests' },
+          { time: '07:00 PM', activity: 'Stop at Mysore for dinner' },
+          { time: '10:00 PM', activity: 'Reach Bangalore with memorable moments' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Round-trip transportation from Bangalore in pushback vehicle',
+      'Comfortable stay in Ooty (sharing basis)',
+      '2 Breakfasts and 1 Dinner',
+      'All entry fees and toll/parking charges',
+      'Expert Trip Leaders from Adventure Chaarana',
+      'First aid & emergency support'
+    ],
+    exclusions: [
+      'Lunches and Day 2 Dinner en route',
+      'Boating, Mini Toy Train ride & Horse riding expenses',
+      'Personal shopping and expenses not mentioned in inclusions'
+    ],
+    thingsToCarry: [
+      'Original Govt ID card (mandatory)',
+      'Warm jacket / fleece / sweater (Ooty gets chilly)',
+      'Comfortable walking/sports shoes',
+      'Reusable water bottle (2L)',
+      'Personal toiletries and medications',
+      'Daypack (20L) for day sightseeing'
+    ],
+    placesCovered: [
+      'Government Botanical Garden',
+      'Doddabetta View Point',
+      'Ooty Boat House & Lake',
+      'Mini Toy Train Ride',
+      'Deer Park',
+      'Rose Garden',
+      'Karnataka Garden',
+      'Pine Forest',
+      'Pykara Waterfalls',
+      '9th Mile Shooting Point',
+      'Tea Estate & Factory',
+      'Mudumalai & Bandipur Forest Drive'
+    ]
+  },
+  {
+    id: '20',
+    slug: 'kumaraparvatha-trek',
+    title: 'Kumaraparvatha Trek (Beedalli Route)',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Somwarpet, Coorg, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate - Difficult',
+    elevation: '1,712 m',
+    distance: '14 km (total)',
+    minAge: '8+',
+    timeHours: '8Hrs',
+    modeRating: 'Moderate - Difficult',
+    description: 'Conquer the legendary Kumaraparvatha through the lush Somwarpet Beedalli trail. Trek through pristine shola rainforests, sweeping mountain ridges, and gushing streams to reach the summit, complemented by Mallali Falls and Manjarabad Star Fort.',
+    originalPrice: 4499,
+    currentPrice: 4199,
+    withoutTransportPrice: 3199,
+    discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Kumaraparvatha%20AC.pdf',
+    image: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: 'Boarding from Bangalore pickup points' },
+          { time: '09:00 PM', activity: 'Overnight journey towards Somwarpet, Coorg' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🏔️',
+        items: [
+          { time: '06:00 AM', activity: 'Reach Beedalli base camp, freshen up and breakfast' },
+          { time: '07:30 AM', activity: 'Trek briefing and safety instructions by certified leaders' },
+          { time: '08:00 AM', activity: 'Begin ascent towards Kumaraparvatha Peak through dense forests' },
+          { time: '01:00 PM', activity: 'Reach the summit ridge and enjoy packed lunch with panoramic views' },
+          { time: '02:00 PM', activity: 'Descend back along the trail towards Beedalli' },
+          { time: '06:00 PM', activity: 'Reach base camp / homestay, freshen up and hot tea' },
+          { time: '08:30 PM', activity: 'Hearty dinner and relaxing overnight rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🌊',
+        items: [
+          { time: '06:00 AM', activity: 'Wake up early, visit sunrise viewpoint & have breakfast' },
+          { time: '08:00 AM', activity: 'Visit Shantha Mallikarjuna Temple & 1,000-year-old Sampige tree' },
+          { time: '10:00 AM', activity: 'Reach Kumaradhare River for exciting river rafting (optional)' },
+          { time: '12:30 PM', activity: 'Witness the roaring cascades of Mallali Falls' },
+          { time: '03:00 PM', activity: 'Explore the historic star-shaped Manjarabad Fort' },
+          { time: '04:30 PM', activity: 'Depart towards Bangalore with unforgettable memories' },
+          { time: '10:30 PM', activity: 'Reach Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Round-trip transportation from Bangalore in pushback vehicle',
+      'Homestay accommodation in Coorg',
+      '2 Breakfasts, 1 Packed Lunch, and 1 Dinner',
+      'Forest entry permits & guide fees',
+      'Experienced Adventure Chaarana trek leads',
+      'First aid and emergency assistance'
+    ],
+    exclusions: [
+      'River rafting charges (self-sponsored)',
+      'Day 2 Lunch and Dinner en route',
+      'Personal gear and expenses'
+    ],
+    thingsToCarry: [
+      'Govt ID card (mandatory for forest checkposts)',
+      'Sturdy trekking shoes with excellent grip',
+      'Backpack (20–30L) with rain cover',
+      'Water bottles (2L reusable)',
+      'Trekking pole (recommended)',
+      'Personal medical kit & toiletries'
+    ],
+    placesCovered: [
+      'Kumaraparvatha Peak',
+      'Beedalli Base Camp',
+      'Mallali Falls',
+      'Shantha Mallikarjuna Temple',
+      '1000-Year-Old Sampige Tree',
+      'Kumaradhare River Rafting',
+      'Manjarabad Star Fort'
+    ]
+  },
+  {
+    id: '21',
+    slug: 'kumaraparvatha-beedahalli-to-kukke',
+    title: 'Kumaraparvatha Trek (Beedahalli to Kukke)',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Coorg to Kukke Subramanya, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate - Difficult',
+    elevation: '1,712 m',
+    distance: '22 km (total)',
+    minAge: '8+',
+    timeHours: '10Hrs',
+    modeRating: 'Moderate - Difficult',
+    description: 'The ultimate Western Ghats traverse! Cross from Beedahalli in Coorg over the high crest of Kumaraparvatha and Sheshaparvatha, descending past Bhattara Mane to sacred Kukke Subrahmanya, enriched by Bisle Ghat vistas and kayaking.',
+    originalPrice: 4499,
+    currentPrice: 4199,
+    withoutTransportPrice: 3199,
+    discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Western/Kumaraparvatha%20Bedahalli%20to%20Kukke%20AC.pdf',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'western-ghats',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: 'Boarding starts across Bangalore pickup points' },
+          { time: '09:00 PM', activity: 'Overnight journey towards Somwarpet base' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '⛰️',
+        items: [
+          { time: '06:00 AM', activity: 'Reach base camp, freshen up, breakfast & ID/permit check' },
+          { time: '07:30 AM', activity: 'Start the epic traverse trek toward the summit' },
+          { time: '12:00 PM', activity: 'Reach Kumaraparvatha Peak (1,712m)' },
+          { time: '01:00 PM', activity: 'Reach Sesha Parvatha with majestic panoramic views & packed lunch' },
+          { time: '02:00 PM', activity: 'Descend towards Kallu Mantapa and Girigadde (Bhattara Mane)' },
+          { time: '05:30 PM', activity: 'Reach Kukke Subramanya stay, freshen up' },
+          { time: '07:00 PM', activity: 'Visit the revered Kukke Subrahmanya Temple' },
+          { time: '08:30 PM', activity: 'Dinner and well-deserved rest' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🛶',
+        items: [
+          { time: '07:00 AM', activity: 'Local cuisine breakfast & checkout' },
+          { time: '08:00 AM', activity: 'Scenic drive through the breathtaking Bisle Ghat ridge' },
+          { time: '10:30 AM', activity: 'Explore hidden waterfalls with kayaking & boating session' },
+          { time: '02:00 PM', activity: 'Lunch stop en route (self-sponsored)' },
+          { time: '04:00 PM', activity: 'Depart towards Bengaluru' },
+          { time: '11:30 PM', activity: 'Arrival back in Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Round-trip transportation from Bangalore',
+      'Accommodation in Kukke Subramanya (sharing basis)',
+      '2 Breakfasts, 1 Packed Lunch, 1 Dinner',
+      'Forest permits, guide charges, and environmental fees',
+      'Trek leaders and medical kit assistance'
+    ],
+    exclusions: [
+      'Day 2 Lunch and Dinner on return',
+      'Kayaking/boating entry fee (if applicable)',
+      'Temple puja and personal expenses'
+    ],
+    thingsToCarry: [
+      'Valid Government Photo ID',
+      'Trekking shoes with solid grip (essential for steep descent)',
+      'Light daypack + water bottle (2-3L)',
+      'Rain cover / poncho',
+      'Knee support/straps (recommended for descent)',
+      'Change of clothes & personal medicines'
+    ],
+    placesCovered: [
+      'Kumaraparvatha Peak',
+      'Sheshaparvatha',
+      'Kallu Mantapa',
+      'Girigadhe (Bhattara Mane)',
+      'Kukke Subrahmanya Temple',
+      'Bisle Ghat Viewpoint',
+      'Hidden Waterfalls & Kayaking'
+    ]
+  },
+  {
+    id: '22',
+    slug: 'badami-rock-climbing-trip',
+    title: 'Badami Rock Climbing and Exploration',
+    host: 'Adventure Chaarana',
+    date: 'Every Friday Night',
+    location: 'Badami, Bagalkot, Karnataka',
+    duration: '2 Days / 1 Night',
+    difficulty: 'Moderate',
+    elevation: '593 m',
+    distance: 'Rock Climbing & Bouldering',
+    minAge: '6 Years',
+    description: 'Experience India’s premier rock climbing capital! Scale magnificent red sandstone cliffs with certified climbing instructors, rappel down natural rock faces, and explore ancient rock-cut cave temples, Aihole, and the UNESCO World Heritage site of Pattadakal.',
+    originalPrice: 5499,
+    currentPrice: 4999,
+    withoutTransportPrice: 3499,
+    discount: '',
+    itineraryPdf: 'https://ik.imagekit.io/phj6ifoni/itinery/Itinerary/Trips/Badami%20Rock%20Climbing%20AC.pdf',
+    image: 'https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=1200&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=1200&auto=format&fit=crop'
+    ],
+    badgeColor: 'bg-brand-orange',
+    category: 'weekend',
+    itinerary: [
+      {
+        label: 'Day 0',
+        emoji: '🌃',
+        items: [
+          { time: '08:00 PM', activity: 'Boarding from Bangalore pickup points' },
+          { time: '09:00 PM', activity: 'Overnight journey to the heritage kingdom of Badami' }
+        ]
+      },
+      {
+        label: 'Day 1',
+        emoji: '🧗‍♂️',
+        items: [
+          { time: '07:30 AM', activity: 'Arrive at Badami, freshen up and enjoy hearty breakfast' },
+          { time: '09:00 AM', activity: 'Safety briefing & gear introduction by certified climbing instructors' },
+          { time: '09:30 AM', activity: 'Rock climbing & rappelling on natural red sandstone crags' },
+          { time: '01:30 PM', activity: 'Delicious local North Karnataka lunch' },
+          { time: '03:00 PM', activity: 'Cave exploration at the iconic 6th-century Badami Rock-cut Caves' },
+          { time: '05:00 PM', activity: 'Visit Bhoothanatha Gudi along the serene Agastya Lake at sunset' },
+          { time: '07:00 PM', activity: 'Return to homestay, evening snacks, campfire and dinner' }
+        ]
+      },
+      {
+        label: 'Day 2',
+        emoji: '🏛️',
+        items: [
+          { time: '06:30 AM', activity: 'Auto ride to ancient Mahakuta Temple & sacred natural spring pond' },
+          { time: '08:30 AM', activity: 'Breakfast, freshen up and check out' },
+          { time: '09:30 AM', activity: 'Heritage trail to the ancient temples of Aihole' },
+          { time: '01:00 PM', activity: 'Lunch en route' },
+          { time: '02:00 PM', activity: 'Explore UNESCO World Heritage monument complex at Pattadakal' },
+          { time: '04:30 PM', activity: 'Begin return journey towards Bengaluru' },
+          { time: '11:00 PM', activity: 'Reach Bangalore' }
+        ]
+      }
+    ],
+    inclusions: [
+      'Round-trip transportation from Bangalore',
+      'Homestay / hotel stay in Badami (sharing basis)',
+      'Professional climbing and safety gear (harness, helmets, ropes, carabiners)',
+      'Certified climbing & rappelling instructors',
+      '2 Breakfasts, 1 Lunch, and 1 Dinner',
+      'Entry tickets, monument permits & guide fees',
+      'First aid & emergency support'
+    ],
+    exclusions: [
+      'Day 2 Lunch and Dinner en route',
+      'Personal expenses, snacks & water purchases',
+      'Auto ride fare (shared) if outside package inclusions'
+    ],
+    thingsToCarry: [
+      'Original Govt Photo ID',
+      'Comfortable sports/climbing shoes (snug fit recommended)',
+      'Comfortable stretchable clothing (avoid loose jeans for climbing)',
+      'Sun hat/cap & sunscreen',
+      'Water bottle (2L reusable)',
+      'Towel (if planning to take a dip in Mahakuta pond)',
+      'Personal toiletries & medications'
+    ],
+    placesCovered: [
+      'Natural Rock Climbing Sites',
+      'Natural Rock Rappelling',
+      'Badami Cave Temples',
+      'Bhoothanatha Gudi',
+      'Agastya Lake',
+      'Mahakuta Temple & Natural Spring Pond',
+      'Aihole Heritage Site',
+      'Pattadakal UNESCO World Heritage Complex',
+      'Badami Archaeological Museum'
+    ]
   }
 ];
 
@@ -1975,6 +2367,8 @@ const IndependenceDayBanner = ({
   onClose: () => void;
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isDetailsPage = location.pathname.startsWith('/trek/');
 
   return (
     <AnimatePresence>
@@ -1984,7 +2378,7 @@ const IndependenceDayBanner = ({
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
-          className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-orange-500/25 shadow-md overflow-hidden"
+          className={`${isDetailsPage ? 'relative' : 'fixed top-0 left-0 right-0'} z-50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-orange-500/25 shadow-md overflow-hidden`}
           aria-label="Independence Day Special Announcement"
         >
           {/* Subtle Tricolor Top Accent Line */}
@@ -2208,12 +2602,12 @@ const Layout = ({ children, showPromo, setShowPromo }: { children: React.ReactNo
   const [isBannerOpen, setIsBannerOpen] = useState(true);
 
   return (
-    <div className="min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative overflow-hidden">
+    <div className={`min-h-screen w-full bg-brand-paper text-brand-dark font-sans flex flex-col relative ${isDetailsPage ? 'overflow-x-clip' : 'overflow-hidden'}`}>
       {!isDetailsPage && <Background />}
       <IndependenceDayBanner isOpen={isBannerOpen} onClose={() => setIsBannerOpen(false)} />
       {!isDetailsPage && <Header isBannerOpen={isBannerOpen} />}
       
-      <main className={`relative z-10 flex-1 ${isBannerOpen && isDetailsPage ? 'pt-9 sm:pt-10' : 'pt-0'} transition-all duration-300`}>
+      <main className="relative z-10 flex-1 transition-all duration-300">
         {isDetailsPage && <Breadcrumbs />}
         {children}
       </main>
@@ -2726,15 +3120,45 @@ const TrekDetailsPage = () => {
     }
   };
 
-  const isWeekdayEligible = trek?.slug ? [
-    'nethravathi-peak-trek',
-    'bandaje-waterfalls-trek',
-    'kurinjal-peak-trek',
-    'gangadikallu-trek-dzukou-valley-of-the-south'
-  ].includes(trek.slug) : false;
-
   const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>('overview');
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const navTabs = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'itinerary', label: 'Itinerary' },
+    { id: 'inclusions', label: 'Inclusions' },
+    { id: 'cancellation', label: 'Cancellation' },
+    { id: 'what-to-pack', label: 'What to Pack' },
+    { id: 'faqs', label: 'FAQs' },
+  ];
+
+  const scrollToSection = (id: string) => {
+    setActiveTab(id);
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -64;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+      for (let i = navTabs.length - 1; i >= 0; i--) {
+        const el = document.getElementById(navTabs[i].id);
+        if (el && scrollPosition >= el.offsetTop) {
+          setActiveTab(navTabs[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleDownloadItineraryPdf = async (url: string, title: string) => {
     if (!url) return;
@@ -2774,37 +3198,6 @@ const TrekDetailsPage = () => {
     } finally {
       setIsDownloadingPdf(false);
     }
-  };
-
-  const getUpcomingWeekdaySlots = (): Batch[] => {
-    const slots: Batch[] = [];
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const cur = new Date(today);
-    let count = 0;
-    let safety = 0;
-    while (count < 8 && safety < 120) {
-      safety++;
-      if ((cur.getDay() === 2 || cur.getDay() === 4) && cur >= today) {
-        const startDate = new Date(cur);
-        const endDate = new Date(cur);
-        endDate.setDate(startDate.getDate() + 2);
-
-        const formatDate = (d: Date) => d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
-        const monthGroup = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-
-        slots.push({
-          start: formatDate(startDate),
-          end: formatDate(endDate),
-          year: startDate.getFullYear(),
-          dayName: startDate.toLocaleDateString('en-US', { weekday: 'short' }),
-          monthGroup
-        });
-        count++;
-      }
-      cur.setDate(cur.getDate() + 1);
-    }
-    return slots;
   };
 
   const getUpcomingBatches = (trek: Trek): Batch[] => {
@@ -2859,6 +3252,35 @@ const TrekDetailsPage = () => {
   }
 
 
+
+  const faqs = [
+    {
+      q: `How do I book and confirm my slot for ${trek.title}?`,
+      a: `Booking is straightforward and fast! Click on "Book Now" or "DM TO 9980489494" on WhatsApp to chat directly with our team. Once we verify slot availability for your chosen batch, you can reserve your spot with a token advance or full payment via UPI or Bank transfer. You'll receive instant booking confirmation details and ticket vouchers.`
+    },
+    {
+      q: `What are the pickup and drop-off points in Bengaluru?`,
+      a: `We provide designated central pickup points across Bengaluru: Indiranagar (Narayana Nethralaya - 8:30 PM), Majestic (Shantala Silks - 9:30 PM), Yeshwanthpur (Govardhan Theatre - 10:00 PM), and Gorguntepalya / Nelamangala Toll (10:15 PM). Detailed driver numbers, live vehicle location, and trip captain contact are shared in the dedicated trip WhatsApp group 24 hours prior to departure.`
+    },
+    {
+      q: `What kind of food and accommodation are included?`,
+      a: `We arrange authentic local homestays or scenic riverside campsites with separate rooms/tents and hygienic washrooms for men and women. Wholesome vegetarian meals are included (fresh local breakfast, packed trail lunch, and authentic dinner), along with hot evening tea/coffee and refreshments.`
+    },
+    {
+      q: `Is this trek suitable for beginners and solo or female travelers?`,
+      a: `Yes, absolutely! Over 55% of our trekkers join solo, and more than 40% are women. Our certified outdoor leads and wilderness first responders ensure a welcoming, inclusive, and strictly smoke-free & alcohol-free community environment. Trek leaders maintain a steady, comfortable pace with frequent hydration and scenic photo breaks.`
+    },
+    {
+      q: `What happens if it rains or weather conditions change?`,
+      a: `The Western Ghats are celebrated for their misty atmosphere, lush green mountain ridges, and seasonal streams. Light or moderate rain adds to the magic of the trail! Trekkers should carry a reliable poncho/raincoat and waterproof pouches for mobile phones. In case of extreme weather alerts or forest department closures, we reschedule or offer safe alternative trails per safety protocol.`
+    },
+    {
+      q: `What is the cancellation and refund policy?`,
+      a: isOneDayTrek 
+        ? `For 1-Day Sunrise Treks, bookings are non-refundable. However, free date rescheduling and slot transfer to a friend is permitted up to 24 hours before departure.`
+        : `For 2-Day Weekend Treks: Cancellations made more than 72 hours prior to departure incur only a 45% fee, with refunds processed directly back to your source account in 5-7 business days. Within 72 hours of departure, slots are strictly non-refundable due to pre-booked homestays, non-AC transit, and forest department permits.`
+    }
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -3085,38 +3507,270 @@ const TrekDetailsPage = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
-        {/* ─── PLACES WE COVER ─── */}
-        {trek.placesCovered && trek.placesCovered.length > 0 && (
-          <section className="space-y-8">
-            <div className="flex items-center gap-3">
-              <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📍 Highlights</span>
-              <div className="flex-1 h-px bg-slate-100" />
+      {/* ─── IN-PAGE NAVIGATION HEADER (STATIC PINNED AT TOP ON SCROLL) ─── */}
+      <nav 
+        aria-label="Trek details sub-navigation"
+        className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-8 overflow-x-auto no-scrollbar py-1 w-full lg:w-auto">
+            {navTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => scrollToSection(tab.id)}
+                  className={`py-3.5 px-3 md:px-2 text-xs md:text-sm whitespace-nowrap transition-all border-b-2 cursor-pointer flex items-center gap-1.5 shrink-0 ${
+                    isActive
+                      ? 'border-brand-orange text-brand-orange font-black'
+                      : 'border-transparent text-slate-500 hover:text-slate-900 hover:border-slate-300 font-bold'
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="hidden lg:flex items-center gap-3 py-2 shrink-0 pl-6 border-l border-slate-100">
+            <div className="text-right">
+              <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block leading-none">Starting from</span>
+              <span className="text-base font-black text-slate-900">₹{trek.currentPrice.toLocaleString()}</span>
             </div>
-            
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
-                Places We <span className="text-brand-orange italic font-serif">Explore</span>
-              </h2>
-              <p className="text-slate-400 font-medium text-xs max-w-lg">
-                Our curated itinerary ensures you witness the most iconic landmarks and hidden gems this landscape has to offer.
-              </p>
+            {trek.itineraryPdf && (
+              <button
+                onClick={() => handleDownloadItineraryPdf(trek.itineraryPdf!, trek.title)}
+                className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-black text-xs uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer"
+                title="Download PDF Itinerary"
+              >
+                <Download size={13} className="text-brand-orange" />
+                <span>PDF</span>
+              </button>
+            )}
+            <button
+              onClick={() => {
+                const message = `Hi Adventure Chaarana! I want to book slots for ${trek.title}. Please provide available dates and booking details.`;
+                window.open(`https://wa.me/919980489494?text=${encodeURIComponent(message)}`, '_blank');
+              }}
+              className="px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+            >
+              <MessageCircle size={14} className="fill-white" />
+              <span>Book Now</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 md:py-12 space-y-16 md:space-y-20">
+        {/* ─── SECTION 1: OVERVIEW (MATCHING SCREENSHOT LAYOUT) ─── */}
+        <section id="overview" className="space-y-8 scroll-mt-20">
+          {/* 4 Quick Stat Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            {/* 1. DURATION */}
+            <div className="bg-white border border-slate-200/80 p-4 md:p-5 rounded-2xl flex items-center gap-3.5 shadow-xs hover:border-brand-orange/40 hover:shadow-md transition-all">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center shrink-0 text-rose-600">
+                <Clock size={20} className="stroke-[2.5]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block leading-tight">
+                  DURATION
+                </span>
+                <span className="text-sm md:text-base font-black text-slate-900 tracking-tight truncate block">
+                  {trek.duration}
+                </span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
-              {trek.placesCovered.map((place, idx) => (
-                <div key={idx} className="bg-white border border-slate-100 p-3 rounded-xl flex items-center gap-2 hover:shadow-lg hover:shadow-slate-100 transition-all group">
-                   <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-brand-orange/10 transition-colors">
-                     <MapPin size={14} className="text-slate-300 group-hover:text-brand-orange transition-colors" />
-                   </div>
-                   <span className="text-[9px] font-black text-slate-600 leading-tight uppercase tracking-tight">{place}</span>
+            {/* 2. DIFFICULTY */}
+            <div className="bg-white border border-slate-200/80 p-4 md:p-5 rounded-2xl flex items-center gap-3.5 shadow-xs hover:border-brand-orange/40 hover:shadow-md transition-all">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 text-brand-orange">
+                <Mountain size={20} className="stroke-[2.5]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block leading-tight">
+                  DIFFICULTY
+                </span>
+                <span className="text-sm md:text-base font-black text-slate-900 tracking-tight truncate block">
+                  {trek.difficulty}
+                </span>
+              </div>
+            </div>
+
+            {/* 3. MAX ALTITUDE */}
+            <div className="bg-white border border-slate-200/80 p-4 md:p-5 rounded-2xl flex items-center gap-3.5 shadow-xs hover:border-brand-orange/40 hover:shadow-md transition-all">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center shrink-0 text-amber-600">
+                <TrendingUp size={20} className="stroke-[2.5]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block leading-tight">
+                  MAX ALTITUDE
+                </span>
+                <span className="text-sm md:text-base font-black text-slate-900 tracking-tight truncate block">
+                  {trek.elevation || '1,894 m'}
+                </span>
+              </div>
+            </div>
+
+            {/* 4. START POINT */}
+            <div className="bg-white border border-slate-200/80 p-4 md:p-5 rounded-2xl flex items-center gap-3.5 shadow-xs hover:border-brand-orange/40 hover:shadow-md transition-all">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-600">
+                <MapPin size={20} className="stroke-[2.5]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block leading-tight">
+                  START POINT
+                </span>
+                <span className="text-sm md:text-base font-black text-slate-900 tracking-tight truncate block">
+                  Bengaluru
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Highlights Row */}
+          <div className="space-y-3">
+            <h3 className="text-sm md:text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
+              <span>Highlights</span>
+            </h3>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 shadow-xs hover:border-brand-orange/40 transition-colors">
+                <Star size={13} className="text-brand-orange fill-brand-orange" />
+                {trek.title.replace(/\s+Trek.*/i, '')} Expedition
+              </span>
+              {trek.placesCovered && trek.placesCovered.length > 0 ? (
+                trek.placesCovered.slice(0, 5).map((place, idx) => (
+                  <span key={idx} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 shadow-xs hover:border-brand-orange/40 transition-colors">
+                    <Star size={13} className="text-brand-orange fill-brand-orange" />
+                    {place}
+                  </span>
+                ))
+              ) : (
+                <>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 shadow-xs hover:border-brand-orange/40 transition-colors">
+                    <Star size={13} className="text-brand-orange fill-brand-orange" />
+                    Western Ghats Shola Ridge
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 shadow-xs hover:border-brand-orange/40 transition-colors">
+                    <Star size={13} className="text-brand-orange fill-brand-orange" />
+                    Waterfalls & Stream Trail
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 shadow-xs hover:border-brand-orange/40 transition-colors">
+                    <Star size={13} className="text-brand-orange fill-brand-orange" />
+                    Campfire & Mountain Homestay
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Photo Collage Preview (as seen in reference screenshot) */}
+          {(() => {
+            const allImgs = [
+              trek.image,
+              ...(trek.gallery || []).filter(u => !u.toLowerCase().endsWith('.mov')),
+              "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg",
+              "https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778590561/IMG_5569_bhnmtl.jpg"
+            ];
+            const featureImg = allImgs[0];
+            const secondaryImgs = allImgs.slice(1, 4);
+            const totalCount = allImgs.length;
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-3 rounded-3xl overflow-hidden shadow-xs border border-slate-200/80 bg-slate-50 p-2">
+                {/* Main Feature Image */}
+                <div 
+                  onClick={() => {
+                    const el = document.getElementById('trek-gallery-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="md:col-span-7 h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden relative group cursor-pointer"
+                  title="Click to view full photo gallery"
+                >
+                  <img 
+                    src={featureImg} 
+                    alt={trek.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:opacity-70 transition-opacity" />
+                  <div className="absolute bottom-3 left-3 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5">
+                    <Sparkles size={11} className="text-brand-orange" />
+                    <span>Trail View</span>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
 
-        {/* ─── DM TO BOOK BANNER ─── */}
+                {/* Right Grid with +Photos button on the last image */}
+                <div className="md:col-span-5 grid grid-cols-2 gap-3 h-64 sm:h-80 md:h-96">
+                  {secondaryImgs.map((imgUrl, i) => {
+                    const isLast = i === secondaryImgs.length - 1;
+                    return (
+                      <div 
+                        key={i}
+                        onClick={() => {
+                          const el = document.getElementById('trek-gallery-section');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className={`rounded-2xl overflow-hidden relative group cursor-pointer ${
+                          secondaryImgs.length === 3 && i === 0 ? 'col-span-2 h-32 sm:h-40 md:h-46' : 'h-30 sm:h-38 md:h-46'
+                        }`}
+                        title="Click to view full photo gallery"
+                      >
+                        <img 
+                          src={imgUrl} 
+                          alt={`${trek.title} moment ${i + 1}`} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+                        {isLast && (
+                          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center p-3 group-hover:bg-black/70 transition-colors">
+                            <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-black text-xs uppercase tracking-wider backdrop-blur-md shadow-lg">
+                              <Camera size={13} />
+                              +{Math.max(totalCount - 3, 1)} Photos
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Overview Text Description */}
+          <div className="bg-white border border-slate-200/80 p-6 md:p-8 rounded-3xl space-y-4 shadow-xs">
+            <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">Overview</h3>
+            <p className="text-slate-700 text-sm md:text-base leading-relaxed font-medium">
+              {trek.description}
+            </p>
+          </div>
+
+          {/* Places We Explore (Curated Landmarks) */}
+          {trek.placesCovered && trek.placesCovered.length > 0 && (
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center gap-3">
+                <span className="text-brand-orange text-[8px] font-black uppercase tracking-[0.4em]">📍 Key Locations</span>
+                <div className="flex-1 h-px bg-slate-100" />
+              </div>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 md:gap-3">
+                {trek.placesCovered.map((place, idx) => (
+                  <div key={idx} className="bg-white border border-slate-150 p-3 rounded-xl flex items-center gap-2 hover:shadow-md hover:border-brand-orange/30 transition-all group">
+                     <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-brand-orange/10 transition-colors">
+                       <MapPin size={14} className="text-slate-400 group-hover:text-brand-orange transition-colors" />
+                     </div>
+                     <span className="text-[10px] font-black text-slate-700 leading-tight uppercase tracking-tight">{place}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* ─── SECTION 2: ITINERARY ─── */}
+        <section id="itinerary" className="space-y-12 scroll-mt-20">
+          {/* ─── DM TO BOOK BANNER ─── */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -3214,65 +3868,6 @@ const TrekDetailsPage = () => {
                   </div>
                 );
               })()}
-
-              {isWeekdayEligible && (
-                <div className="space-y-4 pt-6 border-t border-slate-100">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-black tracking-tight text-brand-dark italic">Weekday <span className="text-cyan-500">Slots</span></h3>
-                    <p className="text-[10px] uppercase font-black tracking-widest text-cyan-500/80 italic">
-                      Special Mid-week Departures (Tuesday & Thursday)
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                    {(() => {
-                      const groupedWeekday = getUpcomingWeekdaySlots().reduce((acc, batch) => {
-                        const group = batch.monthGroup || 'Weekday Slots';
-                        if (!acc[group]) acc[group] = [];
-                        acc[group].push(batch);
-                        return acc;
-                      }, {} as Record<string, Batch[]>);
-
-                      return Object.keys(groupedWeekday).map((monthGroup) => {
-                        const slots = groupedWeekday[monthGroup] || [];
-                        return (
-                          <div key={monthGroup} className="space-y-4 bg-slate-50/60 hover:bg-white border border-slate-200/50 p-6 rounded-3xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_12px_16px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.12),0_25px_25px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-cyan-500">
-                            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0f0f0f] bg-cyan-400/5 border border-cyan-400/10 px-3 py-1.5 rounded-full w-fit">
-                              {monthGroup}
-                            </h4>
-                            <div className="flex flex-col gap-2">
-                              {slots.map((batch, idx) => {
-                                const whatsappMsg = encodeURIComponent(`Hi Adventure Chaarana! I'm interested in booking the Weekday Slot for ${trek.title} on the batch: ${batch.start} - ${batch.end}, ${batch.year}. Please provide more details.`);
-                                const waLink = `https://wa.me/9980489494?text=${whatsappMsg}`;
-
-                                return (
-                                  <a 
-                                    key={idx} 
-                                    href={waLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group bg-white border border-slate-100 hover:bg-cyan-500/[0.03] hover:border-cyan-500/30 p-3.5 rounded-xl flex items-center justify-between shadow-sm hover:shadow-md transition-all cursor-pointer"
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse shrink-0" />
-                                      <p className="font-bold text-slate-800 text-xs tracking-tight">
-                                        {batch.start} - {batch.end}
-                                      </p>
-                                    </div>
-                                    <span className="text-[9px] font-extrabold text-cyan-600 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded uppercase tracking-wider scale-90">
-                                      {batch.dayName}
-                                    </span>
-                                  </a>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        );
-                      });
-                    })()}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
 
@@ -3582,7 +4177,7 @@ const TrekDetailsPage = () => {
             const day0 = trek.itinerary.find(d => d.label.toLowerCase() === 'day 0');
             return day0 ? (
               <div className="max-w-4xl mx-auto w-full mb-8">
-                <div className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300 space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
@@ -3593,6 +4188,22 @@ const TrekDetailsPage = () => {
                     <div className="flex items-center gap-3 bg-brand-orange/[0.04] border border-brand-orange/10 px-4 py-3 rounded-2xl flex-1 sm:flex-none">
                       <span className="text-xs font-mono font-black text-brand-orange shrink-0">{isOneDayTrek ? '09:30 PM' : '08:00 PM'}</span>
                       <p className="font-bold text-slate-755 text-xs md:text-sm">Departure from Bangalore time {isOneDayTrek ? '9.30 PM' : '8PM'}</p>
+                    </div>
+                  </div>
+
+                  {/* Day 0 Accommodation & Meals */}
+                  <div className="pt-3 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100/80 space-y-0.5">
+                      <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block flex items-center gap-1">
+                        <span>🏠</span> ACCOMMODATION
+                      </span>
+                      <span className="text-xs font-black text-slate-800 block">Overnight Journey (Tempo Traveller / Bus)</span>
+                    </div>
+                    <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100/80 space-y-0.5">
+                      <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block flex items-center gap-1">
+                        <span>🍽️</span> MEALS
+                      </span>
+                      <span className="text-xs font-black text-slate-800 block">Dinner on the way (Self-sponsored)</span>
                     </div>
                   </div>
                 </div>
@@ -3613,28 +4224,54 @@ const TrekDetailsPage = () => {
                     : 'md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
                 }`}>
                    {otherDays.map((day, dIdx) => (
-                     <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                       <div className="flex items-center gap-3 mb-6">
-                          <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
-                            {day.emoji} {day.label}
-                          </span>
-                          <div className="flex-1 h-px bg-slate-100" />
-                       </div>
-                       
-                       <div className="space-y-4 pl-3 relative border-l border-slate-100">
-                          {day.items.map((item, idx) => {
-                            const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
-                            return (
-                              <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
-                                <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
-                                <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
-                                  <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
-                                  <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
-                                  {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                     <div key={dIdx} className="bg-white border border-slate-100/80 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                       <div>
+                         <div className="flex items-center gap-3 mb-6">
+                            <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/5 px-3 py-1 rounded-full border border-brand-orange/10">
+                              {day.emoji} {day.label}
+                            </span>
+                            <div className="flex-1 h-px bg-slate-100" />
+                         </div>
+                         
+                         <div className="space-y-4 pl-3 relative border-l border-slate-100">
+                            {day.items.map((item, idx) => {
+                              const isHighlight = item.activity.toLowerCase().includes('sunrise') || item.activity.toLowerCase().includes('trek');
+                              return (
+                                <div key={idx} className={`relative pl-5 group ${isHighlight ? 'py-1' : ''}`}>
+                                  <div className={`absolute left-[-4.5px] top-1 w-2 h-2 rounded-full border-2 border-white transition-all ${isHighlight ? 'bg-brand-orange scale-150' : 'bg-slate-200 group-hover:bg-brand-orange'}`} />
+                                  <div className={`space-y-0 ${isHighlight ? 'bg-brand-orange/5 p-3 rounded-xl border border-brand-orange/10' : ''}`}>
+                                    <span className="text-[10px] md:text-xs font-black text-brand-orange uppercase tracking-widest">{item.time}</span>
+                                    <p className={`font-bold leading-relaxed ${isHighlight ? 'text-brand-dark text-xs md:text-sm' : 'text-slate-705 text-xs md:text-sm'}`}>{item.activity}</p>
+                                    {isHighlight && <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mt-1">✨ EXPEDITION POINT</p>}
+                                  </div>
                                 </div>
-                              </div>
-                            );
-                          })}
+                              );
+                            })}
+                         </div>
+                       </div>
+
+                       {/* Accommodation & Meals Badges (Reference Screenshot Feature) */}
+                       <div className="mt-6 pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                         <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100/80 space-y-0.5">
+                           <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block flex items-center gap-1">
+                             <span>🏠</span> ACCOMMODATION
+                           </span>
+                           <span className="text-xs font-black text-slate-800 block">
+                             {dIdx === 0 
+                               ? (isOneDayTrek ? 'Day Trail (No Stay)' : 'Homestay / Campsite') 
+                               : (otherDays.length > 2 && dIdx === 1 ? 'Homestay / Campsite' : 'Return Journey')}
+                           </span>
+                         </div>
+                         <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100/80 space-y-0.5">
+                           <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block flex items-center gap-1">
+                             <span>🍽️</span> MEALS
+                           </span>
+                           <span className="text-xs font-black text-slate-800 block">
+                             {dIdx === 0 
+                               ? (isOneDayTrek ? 'Light Snacks & Tea' : 'Breakfast, Trail Lunch & Dinner') 
+                               : (isOneDayTrek ? 'Self-sponsored' : 'Breakfast Included (Lunch Self-sponsored)')}
+                           </span>
+                         </div>
                        </div>
                      </div>
                    ))}
@@ -3742,8 +4379,11 @@ const TrekDetailsPage = () => {
             </div>
           </motion.div>
         </section>
+        </section>
 
-        {/* ─── EXPEDITION PERKS ─── */}
+        {/* ─── SECTION 3: INCLUSIONS ─── */}
+        <section id="inclusions" className="space-y-10 scroll-mt-20">
+          {/* ─── EXPEDITION PERKS ─── */}
         <section className="space-y-6 md:space-y-8">
           <div className="relative rounded-2xl overflow-hidden p-5 md:p-10 bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 shadow-xl">
             <div className="absolute inset-0 z-0">
@@ -3855,9 +4495,10 @@ const TrekDetailsPage = () => {
             </div>
           </div>
         </section>
+        </section>
 
-        {/* ─── CHECKLIST ─── */}
-        <section className="bg-slate-900 text-white p-6 md:p-14 rounded-3xl md:rounded-[3rem] relative overflow-hidden">
+        {/* ─── SECTION 5: WHAT TO PACK (CHECKLIST) ─── */}
+        <section id="what-to-pack" className="bg-slate-900 text-white p-6 md:p-14 rounded-3xl md:rounded-[3rem] relative overflow-hidden scroll-mt-20">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(232,117,26,0.1),transparent)]" />
           
           <div className="relative z-10 grid lg:grid-cols-3 gap-6 md:gap-12 items-center">
@@ -3946,7 +4587,9 @@ const TrekDetailsPage = () => {
         </section>
 
         {/* ─── TREK SPECIFIC GALLERY ─── */}
-        <TrekGallery trek={trek} />
+        <div id="trek-gallery-section" className="scroll-mt-20">
+          <TrekGallery trek={trek} />
+        </div>
 
         {/* ─── POLICY ─── */}
         <section className="space-y-10">
@@ -4120,7 +4763,7 @@ const TrekDetailsPage = () => {
           </div>
         </section>
         {/* ─── PROMINENT CANCELLATION POLICY ─── */}
-        <section className="space-y-10 pt-4">
+        <section id="cancellation" className="space-y-10 pt-4 scroll-mt-20">
           <div className="bg-white border-2 border-brand-orange/20 rounded-[2.5rem] p-6 md:p-12 shadow-[0_20px_50px_rgba(249,115,22,0.06)] space-y-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 via-brand-orange to-sky-500" />
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
@@ -4235,6 +4878,77 @@ const TrekDetailsPage = () => {
                 </div>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* ─── SECTION 6: FAQS (ACCORDION) ─── */}
+        <section id="faqs" className="space-y-8 scroll-mt-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+            <div className="space-y-2">
+              <span className="text-brand-orange text-[9px] font-black uppercase tracking-[0.3em] block">
+                ❓ Clarifications & Answers
+              </span>
+              <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tight leading-none">
+                Frequently Asked <span className="text-brand-orange italic font-serif">Questions</span>
+              </h3>
+            </div>
+            <p className="text-xs md:text-sm text-slate-500 font-bold max-w-sm leading-relaxed md:text-right">
+              Everything you need to know about the trail, bookings, inclusions, and community standards.
+            </p>
+          </div>
+
+          <div className="space-y-3 max-w-4xl mx-auto">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div
+                  key={index}
+                  className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
+                    isOpen 
+                      ? 'border-brand-orange/40 bg-white shadow-md shadow-brand-orange/5' 
+                      : 'border-slate-200/80 bg-white/70 hover:bg-white hover:border-slate-300 shadow-xs'
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-center gap-3.5">
+                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                        isOpen ? 'bg-brand-orange text-white' : 'bg-slate-100 text-slate-500'
+                      }`}>
+                        <HelpCircle size={17} />
+                      </div>
+                      <span className="font-extrabold text-sm md:text-base text-slate-900 tracking-tight">
+                        {faq.q}
+                      </span>
+                    </div>
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-slate-400 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-brand-orange' : ''
+                    }`}>
+                      <ChevronDown size={18} />
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 pb-6 sm:px-6 pt-0 text-slate-650 text-xs md:text-sm leading-relaxed border-t border-slate-100 font-medium pl-14 sm:pl-16">
+                          <p className="pt-3">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -4369,6 +5083,12 @@ const TrekCard = ({ trek }: { trek: Trek }) => {
         {trek.discount && (
           <div className="absolute top-4 right-4 bg-brand-orange text-white px-3.5 py-1.5 rounded-2xl flex items-center shadow-[0_8px_20px_rgba(249,115,22,0.3)] border border-white/15">
             <span className="text-[9px] font-black tracking-widest uppercase">{trek.discount}</span>
+          </div>
+        )}
+        {trek.itineraryPdf && (
+          <div className="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-md border border-white/15 text-white text-[9px] font-black uppercase tracking-wider">
+            <Download size={11} className="text-emerald-400" />
+            <span>PDF Ready</span>
           </div>
         )}
       </div>
