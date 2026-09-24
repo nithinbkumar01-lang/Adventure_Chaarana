@@ -5,6 +5,13 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "/api/endpoint?__path=/api/:path*",
+      "missing": [
+        { "type": "query", "key": "__path" }
+      ]
+    },
+    {
       "source": "/:path((?!api/).*)",
       "destination": "/index.html"
     }
