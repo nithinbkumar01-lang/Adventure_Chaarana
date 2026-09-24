@@ -3,8 +3,9 @@ import { communityImages } from '../server/data/communityImages';
 import { treks } from '../server/data/treks';
 
 function serveFallback(req: Request, res: Response, apiPath: string) {
-  const category = typeof req.query.category === 'string' ? req.query.category : null;
-  const query = typeof req.query.q === 'string' ? req.query.q.trim().toLowerCase() : '';
+  const searchParams = new URL(req.url ?? '/', 'https://api.local').searchParams;
+  const category = searchParams.get('category');
+  const query = (searchParams.get('q') ?? '').trim().toLowerCase();
 
   if (req.method === 'GET' && apiPath === '/api/treks') {
     const rows = treks.filter((trek) => (!category || trek.category === category)
@@ -32,22 +33,15 @@ function serveFallback(req: Request, res: Response, apiPath: string) {
  * original API path before passing the request to the shared Express app.
  */
 export default async function handler(req: Request, res: Response) {
-  const requestedPath = req.query.__path;
-  if (typeof requestedPath !== 'string' || !requestedPath.startsWith('/api/')) {
+  const requestUrl = new URL(req.url ?? '/', 'https://api.local');
+  const requestedPath = requestUrl.searchParams.get('__path');
+  if (!requestedPath?.startsWith('/api/')) {
     res.status(400).json({ error: { code: 'INVALID_API_PATH', message: 'The API path is invalid.' } });
     return;
   }
 
-  const query = new URLSearchParams();
-  for (const [key, value] of Object.entries(req.query)) {
-    if (key === '__path') continue;
-    if (typeof value === 'string') query.append(key, value);
-    else if (Array.isArray(value)) {
-      for (const item of value) {
-        if (typeof item === 'string') query.append(key, item);
-      }
-    }
-  }
+  const query = new URLSearchParams(requestUrl.searchParams);
+  query.delete('__path');
 
   const search = query.toString();
   req.url = `${requestedPath}${search ? `?${search}` : ''}`;
