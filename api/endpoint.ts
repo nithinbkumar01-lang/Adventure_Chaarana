@@ -48,18 +48,11 @@ export default async function handler(req: Request, res: Response) {
   try {
     const { default: app } = await import('../server/app');
     await new Promise<void>((resolve, reject) => {
-      const finish = () => {
-        res.off('finish', finish);
-        res.off('close', finish);
-        resolve();
-      };
-      res.once('finish', finish);
-      res.once('close', finish);
+      res.once('finish', resolve);
+      res.once('close', resolve);
       try {
         app(req, res);
       } catch (error) {
-        res.off('finish', finish);
-        res.off('close', finish);
         reject(error);
       }
     });
