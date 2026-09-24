@@ -53,7 +53,22 @@ export default async function handler(req: Request, res: Response) {
   req.url = `${requestedPath}${search ? `?${search}` : ''}`;
   try {
     const { default: app } = await import('../server/app');
-    return app(req, res);
+    await new Promise<void>((resolve, reject) => {
+      const finish = () => {
+        res.off('finish', finish);
+        res.off('close', finish);
+        resolve();
+      };
+      res.once('finish', finish);
+      res.once('close', finish);
+      try {
+        app(req, res);
+      } catch (error) {
+        res.off('finish', finish);
+        res.off('close', finish);
+        reject(error);
+      }
+    });
   } catch {
     console.error('[api] Backend initialization failed; serving bundled public content where available.');
     return serveFallback(req, res, requestedPath);
