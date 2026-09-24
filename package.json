@@ -3,22 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
-    "dev": "tsx server.ts",
+    "dev": "node -r ./scripts/tsx-userinfo-shim.cjs ./node_modules/tsx/dist/cli.mjs server.ts",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit && eslint ."
+    "lint": "tsc --noEmit && eslint .",
+    "firestore:seed": "node -r ./scripts/tsx-userinfo-shim.cjs ./node_modules/tsx/dist/cli.mjs server/db/seed.ts"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
     "@tailwindcss/vite": "^4.1.14",
-    "@types/cors": "^2.8.19",
     "@vitejs/plugin-react": "^5.0.4",
-    "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^4.22.1",
     "firebase": "^12.12.1",
+    "firebase-admin": "^14.5.0",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "react": "^19.0.0",
@@ -34,7 +36,6 @@
     "@types/node": "^22.14.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vercel/node": "^5.7.13",
     "autoprefixer": "^10.4.21",
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
