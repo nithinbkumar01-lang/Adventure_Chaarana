@@ -1,8 +1,8 @@
 import { createHash, randomBytes } from 'node:crypto';
 import { Router } from 'express';
 import type { Response } from 'express';
-import { db, Timestamp } from '../firestore';
-import { requireFirestore } from '../middleware/requireFirestore';
+import { db, Timestamp } from '../firestore.js';
+import { requireFirestore } from '../middleware/requireFirestore.js';
 
 const bookingRouter = Router();
 

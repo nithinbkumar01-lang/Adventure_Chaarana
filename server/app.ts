@@ -1,8 +1,8 @@
 import express from 'express';
-import { db, FieldValue, isFirestoreConfigured } from './firestore';
-import contentRouter from './routes/content';
-import adminRouter from './routes/admin';
-import bookingRouter from './routes/bookings';
+import { db, FieldValue, isFirestoreConfigured } from './firestore.js';
+import contentRouter from './routes/content.js';
+import adminRouter from './routes/admin.js';
+import bookingRouter from './routes/bookings.js';
 
 const app = express();
 app.use(express.json({ limit: '1mb' }));

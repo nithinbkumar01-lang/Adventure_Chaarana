@@ -2,10 +2,10 @@ import { randomUUID } from 'node:crypto';
 import { Router } from 'express';
 import type { Response } from 'express';
 import type { Trek } from '../../shared/types/trek';
-import { db, Timestamp, serializeTimestamp } from '../firestore';
-import { treks as websiteTreks } from '../data/treks';
-import { requireAdmin } from '../middleware/adminAuth';
-import { requireFirestore } from '../middleware/requireFirestore';
+import { db, Timestamp, serializeTimestamp } from '../firestore.js';
+import { treks as websiteTreks } from '../data/treks.js';
+import { requireAdmin } from '../middleware/adminAuth.js';
+import { requireFirestore } from '../middleware/requireFirestore.js';
 
 const adminRouter = Router();
 const ADMIN_TREK_READ_TIMEOUT_MS = 2_000;

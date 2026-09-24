@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { treks } from '../data/treks';
-import { communityImages } from '../data/communityImages';
-import { db, Timestamp } from '../firestore';
+import { treks } from '../data/treks.js';
+import { communityImages } from '../data/communityImages.js';
+import { db, Timestamp } from '../firestore.js';
 
 const homepageSections = [
   ['hero', 'Adventure Awaits!!', { backgroundImageUrl: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1777477957/Background_tdfgts.png', primaryCtaLabel: 'Search', primaryCtaTarget: 'treks-section' }],

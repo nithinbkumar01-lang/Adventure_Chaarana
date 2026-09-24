@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import type { DocumentData, QueryDocumentSnapshot } from 'firebase-admin/firestore';
-import { communityImages as fallbackImages } from '../data/communityImages';
-import { treks as fallbackTreks } from '../data/treks';
-import { db, isFirestoreConfigured, serializeTimestamp } from '../firestore';
+import { communityImages as fallbackImages } from '../data/communityImages.js';
+import { treks as fallbackTreks } from '../data/treks.js';
+import { db, isFirestoreConfigured, serializeTimestamp } from '../firestore.js';
 
 const contentRouter = Router();
 const FIRESTORE_CONTENT_TIMEOUT_MS = 2_000;

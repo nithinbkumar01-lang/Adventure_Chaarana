@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { communityImages } from '../server/data/communityImages';
-import { treks } from '../server/data/treks';
+import { communityImages } from '../server/data/communityImages.js';
+import { treks } from '../server/data/treks.js';
 
 async function withFirestoreTimeout<T>(query: Promise<T>) {
   let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -52,7 +52,7 @@ async function readPublicContent(req: Request, res: Response, apiPath: string, s
       if (!process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
         return res.json({ status: 'ok', firestore: 'not_configured', database: 'not_configured' });
       }
-      const { db } = await import('../server/firestore');
+      const { db } = await import('../server/firestore.js');
       await withFirestoreTimeout(db.collection('treks').limit(1).get());
       return res.json({ status: 'ok', firestore: 'connected', database: 'connected' });
     } catch {
@@ -62,7 +62,7 @@ async function readPublicContent(req: Request, res: Response, apiPath: string, s
 
   if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
     try {
-      const { db } = await import('../server/firestore');
+      const { db } = await import('../server/firestore.js');
       if (apiPath === '/api/treks') {
         const snapshot = await withFirestoreTimeout(db.collection('treks').where('status', '==', 'published').get());
         const category = searchParams.get('category');
@@ -128,7 +128,7 @@ export default async function handler(req: Request, res: Response) {
   if (handled) return;
 
   try {
-    const { default: app } = await import('../server/app');
+    const { default: app } = await import('../server/app.js');
     return app(req, res);
   } catch {
     console.error('[api] Backend initialization failed; serving bundled public content where available.');

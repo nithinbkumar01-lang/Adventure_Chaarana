@@ -1,5 +1,5 @@
 import type { RequestHandler } from 'express';
-import { isFirestoreConfigured } from '../firestore';
+import { isFirestoreConfigured } from '../firestore.js';
 
 export const requireFirestore: RequestHandler = (_req, res, next) => {
   if (!isFirestoreConfigured()) {
