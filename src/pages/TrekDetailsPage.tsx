@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { Clock, MapPin, ArrowLeft, Mountain, Compass, ChevronDown, Sparkles, Camera, Instagram, MessageCircle, Download, FileText, FileDown, Check, Loader2, Star, HelpCircle, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
 import { TrekGallery } from '../components/TrekGallery';
+import { Seo } from '../components/Seo';
 import { useSiteData } from '../context/SiteDataContext';
 import type { Trek } from '../../shared/types/trek';
+import { trekSeo } from '../../shared/seo';
 
 interface Batch {
   start: string;
@@ -184,6 +185,12 @@ export const TrekDetailsPage = () => {
   if (!trek) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <Seo
+          title={isLoading ? 'Explore Treks from Bengaluru | Adventure Chaarana' : 'Trek Not Found | Adventure Chaarana'}
+          description={isLoading ? 'Explore guided treks and weekend getaways from Bengaluru with Adventure Chaarana.' : 'This trek page could not be found. Explore current treks and weekend getaways from Bengaluru.'}
+          path={slug ? `/trek/${slug}` : '/'}
+          noindex={!isLoading}
+        />
         <Compass size={64} className="text-slate-200 mb-4 animate-spin-slow" />
         <h2 className="text-2xl font-black text-slate-900 mb-2">{isLoading ? 'Loading trek…' : error ? 'Unable to load trek' : 'Trek Not Found'}</h2>
         <p className="text-slate-500 mb-8">{isLoading ? 'Please wait while we load this expedition.' : error ? 'Please refresh and try again.' : "The expedition you're looking for doesn't exist."}</p>
@@ -225,37 +232,6 @@ export const TrekDetailsPage = () => {
     }
   ];
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": trek.title,
-    "description": trek.description,
-    "image": trek.image,
-    "startDate": trek.date.includes('Every') ? undefined : new Date(trek.date).toISOString(),
-    "location": {
-      "@type": "Place",
-      "name": trek.location,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": trek.location,
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      }
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": trek.currentPrice,
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "url": `https://adventurechaarana.com/trek/${trek.slug}`
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Adventure Chaarana",
-      "url": "https://adventurechaarana.com"
-    }
-  };
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -263,22 +239,7 @@ export const TrekDetailsPage = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-brand-paper relative font-sans selection:bg-brand-orange selection:text-white"
     >
-      <Helmet>
-        <title>{trek.title} | Adventure Chaarana - Best Treks from Bangalore</title>
-        <meta name="description" content={trek.description} />
-        <meta name="keywords" content={`${trek.title}, trekking ${trek.location}, ${trek.category} treks, adventure trip from bangalore, adventure chaarana`} />
-        <link rel="canonical" href={`https://adventurechaarana.com/trek/${trek.slug}`} />
-        
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${trek.title} | Adventure Chaarana`} />
-        <meta property="og:description" content={trek.description} />
-        <meta property="og:image" content={trek.image} />
-        <meta property="og:url" content={`https://adventurechaarana.com/trek/${trek.slug}`} />
-
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
+      <Seo {...trekSeo(trek)} />
 
       {/* ─── IMMERSIVE CENTERED HERO ─── */}
       <header className="relative pt-16 flex flex-col justify-center items-center min-h-[45vh] md:min-h-[55vh] overflow-hidden text-center px-6">

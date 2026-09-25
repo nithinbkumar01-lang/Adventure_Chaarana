@@ -17,6 +17,7 @@ import type { ConfirmationResult } from 'firebase/auth';
 import { ArrowLeft, CheckCircle2, LockKeyhole, Mail, Mountain, Phone, UserRound } from 'lucide-react';
 import { auth } from '../lib/firebase';
 import { useAuth } from '../context/AuthContext';
+import { Seo } from '../components/Seo';
 
 type AuthMode = 'signin' | 'signup' | 'forgot';
 type AuthMethod = 'email' | 'phone';
@@ -185,6 +186,7 @@ export default function AuthPage() {
 
   return (
     <main className="relative z-10 flex min-h-[78vh] items-center justify-center px-4 pb-20 pt-36 sm:px-6 md:pt-40">
+      <Seo title="Sign In or Create an Account | Adventure Chaarana" description="Sign in or create your Adventure Chaarana account to manage your trekking and travel bookings." path="/auth" noindex />
       <section className="grid w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_32px_100px_-40px_rgba(15,15,15,0.3)] md:grid-cols-[0.9fr_1.1fr]">
         <div className="relative hidden min-h-[650px] overflow-hidden bg-brand-dark p-10 text-white md:flex md:flex-col md:justify-between">
           <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(15,15,15,0.97),rgba(15,15,15,0.7),rgba(232,117,26,0.35)),url('https://res.cloudinary.com/dofg6bsom/image/upload/v1777477957/Background_tdfgts.png')] bg-cover bg-center" />

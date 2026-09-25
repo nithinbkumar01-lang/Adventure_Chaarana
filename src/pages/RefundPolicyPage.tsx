@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { Seo } from '../components/Seo';
+import { policySeo } from '../../shared/seo';
 
 export const RefundPolicyPage = () => {
   useEffect(() => {
@@ -9,11 +10,7 @@ export const RefundPolicyPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Refund & Cancellation Policy | Adventure Chaarana</title>
-        <meta name="description" content="Understand our refund process and cancellation charges. 72h cancellation rules and calamity refunds explained." />
-        <link rel="canonical" href="https://adventurechaarana.com/refund-policy" />
-      </Helmet>
+      <Seo {...policySeo.refund} />
       <div className="h-24" />
       <div className="max-w-4xl mx-auto px-6 pb-24">
         <motion.div 

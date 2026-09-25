@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "node -r ./scripts/tsx-userinfo-shim.cjs ./node_modules/tsx/dist/cli.mjs server.ts",
-    "build": "vite build",
+    "build": "vite build && npm run seo:generate",
+    "seo:generate": "node -r ./scripts/tsx-userinfo-shim.cjs ./node_modules/tsx/dist/cli.mjs scripts/generate-seo-pages.ts",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit && eslint .",

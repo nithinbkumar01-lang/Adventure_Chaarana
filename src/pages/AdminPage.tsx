@@ -6,6 +6,7 @@ import type { Trek } from '../../shared/types/trek';
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 import { useAuth } from '../context/AuthContext';
+import { Seo } from '../components/Seo';
 
 interface AdminTrekRow {
   id: string;
@@ -253,12 +254,13 @@ export default function AdminPage() {
   };
 
   if (authLoading || (user && !authenticated && !authError)) {
-    return <main className="flex min-h-screen items-center justify-center bg-slate-950 text-sm font-semibold text-white">Checking admin sign in…</main>;
+    return <main className="flex min-h-screen items-center justify-center bg-slate-950 text-sm font-semibold text-white"><Seo title="Admin | Adventure Chaarana" description="Adventure Chaarana administration." path="/admin" noindex />Checking admin sign in…</main>;
   }
 
   if (!authenticated) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 text-slate-900">
+        <Seo title="Admin Sign In | Adventure Chaarana" description="Sign in to manage Adventure Chaarana treks and departures." path="/admin" noindex />
         <form onSubmit={handleLogin} className="w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl">
           <div className="mb-6 flex size-12 items-center justify-center rounded-2xl bg-orange-100 text-orange-600"><ShieldCheck size={23} /></div>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Adventure Chaarana</p>
@@ -288,6 +290,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
+      <Seo title="Admin | Adventure Chaarana" description="Adventure Chaarana administration." path="/admin" noindex />
       <aside className="fixed inset-y-0 left-0 z-20 hidden w-64 flex-col bg-slate-950 px-5 py-6 text-white lg:flex">
         <a href="/" className="mb-10 flex items-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-orange-500"><Mountain size={20} /></span>

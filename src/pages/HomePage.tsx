@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { MapPin, Mountain, Sun, Compass, Tent, X, ChevronDown, Search, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
 import { TrekCard } from '../components/TrekCard';
 import { TrekCardSkeleton } from '../components/TrekCardSkeleton';
 import { CommunityGallery } from '../components/CommunityGallery';
+import { Seo } from '../components/Seo';
 import { useSiteData } from '../context/SiteDataContext';
+import { homeSchema, homeSeo } from '../../shared/seo';
 
 export const HomePage = () => {
   const { treks, isLoading, error } = useSiteData();
@@ -46,18 +47,7 @@ export const HomePage = () => {
 
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Adventure Chaarana | Premium Trekking & Adventure Community in Bangalore</title>
-        <meta name="description" content="Explore the pure wild with Adventure Chaarana. We offer the best sunrise treks, weekend getaways, and western ghats expeditions from Bangalore. Join our active adventure community." />
-        <meta name="keywords" content="trekking bangalore, sunrise treks bangalore, adventure community bangalore, western ghats trek, kodaikanal trip, adventure chaarana" />
-        <link rel="canonical" href="https://adventurechaarana.com/" />
-        
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://adventurechaarana.com/" />
-        <meta property="og:title" content="Adventure Chaarana | Premium Trekking & Adventure Community" />
-        <meta property="og:description" content="Explore the pure wild with Bangalore's most active trekking community." />
-        <meta property="og:image" content="https://res.cloudinary.com/dmez9koqz/image/upload/v1786011636/logo_eng_fr3ih9.png" />
-      </Helmet>
+      <Seo {...homeSeo} schema={homeSchema} />
       {/* Hero Section */}
       <section className="relative z-20 min-h-[90vh] sm:min-h-[85vh] flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden pt-24 pb-16">
         {/* Background Image Layer */}
@@ -65,6 +55,7 @@ export const HomePage = () => {
           <img 
             src="https://res.cloudinary.com/dofg6bsom/image/upload/v1777477957/Background_tdfgts.png" 
             alt="Scenic mountain range background for Adventure Chaarana" 
+            fetchPriority="high"
             className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
@@ -87,6 +78,10 @@ export const HomePage = () => {
               </span>
             </h1>
           </motion.div>
+
+          <p className="mx-auto max-w-2xl text-sm font-semibold leading-6 text-white/90 drop-shadow-md sm:text-base">
+            Guided sunrise treks, Western Ghats expeditions and weekend getaways from Bengaluru.
+          </p>
 
           {/* Stats Bar */}
           <motion.div 

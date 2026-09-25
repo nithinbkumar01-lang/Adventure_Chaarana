@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { Seo } from '../components/Seo';
+import { policySeo } from '../../shared/seo';
 
 export const SafetyPage = () => {
   useEffect(() => {
@@ -9,11 +10,7 @@ export const SafetyPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Safety Code & Conduct | Adventure Chaarana</title>
-        <meta name="description" content="Safety is our priority. Learn about our 'Leave No Trace' policy, group conduct rules, and biological risk awareness." />
-        <link rel="canonical" href="https://adventurechaarana.com/safety-code" />
-      </Helmet>
+      <Seo {...policySeo.safety} />
       <div className="h-24" />
       <div className="max-w-4xl mx-auto px-6 pb-24 text-slate-700">
         <motion.div 

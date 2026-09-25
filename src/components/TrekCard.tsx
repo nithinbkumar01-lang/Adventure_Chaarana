@@ -1,24 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Clock, MapPin, Heart, ArrowRight, Mountain, Calendar, Download } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { Trek } from '../../shared/types/trek';
 
 export const TrekCard = ({ trek }: { trek: Trek }) => {
-  const navigate = useNavigate();
-
   return (
-    <motion.div 
+    <motion.article
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       layout
-      onClick={() => navigate(`/trek/${trek.slug}`)}
-      className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_100px_-20px_rgba(37,211,102,0.15)] transition-all duration-500 border border-slate-100 group flex flex-col h-full w-full cursor-pointer relative"
+      className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_100px_-20px_rgba(37,211,102,0.15)] transition-all duration-500 border border-slate-100 group flex flex-col h-full w-full relative"
     >
       <div className="relative aspect-[4/3] overflow-hidden m-3 rounded-[2rem]">
         <img 
           src={trek.image} 
           alt={`Trek Expedition: ${trek.title} - ${trek.location}`} 
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
           referrerPolicy="no-referrer"
         />
@@ -42,7 +41,7 @@ export const TrekCard = ({ trek }: { trek: Trek }) => {
       <div className="p-8 pt-4 flex flex-col flex-1">
         <div className="flex justify-between items-start mb-6">
           <h3 className="font-black text-2xl text-slate-900 leading-tight group-hover:text-brand-orange transition-colors pr-4">
-            {trek.title}
+            <Link to={`/trek/${trek.slug}`} className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange">{trek.title}</Link>
           </h3>
           <div className="bg-slate-50 text-slate-400 p-2 rounded-xl">
              <Heart size={18} />
@@ -73,7 +72,7 @@ export const TrekCard = ({ trek }: { trek: Trek }) => {
           </span>
         </div>
 
-        <div className="mt-auto flex items-center justify-between bg-slate-50 p-5 rounded-[2rem] border border-slate-100 transition-all group-hover:bg-brand-orange/5 group-hover:border-brand-orange/10 group-hover:shadow-lg group-hover:shadow-brand-orange/5">
+        <Link to={`/trek/${trek.slug}`} aria-label={`View ${trek.title} itinerary and trip details`} className="mt-auto flex items-center justify-between bg-slate-50 p-5 rounded-[2rem] border border-slate-100 transition-all group-hover:bg-brand-orange/5 group-hover:border-brand-orange/10 group-hover:shadow-lg group-hover:shadow-brand-orange/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange">
           <div className="flex flex-col">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">Expedition from</span>
             <span className="text-2xl font-black text-slate-900 tracking-tight">₹{trek.currentPrice.toLocaleString()}</span>
@@ -81,8 +80,8 @@ export const TrekCard = ({ trek }: { trek: Trek }) => {
           <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-400 group-hover:text-brand-orange group-hover:scale-110 transition-all border border-slate-100">
             <ArrowRight size={20} />
           </div>
-        </div>
+        </Link>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { Seo } from '../components/Seo';
+import { policySeo } from '../../shared/seo';
 
 export const TermsPage = () => {
   useEffect(() => {
@@ -42,11 +43,7 @@ export const TermsPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Terms & Conditions | Adventure Chaarana</title>
-        <meta name="description" content="Read the official terms and conditions of Adventure Chaarana. Booking policies, cancellation rules, and safety guidelines." />
-        <link rel="canonical" href="https://adventurechaarana.com/terms" />
-      </Helmet>
+      <Seo {...policySeo.terms} />
       {/* Header Spacer */}
       <div className="h-24" />
       

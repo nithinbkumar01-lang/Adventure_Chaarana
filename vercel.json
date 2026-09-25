@@ -11,6 +11,13 @@
         { "type": "query", "key": "__path" }
       ]
     },
+    { "source": "/", "destination": "/seo/index.html" },
+    { "source": "/terms", "destination": "/seo/terms.html" },
+    { "source": "/refund-policy", "destination": "/seo/refund-policy.html" },
+    { "source": "/safety-code", "destination": "/seo/safety-code.html" },
+    { "source": "/auth", "destination": "/seo/auth.html" },
+    { "source": "/admin", "destination": "/seo/admin.html" },
+    { "source": "/trek/:slug", "destination": "/seo/trek/:slug.html" },
     {
       "source": "/:path((?!api/).*)",
       "destination": "/index.html"
