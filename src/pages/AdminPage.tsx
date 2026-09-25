@@ -3,6 +3,9 @@ import type { FormEvent } from 'react';
 import { Activity, CalendarDays, Compass, LogOut, Mountain, Plus, Save, ShieldCheck, Tent, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { Trek } from '../../shared/types/trek';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { auth } from '../lib/firebase';
+import { useAuth } from '../context/AuthContext';
 
 interface AdminTrekRow {
   id: string;
@@ -56,8 +59,11 @@ const inputClass = 'w-full rounded-xl border border-slate-200 bg-white px-3.5 py
 const labelClass = 'mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-500';
 
 export default function AdminPage() {
-  const [token, setToken] = useState(() => sessionStorage.getItem('adventure-admin-token') ?? '');
+  const { user, isLoading: authLoading } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
+  const [authenticating, setAuthenticating] = useState(false);
   const [authError, setAuthError] = useState('');
   const [activeSection, setActiveSection] = useState<'dashboard' | 'treks' | 'departures' | 'bookings'>('dashboard');
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
@@ -78,11 +84,13 @@ export default function AdminPage() {
   const [departureCapacity, setDepartureCapacity] = useState('25');
 
   const api = async <T,>(url: string, init: RequestInit = {}): Promise<T> => {
+    const idToken = await auth.currentUser?.getIdToken();
+    if (!idToken) throw new Error('Your sign-in session has ended. Please sign in again.');
     const response = await fetch(url, {
       ...init,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${idToken}`,
         ...init.headers,
       },
     });
@@ -117,18 +125,22 @@ export default function AdminPage() {
     }
   };
 
-  const verifyToken = async (candidate: string) => {
-    const response = await fetch('/api/v1/admin/auth/verify', { method: 'POST', headers: { Authorization: `Bearer ${candidate}` } });
+  const verifyToken = async (idToken: string) => {
+    const response = await fetch('/api/v1/admin/auth/verify', { method: 'POST', headers: { Authorization: `Bearer ${idToken}` } });
     if (!response.ok) {
       const payload = await response.json().catch(() => ({}));
-      throw new Error(payload.error?.message ?? 'Admin token could not be verified.');
+      throw new Error(payload.error?.message ?? 'Admin sign-in could not be verified.');
     }
   };
 
   useEffect(() => {
-    if (!token) return;
+    if (authLoading || !user) {
+      setAuthenticated(false);
+      return;
+    }
     let active = true;
-    verifyToken(token)
+    void user.getIdToken()
+      .then(verifyToken)
       .then(() => {
         if (active) {
           setAuthenticated(true);
@@ -137,31 +149,32 @@ export default function AdminPage() {
       })
       .catch((error: unknown) => {
         if (active) {
-          sessionStorage.removeItem('adventure-admin-token');
           setAuthenticated(false);
           setAuthError(error instanceof Error ? error.message : 'Unable to authenticate.');
+          void signOut(auth);
         }
       });
     return () => { active = false; };
-  }, []);
+  }, [authLoading, user]);
 
   const handleLogin = async (event: FormEvent) => {
     event.preventDefault();
     setAuthError('');
+    setAuthenticating(true);
     try {
-      await verifyToken(token);
-      sessionStorage.setItem('adventure-admin-token', token);
-      setAuthenticated(true);
-      await loadAdminData();
+      await signInWithEmailAndPassword(auth, email.trim(), password);
     } catch (error) {
-      setAuthError(error instanceof Error ? error.message : 'Unable to authenticate.');
+      setAuthError(error instanceof Error && 'code' in error
+        ? 'Email or password is incorrect, or this account is not authorized for admin access.'
+        : error instanceof Error ? error.message : 'Unable to sign in.');
+    } finally {
+      setAuthenticating(false);
     }
   };
 
-  const handleLogout = () => {
-    sessionStorage.removeItem('adventure-admin-token');
+  const handleLogout = async () => {
+    await signOut(auth);
     setAuthenticated(false);
-    setToken('');
     setDashboard(null);
   };
 
@@ -239,6 +252,10 @@ export default function AdminPage() {
     }
   };
 
+  if (authLoading || (user && !authenticated && !authError)) {
+    return <main className="flex min-h-screen items-center justify-center bg-slate-950 text-sm font-semibold text-white">Checking admin sign in…</main>;
+  }
+
   if (!authenticated) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 text-slate-900">
@@ -246,13 +263,17 @@ export default function AdminPage() {
           <div className="mb-6 flex size-12 items-center justify-center rounded-2xl bg-orange-100 text-orange-600"><ShieldCheck size={23} /></div>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Adventure Chaarana</p>
           <h1 className="mt-2 text-3xl font-black tracking-tight">Admin sign in</h1>
-          <p className="mt-2 text-sm leading-6 text-slate-500">Enter the admin API token configured on the server.</p>
+          <p className="mt-2 text-sm leading-6 text-slate-500">Sign in with your authorized admin email and password.</p>
           <label className="mt-6 block">
-            <span className={labelClass}>Admin token</span>
-            <input className={inputClass} type="password" value={token} onChange={(event) => setToken(event.target.value)} autoComplete="current-password" required />
+            <span className={labelClass}>Email address</span>
+            <input className={inputClass} type="email" value={email} onChange={(event) => setEmail(event.target.value)} autoComplete="username" required />
+          </label>
+          <label className="mt-4 block">
+            <span className={labelClass}>Password</span>
+            <input className={inputClass} type="password" value={password} onChange={(event) => setPassword(event.target.value)} autoComplete="current-password" required />
           </label>
           {authError && <p role="alert" className="mt-4 text-sm font-semibold text-red-600">{authError}</p>}
-          <button className="mt-6 w-full rounded-xl bg-slate-950 px-4 py-3 font-bold text-white transition hover:bg-orange-600">Continue</button>
+          <button disabled={authenticating} className="mt-6 w-full rounded-xl bg-slate-950 px-4 py-3 font-bold text-white transition hover:bg-orange-600 disabled:cursor-wait disabled:opacity-60">{authenticating ? 'Signing in…' : 'Sign in'}</button>
         </form>
       </main>
     );
