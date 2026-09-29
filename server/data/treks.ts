@@ -693,12 +693,13 @@ id: '9',
     badgeColor: 'bg-brand-orange',
     category: 'western-ghats',
     description: 'Trek to the pristine Bandaje Waterfalls nestled in the Western Ghats of Karnataka. Immerse yourself in misty grasslands, navigate lush mountain trails, and discover enchanting vistas at Rani Jhari viewpoint, Kodige Falls, Kelgur Tea Estate / KPP, and the ancient Hoysala temples of Belur.',
-    image: 'https://res.cloudinary.com/dofg6bsom/image/upload/v1779803469/6030ae08-a7a3-4ddb-9d9e-3c135b4aea19.png',
+    image: 'https://ik.imagekit.io/phj6ifoni/Bandaje/IMG_7219.jpg?updatedAt=1790590968528',
     gallery: [
-      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440961/8_yga9f8.jpg',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087833/3245baef-ce1d-412a-9307-8890e1f8b175.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1778087824/8c0f8b5a-2b52-4af3-b965-017a2ee1f961.png',
-      'https://res.cloudinary.com/dofg6bsom/image/upload/f_auto,q_auto/v1779440960/WhatsApp_Image_2026-05-22_at_1.33.54_PM_uvvckq.jpg'
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/IMG_5655.jpg?updatedAt=1790591005178',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/IMG_2141.jpg?updatedAt=1790591004806',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_015921342.TS-000.jpg?updatedAt=1790591003026',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_043428687.jpg?updatedAt=1790590989744',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_042617126.jpg?updatedAt=1790590970617'
     ],
     itinerary: [
       {
