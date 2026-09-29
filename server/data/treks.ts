@@ -699,7 +699,10 @@ id: '9',
       'https://ik.imagekit.io/phj6ifoni/Bandaje/IMG_2141.jpg?updatedAt=1790591004806',
       'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_015921342.TS-000.jpg?updatedAt=1790591003026',
       'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_043428687.jpg?updatedAt=1790590989744',
-      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_042617126.jpg?updatedAt=1790590970617'
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_042617126.jpg?updatedAt=1790590970617',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260718_060347017.MP.jpg?updatedAt=1790591014653',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/PXL_20260725_013816856.jpg?updatedAt=1790591012296',
+      'https://ik.imagekit.io/phj6ifoni/Bandaje/IMG_7211.jpg?updatedAt=1790591008579'
     ],
     itinerary: [
       {
