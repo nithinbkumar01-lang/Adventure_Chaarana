@@ -774,6 +774,9 @@ id: '9',
       'Personal emergency medicine',
       'Sunglasses & Hat'
     ],
+    importantNotes: [
+      'A Belur Temple visit won’t be possible if the trek is on Day 2 of the itinerary.'
+    ],
     placesCovered: [
       'Bandaje Waterfalls',
       'Rani Jhari View point',

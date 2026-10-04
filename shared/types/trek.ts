@@ -39,6 +39,7 @@ export interface Trek {
   thingsToCarry: string[];
   gallery?: string[];
   placesCovered?: string[];
+  importantNotes?: string[];
 }
 
 export interface CommunityImage {

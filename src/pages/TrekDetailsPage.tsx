@@ -1572,6 +1572,7 @@ export const TrekDetailsPage = () => {
                   <li>Sometimes local authorities might restrict entry. Adventure Chaarana will try to make alternate arrangements but is not responsible for authorities' decisions.</li>
                   <li>You will be responsible for your belongings.</li>
                   <li>Arrival might be delayed due to heavy rains, traffic, or other unavoidable circumstances.</li>
+                  {(trek.importantNotes ?? []).map((note) => <li key={note}>{note}</li>)}
                   <li>Do not expect luxury in accommodation. Hot water and campfire are weather-dependent.</li>
                   <li>Mandatory signing of Medical, Risk, and Indemnity forms before starting. Under 18 requires parental consent.</li>
                   <li>No medical/accidental insurance included. It is highly recommended to have insurance.</li>
